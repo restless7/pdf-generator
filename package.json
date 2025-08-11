@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "test": "jest",
     "start": "node dist/server.js",
-    "start:dev": "ts-node server.ts",
+    "start:dev": "ts-node src/server.ts",
     "build:server": "tsc && cp -r src/templates dist/ 2>/dev/null || mkdir -p dist/templates && cp -r src/templates/* dist/templates/",
     "railway:build": "npm run build:server",
     "railway:start": "npm run start"

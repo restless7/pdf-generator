@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { createServer } from 'http';
-import pdfRoutes from './src/api/pdf-routes';
+import pdfRoutes from './api/pdf-routes';
 import path from 'path';
-import { ValidationService } from './src/services/validation-service';
+import { ValidationService } from './services/validation-service';
 
 // Load environment variables
 dotenv.config();

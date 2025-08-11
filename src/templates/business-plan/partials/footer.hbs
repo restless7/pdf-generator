@@ -1,0 +1,14 @@
+<footer class="document-footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>{{default _branding.companyName 'Apex Agency'}}</p>
+            <p>Generado el {{formatDate _generation.date}}</p>
+        </div>
+        <div class="footer-right">
+            <p>Versión {{_template.version}}</p>
+            {{#if (neq _generation.quality 'draft')}}
+            <p class="confidential">Confidencial</p>
+            {{/if}}
+        </div>
+    </div>
+</footer>

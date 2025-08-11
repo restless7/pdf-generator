@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{proposalTitle}}</title>
+  <style>
+    /* --- RESET / PAGE --- */
+    :root{
+      --bg:#0b1220;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --white:#ffffff;
+      --emerald:#10b981;
+      --accent:#06b6d4;
+      --paper:#ffffff;
+      --border:#e5e7eb;
+      --text:#1f2937;
+    }
+    
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background:var(--paper); 
+      color:var(--text); 
+      line-height:1.5;
+    }
+    
+    .page{
+      max-width:210mm;
+      margin:0 auto;
+      padding:20mm;
+      background:var(--paper);
+      min-height:100vh;
+      box-sizing:border-box;
+    }
+    
+    /* Page breaks */
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+    
+    .avoid-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    
+    /* Header styles */
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:32px;
+    }
+    .header-content{flex:1;}
+    .logo{width:120px;height:auto;}
+    
+    h1{
+      margin:0;
+      font-size:28px;
+      color:var(--text);
+      font-weight:700;
+      line-height:1.2;
+    }
+    
+    .subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      font-weight:400;
+    }
+    
+    .meta{
+      text-align:right;
+      font-size:14px;
+      color:var(--muted);
+      margin-top:8px;
+    }
+    .meta strong{color:var(--text);font-weight:600;}
+    
+    /* Section styles */
+    .section{
+      margin-bottom:32px;
+    }
+    
+    .section-title {
+      font-size:24px;
+      color:var(--text);
+      font-weight:700;
+      margin:0 0 20px;
+      padding-bottom:12px;
+      border-bottom:2px solid var(--emerald);
+    }
+    
+    .section-subtitle {
+      font-size:20px;
+      color:var(--text);
+      font-weight:600;
+      margin:24px 0 16px;
+    }
+    
+    hr.sep{
+      border:none;
+      border-top:1px solid var(--border);
+      margin:24px 0;
+    }
+    
+    .lead{
+      color:var(--text);
+      font-size:16px;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+    
+    /* Layout grids */
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-bottom:20px;
+    }
+    
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-bottom:20px;
+    }
+    
+    .two-cols{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    
+    /* Card styles */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:20px;
+      box-shadow:0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .card h3{
+      margin:0 0 12px;
+      font-size:16px;
+      color:var(--text);
+      font-weight:600;
+    }
+    
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+    
+    .card.highlight {
+      border-left:4px solid var(--emerald);
+      background:#f0fff4;
+    }
+    
+    .card.full-width {
+      grid-column:1 / -1;
+    }
+    
+    /* Lists */
+    ul.clean{
+      padding-left:24px;
+      margin:16px 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+    
+    ul.clean li {
+      margin-bottom:8px;
+    }
+    
+    /* Tables */
+    table.pricing{
+      width:100%;
+      border-collapse:collapse;
+      margin:20px 0;
+      font-size:14px;
+    }
+    
+    table.pricing thead th{
+      background:#f9fafb;
+      color:var(--text);
+      padding:16px 12px;
+      text-align:left;
+      border-bottom:2px solid var(--border);
+      font-weight:600;
+      font-size:14px;
+    }
+    
+    table.pricing td{
+      padding:14px 12px;
+      border-bottom:1px solid var(--border);
+      color:var(--text);
+      font-size:14px;
+    }
+    
+    table.pricing .total-row {
+      background:#f0fff6;
+      font-weight:700;
+    }
+    
+    table.pricing .note-row {
+      font-size:12px;
+      color:var(--muted);
+      font-style:italic;
+    }
+    
+    /* Text styles */
+    .muted{
+      color:var(--muted);
+      font-size:14px;
+    }
+    
+    .small-note{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:12px;
+      line-height:1.4;
+    }
+    
+    /* Badges and buttons */
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:6px;
+      background:#f0f9f4;
+      color:#065f46;
+      font-weight:600;
+      font-size:12px;
+    }
+    
+    .cta{
+      display:inline-block;
+      margin-top:16px;
+      padding:12px 20px;
+      background:var(--emerald);
+      color:white;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    
+    /* Signature blocks */
+    .sig-blocks{
+      display:flex;
+      gap:40px;
+      margin-top:40px;
+    }
+    
+    .sig{
+      flex:1;
+      border-top:2px solid var(--border);
+      padding-top:20px;
+      text-align:center;
+      font-size:14px;
+      color:var(--text);
+    }
+    
+    .sig-line {
+      margin:20px 0 12px;
+      border-bottom:1px solid var(--text);
+      height:1px;
+      width:200px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    
+    /* Footer */
+    footer{
+      margin-top:40px;
+      border-top:1px solid var(--border);
+      padding-top:20px;
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    
+    /* Print styles */
+    @media print{
+      body{
+        background:white;
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
+      }
+      
+      .page{
+        box-shadow:none;
+        border:none;
+        margin:0;
+        border-radius:0;
+        padding:15mm;
+        max-width:none;
+      }
+      
+      .page-break {
+        page-break-before:always;
+      }
+      
+      .avoid-break {
+        page-break-inside:avoid;
+      }
+      
+      h1, h2, h3 {
+        page-break-after:avoid;
+      }
+      
+      .card {
+        page-break-inside:avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- PAGE 1: PORTADA Y RESUMEN EJECUTIVO -->
+  <div class="page" role="document">
+    <header>
+      <div class="header-content">
+        <h1>{{proposalTitle}}</h1>
+        <div class="subtitle">{{proposalSubtitle}}</div>
+        <div class="meta">
+          <div>Fecha: <strong>{{proposalDate}}</strong></div>
+          <div>Versión: <strong>{{proposalVersion}}</strong></div>
+        </div>
+      </div>
+      <img src="{{logoDataUri}}" alt="{{companyName}}" class="logo">
+    </header>
+
+    <hr class="sep" />
+
+    <!-- RESUMEN EJECUTIVO -->
+    <section class="section avoid-break">
+      <h2 class="section-title">Resumen Ejecutivo</h2>
+      <p class="lead">APEX AI Solutions propone a <strong>{{clientCompany}}</strong> (en adelante, "EL CLIENTE") {{executiveSummary}}</p>
+      <div style="margin-top:16px;">
+        <span class="badge">SaaS (suscripción)</span>
+        <span class="badge">Implementación Local</span>
+      </div>
+    </section>
+
+    <!-- PARTES DEL CONTRATO -->
+    <section class="section two-cols avoid-break">
+      <div>
+        <h3 class="section-subtitle">Partes</h3>
+        <div class="card">
+          <h3>Proveedor</h3>
+          <p><strong>{{providerCompany}}</strong><br/>{{providerAddress}}<br/>{{providerTaxId}}<br/>Contacto: {{providerEmail}} — {{providerPhone}}</p>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="card">
+          <h3>Cliente</h3>
+          <p><strong>{{clientCompany}}</strong><br/>{{clientAddress}}<br/>{{clientRepresentative}}<br/>{{clientContact}}</p>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0;">Objeto del Contrato</h3>
+        <p class="muted">{{contractObject}}</p>
+      </aside>
+    </section>
+  </div>
+
+  <!-- PAGE 2: ALCANCE Y MÓDULOS -->
+  <div class="page page-break">
+    <h2 class="section-title">Alcance y Módulos Incluidos</h2>
+    <p class="muted">{{scopeDescription}}</p>
+
+    <div class="grid-2" style="margin-top:24px;">
+      {{#each modules}}
+      <div class="card {{#if fullWidth}}full-width{{/if}}">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <!-- PAGE 3: MODELOS DE ENTREGA -->
+  <div class="page page-break">
+    <h2 class="section-title">Modelos de Entrega</h2>
+    
+    <div class="grid-2">
+      {{#each deliveryModels}}
+      <div class="card {{#if highlight}}highlight{{/if}}">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        {{#if features}}
+        <ul class="clean">
+          {{#each features}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <!-- PAGE 4: INVERSIÓN Y PRECIOS -->
+  <div class="page page-break">
+    <h2 class="section-title">Inversión y Modalidades</h2>
+    <p class="muted">{{pricingDescription}}</p>
+
+    <table class="pricing" aria-label="Tabla de precios">
+      <thead>
+        <tr>
+          <th>Módulo</th>
+          <th>{{subscriptionColumnTitle}}</th>
+          <th>{{localColumnTitle}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each pricingRows}}
+        <tr {{#if isTotal}}class="total-row"{{/if}} {{#if isNote}}class="note-row"{{/if}}>
+          <td>{{module}}</td>
+          <td>{{subscription}}</td>
+          <td>{{local}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    {{#if discounts}}
+    <div style="margin-top:20px;">
+      <p class="muted">Descuentos por paquete:</p>
+      <ul class="clean">
+        {{#each discounts}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+
+    {{#if pricingExample}}
+    <div class="card highlight" style="margin-top:20px;">
+      <h3>{{pricingExample.title}}</h3>
+      <p class="muted">Suma local (sin descuento): <strong>{{pricingExample.originalAmount}}</strong></p>
+      <p class="muted">Descuento por paquete ({{pricingExample.discountPercent}}): <strong>{{pricingExample.discountAmount}}</strong></p>
+      <p style="margin-top:8px;color:var(--text);font-weight:600;">Total paquete (con descuento aplicado): <strong>{{pricingExample.finalAmount}}</strong></p>
+    </div>
+    {{/if}}
+  </div>
+
+  <!-- PAGE 5: PLAN DE PAGOS -->
+  <div class="page page-break">
+    <h2 class="section-title">Metodología de Pago a Plazos — Implementación Local</h2>
+    <p class="muted">{{paymentPlanDescription}}</p>
+
+    <div class="card">
+      <h3>Propuesta de cronograma de pagos (ejemplo sobre Total paquete: <strong>{{paymentPlan.totalAmount}}</strong>)</h3>
+      <ul class="clean">
+        {{#each paymentPlan.payments}}
+        <li><strong>{{this.stage}}</strong> {{this.description}}: <strong>{{this.amount}}</strong>.</li>
+        {{/each}}
+      </ul>
+      <p class="small-note">{{paymentPlan.notes}}</p>
+    </div>
+  </div>
+
+  <!-- PAGE 6: CRONOGRAMA -->
+  <div class="page page-break">
+    <h2 class="section-title">Cronograma Estimado de Trabajo</h2>
+    
+    <div class="grid-2">
+      {{#each timeline}}
+      <div class="card {{#if fullWidth}}full-width{{/if}}">
+        <h3>{{phase}}</h3>
+        <p class="muted">{{description}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <!-- PAGE 7: TÉRMINOS Y RESPONSABILIDADES -->
+  <div class="page page-break">
+    <h2 class="section-title">Obligaciones y Términos Principales</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>{{responsibilities.provider.title}}</h3>
+        <ul class="clean">
+          {{#each responsibilities.provider.items}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>{{responsibilities.client.title}}</h3>
+        <ul class="clean">
+          {{#each responsibilities.client.items}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="card highlight" style="margin-top:24px;">
+      <h3>{{supportTerms.title}}</h3>
+      <p class="muted">{{supportTerms.description}}</p>
+    </div>
+  </div>
+
+  <!-- PAGE 8: ACEPTACIÓN Y FIRMAS -->
+  <div class="page page-break">
+    <h2 class="section-title">Aceptación</h2>
+    <p class="muted">{{acceptanceText}}</p>
+
+    <div class="sig-blocks">
+      <div class="sig">
+        <div style="font-weight:600;color:var(--text);">{{signatures.provider.company}}</div>
+        <div class="sig-line"></div>
+        <div style="margin-top:16px;color:var(--muted);">
+          Nombre: {{signatures.provider.name}}<br/>
+          Cargo: {{signatures.provider.position}}
+        </div>
+      </div>
+      
+      <div class="sig">
+        <div style="font-weight:600;color:var(--text);">{{signatures.client.company}}</div>
+        <div class="sig-line"></div>
+        <div style="margin-top:16px;color:var(--muted);">
+          Nombre: {{signatures.client.name}}<br/>
+          Cargo: {{signatures.client.position}}
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>{{footerLeft}}</div>
+      <div class="muted">{{footerRight}}</div>
+    </footer>
+  </div>
+</body>
+</html>

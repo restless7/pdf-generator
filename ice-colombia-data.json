@@ -1,0 +1,194 @@
+{
+  "proposalTitle": "Propuesta y Acuerdo de Prestación de Servicios",
+  "proposalSubtitle": "Transformación Digital y Automatización — ICE Colombia & APEX AI Solutions",
+  "proposalDate": "08 de agosto de 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "una solución tecnológica modular orientada a automatizar el flujo de leads, mejorar la experiencia del estudiante, medir el desempeño de agentes y centralizar operaciones mediante integración ERP. La solución puede desplegarse como suscripción mensual o implementación local (pago único), con opción de pago a plazos para esta última.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Colombia",
+  "providerTaxId": "NIT: ____________",
+  "providerEmail": "support@apexaisolutions.dev",
+  "providerPhone": "+1(726)231-6482",
+  
+  "clientCompany": "ICE Colombia",
+  "clientAddress": "Dirección: ___________________",
+  "clientRepresentative": "Representante: ___________________",
+  "clientContact": "Contacto: ___________________",
+  
+  "contractObject": "Diseño, desarrollo, integración y/o provisión como servicio de una plataforma modular orientada a procesos de admisión, gestión documental, atención automatizada y reporting para ICE Colombia.",
+  
+  "scopeDescription": "La solución está compuesta por módulos independientes. EL CLIENTE selecciona los módulos que desea activar. A continuación se describe cada módulo y sus beneficios principales.",
+  
+  "modules": [
+    {
+      "title": "Automatización de Leads y Flujo Comercial",
+      "description": "Asistente IA multicanal (WhatsApp, Instagram, Web) que cualifica prospectos, automatiza respuestas iniciales y agenda citas con asesor/es adecuados."
+    },
+    {
+      "title": "Panel de Desempeño de Agentes",
+      "description": "Métricas en tiempo real (tiempos de respuesta, conversiones, ranking de desempeño), con informes exportables para dirección."
+    },
+    {
+      "title": "Portal Estudiantil",
+      "description": "Portal seguro para carga y validación automática de documentos, con tracker de estado de la aplicación y notificaciones automáticas al estudiante."
+    },
+    {
+      "title": "Integración ERP",
+      "description": "Centralización de datos de programas, finanzas y operaciones, integración con sistemas existentes y reportes estratégicos."
+    },
+    {
+      "title": "Agente de Soporte IA 24/7",
+      "description": "Asistente para FAQs y consultas frecuentes con escalamiento a agente humano solo en casos complejos; reduce la carga operativa y mejora tiempo de respuesta.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo SaaS (Suscripción)",
+      "description": "Acceso a la plataforma mediante suscripción mensual con actualizaciones automáticas, soporte técnico incluido y escalabilidad inmediata.",
+      "features": [
+        "Sin inversión inicial en infraestructura",
+        "Actualizaciones y mejoras automáticas",
+        "Soporte técnico 24/7 incluido",
+        "Escalabilidad instantánea según demanda",
+        "Backup y seguridad gestionados"
+      ]
+    },
+    {
+      "title": "Implementación Local (On-Premise)",
+      "description": "Desarrollo e implementación completa en infraestructura del cliente con pago único y propiedad total del código fuente.",
+      "highlight": true,
+      "features": [
+        "Control total sobre datos e infraestructura",
+        "Propiedad del código fuente",
+        "Personalización completa sin restricciones",
+        "Integración profunda con sistemas internos",
+        "Pago único sin recurrencia mensual"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "A continuación se presentan los costos por módulo en cada modalidad. Los valores están expresados en COP.",
+  "subscriptionColumnTitle": "Suscripción Mensual",
+  "localColumnTitle": "Implementación Local (Pago Único)",
+  
+  "pricingRows": [
+    { "module": "Automatización de Leads", "subscription": "300.000", "local": "3.500.000" },
+    { "module": "Panel de Agentes", "subscription": "650.000", "local": "6.500.000" },
+    { "module": "Portal Estudiantil", "subscription": "--", "local": "4.500.000" },
+    { "module": "ERP Integrado", "subscription": "--", "local": "9.000.000" },
+    { "module": "Agente Soporte IA", "subscription": "500.000", "local": "4.000.000" },
+    { "module": "Total (suma módulos)", "subscription": "1.450.000*", "local": "27.500.000", "isTotal": true },
+    { "module": "*Total mensual considerando módulos disponibles bajo suscripción. Algunos módulos no están disponibles como SaaS en esta oferta; ver fila correspondiente.", "subscription": "", "local": "", "isNote": true }
+  ],
+  
+  "discounts": [
+    "-20% en tarifa mensual para contratación de paquete completo de módulos disponibles en SaaS.",
+    "-25% en monto total para contratación de la Implementación Local de la solución completa."
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: Precio paquete (Implementación Local) con descuento",
+    "originalAmount": "27.500.000 COP",
+    "discountPercent": "-25%",
+    "discountAmount": "6.875.000 COP",
+    "finalAmount": "20.625.000 COP"
+  },
+  
+  "paymentPlanDescription": "Para la modalidad de Implementación Local ofrecemos condiciones de pago a plazos orientadas a facilitar la inversión inicial y alinear entregables con pagos por hitos.",
+  
+  "paymentPlan": {
+    "totalAmount": "20.625.000 COP",
+    "payments": [
+      {
+        "stage": "1) Pago inicial (30%)",
+        "description": "al firmar contrato y comenzar la auditoría",
+        "amount": "6.187.500 COP"
+      },
+      {
+        "stage": "2) Pago por hito técnico (40%)",
+        "description": "al completar desarrollo e integraciones principales",
+        "amount": "8.250.000 COP"
+      },
+      {
+        "stage": "3) Pago final (30%)",
+        "description": "a la entrega, pruebas exitosas y puesta en marcha",
+        "amount": "6.187.500 COP"
+      }
+    ],
+    "notes": "Observaciones: los pagos se realizarán a 15 días hábiles por factura, salvo acuerdo distinto. Podemos negociar una estructura alternativa (4 cuotas, leasing operativo, o financiamiento local) si EL CLIENTE lo solicita."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — Auditoría y Diseño",
+      "description": "Duración estimada: 2 semanas. Actividades: levantamiento de requisitos, mapeo de flujos y definición de metas KPI."
+    },
+    {
+      "phase": "Fase 2 — Prototipado y UX",
+      "description": "Duración estimada: 2 semanas. Actividades: prototipos interactivos y validación con stakeholders."
+    },
+    {
+      "phase": "Fase 3 — Desarrollo e Integración",
+      "description": "Duración estimada: 6–8 semanas. Entregas parciales semanales para revisión y pruebas."
+    },
+    {
+      "phase": "Fase 4 — Capacitación y Lanzamiento",
+      "description": "Duración estimada: 2 semanas. Incluye formación para agentes y personal administrativo."
+    },
+    {
+      "phase": "Fase 5 — Optimización Continua",
+      "description": "Soporte mensual y mejoras incrementales basadas en métricas de uso y rendimiento. SLA y alcance definidos en anexo de soporte.",
+      "fullWidth": true
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollar e implementar los módulos seleccionados conforme al alcance definido.",
+        "Entregar documentación técnica y manuales de usuario para administración y soporte.",
+        "Capacitar al personal definido por EL CLIENTE al momento del lanzamiento.",
+        "Garantizar confidencialidad de la información y proteger datos personales según normativa aplicable."
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de EL CLIENTE (ICE Colombia)",
+      "items": [
+        "Proveer información, accesos y documentación necesaria para integraciones (APIs, sistemas internos).",
+        "Designar responsables de proyecto y participar en revisiones y pruebas en los tiempos acordados.",
+        "Realizar pagos según cronograma acordado y facilitar infraestructura cuando aplique (servidores locales).",
+        "Cumplir con requisitos legales y regulatorios aplicables a sus operaciones."
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte, Garantía y Confidencialidad",
+    "description": "Se incluye garantía de corrección de errores críticos por 30 días tras entrega. El alcance de soporte y SLA se definirá en un anexo de servicio (opcional con costo anual)."
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan los términos de esta propuesta, el alcance descrito y la modalidad de pago seleccionada. Esta propuesta constituye oferta válida por 30 días a partir de la fecha indicada.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Jhoan Karlo Sebastián García Casanova",
+      "position": "Director de Proyectos"
+    },
+    "client": {
+      "company": "ICE Colombia",
+      "name": "________________________",
+      "position": "________________________"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • support@apexaisolutions.dev",
+  "footerRight": "Documento confidencial · Validez: 30 días"
+}

@@ -1,0 +1,159 @@
+{
+  "proposalTitle": "Propuesta y Acuerdo de Prestación de Servicios",
+  "proposalSubtitle": "Transformación Digital y Automatización — [CLIENTE] & APEX AI Solutions",
+  "proposalDate": "[FECHA]",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "[DESCRIPCIÓN PERSONALIZADA DE LA SOLUCIÓN]. La solución puede desplegarse como suscripción mensual o implementación local (pago único), con opción de pago a plazos para esta última.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Colombia",
+  "providerTaxId": "NIT: ____________",
+  "providerEmail": "support@apexaisolutions.dev",
+  "providerPhone": "+1(726)231-6482",
+  
+  "clientCompany": "[NOMBRE CLIENTE]",
+  "clientAddress": "Dirección: [DIRECCIÓN CLIENTE]",
+  "clientRepresentative": "Representante: [REPRESENTANTE CLIENTE]",
+  "clientContact": "Contacto: [CONTACTO CLIENTE]",
+  
+  "contractObject": "[OBJETO DEL CONTRATO ESPECÍFICO PARA EL CLIENTE]",
+  
+  "scopeDescription": "La solución está compuesta por módulos independientes. EL CLIENTE selecciona los módulos que desea activar. A continuación se describe cada módulo y sus beneficios principales.",
+  
+  "modules": [
+    {
+      "title": "[MÓDULO 1]",
+      "description": "[DESCRIPCIÓN DEL MÓDULO 1]"
+    },
+    {
+      "title": "[MÓDULO 2]",
+      "description": "[DESCRIPCIÓN DEL MÓDULO 2]"
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo SaaS (Suscripción)",
+      "description": "Acceso a la plataforma mediante suscripción mensual con actualizaciones automáticas, soporte técnico incluido y escalabilidad inmediata.",
+      "features": [
+        "Sin inversión inicial en infraestructura",
+        "Actualizaciones y mejoras automáticas",
+        "Soporte técnico 24/7 incluido",
+        "Escalabilidad instantánea según demanda",
+        "Backup y seguridad gestionados"
+      ]
+    },
+    {
+      "title": "Implementación Local (On-Premise)",
+      "description": "Desarrollo e implementación completa en infraestructura del cliente con pago único y propiedad total del código fuente.",
+      "highlight": true,
+      "features": [
+        "Control total sobre datos e infraestructura",
+        "Propiedad del código fuente",
+        "Personalización completa sin restricciones",
+        "Integración profunda con sistemas internos",
+        "Pago único sin recurrencia mensual"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "A continuación se presentan los costos por módulo en cada modalidad. Los valores están expresados en [MONEDA].",
+  "subscriptionColumnTitle": "Suscripción Mensual",
+  "localColumnTitle": "Implementación Local (Pago Único)",
+  
+  "pricingRows": [
+    { "module": "[MÓDULO 1]", "subscription": "[PRECIO MENSUAL]", "local": "[PRECIO LOCAL]" },
+    { "module": "[MÓDULO 2]", "subscription": "[PRECIO MENSUAL]", "local": "[PRECIO LOCAL]" },
+    { "module": "Total (suma módulos)", "subscription": "[TOTAL MENSUAL]", "local": "[TOTAL LOCAL]", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "[DESCRIPCIÓN DE DESCUENTOS DISPONIBLES]"
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: Precio paquete con descuento",
+    "originalAmount": "[MONTO ORIGINAL]",
+    "discountPercent": "[PORCENTAJE DESCUENTO]",
+    "discountAmount": "[MONTO DESCUENTO]",
+    "finalAmount": "[MONTO FINAL]"
+  },
+  
+  "paymentPlanDescription": "Para la modalidad de Implementación Local ofrecemos condiciones de pago a plazos orientadas a facilitar la inversión inicial y alinear entregables con pagos por hitos.",
+  
+  "paymentPlan": {
+    "totalAmount": "[MONTO TOTAL]",
+    "payments": [
+      {
+        "stage": "[PAGO 1 - ETAPA]",
+        "description": "[DESCRIPCIÓN DEL PAGO 1]",
+        "amount": "[MONTO PAGO 1]"
+      },
+      {
+        "stage": "[PAGO 2 - ETAPA]",
+        "description": "[DESCRIPCIÓN DEL PAGO 2]",
+        "amount": "[MONTO PAGO 2]"
+      },
+      {
+        "stage": "[PAGO 3 - ETAPA]",
+        "description": "[DESCRIPCIÓN DEL PAGO 3]",
+        "amount": "[MONTO PAGO 3]"
+      }
+    ],
+    "notes": "[OBSERVACIONES Y CONDICIONES ESPECIALES]"
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — [NOMBRE FASE]",
+      "description": "[DESCRIPCIÓN Y DURACIÓN DE LA FASE]"
+    },
+    {
+      "phase": "Fase 2 — [NOMBRE FASE]",
+      "description": "[DESCRIPCIÓN Y DURACIÓN DE LA FASE]"
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "[RESPONSABILIDAD 1 DEL PROVEEDOR]",
+        "[RESPONSABILIDAD 2 DEL PROVEEDOR]"
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de EL CLIENTE ([NOMBRE CLIENTE])",
+      "items": [
+        "[RESPONSABILIDAD 1 DEL CLIENTE]",
+        "[RESPONSABILIDAD 2 DEL CLIENTE]"
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte, Garantía y Confidencialidad",
+    "description": "[TÉRMINOS ESPECÍFICOS DE SOPORTE Y GARANTÍA]"
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan los términos de esta propuesta, el alcance descrito y la modalidad de pago seleccionada. Esta propuesta constituye oferta válida por [DURACIÓN] días a partir de la fecha indicada.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Jhoan Karlo Sebastián García Casanova",
+      "position": "Director de Proyectos"
+    },
+    "client": {
+      "company": "[NOMBRE CLIENTE]",
+      "name": "[NOMBRE REPRESENTANTE]",
+      "position": "[CARGO REPRESENTANTE]"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • support@apexaisolutions.dev",
+  "footerRight": "Documento confidencial · Validez: [DURACIÓN] días"
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{brandName}} - Guía de Voz de Marca</title>
+    <style>
+        /* Professional Brand Voice Styles */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fefefe;
+        }
+        
+        h1, h2, h3, h4 {
+            color: #34495e;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 30px;
+        }
+        
+        h1 { 
+            font-size: 2.8em; 
+            text-align: center; 
+            border-bottom: 3px solid #e74c3c; 
+            padding-bottom: 15px; 
+            margin-bottom: 50px;
+            color: #e74c3c;
+        }
+        
+        h2 { 
+            font-size: 2.0em; 
+            margin-top: 50px; 
+            border-bottom: 2px solid #3498db; 
+            padding-bottom: 10px;
+            color: #3498db;
+        }
+        
+        h3 { 
+            font-size: 1.5em; 
+            margin-top: 35px;
+            color: #8e44ad;
+        }
+        
+        h4 { 
+            font-size: 1.3em;
+            color: #27ae60;
+        }
+        
+        p { 
+            margin-bottom: 18px; 
+            text-align: justify;
+        }
+        
+        ul, ol { 
+            padding-left: 25px; 
+            margin-bottom: 20px;
+        }
+        
+        li { 
+            margin-bottom: 10px; 
+        }
+        
+        strong { 
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        em { 
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        .page-break { 
+            page-break-before: always; 
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .brand-summary {
+            background: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .example-content {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .example-content::before {
+            content: "📝 Ejemplo";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #007bff;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .key-phrases {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .voice-characteristics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .characteristic-item {
+            background: #f1f2f6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid #bdc3c7;
+            padding-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        blockquote {
+            border-left: 4px solid #e74c3c;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #5d6d7e;
+            background: #fafafa;
+            padding: 15px 20px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Print optimizations */
+        @media print {
+            body { font-size: 12pt; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 16pt; }
+            h3 { font-size: 14pt; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>{{brandName}}</h1>
+        <h2 style="border: none; color: #7f8c8d; font-size: 1.4em; margin: 10px 0;">Guía de Voz de Marca</h2>
+        <p><em>Generado el {{generationDate}}</em></p>
+    </div>
+
+    <!-- Brand Summary -->
+    {{#if brandSummary}}
+    <div class="brand-summary">
+        <h3>Resumen de la Voz de Marca</h3>
+        {{{formatContent brandSummary}}}
+    </div>
+    {{/if}}
+
+    <!-- Main Content -->
+    {{{formatContent content}}}
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><strong>{{brandName}}</strong> - Guía de Voz de Marca</p>
+        <p>Documento generado por PlanMaestro IA</p>
+    </div>
+</body>
+</html>

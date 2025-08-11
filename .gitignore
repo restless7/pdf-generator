@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Runtime files
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# PDF output files (keep templates but ignore generated PDFs)
+output/
+cache/
+*.pdf
+
+# Puppeteer browser cache
+.puppeteer/
+
+# Test files
+*.test.js
+*.spec.js
+test-results/
+
+# Lock files (keep package-lock.json for reproducible builds)
+# yarn.lock
+
+# Railway
+.railway/

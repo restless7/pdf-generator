@@ -1,0 +1,14 @@
+<header class="document-header">
+    {{#if _assets.logos.apex-logo}}
+        {{#if _assets.logos.apex-logo.variants.color}}
+            <img src="{{_assets.logos.apex-logo.variants.color}}" alt="{{default _branding.companyName 'Apex Agency'}} Logo" class="header-logo">
+        {{else if _assets.logos.apex-logo.main}}
+            <img src="{{_assets.logos.apex-logo.main}}" alt="{{default _branding.companyName 'Apex Agency'}} Logo" class="header-logo">
+        {{/if}}
+    {{/if}}
+    
+    <div class="header-text">
+        <h1>{{businessName}}</h1>
+        <p class="document-type">Plan de Negocio</p>
+    </div>
+</header>

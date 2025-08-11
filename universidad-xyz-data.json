@@ -1,0 +1,193 @@
+{
+  "proposalTitle": "Propuesta y Acuerdo de Prestación de Servicios",
+  "proposalSubtitle": "Digitalización Académica y Gestión Inteligente — Universidad XYZ & APEX AI Solutions",
+  "proposalDate": "08 de agosto de 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "APEX AI Solutions propone a <strong>Universidad XYZ</strong> (en adelante, \"EL CLIENTE\") una solución tecnológica integral orientada a digitalizar procesos académicos, automatizar la gestión estudiantil y optimizar la toma de decisiones mediante inteligencia artificial. La solución incluye módulos especializados para admisiones, seguimiento académico, comunicación automatizada y analytics predictivo, desplegable como <span class=\"badge\">SaaS (suscripción)</span> o <span class=\"badge\">Implementación Local</span> (pago único).",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Colombia",
+  "providerTaxId": "NIT: ____________",
+  "providerEmail": "support@apexaisolutions.dev",
+  "providerPhone": "+1(726)231-6482",
+  
+  "clientCompany": "Universidad XYZ",
+  "clientAddress": "Dirección: [Por definir con Universidad XYZ]",
+  "clientRepresentative": "Representante: [Por definir]",
+  "clientContact": "Contacto: [Por definir]",
+  
+  "contractObject": "Diseño, desarrollo e implementación de una plataforma integral de gestión académica con módulos de admisiones automatizadas, seguimiento estudiantil, comunicación inteligente y analytics predictivo para Universidad XYZ.",
+  
+  "scopeDescription": "La solución educativa está compuesta por módulos especializados para el sector académico. EL CLIENTE selecciona los módulos que mejor se adapten a sus necesidades institucionales. A continuación se describe cada módulo y sus beneficios específicos.",
+  
+  "modules": [
+    {
+      "title": "Admisiones Inteligentes",
+      "description": "Sistema automatizado de gestión de admisiones con IA para evaluación de perfiles, programación automática de entrevistas y seguimiento del proceso completo hasta la matrícula."
+    },
+    {
+      "title": "Portal Estudiantil Avanzado",
+      "description": "Plataforma integral donde estudiantes pueden consultar notas, horarios, realizar trámites, acceder a contenido académico y recibir notificaciones personalizadas."
+    },
+    {
+      "title": "Gestión Académica Inteligente",
+      "description": "Herramientas para profesores y administradores que incluyen registro de notas, seguimiento de asistencia, programación de clases y generación automática de reportes académicos."
+    },
+    {
+      "title": "Asistente Virtual Universitario",
+      "description": "Chatbot especializado en consultas académicas, trámites estudiantiles, información de programas y soporte 24/7 para toda la comunidad universitaria."
+    },
+    {
+      "title": "Analytics Predictivo Académico",
+      "description": "Dashboard con métricas e indicadores de deserción, rendimiento académico, tendencias de matrícula y recomendaciones basadas en inteligencia artificial.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo SaaS Educativo",
+      "description": "Plataforma cloud especializada en educación superior con actualizaciones automáticas, soporte pedagógico incluido y escalabilidad según crecimiento estudiantil.",
+      "features": [
+        "Infraestructura educativa optimizada",
+        "Actualizaciones académicas automáticas",
+        "Soporte técnico y pedagógico 24/7",
+        "Escalabilidad según matrícula estudiantil",
+        "Backup y seguridad de datos académicos",
+        "Cumplimiento normativo educativo"
+      ]
+    },
+    {
+      "title": "Implementación Campus (On-Premise)",
+      "description": "Instalación completa en la infraestructura de la universidad con personalización total y control absoluto sobre datos académicos sensibles.",
+      "highlight": true,
+      "features": [
+        "Control total sobre datos estudiantiles",
+        "Propiedad completa del código fuente",
+        "Personalización sin restricciones",
+        "Integración con sistemas existentes",
+        "Cumplimiento de regulaciones locales",
+        "Pago único sin mensualidades"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "A continuación se presentan los costos por módulo en cada modalidad. Los valores están expresados en USD para facilitar presupuestación internacional.",
+  "subscriptionColumnTitle": "SaaS Mensual (USD)",
+  "localColumnTitle": "Implementación Campus (USD)",
+  
+  "pricingRows": [
+    { "module": "Admisiones Inteligentes", "subscription": "1,200", "local": "15,000" },
+    { "module": "Portal Estudiantil Avanzado", "subscription": "800", "local": "12,000" },
+    { "module": "Gestión Académica Inteligente", "subscription": "1,500", "local": "20,000" },
+    { "module": "Asistente Virtual Universitario", "subscription": "600", "local": "8,000" },
+    { "module": "Analytics Predictivo Académico", "subscription": "1,000", "local": "18,000" },
+    { "module": "Total (suma módulos)", "subscription": "5,100", "local": "73,000", "isTotal": true },
+    { "module": "Precio para universidades con más de 5,000 estudiantes. Descuentos especiales disponibles para instituciones públicas.", "subscription": "", "local": "", "isNote": true }
+  ],
+  
+  "discounts": [
+    "-15% en tarifa mensual SaaS para contratos anuales pagados por adelantado.",
+    "-20% en implementación campus para universidades públicas o sin fines de lucro.",
+    "-25% en paquete completo para implementación de todos los módulos."
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: Precio paquete completo campus con descuentos",
+    "originalPrice": "Suma campus (sin descuento): <strong>$73,000 USD</strong>",
+    "discount": "Descuento paquete completo (-25%): <strong>$18,250 USD</strong>",
+    "finalPrice": "Total campus (con descuento aplicado): <strong>$54,750 USD</strong>"
+  },
+  
+  "paymentPlanDescription": "Para la modalidad Campus ofrecemos planes de pago flexibles diseñados especialmente para instituciones educativas, con opciones de financiamiento que se adaptan a los calendarios académicos y presupuestarios universitarios.",
+  
+  "paymentPlan": {
+    "title": "Cronograma de pagos sugerido (ejemplo sobre paquete completo: <strong>$54,750 USD</strong>)",
+    "payments": [
+      "1) <strong>Pago inicial (25%)</strong> al firmar contrato e iniciar análisis institucional: <strong>$13,687.50 USD</strong>.",
+      "2) <strong>Pago de desarrollo (40%)</strong> al completar implementación y pruebas piloto: <strong>$21,900 USD</strong>.",
+      "3) <strong>Pago de lanzamiento (25%)</strong> al finalizar capacitaciones y puesta en producción: <strong>$13,687.50 USD</strong>.",
+      "4) <strong>Pago final (10%)</strong> tras 30 días de operación exitosa y aceptación final: <strong>$5,475 USD</strong>."
+    ],
+    "notes": "Observaciones: Aceptamos pagos en USD o moneda local. Disponemos de opciones de financiamiento educativo a través de nuestros partners bancarios. Los pagos pueden ajustarse al calendario fiscal de la institución."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — Análisis Institucional",
+      "description": "Duración: 3 semanas. Actividades: mapeo de procesos académicos actuales, identificación de stakeholders, definición de objetivos institucionales y análisis de integración con sistemas existentes."
+    },
+    {
+      "phase": "Fase 2 — Diseño y Prototipado",
+      "description": "Duración: 4 semanas. Actividades: diseño UX/UI adaptado a la identidad universitaria, creación de prototipos funcionales y validación con usuarios académicos y administrativos."
+    },
+    {
+      "phase": "Fase 3 — Desarrollo e Integración",
+      "description": "Duración: 10-12 semanas. Actividades: desarrollo de módulos, integración con sistemas académicos existentes (SIS, LMS), pruebas de carga y migración de datos académicos."
+    },
+    {
+      "phase": "Fase 4 — Implementación Piloto",
+      "description": "Duración: 4 semanas. Actividades: lanzamiento con grupo piloto de estudiantes y profesores, ajustes basados en feedback y optimización de rendimiento."
+    },
+    {
+      "phase": "Fase 5 — Capacitación y Lanzamiento",
+      "description": "Duración: 3 semanas. Actividades: capacitación intensiva para personal administrativo, profesores y estudiantes, documentación completa y lanzamiento oficial."
+    },
+    {
+      "phase": "Fase 6 — Soporte y Optimización",
+      "description": "Soporte continuo post-lanzamiento, monitoreo de métricas académicas, actualizaciones periódicas y mejoras basadas en el uso real de la comunidad universitaria.",
+      "fullWidth": true
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollar e implementar todos los módulos según especificaciones académicas acordadas.",
+        "Garantizar integración fluida con sistemas universitarios existentes (SIS, LMS, bibliotecas).",
+        "Entregar documentación técnica y manuales de usuario específicos para el sector educativo.",
+        "Capacitar a personal administrativo, profesores y estudiantes en el uso de la plataforma.",
+        "Cumplir con normativas de protección de datos estudiantiles (FERPA, GDPR según aplique).",
+        "Proveer soporte técnico especializado durante y después de la implementación."
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de Universidad XYZ",
+      "items": [
+        "Designar equipo de proyecto con representantes académicos y técnicos.",
+        "Facilitar acceso a sistemas existentes y bases de datos académicas para migración.",
+        "Proporcionar información sobre procesos académicos y administrativos actuales.",
+        "Participar activamente en pruebas piloto y sesiones de validación.",
+        "Asegurar participación del personal en las sesiones de capacitación programadas.",
+        "Cumplir con cronograma de pagos y facilitar infraestructura cuando sea necesario."
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte Académico, Garantía y Confidencialidad",
+    "description": "Se incluye garantía completa por 90 días post-lanzamiento con corrección gratuita de errores y ajustes menores. Soporte técnico especializado disponible 24/7 durante períodos críticos (inscripciones, exámenes finales). Compromiso absoluto de confidencialidad de datos estudiantiles y cumplimiento de normativas educativas internacionales."
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan los términos de esta propuesta, el alcance académico descrito y la modalidad de implementación seleccionada. Esta propuesta constituye oferta válida por 45 días a partir de la fecha indicada, considerando los tiempos de decisión institucional universitaria.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Jhoan Karlo Sebastián García Casanova",
+      "position": "Director de Proyectos"
+    },
+    "client": {
+      "company": "Universidad XYZ",
+      "name": "________________________",
+      "position": "________________________"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • support@apexaisolutions.dev",
+  "footerRight": "Documento confidencial · Validez: 45 días"
+}

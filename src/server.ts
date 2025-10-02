@@ -91,10 +91,20 @@ app.get('/api/health', (req, res) => {
 });
 
 // PDF Routes - Mount all PDF endpoints under /api/pdf
-app.use('/api/pdf', pdfRoutes);
+try {
+  app.use('/api/pdf', pdfRoutes);
+  console.log('✅ PDF routes mounted successfully');
+} catch (error) {
+  console.error('❌ Error mounting PDF routes:', error);
+}
 
 // Legacy compatibility route - Direct mount for business plan generator
-app.use('/api', pdfRoutes);
+try {
+  app.use('/api', pdfRoutes);
+  console.log('✅ Legacy routes mounted successfully');
+} catch (error) {
+  console.error('❌ Error mounting legacy routes:', error);
+}
 
 // Additional endpoints for admin panel compatibility
 const validationService = new ValidationService();
@@ -365,3 +375,24 @@ const startServer = async () => {
 console.log('🎯 About to call startServer() for PDF Generator');
 startServer();
 console.log('✅ PDF Generator startServer() called');
+
+// Graceful shutdown handlers
+process.on('SIGTERM', () => {
+  console.log('👋 SIGTERM received, shutting down gracefully...');
+  process.exit(0);
+});
+
+process.on('SIGINT', () => {
+  console.log('👋 SIGINT received, shutting down gracefully...');
+  process.exit(0);
+});
+
+process.on('uncaughtException', (error) => {
+  console.error('💥 Uncaught Exception:', error);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('💥 Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});

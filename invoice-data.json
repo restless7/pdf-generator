@@ -1,0 +1,85 @@
+{
+  "templateId": "invoice",
+  "data": {
+    "companyName": "APEX AI SOLUTIONS",
+    "companyTagline": "Soluciones Digitales Profesionales",
+    "companyInfo": {
+      "address": "Bucaramanga, Colombia",
+      "phone": "+1(726)231-6482",
+      "email": "support@apexaisolutions.dev",
+      "website": "www.apexaisolutions.dev",
+      "taxId": "1098706707"
+    },
+    "invoiceNumber": "FAC-2025-001",
+    "invoiceDate": "2025-08-19",
+    "dueDate": "2025-08-20",
+    "status": "pending",
+    "billTo": {
+      "name": "JOEL BAUTISTA PEÑUELA",
+      "company": "Joel Bautista Atelier",
+      "address": "Carrera 5 N. 2-37",
+      "city": "Chaguani, Cundinamarca",
+      "postalCode": "-",
+      "taxId": "79.058.049",
+      "email": "joel@joelbautistaatelier.com",
+      "phone": "+57 300 000 0000"
+    },
+    "items": [
+      {
+        "description": "Diseño Brochure",
+        "details": "Diseño profesional de brochure corporativo",
+        "quantity": 1,
+        "rate": 150000,
+        "amount": 150000
+      },
+      {
+        "description": "Catálogo Digital 10 pág",
+        "details": "Catálogo digital de productos de 10 páginas",
+        "quantity": 1,
+        "rate": 250000,
+        "amount": 250000
+      }
+    ],
+    "subtotal": 400000,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "total": 400000,
+    "currency": "COP",
+    "notes": "Gracias por confiar en nuestros servicios. Total: Cuatrocientos mil pesos ($400.000 COP).",
+    "paymentTerms": "Pago a 1 día",
+    "paymentMethods": ["Transferencia bancaria", "Nequi", "Daviplata"],
+    "bankInfo": {
+      "bankName": "Bancolombia ahorros",
+      "accountNumber": "60215268153",
+      "nequi": "3246277296",
+      "accountHolder": "Carlos Garcia"
+    },
+    "terms": [
+      "El pago debe realizarse dentro del plazo acordado",
+      "Los trabajos se entregan una vez confirmado el pago",
+      "Cualquier modificación después de la aprobación inicial puede generar costos adicionales"
+    ],
+    "metadata": {
+      "plan": "professional",
+      "features": {
+        "watermark": false,
+        "highQuality": true
+      },
+      "branding": {
+        "companyName": "APEX AI SOLUTIONS",
+        "colors": {
+          "primary": "#10B981",
+          "secondary": "#059669"
+        }
+      }
+    },
+    "generationDate": "2025-08-19T14:21:14Z"
+  },
+  "options": {
+    "format": "A4",
+    "quality": "high",
+    "watermark": {
+      "enabled": false
+    }
+  }
+}

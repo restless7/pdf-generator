@@ -58,8 +58,8 @@ export class EnhancedPDFGenerator {
     // Ensure directories exist
     await this.ensureDirectories();
 
-    // Initialize browser
-    this.browser = await puppeteer.launch({
+    // Initialize browser with Railway-compatible configuration
+    const puppeteerConfig: any = {
       headless: true,
       args: [
         '--no-sandbox',
@@ -69,9 +69,52 @@ export class EnhancedPDFGenerator {
         '--no-first-run',
         '--no-default-browser-check',
         '--disable-default-apps',
-        '--disable-extensions'
-      ]
-    });
+        '--disable-extensions',
+        '--disable-accelerated-2d-canvas',
+        '--no-zygote',
+        '--disable-background-timer-throttling',
+        '--disable-backgrounding-occluded-windows',
+        '--disable-renderer-backgrounding',
+        '--disable-web-security',
+        '--disable-features=VizDisplayCompositor'
+      ],
+      timeout: 60000
+    };
+
+    // Use Nixpacks Chromium on Railway in production
+    if (process.env.NODE_ENV === 'production') {
+      if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+        puppeteerConfig.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+        console.log('🔧 Using Railway Chromium:', process.env.PUPPETEER_EXECUTABLE_PATH);
+      } else {
+        // Fallback paths to try
+        const fallbackPaths = [
+          '/usr/bin/chromium',
+          '/usr/bin/chromium-browser', 
+          '/usr/bin/google-chrome',
+          '/usr/bin/google-chrome-stable'
+        ];
+        
+        for (const execPath of fallbackPaths) {
+          try {
+            // Check if file exists using fs
+            await fs.access(execPath);
+            puppeteerConfig.executablePath = execPath;
+            console.log('🎯 Found Chromium at:', execPath);
+            break;
+          } catch {
+            // File doesn't exist, continue to next path
+            continue;
+          }
+        }
+        
+        if (!puppeteerConfig.executablePath) {
+          console.log('⚠️  Warning: No Chromium executable found, using Puppeteer default');
+        }
+      }
+    }
+
+    this.browser = await puppeteer.launch(puppeteerConfig);
 
     // Initialize services
     await this.cacheManager.initialize();

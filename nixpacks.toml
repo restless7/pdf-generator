@@ -1,8 +1,15 @@
-[build]
-  cmd = "npm run railway:build"
+[phases.setup]
+  nixPkgs = ['nodejs_20', 'chromium']
+
+[phases.install]
+  cmds = ['npm ci --include=dev']
+
+[phases.build]
+  cmds = ['npm run railway:build']
 
 [start]
   cmd = "npm run railway:start"
 
 [variables]
   NODE_ENV = "production"
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"

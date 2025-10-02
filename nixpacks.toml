@@ -2,7 +2,7 @@
   nixPkgs = ['nodejs_20', 'chromium']
 
 [phases.install]
-  cmds = ['npm ci --include=dev']
+  cmds = ['npm install --include=dev']
 
 [phases.build]
   cmds = ['npm run railway:build']

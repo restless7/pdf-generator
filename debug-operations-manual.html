@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ICE Comprehensive Operational Manual</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            page-break-after: always;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        h1.title {
+            font-size: 3rem;
+            font-weight: 800;
+
+            color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            margin-bottom: 1rem;
+        }
+
+        h2.subtitle {
+            font-size: 1.5rem;
+
+            color: {
+                    {
+                    branding.secondaryColor
+                }
+            }
+
+            ;
+            font-weight: 500;
+            margin-bottom: 3rem;
+        }
+
+        .meta {
+            margin-top: auto;
+            margin-bottom: 4rem;
+            color: #718096;
+            font-size: 0.875rem;
+        }
+
+        .toc {
+            page-break-after: always;
+            padding: 2rem 0;
+        }
+
+        .toc h2 {
+            border-bottom: 2px solid {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+
+            color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+        }
+
+        .toc-part {
+            margin-bottom: 1.5rem;
+        }
+
+        .toc-part h3 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-item {
+            margin-left: 1.5rem;
+            padding: 0.25rem 0;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .part-header {
+            background-color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            color: white;
+            padding: 3rem 2rem;
+            margin: 4rem 0 3rem 0;
+            border-radius: 8px;
+            page-break-before: always;
+            text-align: center;
+        }
+
+        .part-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            color: {
+                    {
+                    branding.secondaryColor
+                }
+            }
+
+            ;
+            font-size: 1.75rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .content {
+            font-size: 1rem;
+            color: #2d3748;
+        }
+
+        .content h3 {
+            color: #2d3748;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+
+            border-left: 4px solid {
+                    {
+                    branding.accentColor
+                }
+            }
+
+            ;
+            padding-left: 0.75rem;
+        }
+
+        .content h4 {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Improved Table Styling */
+        table.styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        table.styled-table thead tr {
+            background-color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        table.styled-table th,
+        table.styled-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        table.styled-table tbody tr:nth-of-type(even) {
+            background-color: #f8fafc;
+        }
+
+        table.styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+        }
+
+        table.styled-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Diagram Containers */
+        .diagram-container {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+            color: #4a5568;
+            border-left: 4px solid #718096;
+        }
+
+        /* Callouts */
+        .callout {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        blockquote {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            font-style: italic;
+            color: #744210;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1 class="title">ICE Comprehensive Operational Manual</h1>
+        <h2 class="subtitle">Franchise Replication Guide</h2>
+        <div class="meta">
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Effective Date:</strong> February 2026</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">Confidential &amp; Proprietary - For authorized personnel only.</p>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <div class="toc-part">
+            <h3>Part I: Introduction &amp; Company Overview</h3>
+            <div class="toc-item">
+                <strong>01</strong> - Executive Summary
+            </div>
+        </div>
+        <div class="toc-part">
+            <h3>Part II: Organizational Culture &amp; Business Architecture</h3>
+            <div class="toc-item">
+                <strong>02</strong> - Organizational Culture
+            </div>
+            <div class="toc-item">
+                <strong>03</strong> - Organizational Structure
+            </div>
+            <div class="toc-item">
+                <strong>04</strong> - Roles and Responsibilities
+            </div>
+            <div class="toc-item">
+                <strong>04A</strong> - Workforce Management
+            </div>
+        </div>
+        <div class="toc-part">
+            <h3>Part III: Service Catalog &amp; Products</h3>
+            <div class="toc-item">
+                <strong>05</strong> - Service Catalog
+            </div>
+        </div>
+        <div class="toc-part">
+            <h3>Part IV: Operational Workflows</h3>
+            <div class="toc-item">
+                <strong>06</strong> - Lead Acquisition and Management
+            </div>
+            <div class="toc-item">
+                <strong>07</strong> - Client Follow-Up and Nurturing
+            </div>
+            <div class="toc-item">
+                <strong>08</strong> - Client Onboarding and Enrollment
+            </div>
+            <div class="toc-item">
+                <strong>09</strong> - Visa Rescheduling Operations
+            </div>
+            <div class="toc-item">
+                <strong>10</strong> - Student Lifecycle Management
+            </div>
+        </div>
+        <div class="toc-part">
+            <h3>Part V: Technology &amp; Systems</h3>
+            <div class="toc-item">
+                <strong>11</strong> - Technology Stack
+            </div>
+            <div class="toc-item">
+                <strong>12</strong> - Agent Control Panel
+            </div>
+        </div>
+        <div class="toc-part">
+            <h3>Part VI: Franchise Replication Model</h3>
+            <div class="toc-item">
+                <strong>13</strong> - Franchise Model
+            </div>
+            <div class="toc-item">
+                <strong>14</strong> - Training Requirements
+            </div>
+            <div class="toc-item">
+                <strong>15</strong> - Additional Modules
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="part">
+        <div class="part-header">
+            <h1>Part I: Introduction &amp; Company Overview</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>01. Executive Summary</h2>
+            </div>
+
+            <div class="content">
+                <h3>Mission</h3><p>ICE (International Cultural Exchange) is dedicated to empowering young adults and professionals to achieve their dreams of international cultural exchange, education, and career advancement through world-class services and cutting-edge technology.</p><h3>Vision</h3><p>To be the leading agency in Latin America for cultural exchange programs, recognized for our operational excellence, AI-driven automation, and unwavering commitment to client success.</p><h3>Target Market</h3><table class='styled-table'><thead><tr><th>Segment</th><th>Description</th></tr></thead><tbody><tr><td><strong>University Students</strong></td><td>Aged 18-28, seeking Work & Travel USA or summer internship programs.</td></tr><tr><td><strong>Professionals</strong></td><td>Young professionals exploring Au Pair or career development programs abroad.</td></tr><tr><td><strong>Families</strong></td><td>Parents securing cultural exchange opportunities for their children.</td></tr><tr><td><strong>Agencies & Partners</strong></td><td>Travel agencies and educational institutions seeking a white-label visa solution.</td></tr></tbody></table><h3>Value Proposition</h3><p>ICE offers a unique, technology-forward approach to cultural exchange services:</p><ol><li><strong>AI-Powered Visa Rescheduling</strong>: Our proprietary automation system monitors visa appointment portals 24/7 and automatically reschedules appointments to earlier dates.</li><li><strong>End-to-End Client Support</strong>: From lead capture to program completion, clients are guided by dedicated agents.</li><li><strong>Unified Portal System</strong>: A single platform for students, agents, and administrators to manage documents, track progress, and communicate.</li><li><strong>Data-Driven Operations</strong>: Lead scoring, agent performance tracking, and analytics for continuous improvement.</li></ol><h3>Franchise Opportunity Overview</h3><p>This manual serves as the foundational guide for replicating the ICE operational model. A franchise package includes:</p><ul><li><strong>Full Technology Stack</strong>: Access to the Visa Rescheduler Bot, CRM, and Student Portal.</li><li><strong>Operational Playbook</strong>: This manual, covering all workflows and procedures.</li><li><strong>Training Program</strong>: Comprehensive onboarding for all roles.</li><li><strong>Brand & Marketing Assets</strong>: Collateral, templates, and campaign guides.</li><li><strong>Ongoing Support</strong>: Technical support, software updates, and strategic guidance.</li></ul><p>For commercial terms (Sale, Rental, Subscription), please contact: <code>support@apexaisolutions.dev</code></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="part">
+        <div class="part-header">
+            <h1>Part II: Organizational Culture &amp; Business Architecture</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>02. Organizational Culture</h2>
+            </div>
+
+            <div class="content">
+                <h3>Core Values</h3><table class='styled-table'><thead><tr><th>Value</th><th>Description</th></tr></thead><tbody><tr><td><strong>Client-Centricity</strong></td><td>Every decision is made with the client's success in mind.</td></tr><tr><td><strong>Integrity</strong></td><td>We operate with transparency and honesty in all interactions.</td></tr><tr><td><strong>Innovation</strong></td><td>We leverage technology to improve efficiency and outcomes.</td></tr><tr><td><strong>Collaboration</strong></td><td>We work as one team, across departments and roles.</td></tr><tr><td><strong>Accountability</strong></td><td>We take ownership of our responsibilities and results.</td></tr></tbody></table><h3>Code of Conduct</h3><p>All ICE team members are expected to adhere to the following standards:</p><ol><li><strong>Professionalism</strong>: Maintain a professional demeanor in all client and team interactions.</li><li><strong>Confidentiality</strong>: Protect client data and company secrets.</li><li><strong>Respect</strong>: Treat colleagues, clients, and partners with respect and courtesy.</li><li><strong>Punctuality</strong>: Honor all scheduled meetings and deadlines.</li><li><strong>Continuous Improvement</strong>: Actively seek to improve skills and processes.</li></ol><h3>Communication Standards</h3><table class='styled-table'><thead><tr><th>Channel</th><th>Purpose</th><th>Response Time SLA</th></tr></thead><tbody><tr><td><strong>Email</strong></td><td>Formal communication, documentation</td><td>&lt; 24 hours</td></tr><tr><td><strong>WhatsApp</strong></td><td>Quick internal coordination, urgent client matters</td><td>&lt; 1 hour</td></tr><tr><td><strong>Portal Chat</strong></td><td>Client support inquiries</td><td>&lt; 4 hours</td></tr><tr><td><strong>Daily Huddle</strong></td><td>Team sync, priorities, blockers</td><td>N/A (Scheduled)</td></tr><tr><td><strong>Weekly Meeting</strong></td><td>Performance review, planning</td><td>N/A (Scheduled)</td></tr></tbody></table><h3>Quality Standards</h3><ul><li><strong>Lead Response Time</strong>: All new leads must be contacted within 4 hours of entry into the system.</li><li><strong>Client Satisfaction Score</strong>: Target a minimum 4.5/5 rating on post-service surveys.</li><li><strong>First Call Resolution</strong>: Aim for 80% of client inquiries resolved on the first contact.</li></ul>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>03. Organizational Structure</h2>
+            </div>
+
+            <div class="content">
+                <h3>Organizational Chart</h3><div class='diagram-container'><p><strong>Tier 1</strong>: Director/CTO (SUPER_ADMIN) → Operations Manager (ADMIN)</p><p><strong>Tier 2</strong>: Supervisor (SUPERVISOR) → Team Lead (TEAM_LEAD)</p><p><strong>Tier 3</strong>: Agents, Accountant, Marketing</p></div><h3>Departments</h3><table class='styled-table'><thead><tr><th>Department</th><th>Key Functions</th><th>Key Roles</th></tr></thead><tbody><tr><td><strong>Executive Management</strong></td><td>Strategic direction, investor relations, P&L ownership.</td><td>Director/CTO</td></tr><tr><td><strong>Operations</strong></td><td>Day-to-day management, client services, agent supervision.</td><td>Operations Manager, Supervisor, Team Lead, Agents</td></tr><tr><td><strong>Commercial & Processes</strong></td><td>Lead management, sales, visa processing.</td><td>Agents, Process Specialists</td></tr><tr><td><strong>Marketing & Communications</strong></td><td>Brand management, social media, lead generation campaigns.</td><td>Marketing Manager, Digital Specialist</td></tr><tr><td><strong>Accounting & Finance</strong></td><td>Invoicing, payment tracking, financial reporting.</td><td>Accountant</td></tr></tbody></table><h3>Reporting Lines</h3><table class='styled-table'><thead><tr><th>Role</th><th>Reports To</th></tr></thead><tbody><tr><td>Agent</td><td>Team Lead or Supervisor</td></tr><tr><td>Team Lead</td><td>Supervisor</td></tr><tr><td>Supervisor</td><td>Operations Manager (ADMIN)</td></tr><tr><td>Accountant</td><td>Operations Manager (ADMIN)</td></tr><tr><td>Marketing</td><td>Operations Manager (ADMIN)</td></tr><tr><td>Operations Manager</td><td>Director/CTO (SUPER_ADMIN)</td></tr></tbody></table>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>04. Roles and Responsibilities</h2>
+            </div>
+
+            <div class="content">
+                <p>This section defines the job descriptions for each role within the ICE organization, structured in a professional tier-based hierarchy for scalable operations.</p><h3>Tier 1: Executive Leadership</h3><table class='styled-table'><thead><tr><th>Role</th><th>System Role</th><th>Description</th><th>Key Responsibilities</th></tr></thead><tbody><tr><td><strong>Director / CTO</strong></td><td><code>SUPER_ADMIN</code></td><td>Full system owner and strategic leader.</td><td>Strategic direction, P&L ownership, investor relations, technology oversight, cross-departmental alignment.</td></tr><tr><td><strong>Operations Manager</strong></td><td><code>ADMIN</code></td><td>Day-to-day operational lead.</td><td>Manages all departments, handles escalations, approves policies, defines KPIs, conducts performance reviews.</td></tr></tbody></table><h3>Tier 2: Supervision & Coordination</h3><table class='styled-table'><thead><tr><th>Role</th><th>System Role</th><th>Description</th><th>Key Responsibilities</th></tr></thead><tbody><tr><td><strong>Supervisor</strong></td><td><code>SUPERVISOR</code></td><td>Workforce coordinator.</td><td>Monitors real-time agent performance, assigns tasks, conducts QA, runs daily briefings, ensures alignment with business goals.</td></tr><tr><td><strong>Team Lead</strong></td><td><code>TEAM_LEAD</code></td><td>Senior Agent (optional tier).</td><td>Handles complex or escalated client cases, mentors junior agents, provides first-level support.</td></tr></tbody></table><h3>Tier 3: Operational Staff</h3><table class='styled-table'><thead><tr><th>Role</th><th>System Role</th><th>Description</th><th>Key Responsibilities</th></tr></thead><tbody><tr><td><strong>Agent</strong></td><td><code>AGENT</code></td><td>Commercial / Sales Agent.</td><td>Lead management, client calls, visa advisory, document collection.</td></tr><tr><td><strong>Accountant</strong></td><td><code>ACCOUNTANT</code></td><td>Finance Specialist.</td><td>Invoice generation, payment tracking and reconciliation, financial report preparation.</td></tr><tr><td><strong>Marketing Specialist</strong></td><td><code>MARKETING</code></td><td>Digital Marketing.</td><td>Social media management, advertising campaigns, lead generation, brand content creation.</td></tr></tbody></table><h3>Role Specializations (by Program Type)</h3><p>Agents and Team Leads may develop specializations in specific program areas:</p><table class='styled-table'><thead><tr><th>Specialization</th><th>Description</th></tr></thead><tbody><tr><td><strong>Work & Travel USA</strong></td><td>Summer work programs for university students.</td></tr><tr><td><strong>Au Pair</strong></td><td>Childcare-focused cultural exchange programs.</td></tr><tr><td><strong>Visa Advisory</strong></td><td>General visa consultation and rescheduling services.</td></tr><tr><td><strong>University Programs</strong></td><td>Full academic enrollment and student services.</td></tr></tbody></table><h3>Key Performance Indicators (KPIs) by Role</h3><table class='styled-table'><thead><tr><th>Role</th><th>Primary KPIs</th></tr></thead><tbody><tr><td><strong>Agent</strong></td><td>Leads contacted per day, Conversion rate, Average response time, Client satisfaction score.</td></tr><tr><td><strong>Team Lead</strong></td><td>Escalation resolution rate, Team conversion rate, Mentee performance improvement.</td></tr><tr><td><strong>Supervisor</strong></td><td>Team overall KPIs, QA audit scores, Agent utilization rate.</td></tr><tr><td><strong>Operations Manager</strong></td><td>Revenue targets, Cost efficiency, Overall client NPS.</td></tr></tbody></table>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>04A. Workforce Management</h2>
+            </div>
+
+            <div class="content">
+                <p>This section details the processes and tools for managing the ICE workforce, inspired by professional call center and sales operations.</p><h3>Daily Operations Rhythm</h3><h4>Morning Briefing ("Huddle")</h4><ul><li><strong>Frequency</strong>: Daily, at the start of each shift.</li><li><strong>Duration</strong>: 10-15 minutes.</li><li><strong>Led By</strong>: Supervisor.</li></ul><p><strong>Agenda</strong>: Review previous day's performance, announce today's targets, highlight urgent leads/escalations, address agent questions, motivational close.</p><h4>End-of-Day Wrap-Up</h4><p>Agents update lead statuses, log notes, and flag any end-of-day hand-offs. Supervisor reviews dashboards and prepares notes for next morning briefing.</p><h3>Task Assignment Methodology</h3><p>Supervisors use the <strong>Agent Control Panel</strong> (<code>/portal/agents</code>) to manage workload.</p><ol><li><strong>Current Workload</strong>: Agents with lower active task counts receive new assignments first.</li><li><strong>Specialization Match</strong>: Leads are matched to agents specializing in the relevant program.</li><li><strong>Round Robin</strong>: For unspecialized leads, distribute evenly across available agents.</li><li><strong>Manual Override</strong>: Supervisors can manually re-assign leads based on judgment.</li></ol><h3>Quality Assurance (QA) Process</h3><ol><li><strong>Sampling</strong>: Supervisor reviews a random sample of 5-10% of agent interactions per month.</li><li><strong>Scoring</strong>: Each interaction is scored on Professionalism, Accuracy, Client Rapport, Closure (1-5 each).</li><li><strong>Feedback</strong>: Results shared individually. Trends discussed in weekly team meetings.</li><li><strong>Action Items</strong>: Agents scoring below threshold receive targeted coaching.</li></ol><h3>Performance Monitoring (Real-Time Dashboards)</h3><table class='styled-table'><thead><tr><th>Metric</th><th>Description</th></tr></thead><tbody><tr><td><strong>Agent Status</strong></td><td>Online, Offline, On Break. (<code>Agent.isOnline</code>, <code>Agent.lastSeen</code>)</td></tr><tr><td><strong>Lead Response Time</strong></td><td>Time from lead creation to first contact.</td></tr><tr><td><strong>Conversion Rate</strong></td><td>% of leads converted per agent. (<code>Lead.stage = 'CONVERTED'</code>)</td></tr><tr><td><strong>Task Completion</strong></td><td>Open vs. completed tasks. (<code>Task.status</code>)</td></tr><tr><td><strong>Daily Activity</strong></td><td>Calls made, emails sent, leads contacted.</td></tr></tbody></table><h3>Escalation Matrix</h3><p>A clear escalation path ensures client issues are resolved efficiently.</p><table class='styled-table'><thead><tr><th>Level</th><th>Handler</th><th>Trigger</th></tr></thead><tbody><tr><td><strong>L1</strong></td><td>Agent</td><td>Initial client contact, standard inquiries.</td></tr><tr><td><strong>L2</strong></td><td>Team Lead</td><td>Complex queries, agent needs guidance, first escalation.</td></tr><tr><td><strong>L3</strong></td><td>Supervisor</td><td>Unresolved L2 issues, complaints, policy exceptions.</td></tr><tr><td><strong>L4</strong></td><td>Operations Manager</td><td>Critical issues, VIP clients, systemic problems.</td></tr><tr><td><strong>L5</strong></td><td>Director/CTO</td><td>Legal issues, PR crises, strategic decisions.</td></tr></tbody></table>
+            </div>
+
+            <div class="callout">
+                <span class="callout-title">Escalation Matrix</span>
+                <p>A clear escalation path ensures client issues are resolved efficiently: L1 (Agent) → L2 (Team Lead) → L3 (Supervisor) → L4 (Operations Manager) → L5 (Director/CTO).</p>
+            </div>
+        </div>
+    </div>
+    <div class="part">
+        <div class="part-header">
+            <h1>Part III: Service Catalog &amp; Products</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>05. Service Catalog</h2>
+            </div>
+
+            <div class="content">
+                <h3>Core Service: Automated Visa Rescheduling</h3><p>The <strong>ICE Visa Rescheduler Bot</strong> is a proprietary automation system that monitors US Embassy visa appointment portals worldwide. It automatically identifies earlier available appointment slots and reschedules the client to the better date.</p><h3>How It Works</h3><div class='diagram-container'><p>Client -> ICE System: Register<br/>ICE System -> Queue: Create Job<br/>Check Loop: System -> Portal -> Available?<br/>If Yes: Reschedule -> Notify Client</p></div><h3>Supported Consulates</h3><table class='styled-table'><thead><tr><th>Consulate</th><th>Code</th></tr></thead><tbody><tr><td>US Embassy Madrid</td><td><code>US_EMBASSY_MADRID</code></td></tr><tr><td>US Embassy Barcelona</td><td><code>US_EMBASSY_BARCELONA</code></td></tr><tr><td>US Embassy Mexico City</td><td><code>US_EMBASSY_MEXICO_CITY</code></td></tr><tr><td>US Embassy London</td><td><code>US_EMBASSY_LONDON</code></td></tr><tr><td>US Embassy Mumbai</td><td><code>US_EMBASSY_MUMBAI</code></td></tr><tr><td>US Embassy Delhi</td><td><code>US_EMBASSY_DELHI</code></td></tr><tr><td>US Embassy Frankfurt</td><td><code>US_EMBASSY_FRANKFURT</code></td></tr></tbody></table><h3>Key Features</h3><ul><li><strong>Human-like Behavior</strong>: Randomized delays, realistic browser fingerprints, anti-detection measures.</li><li><strong>Smart Scheduling</strong>: Preference-based slot selection (time windows, blackout dates).</li><li><strong>Screenshot Audit Trail</strong>: Visual proof of all automation steps stored for compliance.</li><li><strong>Multi-Channel Notifications</strong>: Email (via Resend/SMTP) and SMS (via Twilio).</li></ul><h3>Cultural Exchange Programs</h3><h4>Work & Travel USA</h4><ul><li><strong>Target Audience</strong>: University students aged 18-28.</li><li><strong>Duration</strong>: Summer season (typically 3-4 months).</li><li><strong>Service Includes</strong>: Job placement assistance, J-1 visa sponsorship, pre-departure orientation, in-country support.</li></ul><h4>Au Pair Programs</h4><ul><li><strong>Target Audience</strong>: Young adults (18-26) seeking childcare exchange.</li><li><strong>Duration</strong>: 1-2 years.</li><li><strong>Service Includes</strong>: Host family matching, visa sponsorship, cultural orientation.</li></ul><h4>Visa Advisory</h4><ul><li><strong>Target Audience</strong>: Any individual requiring visa consultation.</li><li><strong>Service Includes</strong>: Document preparation, interview coaching, consulate appointment management.</li></ul><h3>Student Services</h3><ul><li><strong>Document Management</strong>: Secure upload, verification, and storage of required documents.</li><li><strong>Progress Tracking</strong>: Students can view their application status, GPA, and credits via the Student Portal.</li><li><strong>Enrollment Management</strong>: Link students to specific programs with start/end dates and completion tracking.</li></ul><h3>Service Pricing (Placeholder)</h3><blockquote><p>Pricing is determined by commercial agreements and may vary by franchise location. Contact <code>support@apexaisolutions.dev</code> for rate cards.</p></blockquote>
+            </div>
+
+        </div>
+    </div>
+    <div class="part">
+        <div class="part-header">
+            <h1>Part IV: Operational Workflows</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>06. Lead Acquisition and Management</h2>
+            </div>
+
+            <div class="content">
+                <p>This section outlines the process for capturing, scoring, assigning, and managing leads from initial contact to qualification.</p><h3>Lead Sources</h3><p>Leads enter the ICE system from multiple channels:</p><table class='styled-table'><thead><tr><th>Source</th><th>Description</th><th>System Field</th></tr></thead><tbody><tr><td><strong>Events</strong></td><td>University fairs, expos, presentations.</td><td><code>event_fair_name</code></td></tr><tr><td><strong>Website</strong></td><td>Contact forms, landing pages.</td><td><code>website_form</code></td></tr><tr><td><strong>Social Media</strong></td><td>Facebook, Instagram campaigns.</td><td><code>social_facebook</code>, <code>social_instagram</code></td></tr><tr><td><strong>Referrals</strong></td><td>Existing client referrals.</td><td><code>referral</code></td></tr><tr><td><strong>Partners</strong></td><td>Agency or institutional partners.</td><td><code>partner_agency_name</code></td></tr></tbody></table><h3>Lead Capture (ETL Process)</h3><ol><li><strong>Data Ingestion</strong>: Leads from external sources (spreadsheets, API webhooks) are ingested via ETL jobs.</li><li><strong>Data Normalization</strong>: Raw data is mapped to the <code>Person</code> and <code>Lead</code> models.</li><li><strong>Deduplication</strong>: System checks for existing <code>Person</code> by email or <code>cedula</code>.</li><li><strong>Creation</strong>: New <code>Lead</code> record created and linked to <code>Person</code>, <code>Service</code>, and <code>Event</code> (if applicable).</li></ol><h3>Lead Scoring</h3><p>Leads are automatically scored (0-100) to prioritize follow-up.</p><h4>Scoring Components & Weights</h4><table class='styled-table'><thead><tr><th>Component</th><th>Weight</th><th>Description</th></tr></thead><tbody><tr><td><strong>Fit</strong></td><td>25%</td><td>Program compatibility, age, country, eligibility.</td></tr><tr><td><strong>Intent</strong></td><td>25%</td><td>Program interest indicated, budget signals.</td></tr><tr><td><strong>Engagement</strong></td><td>20%</td><td>Email opens, replies, calls answered, events attended.</td></tr><tr><td><strong>Source Quality</strong></td><td>10%</td><td>Historical conversion rate of the source.</td></tr><tr><td><strong>Recency</strong></td><td>10%</td><td>Time since last contact (recent = higher).</td></tr><tr><td><strong>Agent Performance</strong></td><td>10%</td><td>Assigned agent's historical conversion rate.</td></tr></tbody></table><h4>Conversion Probability & Estimated Value</h4><ul><li><code>conversionProbability</code>: Derived from score via logistic transform.</li><li><code>estimatedValue</code>: <code>conversionProbability * expectedDealValue</code></li></ul><h3>Lead Assignment</h3><p>Leads are assigned to Agents based on:</p><ol><li><strong>Auto-Assignment (Round Robin)</strong>: New leads distributed evenly.</li><li><strong>Skill-Based Routing</strong>: Leads for specific programs routed to specialized agents.</li><li><strong>Manual Assignment</strong>: Supervisor assigns lead via Agent Control Panel.</li></ol><p><strong>System Field</strong>: <code>Lead.assignedAgentId</code></p><h3>Kanban Pipeline Stages</h3><p>Leads progress through defined stages:</p><table class='styled-table'><thead><tr><th>Stage</th><th>Description</th><th>Triggers</th></tr></thead><tbody><tr><td><code>NEW</code></td><td>Freshly captured lead, not yet contacted.</td><td>Lead creation.</td></tr><tr><td><code>CONTACTED</code></td><td>Agent has made first contact.</td><td>Agent logs call/email.</td></tr><tr><td><code>QUALIFIED</code></td><td>Lead confirmed as a genuine opportunity.</td><td>Agent qualifies (interest + ability).</td></tr><tr><td><code>OPPORTUNITY</code></td><td>Active negotiation, proposal sent.</td><td>Proposal or contract sent.</td></tr><tr><td><code>CONVERTED</code></td><td>Successfully enrolled/signed.</td><td>Payment received or contract signed.</td></tr><tr><td><code>LOST</code></td><td>Lead declined or disqualified.</td><td>Agent marks as lost (with reason).</td></tr></tbody></table><p><strong>System Field</strong>: <code>Lead.stage</code></p><h3>Lead List & Filtering (Agent View)</h3><p>Agents access their assigned leads via <code>/ice-leads</code> or <code>/portal/leads</code>:</p><ul><li><strong>Filters</strong>: Stage, Source, Score Range, Date Range, Assigned Agent.</li><li><strong>Sorting</strong>: By Name, Last Contact Date, Lead Score.</li><li><strong>Quick Actions</strong>: Log Call, Send Email, Change Stage, Reassign.</li></ul>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>07. Client Follow-Up and Nurturing</h2>
+            </div>
+
+            <div class="content">
+                <p>This section describes the standard procedures for contacting and nurturing leads after acquisition.</p><h3>Follow-Up Cadence</h3><p>A structured follow-up cadence ensures leads are contacted consistently. If no response after Day 14, lead may be moved to a "Dormant" status for future re-engagement campaigns.</p><table class='styled-table'><thead><tr><th>Day</th><th>Action</th><th>Channel</th></tr></thead><tbody><tr><td>Day 0</td><td>Initial contact attempt</td><td>Call</td></tr><tr><td>Day 0</td><td>If no answer, send intro message</td><td>WhatsApp / Email</td></tr><tr><td>Day 1</td><td>Second contact attempt</td><td>Call</td></tr><tr><td>Day 2</td><td>Follow-up value message</td><td>Email</td></tr><tr><td>Day 4</td><td>Third contact attempt</td><td>Call</td></tr><tr><td>Day 7</td><td>Nurture content (success stories, program info)</td><td>Email</td></tr><tr><td>Day 14</td><td>Final warm outreach</td><td>Call / Email</td></tr></tbody></table><h3>Communication Channels</h3><table class='styled-table'><thead><tr><th>Channel</th><th>Use Case</th><th>Best Practices</th></tr></thead><tbody><tr><td><strong>Phone Call</strong></td><td>Primary contact for new leads, urgent matters.</td><td>Be prepared with lead info, personalize greeting.</td></tr><tr><td><strong>WhatsApp</strong></td><td>Quick follow-ups, reminders, document requests.</td><td>Keep messages concise, respond within 1 hour.</td></tr><tr><td><strong>Email</strong></td><td>Formal proposals, document sharing, nurture content.</td><td>Use templates, include clear CTA.</td></tr><tr><td><strong>Portal Notifications</strong></td><td>System-generated updates (status changes, appointments).</td><td>Automatic.</td></tr></tbody></table><h3>Tracking Engagement</h3><p>Agent activity and lead engagement are tracked in the system:</p><table class='styled-table'><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>Lead.lastContactedAt</code></td><td>Timestamp of last agent interaction.</td></tr><tr><td><code>Lead.contactAttempts</code></td><td>Number of contact attempts made.</td></tr><tr><td><code>Lead.followupStatus</code></td><td>JSON object with detailed status notes.</td></tr><tr><td><code>AuditLog</code></td><td>Record of all actions taken on the lead.</td></tr></tbody></table><h3>Escalation Procedures</h3><ol><li><strong>Stalled Lead</strong>: Agent flags lead for Supervisor review. Supervisor may reassign or attempt contact.</li><li><strong>Upset or Complaining Client</strong>: Escalate immediately to Team Lead (L2) or Supervisor (L3). Document interaction thoroughly.</li><li><strong>Information Dispute</strong>: Escalate to Operations Manager with supporting documentation.</li></ol><h3>Nurture Campaigns (Dormant Leads)</h3><p>Leads that go cold are not discarded. Marketing runs periodic re-engagement campaigns: Email Newsletters, Special Promotions, Event Invitations.</p>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>08. Client Onboarding and Enrollment</h2>
+            </div>
+
+            <div class="content">
+                <p>This section covers the conversion of a qualified lead into an enrolled student/client.</p><h3>Conversion Workflow</h3><div class='diagram-container'>Lead -> Accepts? -> (Yes) Create Student -> Collect Docs -> Invoice -> Payment -> Enroll -> Active<br/>(No) -> Lost</div><h3>Step 1: Client Accepts Offer</h3><ul><li>Agent presents program details, pricing, and terms.</li><li>Client verbally or in writing agrees to proceed.</li><li>Lead stage updated to <code>OPPORTUNITY</code> then <code>CONVERTED</code>.</li></ul><h3>Step 2: Create Student Record</h3><p>When a lead converts, a <code>Student</code> record is created:</p><ol><li>Agent initiates creation via portal.</li><li>System links <code>Student</code> to existing <code>Person</code>.</li><li>Assigns <code>studentNumber</code>.</li><li>Sets initial <code>status = 'ACTIVE'</code>.</li></ol><p><strong>Key Fields</strong>: <code>Student.id</code>, <code>Student.personId</code>, <code>Student.studentNumber</code>, <code>Student.program</code>, <code>Student.status</code>.</p><h3>Step 3: Document Collection</h3><p>Clients upload required documents via the <strong>Student Portal</strong>.</p><h4>Common Document Types</h4><table class='styled-table'><thead><tr><th>Document Type</th><th>Code</th><th>Required For</th></tr></thead><tbody><tr><td>Passport Copy</td><td><code>PASSPORT</code></td><td>All programs</td></tr><tr><td>University Transcript</td><td><code>TRANSCRIPT</code></td><td>Work & Travel</td></tr><tr><td>Financial Statement</td><td><code>FINANCIAL_STATEMENT</code></td><td>Visa applications</td></tr><tr><td>DS-160 Confirmation</td><td><code>DS160</code></td><td>US Visa</td></tr><tr><td>Photo (Visa Format)</td><td><code>PHOTO</code></td><td>All visas</td></tr><tr><td>Signed Contract</td><td><code>CONTRACT</code></td><td>All programs</td></tr></tbody></table><h4>Document Workflow</h4><ol><li><strong>Upload</strong>: Client uploads via portal (Status: PENDING).</li><li><strong>Agent Review</strong>: Agent reviews for completeness.</li><li><strong>Approve/Reject</strong>: Status updated (with comments).</li></ol><h3>Step 4: Generate Invoice</h3><p>An invoice is created linked to the client and program. Status: <code>PENDING</code> until payment.</p><h3>Step 5: Payment & Enrollment</h3><ol><li>Client makes payment.</li><li>Accountant confirms payment.</li><li>Invoice <code>PAID</code>.</li><li>Enrollment record created.</li></ol><h3>Step 6: Welcome & Onboarding</h3><ul><li>Client receives welcome email with portal access.</li><li>Assigned agent introduces next steps.</li><li>Client becomes an <strong>Active Student</strong>.</li></ul>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>09. Visa Rescheduling Operations</h2>
+            </div>
+
+            <div class="content">
+                <p>This section details the operational workflow for the <strong>ICE Visa Rescheduler Bot</strong>, the core proprietary product.</p><h3>Overview</h3><ol><li>Logs into US visa appointment portals using client credentials.</li><li>Monitors for earlier available appointment slots.</li><li>Automatically reschedules the appointment if a better slot is found.</li><li>Notifies the client via Email/SMS.</li></ol><h3>Operational Workflow</h3><div class='diagram-container'><p>Agent -> System: Register<br/>System -> Queue: Create Job<br/>Worker loop: Portal Login -> Check Dates -> Available?<br/>If Yes: Reschedule -> Notify</p></div><h3>Step 1: Applicant Registration</h3><ol><li>Agent creates <code>Person</code>, <code>Appointment</code>, <code>Preference</code>, and <code>Credential</code> records.</li></ol><h3>Step 2: Job Creation</h3><p>System creates a <code>Job</code> in the BullMQ queue (<code>type: 'RESCHEDULE'</code>). Job is scheduled to run at intervals defined by <code>SearchRule</code>.</p><h3>Step 3: Automated Monitoring</h3><p>The Worker service (Playwright) picks up job, launches headless browser, logs in, searches for appointments. Takes screenshot at each step for audit trail.</p><h3>Step 4: Rescheduling</h3><p>If an earlier slot is found: Worker completes the reschedule flow, receives new confirmation, creates <code>RescheduleAttempt</code> record, updates <code>Appointment</code>, triggers notification.</p><h3>Step 5: Notifications</h3><p>Clients are notified via multi-channel system: Email (Resend API or SMTP), SMS (Twilio).</p><h3>Monitoring & Audit</h3><ul><li><strong>Dashboard</strong>: <code>/dashboard</code> shows active applicants, queue depth, success rates.</li><li><strong>Screenshots</strong>: Stored in <code>screenshots/</code> directory.</li><li><strong>Audit Log</strong>: All actions logged to <code>AuditLog</code> for compliance.</li></ul><h3>Error Handling & Escalation</h3><table class='styled-table'><thead><tr><th>Error Type</th><th>Action</th></tr></thead><tbody><tr><td>Login Failure</td><td>Notify agent to verify credentials. Mark job as failed.</td></tr><tr><td>Portal Unavailable</td><td>Retry with exponential backoff. Alert Supervisor after N failures.</td></tr><tr><td>Captcha Detected</td><td>Log and pause. May require manual intervention.</td></tr><tr><td>Account Locked</td><td>Immediately notify client and agent. Pause all jobs for that applicant.</td></tr></tbody></table>
+            </div>
+
+            <div class="callout">
+                <span class="callout-title">Core Product Workflow</span>
+                <p>Agent Registers Applicant → System Creates Job → Worker Monitors Portal (Loop) → If Earlier Date Found: Reschedule &amp; Notify → Log Attempt Result</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>10. Student Lifecycle Management</h2>
+            </div>
+
+            <div class="content">
+                <h3>Student Statuses</h3><table class='styled-table'><thead><tr><th>Status</th><th>Description</th></tr></thead><tbody><tr><td><code>ACTIVE</code></td><td>Currently enrolled and in-program.</td></tr><tr><td><code>INACTIVE</code></td><td>Paused or temporarily deferred.</td></tr><tr><td><code>GRADUATED</code></td><td>Successfully completed the program.</td></tr><tr><td><code>WITHDRAWN</code></td><td>Left the program before completion.</td></tr></tbody></table><h3>Student Portal Overview</h3><p>Enrolled students access the <strong>Student Portal</strong> (<code>/student-portal</code>) to: View their profile and program details, Upload and manage documents, Track application status and progress, View upcoming appointments or deadlines, Contact their assigned agent.</p><h3>Document Management</h3><h4>Uploading Documents</h4><ol><li>Student logs into portal.</li><li>Navigates to "My Documents".</li><li>Selects document type and uploads file.</li><li>Document saved to MinIO storage with metadata in <code>StudentDocument</code>.</li></ol><h4>Document Approval Workflow</h4><p>Pending → Agent Review → Approved or Rejected.</p><h4>Document Types</h4><table class='styled-table'><thead><tr><th>Type</th><th>Required For</th></tr></thead><tbody><tr><td><code>PASSPORT</code></td><td>All</td></tr><tr><td><code>TRANSCRIPT</code></td><td>Work & Travel</td></tr><tr><td><code>DS160</code></td><td>US Visa</td></tr><tr><td><code>FINANCIAL_STATEMENT</code></td><td>Visa</td></tr><tr><td><code>CONTRACT</code></td><td>All</td></tr><tr><td><code>OFFER_LETTER</code></td><td>University Programs</td></tr></tbody></table><h3>Progress Tracking</h3><p>For academic programs, students can track: <code>currentSemester</code>, <code>gpa</code>, <code>creditsCompleted</code>, <code>creditsTotal</code>, <code>Enrollment.completionRate</code>.</p><h3>Program Completion</h3><ol><li>Agent or system updates <code>Student.status = 'GRADUATED'</code>.</li><li><code>Enrollment.status = 'COMPLETED'</code>.</li><li>Completion certificate or documentation generated (if applicable).</li><li>Student added to Alumni pool for referrals and testimonials.</li></ol><h3>Handling Withdrawals</h3><ol><li>Agent updates <code>Student.status = 'WITHDRAWN'</code>.</li><li>Logs reason in notes.</li><li>Refund policy triggered (if applicable).</li><li>Lead record may be flagged for future re-engagement.</li></ol>
+            </div>
+
+        </div>
+    </div>
+    <div class="part">
+        <div class="part-header">
+            <h1>Part V: Technology &amp; Systems</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>11. Technology Stack</h2>
+            </div>
+
+            <div class="content">
+                <p>This section provides an overview of the technology powering the ICE system.</p><h3>Core Technologies</h3><table class='styled-table'><thead><tr><th>Layer</th><th>Technology</th><th>Version</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Frontend</strong></td><td>Next.js (App Router)</td><td>15.x</td><td>React framework with SSR/SSG</td></tr><tr><td><strong>Language</strong></td><td>TypeScript</td><td>5.x</td><td>Type-safe development</td></tr><tr><td><strong>Styling</strong></td><td>TailwindCSS</td><td>3.x</td><td>Utility-first CSS</td></tr><tr><td><strong>Backend</strong></td><td>Next.js API Routes</td><td>15.x</td><td>REST API endpoints</td></tr><tr><td><strong>ORM</strong></td><td>Prisma</td><td>6.x</td><td>Database management</td></tr><tr><td><strong>Database</strong></td><td>PostgreSQL</td><td>14+</td><td>Primary data store</td></tr><tr><td><strong>Queue</strong></td><td>BullMQ</td><td>5.x</td><td>Job queue for automation tasks</td></tr><tr><td><strong>Cache/Session</strong></td><td>Redis</td><td>6+</td><td>Caching and queue backend</td></tr><tr><td><strong>Browser Automation</strong></td><td>Playwright</td><td>1.x</td><td>Visa portal automation</td></tr><tr><td><strong>Email</strong></td><td>Resend / Nodemailer</td><td>Latest</td><td>Email notifications</td></tr><tr><td><strong>Secrets</strong></td><td>HashiCorp Vault</td><td>Latest</td><td>Credential encryption</td></tr></tbody></table><h3>System Architecture Diagram</h3><div class='diagram-container'><p>ICE Portal Frontend (Next.js) <br/> | <br/> Authentication (NextAuth.js) <br/> | <br/> API Gateway <br/> | <br/> Business Logic (Student Mgmt, Visa System, Agent Panel) <br/> | <br/> Service Orchestration (BullMQ) <br/> | <br/> Data Access (Prisma) <br/> | <br/> PostgreSQL + Redis</p></div><h3>Access Levels (RBAC)</h3><table class='styled-table'><thead><tr><th>System Role</th><th>Access Level</th></tr></thead><tbody><tr><td><code>SUPER_ADMIN</code></td><td>Full system access. All modules, all data.</td></tr><tr><td><code>ADMIN</code></td><td>Operations management. All modules except system config.</td></tr><tr><td><code>SUPERVISOR</code></td><td>Agent management, lead oversight, QA.</td></tr><tr><td><code>TEAM_LEAD</code></td><td>Same as Agent + mentoring access.</td></tr><tr><td><code>AGENT</code></td><td>Assigned leads, tasks, client communication.</td></tr><tr><td><code>ACCOUNTANT</code></td><td>Invoices, payments, financial reports.</td></tr><tr><td><code>MARKETING</code></td><td>Campaigns, analytics, lead sources.</td></tr><tr><td><code>STUDENT</code></td><td>Student Portal access only (self-service).</td></tr></tbody></table><h3>Key System URLs</h3><table class='styled-table'><thead><tr><th>URL</th><th>Purpose</th><th>Access</th></tr></thead><tbody><tr><td><code>/</code></td><td>Landing / Login</td><td>Public</td></tr><tr><td><code>/portal</code></td><td>Main Admin Portal</td><td>Agents, Admins</td></tr><tr><td><code>/portal/agents</code></td><td>Agent Control Panel</td><td>Supervisors, Admins</td></tr><tr><td><code>/ice-leads</code></td><td>ICE Leads Dashboard</td><td>Agents, Admins</td></tr><tr><td><code>/dashboard</code></td><td>Visa Operations Dashboard</td><td>Operators</td></tr><tr><td><code>/student-portal</code></td><td>Student Self-Service</td><td>Students</td></tr><tr><td><code>/admin</code></td><td>System Administration</td><td>Super Admins</td></tr></tbody></table>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>12. Agent Control Panel</h2>
+            </div>
+
+            <div class="content">
+                <p>This section describes the Agent Control Panel used by Supervisors and Admins to manage the workforce.</p><h3>Overview</h3><p>The Agent Control Panel is accessible at <code>/portal/agents</code> and provides: Real-time agent status monitoring, Performance metrics and analytics, Task management and assignment, Schedule and calendar views.</p><h3>Agent List View</h3><table class='styled-table'><thead><tr><th>Column</th><th>Description</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Agent full name.</td></tr><tr><td><strong>Department</strong></td><td>e.g., Commercial & Processes.</td></tr><tr><td><strong>Role</strong></td><td>Agent, Team Lead, Supervisor.</td></tr><tr><td><strong>Status</strong></td><td>Online, Offline, On Break, Training.</td></tr><tr><td><strong>Workload</strong></td><td>Number of active leads/tasks.</td></tr><tr><td><strong>Capacity</strong></td><td>Max capacity setting.</td></tr><tr><td><strong>Last Activity</strong></td><td>Timestamp of last system action.</td></tr></tbody></table><h3>Performance Dashboard</h3><table class='styled-table'><thead><tr><th>Metric</th><th>Description</th></tr></thead><tbody><tr><td><strong>Leads Assigned</strong></td><td>Total leads assigned in period.</td></tr><tr><td><strong>Leads Converted</strong></td><td>Total successful conversions.</td></tr><tr><td><strong>Conversion Rate</strong></td><td>(Converted / Assigned) × 100.</td></tr><tr><td><strong>Avg Response Time</strong></td><td>Time to first contact.</td></tr><tr><td><strong>Customer Satisfaction</strong></td><td>Average rating from surveys.</td></tr><tr><td><strong>Tasks Completed</strong></td><td>Number of tasks marked done.</td></tr></tbody></table><h3>Task Management</h3><table class='styled-table'><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><strong>Title</strong></td><td>Task name.</td></tr><tr><td><strong>Priority</strong></td><td>Low, Medium, High, Urgent.</td></tr><tr><td><strong>Status</strong></td><td>Pending, In Progress, Completed.</td></tr><tr><td><strong>Due Date</strong></td><td>Deadline.</td></tr></tbody></table><h3>Real-Time Monitoring</h3><p>Supervisors can see live agent activity: Online/Offline Status, Current Task, Session Tracking.</p><h3>Reporting & Export</h3><ul><li><strong>Export to CSV/Excel</strong>: Download agent performance reports.</li><li><strong>Scheduled Reports</strong>: Configure automated email reports (planned feature).</li></ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="part">
+        <div class="part-header">
+            <h1>Part VI: Franchise Replication Model</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>13. Franchise Model</h2>
+            </div>
+
+            <div class="content">
+                <p>This section outlines the franchise replication model for ICE.</p><h3>Franchise Package Overview</h3><table class='styled-table'><thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td><strong>Technology Platform</strong></td><td>Full access to ICE Portal, Visa Rescheduler Bot, CRM, Student Portal.</td></tr><tr><td><strong>Operational Manual</strong></td><td>This comprehensive guide.</td></tr><tr><td><strong>Training Program</strong></td><td>Online and on-site training for all roles.</td></tr><tr><td><strong>Brand Assets</strong></td><td>Logo, marketing templates, collateral.</td></tr><tr><td><strong>Ongoing Support</strong></td><td>Technical support, software updates, strategic advice.</td></tr></tbody></table><h3>Setup Requirements</h3><h4>Technical Infrastructure</h4><table class='styled-table'><thead><tr><th>Requirement</th><th>Specification</th></tr></thead><tbody><tr><td><strong>Server</strong></td><td>Linux VPS (min 4 cores, 16GB RAM).</td></tr><tr><td><strong>Database</strong></td><td>PostgreSQL 14+.</td></tr><tr><td><strong>Redis</strong></td><td>Version 6+.</td></tr><tr><td><strong>Domain</strong></td><td>Custom domain with SSL.</td></tr><tr><td><strong>Email</strong></td><td>Business email with API.</td></tr></tbody></table><h4>Legal & Business</h4><ul><li>Business registration in target country.</li><li>Compliance with local data protection laws (GDPR, etc.).</li><li>Signed franchise agreement with Apex AI Solutions LLC.</li></ul><h3>Commercial Models</h3><blockquote><p>Specific pricing is subject to negotiation. Contact <code>support@apexaisolutions.dev</code> for details.</p></blockquote><h4>Option A: Outright Sale</h4><ul><li>One-time payment for perpetual license.</li><li>Includes initial setup and training.</li><li>Annual maintenance fee.</li></ul><h4>Option B: Subscription / Rental</h4><ul><li>Monthly or annual fee.</li><li>Includes all software, updates, and support.</li></ul><h4>Option C: Revenue Share</h4><ul><li>Lower fixed fees.</li><li>Percentage of franchise revenue shared.</li></ul><h3>Franchise Owner Responsibilities</h3><ol><li>Hire and manage local staff.</li><li>Adhere to ICE operational standards.</li><li>Maintain platform infrastructure.</li><li>Report performance metrics monthly.</li><li>Pay franchise fees.</li></ol>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>14. Training Requirements</h2>
+            </div>
+
+            <div class="content">
+                <p>This section outlines the training program for onboarding new franchise staff.</p><h3>Training Curriculum Overview</h3><table class='styled-table'><thead><tr><th>Module</th><th>Target Role</th><th>Duration</th><th>Format</th></tr></thead><tbody><tr><td><strong>ICE Company Overview</strong></td><td>All</td><td>2 hours</td><td>Online</td></tr><tr><td><strong>System Navigation</strong></td><td>All</td><td>4 hours</td><td>Online + Hands-on</td></tr><tr><td><strong>Lead Management</strong></td><td>Agents, Ops</td><td>4 hours</td><td>Online + Hands-on</td></tr><tr><td><strong>Visa Operations</strong></td><td>Agents, Ops</td><td>6 hours</td><td>Online + Hands-on</td></tr><tr><td><strong>Agent Control Panel</strong></td><td>Supervisors</td><td>3 hours</td><td>Hands-on</td></tr><tr><td><strong>System Admin</strong></td><td>Admins</td><td>6 hours</td><td>Hands-on</td></tr></tbody></table><h3>Training by Role</h3><h4>Agent Training Path</h4><ol><li>ICE Company Overview</li><li>System Navigation</li><li>Lead Management</li><li>Client Communication</li><li>Visa Operations</li><li>Document Management</li><li>Compliance & Security</li></ol><p><strong>Total</strong>: ~24 hours</p><h4>Supervisor Training Path</h4><ol><li>Complete Agent Training Path</li><li>Workforce Management</li><li>Agent Control Panel</li><li>Advanced Reporting</li></ol><p><strong>Total</strong>: ~31 hours</p><h4>Admin Training Path</h4><ol><li>Complete Supervisor Training Path</li><li>System Administration</li><li>User Management</li><li>Incident Response</li></ol><p><strong>Total</strong>: ~39 hours</p><h3>Certification</h3><ul><li><strong>ICE Certified Agent/Supervisor/Admin</strong> badge.</li><li>Certificate of completion.</li><li>Role permissions enabled.</li></ul><h3>Ongoing Training</h3><ul><li><strong>Quarterly Refreshers</strong>: Updates on system features.</li><li><strong>New Feature Training</strong>: Major updates.</li><li><strong>Performance Coaching</strong>: Based on QA.</li></ul>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <h2>15. Additional Modules</h2>
+            </div>
+
+            <div class="content">
+                <p>This section identifies modules recommended for future development to enhance franchise value.</p><h3>Recommended Expansions</h3><table class='styled-table'><thead><tr><th>Module</th><th>Description</th><th>Priority</th></tr></thead><tbody><tr><td><strong>Advanced CRM</strong></td><td>360° client view, automated reminders.</td><td>High</td></tr><tr><td><strong>Integrated Billing</strong></td><td>Payment gateway integration, automated invoicing.</td><td>High</td></tr><tr><td><strong>Customer Support Ticketing</strong></td><td>Helpdesk system.</td><td>Medium</td></tr><tr><td><strong>Mobile Application</strong></td><td>React Native app for agents and students.</td><td>Medium</td></tr><tr><td><strong>AI Chatbot</strong></td><td>Intelligent client support via chat.</td><td>Low</td></tr></tbody></table><h3>Module Details</h3><h4>Advanced CRM</h4><ul><li>Unified client profile.</li><li>Automated reminders.</li><li>Email/Calendar integration.</li></ul><h4>Integrated Billing</h4><ul><li>Payment gateway (Stripe/PayU).</li><li>Automatic invoice generation.</li><li>Overdue tracking.</li></ul><h4>Customer Support Ticketing</h4><ul><li>Ticket creation.</li><li>SLA tracking.</li><li>Knowledge base.</li></ul><h3>How to Request New Modules</h3><p>Franchise owners can request new modules by contacting: <code>support@apexaisolutions.dev</code>. Development timelines and costs will be scoped based on requirements.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

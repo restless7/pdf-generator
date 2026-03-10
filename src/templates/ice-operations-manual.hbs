@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{documentTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            page-break-after: always;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        h1.title {
+            font-size: 3rem;
+            font-weight: 800;
+
+            color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            margin-bottom: 1rem;
+        }
+
+        h2.subtitle {
+            font-size: 1.5rem;
+
+            color: {
+                    {
+                    branding.secondaryColor
+                }
+            }
+
+            ;
+            font-weight: 500;
+            margin-bottom: 3rem;
+        }
+
+        .meta {
+            margin-top: auto;
+            margin-bottom: 4rem;
+            color: #718096;
+            font-size: 0.875rem;
+        }
+
+        .toc {
+            page-break-after: always;
+            padding: 2rem 0;
+        }
+
+        .toc h2 {
+            border-bottom: 2px solid {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+
+            color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+        }
+
+        .toc-part {
+            margin-bottom: 1.5rem;
+        }
+
+        .toc-part h3 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-item {
+            margin-left: 1.5rem;
+            padding: 0.25rem 0;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .part-header {
+            background-color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            color: white;
+            padding: 3rem 2rem;
+            margin: 4rem 0 3rem 0;
+            border-radius: 8px;
+            page-break-before: always;
+            text-align: center;
+        }
+
+        .part-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            color: {
+                    {
+                    branding.secondaryColor
+                }
+            }
+
+            ;
+            font-size: 1.75rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .content {
+            font-size: 1rem;
+            color: #2d3748;
+        }
+
+        .content h3 {
+            color: #2d3748;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+
+            border-left: 4px solid {
+                    {
+                    branding.accentColor
+                }
+            }
+
+            ;
+            padding-left: 0.75rem;
+        }
+
+        .content h4 {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Improved Table Styling */
+        table.styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        table.styled-table thead tr {
+            background-color: {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        table.styled-table th,
+        table.styled-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        table.styled-table tbody tr:nth-of-type(even) {
+            background-color: #f8fafc;
+        }
+
+        table.styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid {
+                    {
+                    branding.primaryColor
+                }
+            }
+
+            ;
+        }
+
+        table.styled-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Diagram Containers */
+        .diagram-container {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+            color: #4a5568;
+            border-left: 4px solid #718096;
+        }
+
+        /* Callouts */
+        .callout {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        blockquote {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            font-style: italic;
+            color: #744210;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        {{#if companyInfo.logo}}
+        <img src="{{companyInfo.logo}}" alt="Logo" style="max-width: 250px; margin-bottom: 2rem;">
+        {{/if}}
+        <h1 class="title">{{documentTitle}}</h1>
+        <h2 class="subtitle">{{subtitle}}</h2>
+        <div class="meta">
+            <p><strong>Version:</strong> {{version}}</p>
+            <p><strong>Effective Date:</strong> {{effectiveDate}}</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">{{confidentialityNotice}}</p>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        {{#each parts}}
+        <div class="toc-part">
+            <h3>Part {{partNumber}}: {{partTitle}}</h3>
+            {{#each sections}}
+            <div class="toc-item">
+                <strong>{{sectionNumber}}</strong> - {{title}}
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+
+    <!-- Content -->
+    {{#each parts}}
+    <div class="part">
+        <div class="part-header">
+            <h1>Part {{partNumber}}: {{partTitle}}</h1>
+        </div>
+
+        {{#each sections}}
+        <div class="section">
+            <div class="section-header">
+                <h2>{{sectionNumber}}. {{title}}</h2>
+            </div>
+
+            <div class="content">
+                {{{content}}}
+            </div>
+
+            {{#if callout}}
+            <div class="callout">
+                <span class="callout-title">{{callout.title}}</span>
+                <p>{{callout.content}}</p>
+            </div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+
+</body>
+
+</html>

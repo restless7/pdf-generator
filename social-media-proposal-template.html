@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{proposalTitle}} - {{proposalSubtitle}}</title>
+    <style>
+        /* Jessica Quintero Psychology Brand Colors */
+        :root {
+            --primary-peach: #FFDCB2;
+            --secondary-coral: #FFB4A2;
+            --accent-rose: #E5989B;
+            --deep-mauve: #B5838D;
+            --text-gray: #6D6875;
+            --white: #FFFFFF;
+            --light-gray: #F9FAFB;
+            --border-light: #E5E7EB;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-gray);
+            background: var(--white);
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-peach) 0%, var(--secondary-coral) 50%, var(--accent-rose) 100%);
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cover-subtitle {
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cover-info {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: var(--deep-mauve);
+        }
+
+        .info-value.highlight {
+            color: var(--accent-rose);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Page breaks */
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Section headers */
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-gray);
+            margin: 40px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-rose);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-rose), var(--deep-mauve));
+        }
+
+        /* Executive Summary */
+        .executive-summary {
+            background: linear-gradient(135deg, var(--primary-peach) 0%, rgba(255, 220, 178, 0.3) 100%);
+            padding: 30px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-rose);
+        }
+
+        .highlights-box {
+            background: var(--secondary-coral);
+            color: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+        }
+
+        .highlights-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Tier Cards */
+        .tiers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease;
+            page-break-inside: avoid;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tier-number {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .tier-number.green {
+            background: linear-gradient(135deg, #10B981, #059669);
+        }
+
+        .tier-number.blue {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+        }
+
+        .tier-number.purple {
+            background: linear-gradient(135deg, var(--deep-mauve), var(--accent-rose));
+        }
+
+        .tier-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .tier-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .tier-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-rose);
+            margin-bottom: 20px;
+        }
+
+        .tier-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tier-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .tier-features li:last-child {
+            border-bottom: none;
+        }
+
+        .tier-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-rose);
+            font-weight: 700;
+        }
+
+        /* Methodology section */
+        .methodology-section {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: var(--radius);
+            margin: 30px 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-rose);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--secondary-coral);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-phase {
+            font-weight: 700;
+            color: var(--accent-rose);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .timeline-duration {
+            font-size: 0.85rem;
+            color: var(--deep-mauve);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* Pricing table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .pricing-table th {
+            background: linear-gradient(135deg, var(--accent-rose), var(--deep-mauve));
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+            background: var(--white);
+        }
+
+        .pricing-table tr:nth-child(even) td {
+            background: var(--light-gray);
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-rose);
+        }
+
+        .total-row {
+            background: var(--primary-peach) !important;
+            font-weight: 700;
+        }
+
+        /* Terms section */
+        .terms-section {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: var(--radius);
+            margin: 30px 0;
+        }
+
+        .terms-section h3 {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Next steps */
+        .next-steps {
+            background: linear-gradient(135deg, var(--secondary-coral) 0%, var(--accent-rose) 100%);
+            color: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            margin: 30px 0;
+        }
+
+        /* Contact section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 2px solid var(--border-light);
+        }
+
+        .contact-card h4 {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-gray);
+            border-radius: var(--radius);
+            margin-top: 40px;
+            color: var(--deep-mauve);
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-rose);
+            margin-bottom: 10px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .tier-card,
+            .timeline-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <div class="cover-content">
+                <h1 class="cover-title">{{proposalTitle}}</h1>
+                <p class="cover-subtitle">{{proposalSubtitle}}</p>
+                
+                <div class="cover-info">
+                    <div class="info-row">
+                        <span class="info-label">Cliente:</span>
+                        <span class="info-value">{{client}}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Proveedor:</span>
+                        <span class="info-value">{{provider}}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Fecha de Propuesta:</span>
+                        <span class="info-value">{{proposalDate}}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Válida hasta:</span>
+                        <span class="info-value">{{validUntil}}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Presupuesto Total:</span>
+                        <span class="info-value highlight">{{totalBudget}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="page-break">
+            <h2>Resumen Ejecutivo</h2>
+            <div class="executive-summary">
+                <p>{{executiveSummary}}</p>
+                
+                <div class="highlights-box">
+                    <h4>Puntos Destacados</h4>
+                    <p>{{#each highlights}}{{this}}{{#unless @last}} • {{/unless}}{{/each}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <h2>Servicios Propuestos</h2>
+        <div class="tiers-container">
+            {{#each tiers}}
+            <div class="tier-card">
+                <div class="tier-header">
+                    <div class="tier-number {{color}}">{{id}}</div>
+                </div>
+                <h3 class="tier-title">{{name}}</h3>
+                <p class="tier-description">{{description}}</p>
+                <div class="tier-price">{{price}} COP</div>
+                <ul class="tier-features">
+                    {{#each features}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Methodology -->
+        <div class="page-break">
+            <h2>{{methodology.title}}</h2>
+            <div class="methodology-section">
+                <p>{{methodology.description}}</p>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <h2>Cronograma de Trabajo</h2>
+        <div class="timeline">
+            {{#each timeline}}
+            <div class="timeline-item">
+                <div class="timeline-marker">▶</div>
+                <div class="timeline-content">
+                    <div class="timeline-phase">{{phase}}</div>
+                    <div class="timeline-title">{{title}}</div>
+                    <div class="timeline-duration">{{duration}}</div>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Pricing Table -->
+        <div class="page-break">
+            <h2>Detalle de Precios</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each pricing}}
+                    <tr>
+                        <td><strong>{{concept}}</strong></td>
+                        <td>{{description}}</td>
+                        <td>{{quantity}}</td>
+                        <td>{{unitPrice}} COP</td>
+                        <td class="price-highlight">{{subtotal}} COP</td>
+                    </tr>
+                    {{/each}}
+                    <tr class="total-row">
+                        <td colspan="4"><strong>TOTAL</strong></td>
+                        <td class="price-highlight" style="font-size: 1.5rem;"><strong>{{totalBudget}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Terms -->
+        <h2>Términos y Condiciones</h2>
+        <div class="terms-section">
+            <h3>Alcance</h3>
+            <p>{{terms.scope}}</p>
+            
+            <h3>Tiempos</h3>
+            <p>{{terms.timeline}}</p>
+            
+            <h3>Pagos</h3>
+            <p>{{terms.payments}}</p>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+            <h2 style="color: white; border: none; margin-top: 0;">Próximos Pasos</h2>
+            {{#each nextSteps}}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+
+        <!-- Contact Information -->
+        <h2>Información de Contacto</h2>
+        <div class="contact-section">
+            <div class="contact-card">
+                <h4>{{contact.company}}</h4>
+                <p>
+                    {{contact.location}}<br>
+                    Tel: {{contact.phone}}<br>
+                    Email: {{contact.email}}<br>
+                    Web: {{contact.web}}
+                </p>
+            </div>
+            <div class="contact-card">
+                <h4>Responsable del Proyecto</h4>
+                <p>
+                    <strong>{{contact.projectManager.name}}</strong><br>
+                    {{contact.projectManager.position}}<br>
+                    Tel: {{contact.projectManager.phone}}<br>
+                    Email: {{contact.projectManager.email}}
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">{{contact.company}}</div>
+            <p>Propuesta generada el {{footer.generatedDate}} • Documento confidencial</p>
+            {{#if footer.generator}}
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                Generado con {{footer.generator}}
+            </p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+{
+  "title": "Guía de Voz de Marca para International Cultural Experience (ICE)",
+  "subtitle": "Manual Integral de Comunicación y Personalidad de Marca",
+  "company": "International Cultural Experience (ICE)",
+  "date": "Octubre 2025",
+  "version": "1.0",
+  "logo": "logo.png",
+  
+  "brandEssence": {
+    "title": "Brand Essence",
+    "description": "Guiar la transformación personal y profesional a través de experiencias culturales de lujo, comunicando aspiración con la confianza de un mentor experto."
+  },
+  
+  "personalityTraits": {
+    "title": "Rasgos Centrales de Personalidad",
+    "traits": [
+      {
+        "name": "Mentor Sofisticado",
+        "description": "Somos el guía experto que ha recorrido el camino antes. Conocemos los secretos y ofrecemos consejos, no solo opciones."
+      },
+      {
+        "name": "Guía Confiable",
+        "description": "Inspiramos seguridad y tranquilidad. Cada detalle está bajo control, permitiendo a nuestros clientes enfocarse en su crecimiento."
+      },
+      {
+        "name": "Catalizador Inspirador",
+        "description": "No vendemos viajes, encendemos el potencial. Motivamos a nuestros jóvenes exploradores a ir más allá de sus límites."
+      },
+      {
+        "name": "Curador Exclusivo",
+        "description": "Seleccionamos y diseñamos lo mejor, no lo más popular. Nuestro estándar es la excelencia y la autenticidad, no la masividad."
+      }
+    ]
+  },
+  
+  "voicePillars": {
+    "title": "Pilares de la Voz",
+    "pillars": [
+      {
+        "name": "Precisión Aspiracional",
+        "description": "Combinamos un lenguaje que inspira grandes metas con una comunicación clara, directa y basada en resultados. Hablamos de sueños, pero los anclamos en planes concretos y beneficios tangibles. Evitamos la ambigüedad y demostramos nuestra experiencia a través de la especificidad.",
+        "examples": [
+          {
+            "wrong": "Te ofrecemos un viaje increíble para aprender inglés.",
+            "correct": "Te ofrecemos un programa de inmersión lingüística de élite, diseñado para acelerar tu dominio del inglés y posicionarte en un entorno profesional global."
+          },
+          {
+            "wrong": "Tenemos los mejores programas.",
+            "correct": "Nuestros programas están curados en colaboración con instituciones de prestigio internacional, garantizando un impacto medible en tu perfil académico y profesional."
+          }
+        ]
+      },
+      {
+        "name": "Empatía Guiada",
+        "description": "Entendemos y validamos las motivaciones y preocupaciones de nuestras dos audiencias clave: el 'Joven Explorador' y el 'Padre Inversor'. Nuestra comunicación es un puente entre ambos. Empoderamos al joven con un tono de posibilidad y aventura, mientras ofrecemos al padre un tono de seguridad, transparencia y retorno de la inversión.",
+        "examples": [
+          {
+            "audience": "Joven Explorador",
+            "message": "Desbloquea tu potencial global. Esta experiencia está diseñada para que construyas la red de contactos y las habilidades que definirán tu futuro."
+          },
+          {
+            "audience": "Padre Inversor",
+            "message": "Entendemos que la seguridad es su máxima prioridad. Por eso, cada programa incluye un soporte integral 24/7 y protocolos de bienestar rigurosamente establecidos, garantizando una inversión segura en el futuro de su hijo."
+          },
+          {
+            "audience": "Servicio",
+            "message": "Comprendo perfectamente su inquietud sobre el proceso de visado. Permítame explicarle los tres pasos clave que seguiremos juntos para asegurar que todo esté en orden."
+          }
+        ]
+      },
+      {
+        "name": "Elegancia Narrativa",
+        "description": "Utilizamos un lenguaje cuidado, evocador y sofisticado que refleja la calidad premium de nuestras experiencias. Evitamos los clichés del turismo masivo y las jergas demasiado informales. Construimos una narrativa de exclusividad y atención al detalle, usando palabras que connotan calidad, cuidado y propósito.",
+        "preferredVocabulary": [
+          "Curado", "diseñado a medida", "inmersión auténtica", "acceso exclusivo", 
+          "transformador", "de élite", "integral", "selecto"
+        ],
+        "examples": [
+          {
+            "wrong": "Te quedarás en un buen hotel y harás actividades divertidas.",
+            "correct": "Tu estancia será en alojamientos cuidadosamente seleccionados por su confort y ubicación, complementada con un itinerario de actividades culturales exclusivas que te sumergirán en la esencia del destino."
+          }
+        ]
+      }
+    ]
+  },
+  
+  "communicationPrinciples": {
+    "title": "Principios de Comunicación",
+    "dos": [
+      "Hablar de 'inversión', no de 'gasto'.",
+      "Enfocarse en la 'transformación' y el 'resultado'.",
+      "Utilizar un tono de autoridad experta y confiable.",
+      "Ser claro, específico y transparente.",
+      "Mantener una estética verbal limpia y premium."
+    ],
+    "donts": [
+      "Usar lenguaje transaccional o de bajo costo ('oferta', 'barato', 'descuento').",
+      "Limitarse a describir solo las características del viaje (el vuelo, el hotel).",
+      "Sonar como un amigo o un compañero de viaje informal.",
+      "Usar superlativos vagos ('el mejor viaje', 'una experiencia inolvidable').",
+      "Abusar de emojis, signos de exclamación o jerga juvenil."
+    ]
+  },
+  
+  "styleGuidelines": {
+    "title": "Normas de Estilo y Gramática",
+    "guidelines": [
+      {
+        "category": "Longitud de Frases",
+        "rule": "Alternar frases cortas y directas para la claridad (especialmente en puntos clave) con frases más largas y elaboradas para construir la narrativa de la marca."
+      },
+      {
+        "category": "Pronombres",
+        "rule": "Usamos 'nosotros' para referirnos a ICE como equipo de expertos. Nos dirigimos al 'Joven Explorador' con 'tú' para crear una conexión directa y empoderadora. Nos dirigimos al 'Padre Inversor' con 'usted' en comunicaciones formales para transmitir respeto y profesionalismo."
+      },
+      {
+        "category": "Uso de Emojis",
+        "rule": "Se limita a canales informales como Instagram Stories y debe ser sutil y elegante (ej. ✨, 🌍, 🎓). Nunca en la web principal, propuestas o emails formales."
+      },
+      {
+        "category": "Formato",
+        "rule": "Uso estratégico de negritas para resaltar beneficios clave. Las listas deben ser claras y concisas para facilitar la lectura. La estructura del texto debe respirar, con amplios espacios en blanco."
+      }
+    ]
+  },
+  
+  "applicationExamples": {
+    "title": "Ejemplos de Aplicación",
+    "examples": [
+      {
+        "type": "Publicación en Red Social (LinkedIn)",
+        "audience": "Jóvenes profesionales y padres ejecutivos",
+        "pillar": "Precisión Aspiracional",
+        "content": {
+          "title": "Más allá del título: ¿Cómo una pasantía internacional puede definir tu carrera?",
+          "body": "En el mercado global actual, la experiencia práctica es el mayor diferenciador. Pero no todas las pasantías son iguales.\n\nEl Programa de Pasantías Globales Premium (PPGP) de ICE no es solo una línea en tu CV; es una inmersión estratégica en empresas líderes de sectores como la tecnología y las finanzas. Diseñamos cada pasantía para desarrollar habilidades blandas y técnicas de alto impacto, mientras construyes una red de contactos internacional.\n\nDeja de buscar un trabajo. Empieza a construir una carrera global.\n\nDescubre cómo en [Enlace al sitio web].\n\n#InternationalCulturalExperience #DesarrolloProfesional #LiderazgoGlobal #PasantíasPremium"
+        }
+      },
+      {
+        "type": "Mensaje de Servicio al Cliente",
+        "context": "Un padre escribe preocupado por la seguridad de su hija en un programa de inmersión en Francia",
+        "pillar": "Empatía Guiada",
+        "content": {
+          "subject": "Re: Consulta sobre protocolos de seguridad en el programa PEIL Francés",
+          "body": "Estimado Sr. García,\n\nGracias por contactarnos. Entendemos perfectamente que la seguridad y el bienestar de su hija son la máxima prioridad; también lo son para nosotros.\n\nQuiero asegurarle que todos nuestros programas, incluido el PEIL en Francia, operan bajo rigurosos protocolos de seguridad. Esto incluye una selección exhaustiva de las familias anfitrionas premium, un coordinador local disponible 24/7 para cualquier eventualidad, y un seguro de viaje con cobertura integral.\n\nAntes del viaje, realizaremos una sesión de orientación detallada con usted y su hija para repasar todas las medidas de seguridad y contactos de emergencia. Nuestra misión es ofrecer una experiencia transformadora en un entorno completamente seguro.\n\nSi lo desea, podemos agendar una breve llamada esta semana para resolver cualquier otra duda que pueda tener.\n\nCordialmente,\n\nEl equipo de ICE"
+        }
+      },
+      {
+        "type": "Párrafo Introductorio del Sitio Web",
+        "section": "Sobre Nosotros",
+        "audience": "General",
+        "pillars": "Todos, con énfasis en Elegancia Narrativa",
+        "content": {
+          "title": "Nuestra Misión: Diseñamos Futuros, No Solo Viajes.",
+          "body": "ICE nació de una convicción: una verdadera experiencia internacional no se mide en kilómetros recorridos, sino en la transformación que genera. Trascendemos el modelo de la agencia tradicional para convertirnos en arquitectos de experiencias culturales de lujo.\n\nNo ofrecemos catálogos; ofrecemos una curaduría. Cada programa es diseñado a medida para catalizar el crecimiento personal y profesional de jóvenes ambiciosos. A través de nuestra red global de instituciones de prestigio y un soporte integral, garantizamos que cada viaje sea más que un destino: es una inversión estratégica en un futuro sin fronteras.\n\nBienvenidos a International Cultural Experience."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+/* SACI Technical Proposal Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f8fafc;
+    --border-color: #e5e7eb;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: white;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Print optimizations */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+    
+    .no-break {
+        page-break-inside: avoid;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-primary { color: var(--primary-color); }
+.text-light { color: var(--text-light); }
+.mb-20 { margin-bottom: 20px; }
+.mt-20 { margin-top: 20px; }

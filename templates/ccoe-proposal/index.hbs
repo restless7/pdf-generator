@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{projectTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --electoral-blue: #1d4ed8;
+            --electoral-red: #dc2626;
+            --electoral-green: #16a34a;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --border-color: #e5e7eb;
+            --accent-color: #7c3aed;
+            --warning-color: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            font-size: 13px;
+        }
+
+        .page {
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 25px;
+            min-height: 29.7cm;
+        }
+
+        /* Cover Page - Electoral Theme */
+        .cover-page {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, var(--electoral-blue), var(--primary-color));
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="75" r="1" fill="rgba(255,255,255,0.06)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .cover-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-details {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-details h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .cover-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .cover-info div {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cover-footer {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Electoral Badge */
+        .electoral-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--electoral-red);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Styling - Electoral Theme */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--electoral-blue), var(--secondary-color));
+            color: white;
+            padding: 18px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1));
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .section-content {
+            padding: 0 10px;
+            line-height: 1.7;
+        }
+
+        /* Electoral Modules Grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .module-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--electoral-blue);
+        }
+
+        .module-card:hover {
+            border-color: var(--electoral-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.15);
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .module-icon {
+            background: var(--electoral-blue);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        .module-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .module-type {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .module-features {
+            margin-top: 15px;
+        }
+
+        .module-features ul {
+            list-style: none;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .module-features li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .module-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--electoral-green);
+            font-weight: bold;
+        }
+
+        /* Architecture Diagram - Electoral Style */
+        .architecture-diagram {
+            background: linear-gradient(135deg, var(--bg-light), #ffffff);
+            border: 3px solid var(--electoral-blue);
+            border-style: dashed;
+            padding: 50px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .diagram-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--electoral-blue);
+            margin-bottom: 20px;
+        }
+
+        .diagram-note {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .diagram-placeholder {
+            background: rgba(30, 64, 175, 0.05);
+            border: 2px dashed var(--electoral-blue);
+            border-radius: 8px;
+            padding: 40px 20px;
+            color: var(--electoral-blue);
+            font-weight: 600;
+        }
+
+        /* Technology Stack Table - Electoral */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tech-table th {
+            background: linear-gradient(135deg, var(--electoral-blue), var(--secondary-color));
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .tech-table tr:nth-child(even) {
+            background: rgba(248, 250, 252, 0.7);
+        }
+
+        .tech-table tr:hover {
+            background: rgba(30, 64, 175, 0.05);
+        }
+
+        /* Development Phases - Electoral Timeline */
+        .phases-timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .phases-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--electoral-blue), var(--electoral-green));
+        }
+
+        .phase-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        .phase-marker {
+            position: absolute;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            background: var(--electoral-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+        }
+
+        .phase-content {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .phase-header {
+            margin-bottom: 15px;
+        }
+
+        .phase-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--electoral-blue);
+            margin-bottom: 5px;
+        }
+
+        .phase-duration {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .phase-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .phase-objectives, .phase-deliverables {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--electoral-blue);
+        }
+
+        .phase-objectives h5, .phase-deliverables h5 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--electoral-blue);
+            margin-bottom: 10px;
+        }
+
+        .phase-objectives ul, .phase-deliverables ul {
+            padding-left: 20px;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .phase-objectives li, .phase-deliverables li {
+            margin-bottom: 5px;
+        }
+
+        /* Electoral Database Schema */
+        .db-schema {
+            background: #1f2937;
+            color: #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.5;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .db-schema::before {
+            content: 'SQL Schema';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: var(--electoral-blue);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .db-schema h4 {
+            color: #60a5fa;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* KPIs Grid - Electoral Style */
+        .kpis-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .kpi-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--electoral-blue), var(--electoral-green));
+        }
+
+        .kpi-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--electoral-blue), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .kpi-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .kpi-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--electoral-blue);
+            margin-bottom: 5px;
+        }
+
+        .kpi-desc {
+            font-size: 10px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* Benefits Grid - Electoral */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--electoral-blue), var(--accent-color));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+        }
+
+        .benefit-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-desc {
+            font-size: 12px;
+            opacity: 0.95;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Security & Compliance - Electoral */
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .compliance-item {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .compliance-item:hover {
+            border-color: var(--electoral-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.15);
+        }
+
+        .compliance-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--electoral-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 22px;
+            color: white;
+        }
+
+        .compliance-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .compliance-desc {
+            font-size: 11px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Subsections */
+        .subsection {
+            margin-bottom: 25px;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--electoral-blue);
+            margin-bottom: 12px;
+            border-left: 4px solid var(--electoral-blue);
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .subsection-title::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--electoral-blue), var(--secondary-color));
+        }
+
+        .subsection-content {
+            margin-left: 19px;
+            line-height: 1.7;
+        }
+
+        /* Code Blocks - Electoral Style */
+        .code-block {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.5;
+            margin: 20px 0;
+            overflow-x: auto;
+            position: relative;
+            border-left: 5px solid var(--electoral-blue);
+        }
+
+        .code-block::before {
+            content: 'Flujo del Sistema';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: var(--electoral-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Footer - Electoral Style */
+        .document-footer {
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-light), #ffffff);
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h3 {
+            color: var(--electoral-blue);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .contact-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--electoral-blue);
+            border-radius: 2px;
+        }
+
+        .contact-info {
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .contact-info strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .disclaimer {
+            background: rgba(30, 64, 175, 0.05);
+            border-left: 5px solid var(--electoral-blue);
+            padding: 25px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+            .page { padding: 20px; }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <div class="electoral-badge">Sistema Electoral</div>
+            <h1 class="cover-title">{{title}}</h1>
+            <h2 class="cover-subtitle">{{subtitle}}</h2>
+            
+            <div class="cover-details">
+                <h3>Especificaciones del Proyecto</h3>
+                <div class="cover-info">
+                    <div><strong>Autor:</strong> <span>{{author}}</span></div>
+                    <div><strong>Fecha:</strong> <span>{{reportDate}}</span></div>
+                    <div><strong>Tipo:</strong> <span>Propuesta Técnica Electoral</span></div>
+                    <div><strong>Versión:</strong> <span>{{version}}</span></div>
+                    <div><strong>Alcance:</strong> <span>{{scope}}</span></div>
+                    <div><strong>Duración:</strong> <span>{{duration}}</span></div>
+                </div>
+            </div>
+            
+            <div class="cover-footer">
+                <strong>{{company}}</strong><br>
+                {{companyTagline}}<br>
+                {{email}} | {{phone}}
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Resumen Ejecutivo</h2>
+                <div class="section-subtitle">Plataforma Integral de Inteligencia Electoral</div>
+            </div>
+            <div class="section-content">
+                <p><strong>{{executiveSummary}}</strong></p>
+                
+                <div class="benefits-grid">
+                    {{#each strategicBenefits}}
+                    <div class="benefit-card">
+                        <div class="benefit-icon">{{this.icon}}</div>
+                        <div class="benefit-title">{{this.title}}</div>
+                        <div class="benefit-desc">{{this.description}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- System Components -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Componentes Principales del Sistema</h2>
+                <div class="section-subtitle">Módulos Sinérgicos del CCOE</div>
+            </div>
+            <div class="section-content">
+                <div class="modules-grid">
+                    {{#each systemModules}}
+                    <div class="module-card">
+                        <div class="module-header">
+                            <div class="module-icon">{{this.icon}}</div>
+                            <div class="module-info">
+                                <h4>{{this.name}}</h4>
+                                <div class="module-type">{{this.type}}</div>
+                            </div>
+                        </div>
+                        <div class="module-features">
+                            <ul>
+                                {{#each this.features}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="section page-break">
+            <div class="section-header">
+                <h2 class="section-title">Arquitectura General del Sistema</h2>
+                <div class="section-subtitle">Microservicios para Operaciones Electorales</div>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-title">Descripción Modular</div>
+                    <div class="subsection-content">
+                        <p>{{architectureDescription}}</p>
+                    </div>
+                </div>
+
+                <div class="architecture-diagram">
+                    <div class="diagram-title">Diagrama Lógico de Arquitectura CCOE</div>
+                    <div class="diagram-note">{{architectureDiagram.note}}</div>
+                    <div class="diagram-placeholder">
+                        {{architectureDiagram.placeholder}}
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title">Flujos Principales</div>
+                    <div class="subsection-content">
+                        <div class="code-block">
+{{#each systemFlows}}
+# {{@index}}. {{this.name}}
+{{this.flow}}
+
+{{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Stack Tecnológico y Herramientas</h2>
+                <div class="section-subtitle">Arquitectura Técnica Propuesta</div>
+            </div>
+            <div class="section-content">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Herramienta / Stack</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each techStack}}
+                        <tr>
+                            <td><strong>{{this.category}}</strong></td>
+                            <td>{{this.technologies}}</td>
+                            <td>{{this.description}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Development Phases -->
+        <div class="section page-break">
+            <div class="section-header">
+                <h2 class="section-title">Fases de Desarrollo Progresivo</h2>
+                <div class="section-subtitle">Plan Estructurado en 4 Etapas</div>
+            </div>
+            <div class="section-content">
+                <div class="phases-timeline">
+                    {{#each developmentPhases}}
+                    <div class="phase-item">
+                        <div class="phase-marker">{{@index}}</div>
+                        <div class="phase-content">
+                            <div class="phase-header">
+                                <div class="phase-title">{{this.name}}</div>
+                                <div class="phase-duration">{{this.duration}}</div>
+                            </div>
+                            <div class="phase-details">
+                                <div class="phase-objectives">
+                                    <h5>Objetivos:</h5>
+                                    <ul>
+                                        {{#each this.objectives}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <div class="phase-deliverables">
+                                    <h5>Entregables:</h5>
+                                    <ul>
+                                        {{#each this.deliverables}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Design -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Diseño de Base de Datos Electoral</h2>
+                <div class="section-subtitle">Modelo Relacional Optimizado</div>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-title">Esquema Principal</div>
+                    <div class="subsection-content">
+                        <p>{{databaseDescription}}</p>
+                        
+                        {{#each databaseSchemas}}
+                        <div class="db-schema">
+                            <h4>{{this.title}}</h4>
+{{this.schema}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard & KPIs -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Dashboard y Visualizaciones</h2>
+                <div class="section-subtitle">KPIs Principales del Sistema</div>
+            </div>
+            <div class="section-content">
+                <div class="kpis-grid">
+                    {{#each kpiMetrics}}
+                    <div class="kpi-card">
+                        <div class="kpi-icon">{{this.icon}}</div>
+                        <div class="kpi-title">{{this.title}}</div>
+                        <div class="kpi-value">{{this.value}}</div>
+                        <div class="kpi-desc">{{this.description}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title">Componentes de Dashboard</div>
+                    <div class="subsection-content">
+                        <div class="modules-grid">
+                            {{#each dashboardComponents}}
+                            <div class="module-card">
+                                <div class="module-header">
+                                    <div class="module-icon">{{this.icon}}</div>
+                                    <div class="module-info">
+                                        <h4>{{this.name}}</h4>
+                                        <div class="module-type">Componente</div>
+                                    </div>
+                                </div>
+                                <div class="module-features">
+                                    <ul>
+                                        {{#each this.features}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security & Compliance -->
+        <div class="section page-break">
+            <div class="section-header">
+                <h2 class="section-title">Seguridad y Cumplimiento Electoral</h2>
+                <div class="section-subtitle">Protección de Datos Electorales</div>
+            </div>
+            <div class="section-content">
+                <div class="compliance-grid">
+                    {{#each securityMeasures}}
+                    <div class="compliance-item">
+                        <div class="compliance-icon">{{this.icon}}</div>
+                        <div class="compliance-title">{{this.title}}</div>
+                        <div class="compliance-desc">{{this.description}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title">Roles y Permisos del Sistema</div>
+                    <div class="subsection-content">
+                        <div class="modules-grid">
+                            {{#each systemRoles}}
+                            <div class="module-card">
+                                <div class="module-header">
+                                    <div class="module-icon">{{this.icon}}</div>
+                                    <div class="module-info">
+                                        <h4>{{this.name}}</h4>
+                                        <div class="module-type">Rol de Usuario</div>
+                                    </div>
+                                </div>
+                                <div class="module-features">
+                                    <ul>
+                                        {{#each this.permissions}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title">Cumplimiento Legal</div>
+                    <div class="subsection-content">
+                        <div class="compliance-grid">
+                            {{#each legalCompliance}}
+                            <div class="compliance-item">
+                                <div class="compliance-icon">⚖️</div>
+                                <div class="compliance-title">{{this.law}}</div>
+                                <div class="compliance-desc">{{this.description}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scalability -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Consideraciones de Escalabilidad Electoral</h2>
+                <div class="section-subtitle">Optimización para Períodos Críticos</div>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-title">Base de Datos Electoral</div>
+                    <div class="subsection-content">
+                        <div class="modules-grid">
+                            {{#each scalabilityFeatures}}
+                            <div class="module-card">
+                                <div class="module-header">
+                                    <div class="module-icon">{{this.icon}}</div>
+                                    <div class="module-info">
+                                        <h4>{{this.title}}</h4>
+                                        <div class="module-type">Optimización</div>
+                                    </div>
+                                </div>
+                                <div class="module-features">
+                                    <ul>
+                                        {{#each this.features}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Conclusión Ejecutiva</h2>
+                <div class="section-subtitle">Impacto Estratégico Esperado</div>
+            </div>
+            <div class="section-content">
+                <p><strong>{{conclusion}}</strong></p>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Ventajas Competitivas Clave</div>
+                    <div class="subsection-content">
+                        <ul>
+                            {{#each competitiveAdvantages}}
+                            <li><strong>{{this.title}}:</strong> {{this.description}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title">Impacto Estratégico Esperado</div>
+                    <div class="subsection-content">
+                        <div class="kpis-grid">
+                            {{#each expectedImpact}}
+                            <div class="kpi-card">
+                                <div class="kpi-icon">{{this.icon}}</div>
+                                <div class="kpi-title">{{this.metric}}</div>
+                                <div class="kpi-value">{{this.value}}</div>
+                                <div class="kpi-desc">{{this.description}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="document-footer">
+            <div class="contact-grid">
+                <div class="contact-section">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-info">
+                        <strong>Contacto:</strong> {{contact.name}}<br>
+                        <strong>Teléfono:</strong> {{contact.phone}}<br>
+                        <strong>Email:</strong> {{contact.email}}<br>
+                        <strong>Empresa:</strong> {{contact.company}}
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <h3>Equipo de Desarrollo</h3>
+                    <div class="contact-info">
+                        <strong>Equipo:</strong> {{team.name}}<br>
+                        <strong>Especialización:</strong> {{team.specialization}}<br>
+                        <strong>Experiencia:</strong> {{team.experience}}<br>
+                        <strong>Metodología:</strong> {{team.methodology}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> {{disclaimer}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

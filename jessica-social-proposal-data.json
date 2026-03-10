@@ -1,0 +1,150 @@
+{
+  "proposalTitle": "Propuesta Comercial Profesional",
+  "proposalSubtitle": "Creación y Gestión de Contenido para Redes Sociales",
+  "proposalDate": "06 de octubre de 2025",
+  "proposalVersion": "2.0",
+  "validUntil": "21 de octubre de 2025",
+  "totalBudget": "1250000 COP",
+  
+  "client": "Dra. Jessica Quintero Rodríguez",
+  "provider": "APEX AI Solutions",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  
+  "executiveSummary": "Potenciar la presencia digital profesional de la Dra. Jessica Quintero a través de una estrategia integral de contenidos para redes sociales que refleje su especialización en psicología, conecte emocionalmente con su audiencia objetivo y posicione su autoridad como experta en límites emocionales y bienestar mental.",
+  
+  "highlights": [
+    "Autoridad profesional sólida",
+    "Contenido educativo especializado", 
+    "Mayor conexión con pacientes potenciales"
+  ],
+  
+  "tiers": [
+    {
+      "id": 0,
+      "name": "Bienestar (Básico)",
+      "description": "Ideal para establecer presencia profesional constante en redes sociales. Estrategia de contenido mensual con enfoque educativo en salud mental.",
+      "price": 600000,
+      "color": "green",
+      "features": [
+        "Estrategia de contenido mensual (calendario de 16 publicaciones especializadas)",
+        "2 Reels educativos sobre técnicas de bienestar",
+        "Diseño gráfico profesional y cálido (posts + stories) con paleta de marca",
+        "Textos psicoeducativos breves y accesibles para audiencia general",
+        "Programación automática en 1 red social principal (Instagram o Facebook)",
+        "Reporte mensual de métricas de engagement y alcance"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Equilibrio (Intermedio)", 
+      "description": "Consolida tu comunidad digital con narrativas más profundas sobre salud mental y consistencia visual profesional.",
+      "price": 850000,
+      "color": "blue",
+      "features": [
+        "Estrategia de contenido mensual (calendario de 28 publicaciones especializadas)",
+        "Contenido visual mixto: infografías psicoeducativas, testimonios anónimos, videos cortos educativos. 4 Reels",
+        "Textos especializados y storytelling relacionado con casos clínicos (anonimizados)",
+        "Programación automática en hasta 3 redes sociales (Instagram, Facebook, TikTok)",
+        "Diseño de plantillas consistentes para identidad visual profesional",
+        "Reporte mensual con insights de audiencia y recomendaciones estratégicas"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Transformación (Premium)",
+      "description": "Solución integral para posicionar a la Dra. Jessica como referente digital en psicología y límites emocionales.",
+      "price": 1250000,
+      "color": "purple", 
+      "features": [
+        "Estrategia de contenido avanzada (calendario de 40 publicaciones especializadas)",
+        "Producción audiovisual profesional (cápsulas educativas, meditaciones guiadas, técnicas en video). 6 reels",
+        "Cobertura de consultas virtuales y talleres para generar contenido educativo en tiempo real",
+        "Gestión activa en hasta 5 redes sociales con community management especializado",
+        "Diseño de campañas temáticas (Día Mundial de la Salud Mental, mes del autocuidado, etc.)",
+        "Reporte mensual con análisis de KPIs, tendencias en salud mental y propuestas estratégicas"
+      ]
+    }
+  ],
+  
+  "methodology": {
+    "title": "Metodología y Enfoque Especializado",
+    "description": "Planificación de contenido mensual basada en principios de psicología educativa; producción de material visual y audiovisual que respete la ética profesional; programación estratégica en redes sociales; seguimiento de métricas específicas para profesionales de la salud mental."
+  },
+  
+  "timeline": [
+    {
+      "phase": "FASE 1",
+      "title": "Diagnóstico y Estrategia Profesional",
+      "duration": "Semana 1",
+      "description": "Análisis de presencia digital actual, definición de buyer personas (pacientes potenciales), objetivos terapéuticos y lineamientos de contenido ético en salud mental."
+    },
+    {
+      "phase": "FASE 2", 
+      "title": "Producción de Contenido Especializado",
+      "duration": "Semanas 2–3",
+      "description": "Creación de material gráfico profesional, redacción de contenido psicoeducativo, producción de reels con técnicas de bienestar según tier seleccionado."
+    },
+    {
+      "phase": "FASE 3",
+      "title": "Publicación y Community Management",
+      "duration": "Semana 4", 
+      "description": "Programación estratégica, publicación de contenido, moderación especializada de comentarios sobre salud mental y análisis de métricas para optimización continua."
+    }
+  ],
+  
+  "pricing": [
+    {
+      "concept": "Gestión de Contenido (Tier Bienestar)",
+      "description": "Planificación, diseño, copy psicoeducativo y publicación en 1 red social",
+      "quantity": 1,
+      "unitPrice": 600000,
+      "subtotal": 600000
+    },
+    {
+      "concept": "Gestión de Contenido (Tier Equilibrio)", 
+      "description": "Planificación, diseño, plantillas profesionales, gestión multired y análisis de audiencia",
+      "quantity": 1,
+      "unitPrice": 850000,
+      "subtotal": 850000
+    },
+    {
+      "concept": "Gestión de Contenido (Tier Transformación)",
+      "description": "Estrategia avanzada, producción audiovisual especializada, campañas temáticas y community management",
+      "quantity": 1,
+      "unitPrice": 1250000,
+      "subtotal": 1250000
+    }
+  ],
+  
+  "terms": {
+    "scope": "Los entregables y volúmenes de contenido dependen del tier seleccionado. Cualquier contenido adicional o campañas especiales se cotizan por separado respetando siempre la ética profesional en salud mental.",
+    "timeline": "El primer mes opera como piloto para ajustes de tono, identidad visual profesional y procesos de contenido especializado en psicología.",
+    "payments": "Mensualidades por adelantado. Precios en COP, no incluyen impuestos ni inversión en pauta publicitaria para promoción de servicios psicológicos."
+  },
+  
+  "nextSteps": [
+    "1) Seleccionar el tier más adecuado para tus objetivos profesionales",
+    "2) Definir redes sociales prioritarias y estilo de comunicación terapéutica", 
+    "3) Iniciar fase piloto de un mes con contenido especializado"
+  ],
+  
+  "contact": {
+    "company": "APEX AI Solutions",
+    "location": "Bucaramanga, Colombia", 
+    "phone": "+57 302 4816706",
+    "email": "support@apexaisolutions.dev",
+    "web": "https://apexaisolutions.dev",
+    "projectManager": {
+      "name": "Sebastian Garcia",
+      "position": "Director de Proyectos",
+      "phone": "+57 302 4816705",
+      "email": "sebastian@apexaisolutions.dev"
+    }
+  },
+  
+  "footer": {
+    "generatedDate": "06/10/2025",
+    "confidential": true,
+    "generator": "APEX AI Solutions PDF Generator"
+  }
+}

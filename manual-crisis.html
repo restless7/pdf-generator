@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{proposalTitle}} - {{companyName}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --success: #10b981;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --card: #ffffff;
+            --background: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: white;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .header .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 3rem;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Crisis Alert Box */
+        .crisis-alert {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border-left: 5px solid var(--danger);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .crisis-alert h3 {
+            color: var(--danger);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Success Box */
+        .success-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-left: 5px solid var(--success);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success-box h3 {
+            color: var(--success);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Communication Cards */
+        .communication-cards {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .communication-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .communication-card.highlight {
+            border-left: 5px solid var(--warning);
+            background: linear-gradient(135deg, #fefcbf, #fef3c7);
+        }
+
+        .communication-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .communication-card .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .communication-card.highlight .badge {
+            background: var(--warning);
+        }
+
+        /* Email Template Box */
+        .email-template {
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .email-template .email-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        .timeline-item h4 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Guidelines Grid */
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .guideline-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .guideline-card h4 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guideline-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .guideline-card li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .guideline-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .comparison-table .danger {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .comparison-table .success {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--background);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .avoid-break {
+                page-break-inside: avoid;
+            }
+            
+            body {
+                font-size: 12pt;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 0 1rem;
+            }
+            
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Header and Context -->
+    <div class="header">
+        <h1>{{proposalTitle}}</h1>
+        <h2>{{proposalSubtitle}}</h2>
+        <div class="meta">
+            <span>{{companyName}}</span>
+            <span>{{proposalDate}} - Versión {{proposalVersion}}</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="crisis-alert avoid-break">
+            <h3>🚨 Situación de Crisis Identificada</h3>
+            <p>{{executiveSummary}}</p>
+        </div>
+
+        <div class="success-box avoid-break">
+            <h3>🎯 Objetivo del Protocolo</h3>
+            <p>{{contractObject}}</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Communication Principles -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Principios de Comunicación</h1>
+        <p class="section-subtitle">{{scopeDescription}}</p>
+
+        <div class="guidelines-grid">
+            {{#each modules}}
+            <div class="guideline-card avoid-break {{#if fullWidth}}full-width{{/if}}">
+                <h4>{{{title}}}</h4>
+                <p>{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Page 3: Communication Models -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Modelos de Comunicación Oficial</h1>
+        
+        <div class="communication-cards">
+            {{#each deliveryModels}}
+            <div class="communication-card avoid-break {{#if highlight}}highlight{{/if}}">
+                {{#if highlight}}<span class="badge">Prioridad Alta</span>{{/if}}
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+                
+                <div class="guideline-card">
+                    <h4>📋 Elementos Clave:</h4>
+                    <ul>
+                        {{#each features}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Page 4: Communication Structure -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Estructura de Comunicación</h1>
+        <p>{{pricingDescription}}</p>
+
+        <table class="comparison-table avoid-break">
+            <thead>
+                <tr>
+                    <th>Etapa de Comunicación</th>
+                    <th>{{subscriptionColumnTitle}}</th>
+                    <th>{{localColumnTitle}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each pricingRows}}
+                <tr {{#if isTotal}}style="background: var(--background); font-weight: 600;"{{/if}}>
+                    <td>{{module}}</td>
+                    <td class="success">{{subscription}}</td>
+                    <td>{{local}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <div class="success-box avoid-break">
+            <h3>📋 Controles de Calidad</h3>
+            <ul style="list-style-type: none; padding-left: 0;">
+                {{#each discounts}}
+                <li style="padding: 0.3rem 0; position: relative; padding-left: 1.5rem;">
+                    <span style="position: absolute; left: 0; color: var(--success); font-weight: 700;">✓</span>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page 5: Language Guidelines -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Guías de Lenguaje</h1>
+        
+        <div class="crisis-alert avoid-break">
+            <h3>{{pricingExample.title}}</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th class="danger">{{pricingExample.originalAmount}}</th>
+                        <th class="success">{{pricingExample.discountPercent}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="danger">{{pricingExample.discountAmount}}</td>
+                        <td class="success">{{pricingExample.finalAmount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-subtitle">{{paymentPlanDescription}}</div>
+
+        <div class="process-timeline">
+            {{#each paymentPlan.payments}}
+            <div class="timeline-item avoid-break">
+                <h4>{{stage}}</h4>
+                <p>{{description}}</p>
+                <div style="background: var(--background); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem; font-weight: 600; color: var(--primary);">
+                    {{amount}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="success-box avoid-break">
+            <h3>⚠️ Consideraciones Importantes</h3>
+            <p>{{paymentPlan.notes}}</p>
+        </div>
+    </div>
+
+    <!-- Page 6: Implementation Timeline -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Cronograma de Implementación</h1>
+        
+        <div class="process-timeline">
+            {{#each timeline}}
+            <div class="timeline-item avoid-break {{#if fullWidth}}full-width{{/if}}">
+                <h4>{{phase}}</h4>
+                <p>{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Page 7: Responsibilities -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Responsabilidades</h1>
+
+        <div class="guidelines-grid">
+            <div class="guideline-card avoid-break">
+                <h4>{{responsibilities.provider.title}}</h4>
+                <ul>
+                    {{#each responsibilities.provider.items}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="guideline-card avoid-break">
+                <h4>{{responsibilities.client.title}}</h4>
+                <ul>
+                    {{#each responsibilities.client.items}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="crisis-alert avoid-break">
+            <h3>{{supportTerms.title}}</h3>
+            <p>{{supportTerms.description}}</p>
+        </div>
+    </div>
+
+    <!-- Page 8: Acceptance and Implementation -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Implementación del Manual</h1>
+
+        <div class="success-box avoid-break">
+            <h3>📋 Declaración de Aceptación</h3>
+            <p>{{acceptanceText}}</p>
+        </div>
+
+        <div class="guidelines-grid">
+            <div class="guideline-card avoid-break">
+                <h4>{{signatures.provider.company}}</h4>
+                <p><strong>Representante:</strong> {{signatures.provider.name}}</p>
+                <p><strong>Cargo:</strong> {{signatures.provider.position}}</p>
+                <div style="margin-top: 2rem; border-bottom: 1px solid var(--border); width: 200px;"></div>
+                <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">Firma y Fecha</p>
+            </div>
+
+            <div class="guideline-card avoid-break">
+                <h4>{{signatures.client.company}}</h4>
+                <p><strong>Representante:</strong> {{signatures.client.name}}</p>
+                <p><strong>Cargo:</strong> {{signatures.client.position}}</p>
+                <div style="margin-top: 2rem; border-bottom: 1px solid var(--border); width: 200px;"></div>
+                <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">Firma y Fecha</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>{{footerLeft}}</span>
+            <span>{{footerRight}}</span>
+        </div>
+    </div>
+</body>
+</html>

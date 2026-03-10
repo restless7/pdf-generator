@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{projectTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --accent-color: #7c3aed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            font-size: 13px;
+        }
+
+        .page {
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 25px;
+            min-height: 29.7cm;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            page-break-after: always;
+        }
+
+        .cover-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cover-details {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .cover-details h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .cover-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .cover-info div {
+            margin-bottom: 8px;
+        }
+
+        .cover-footer {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 30px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 0 10px;
+            line-height: 1.7;
+        }
+
+        /* Subsections */
+        .subsection {
+            margin-bottom: 25px;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .subsection-content {
+            margin-left: 19px;
+            line-height: 1.6;
+        }
+
+        /* Architecture Diagram */
+        .architecture-diagram {
+            background: var(--bg-light);
+            border: 3px dashed var(--border-color);
+            padding: 50px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .diagram-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .diagram-note {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Technology Stack Table */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+
+        .tech-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tech-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .tech-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        /* Development Phases */
+        .phases-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .phase-card {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .phase-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+
+        .phase-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .phase-duration {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        .phase-objectives, .phase-deliverables {
+            margin-bottom: 15px;
+        }
+
+        .phase-objectives h5, .phase-deliverables h5 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .phase-objectives ul, .phase-deliverables ul {
+            padding-left: 20px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .phase-objectives li, .phase-deliverables li {
+            margin-bottom: 4px;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Database Schema */
+        .db-schema {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .db-schema h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .db-table {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            line-height: 1.3;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Compliance Grid */
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .compliance-item {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .compliance-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--success-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .compliance-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .compliance-desc {
+            font-size: 11px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .benefit-desc {
+            font-size: 12px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .document-footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h3 {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .contact-info strong {
+            color: var(--text-dark);
+        }
+
+        .disclaimer {
+            background: rgba(37, 99, 235, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+            .page { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <h1 class="cover-title">{{title}}</h1>
+            <h2 class="cover-subtitle">{{subtitle}}</h2>
+            
+            <div class="cover-details">
+                <h3>Detalles del Proyecto</h3>
+                <div class="cover-info">
+                    <div><strong>Autor:</strong> {{author}}</div>
+                    <div><strong>Fecha:</strong> {{reportDate}}</div>
+                    <div><strong>Tipo:</strong> Propuesta de Desarrollo de Software</div>
+                    <div><strong>Versión:</strong> Documento Técnico v1.0</div>
+                    <div><strong>Alcance:</strong> Sistema PropTech Nacional</div>
+                    <div><strong>Duración:</strong> 24 semanas (4 fases)</div>
+                </div>
+            </div>
+            
+            <div class="cover-footer">
+                <strong>APEX AI Solutions</strong><br>
+                Especialistas en Desarrollo PropTech y Machine Learning<br>
+                support@apexaisolutions.dev | 3024816706
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Resumen Ejecutivo</h2>
+            </div>
+            <div class="section-content">
+                <p><strong>{{executiveSummary}}</strong></p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-title">Automatización Completa</div>
+                        <div class="benefit-desc">85% reducción en tiempo de avalúos</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-title">Precisión Mejorada</div>
+                        <div class="benefit-desc">Margen de error < 10% con ML</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌍</div>
+                        <div class="benefit-title">Escalabilidad Nacional</div>
+                        <div class="benefit-desc">Cobertura 20+ ciudades</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <div class="benefit-title">Análisis Predictivo</div>
+                        <div class="benefit-desc">Tendencias y oportunidades</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Sections -->
+        {{#each sections}}
+        <div class="section page-break">
+            <div class="section-header">
+                <h2 class="section-title">{{this.title}}</h2>
+            </div>
+            <div class="section-content">
+                {{#if (eq this.title "Arquitectura General del Sistema")}}
+                    <div class="subsection">
+                        <div class="subsection-title">Descripción Modular</div>
+                        <div class="subsection-content">
+                            <p>El sistema SACI se estructura bajo una arquitectura de microservicios que garantiza escalabilidad, mantenibilidad y alta disponibilidad.</p>
+                            
+                            <h4>Módulos Principales:</h4>
+                            <ul>
+                                <li><strong>Módulo de Ingesta de Datos:</strong> Web scraping automatizado, integración con APIs inmobiliarias, validación y limpieza de datos</li>
+                                <li><strong>Módulo de Procesamiento ML:</strong> Algoritmos de regresión avanzados, modelos de aprendizaje automático, pipeline de entrenamiento continuo</li>
+                                <li><strong>Módulo de Análisis Geoespacial:</strong> Procesamiento de coordenadas, análisis de proximidad y ubicación, integración con mapas y servicios GIS</li>
+                                <li><strong>Módulo de Reportes:</strong> Generación automática de PDFs, templates personalizables, sistema de plantillas empresariales</li>
+                                <li><strong>API Gateway:</strong> Endpoints RESTful, autenticación y autorización, rate limiting y monitoreo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="architecture-diagram">
+                        <div class="diagram-title">### Diagrama Lógico de Arquitectura</div>
+                        <div class="diagram-note">[Espacio reservado para imagen del diagrama - será integrada posteriormente]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Flujos Principales</div>
+                        <div class="subsection-content">
+                            <div class="code-block">
+# 1. Flujo de Ingesta de Datos
+Portal Inmobiliario → Web Scraper → Validación → Normalización → Base de Datos
+
+# 2. Flujo de Procesamiento ML
+Datos Históricos → Feature Engineering → Entrenamiento → Validación → Modelo Productivo
+
+# 3. Flujo de Consulta y Reporte
+Consulta Usuario → API Gateway → ML Engine → Generación Reporte → Entrega PDF/Dashboard
+                            </div>
+                        </div>
+                    </div>
+
+                {{else if (eq this.title "Stack Tecnológico y Herramientas")}}
+                    <p>{{this.content}}</p>
+                    
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>Etapa</th>
+                                <th>Herramienta / Stack Sugerido</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ingesta de Datos</strong></td>
+                                <td>Python, Pandas, SQLAlchemy, Apache Airflow</td>
+                                <td>Extracción, transformación y carga de datos desde múltiples fuentes inmobiliarias</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Web Scraping</strong></td>
+                                <td>Selenium, BeautifulSoup, Scrapy, Rotating Proxies, Docker</td>
+                                <td>Extracción masiva y automatizada de propiedades de portales colombianos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Preprocesamiento</strong></td>
+                                <td>Pandas, NumPy, Scikit-learn, Feature-engine</td>
+                                <td>Limpieza, normalización, ingeniería de características y detección de anomalías</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modelamiento ML</strong></td>
+                                <td>XGBoost, LightGBM, Scikit-learn, PyTorch, Optuna</td>
+                                <td>Modelos de regresión avanzados y optimización automática de hiperparámetros</td>
+                            </tr>
+                            <tr>
+                                <td><strong>API/Backend</strong></td>
+                                <td>FastAPI, Uvicorn, Docker, Poetry, Pydantic</td>
+                                <td>Backend modular con endpoints RESTful para consultas y operaciones</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frontend</strong></td>
+                                <td>Next.js 14, TypeScript, TailwindCSS, Leaflet.js, Recharts</td>
+                                <td>Dashboard interactivo con mapas geoespaciales y visualizaciones avanzadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Base de Datos</strong></td>
+                                <td>PostgreSQL 15, PostGIS, Redis, pgAdmin</td>
+                                <td>Almacenamiento optimizado para datos geoespaciales y cache de consultas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reportes</strong></td>
+                                <td>ReportLab, Jinja2, WeasyPrint, Chart.js</td>
+                                <td>Generación automática de PDFs profesionales con gráficos y mapas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monitoreo</strong></td>
+                                <td>Prometheus, Grafana, ELK Stack, Sentry</td>
+                                <td>Supervisión integral de scraping, modelos, APIs y detección de errores</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Despliegue</strong></td>
+                                <td>Docker Compose, Kubernetes, Railway, Vercel</td>
+                                <td>Infraestructura escalable en la nube con CI/CD automatizado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                {{else if (eq this.title "Plan de Desarrollo Escalable")}}
+                    <p>{{this.content}}</p>
+                    
+                    <div class="phases-container">
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">1</div>
+                                <div class="phase-info">
+                                    <h4>MVP - Fundación del Sistema</h4>
+                                    <div class="phase-duration">8-12 semanas</div>
+                                </div>
+                            </div>
+                            <div class="phase-objectives">
+                                <h5>Objetivos:</h5>
+                                <ul>
+                                    <li>Scraper funcional para 3 portales principales</li>
+                                    <li>Modelo de regresión lineal básico</li>
+                                    <li>Reportes PDF automatizados</li>
+                                    <li>Dashboard web básico</li>
+                                </ul>
+                            </div>
+                            <div class="phase-deliverables">
+                                <h5>Entregables:</h5>
+                                <ul>
+                                    <li>Pipeline de scraping automatizado</li>
+                                    <li>Base de datos PostgreSQL con PostGIS</li>
+                                    <li>Modelo predictivo con R² > 0.75</li>
+                                    <li>API RESTful con endpoints básicos</li>
+                                    <li>Interfaz web responsive</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">2</div>
+                                <div class="phase-info">
+                                    <h4>Inteligencia Avanzada</h4>
+                                    <div class="phase-duration">12-16 semanas</div>
+                                </div>
+                            </div>
+                            <div class="phase-objectives">
+                                <h5>Objetivos:</h5>
+                                <ul>
+                                    <li>Modelos ML avanzados (XGBoost, Random Forest)</li>
+                                    <li>Visualización geoespacial interactiva</li>
+                                    <li>API pública documentada</li>
+                                    <li>Sistema de cache y optimización</li>
+                                </ul>
+                            </div>
+                            <div class="phase-deliverables">
+                                <h5>Entregables:</h5>
+                                <ul>
+                                    <li>Modelos ML con precisión >90%</li>
+                                    <li>Mapas interactivos con capas de datos</li>
+                                    <li>Documentación API completa</li>
+                                    <li>Sistema de autenticación y autorización</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">3</div>
+                                <div class="phase-info">
+                                    <h4>Sistema Predictivo Autoentrenado</h4>
+                                    <div class="phase-duration">16-20 semanas</div>
+                                </div>
+                            </div>
+                            <div class="phase-objectives">
+                                <h5>Objetivos:</h5>
+                                <ul>
+                                    <li>Pipeline de reentrenamiento automático</li>
+                                    <li>Análisis predictivo de tendencias</li>
+                                    <li>Despliegue en nube con alta disponibilidad</li>
+                                    <li>Integración con servicios externos</li>
+                                </ul>
+                            </div>
+                            <div class="phase-deliverables">
+                                <h5>Entregables:</h5>
+                                <ul>
+                                    <li>MLOps pipeline completo</li>
+                                    <li>Análisis de valorización temporal</li>
+                                    <li>Arquitectura cloud-native</li>
+                                    <li>Integración con APIs gubernamentales</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">4</div>
+                                <div class="phase-info">
+                                    <h4>Integración Nacional</h4>
+                                    <div class="phase-duration">20-24 semanas</div>
+                                </div>
+                            </div>
+                            <div class="phase-objectives">
+                                <h5>Objetivos:</h5>
+                                <ul>
+                                    <li>Cobertura de 20+ ciudades colombianas</li>
+                                    <li>Integración con registros catastrales oficiales</li>
+                                    <li>Sistema de alertas y notificaciones</li>
+                                    <li>Marketplace de servicios inmobiliarios</li>
+                                </ul>
+                            </div>
+                            <div class="phase-deliverables">
+                                <h5>Entregables:</h5>
+                                <ul>
+                                    <li>Base de datos nacional de inmuebles</li>
+                                    <li>Conectores con entidades oficiales</li>
+                                    <li>Sistema de suscripciones premium</li>
+                                    <li>App móvil nativa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                {{else if (eq this.title "Diseño de la Base de Datos")}}
+                    <div class="subsection">
+                        <div class="subsection-title">Modelo Relacional Optimizado</div>
+                        <div class="subsection-content">
+                            <p>El diseño de base de datos utiliza PostgreSQL con la extensión PostGIS para manejo eficiente de datos geoespaciales:</p>
+                            
+                            <div class="db-schema">
+                                <h4>Tabla Principal de Inmuebles</h4>
+                                <div class="db-table">
+CREATE TABLE inmuebles (
+    id SERIAL PRIMARY KEY,
+    codigo_interno VARCHAR(50) UNIQUE,
+    tipo_inmueble VARCHAR(20) NOT NULL,
+    ciudad VARCHAR(50) NOT NULL,
+    barrio VARCHAR(100),
+    direccion TEXT,
+    coordenadas GEOMETRY(POINT, 4326),
+    area_construida DECIMAL(10,2),
+    area_terreno DECIMAL(10,2),
+    habitaciones INTEGER,
+    banos INTEGER,
+    garajes INTEGER,
+    estrato INTEGER,
+    valor_venta BIGINT,
+    valor_arriendo BIGINT,
+    valor_m2 DECIMAL(10,2),
+    fecha_publicacion DATE,
+    fecha_actualizacion TIMESTAMP DEFAULT NOW(),
+    portal_origen VARCHAR(50),
+    url_publicacion TEXT,
+    descripcion TEXT,
+    fotos_urls TEXT[],
+    caracteristicas JSONB,
+    activo BOOLEAN DEFAULT TRUE
+);
+                                </div>
+                            </div>
+
+                            <div class="db-schema">
+                                <h4>Tabla de Predicciones ML</h4>
+                                <div class="db-table">
+CREATE TABLE predicciones_ml (
+    id SERIAL PRIMARY KEY,
+    inmueble_id INTEGER REFERENCES inmuebles(id),
+    modelo_version VARCHAR(20),
+    valor_predicho BIGINT,
+    confianza DECIMAL(5,4),
+    rango_minimo BIGINT,
+                                </div>
+                            </div>
+
+                            <div class="db-schema">
+                                <h4>Índices de Optimización</h4>
+                                <div class="db-table">
+-- Índices para optimización de consultas
+CREATE INDEX idx_inmuebles_ubicacion ON inmuebles USING GIST(coordenadas);
+CREATE INDEX idx_inmuebles_ciudad_tipo ON inmuebles(ciudad, tipo_inmueble);
+CREATE INDEX idx_inmuebles_precio_m2 ON inmuebles(valor_m2) WHERE valor_m2 IS NOT NULL;
+CREATE INDEX idx_inmuebles_fecha ON inmuebles(fecha_publicacion);
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{else if (eq this.title "Aspectos Legales y Éticos")}}
+                    <div class="subsection">
+                        <div class="subsection-title">Cumplimiento Normativo</div>
+                        <div class="subsection-content">
+                            <div class="compliance-grid">
+                                <div class="compliance-item">
+                                    <div class="compliance-icon">🤖</div>
+                                    <div class="compliance-title">Robots.txt y Scraping Ético</div>
+                                    <div class="compliance-desc">
+                                        Respeto total a robots.txt, rate limiting máximo 1 req/seg, headers transparentes, horarios nocturnos
+                                    </div>
+                                </div>
+                                <div class="compliance-item">
+                                    <div class="compliance-icon">⚖️</div>
+                                    <div class="compliance-title">Habeas Data Colombiano</div>
+                                    <div class="compliance-desc">
+                                        Ley 1581/2012: anonimización datos, uso específico mercado, derecho al olvido
+                                    </div>
+                                </div>
+                                <div class="compliance-item">
+                                    <div class="compliance-icon">🔒</div>
+                                    <div class="compliance-title">Protección de Datos</div>
+                                    <div class="compliance-desc">
+                                        HTTPS/TLS 1.3, OAuth2, auditoría completa, backups encriptados
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4>Política de Retención:</h4>
+                            <ul>
+                                <li><strong>Datos de Mercado:</strong> Conservación por 5 años para análisis históricos</li>
+                                <li><strong>Logs de Sistema:</strong> Conservación por 1 año para debugging</li>
+                                <li><strong>Datos Personales:</strong> Eliminación automática después de 30 días de inactividad</li>
+                                <li><strong>Cache Temporal:</strong> Limpieza automática cada 24 horas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                {{else if (eq this.title "Generación de Reportes Automáticos")}}
+                    <div class="subsection">
+                        <div class="subsection-title">Inspiración en RentCast y Habi</div>
+                        <div class="subsection-content">
+                            <p>El sistema de reportes combina las mejores prácticas de ambas plataformas para crear documentos profesionales que cumplan con estándares bancarios y empresariales.</p>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Estructura del Reporte PDF Automatizado</div>
+                        <div class="subsection-content">
+                            <div class="phases-container">
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-info">
+                                            <h4>Portada y Resumen Ejecutivo</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Logo empresarial, dirección y datos básicos del inmueble, valor estimado con rango de confianza, fecha de generación y validez del reporte.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-info">
+                                            <h4>Análisis de Valoración Detallado</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Precio sugerido con intervalos de confianza, metodología ML aplicada, peso de cada característica, posición relativa en el sector.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-info">
+                                            <h4>Análisis Comparativo Geográfico</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Mapa interactivo con pin de la propiedad, hasta 10 propiedades similares en radio de 1km, tabla comparativa completa.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">4</div>
+                                        <div class="phase-info">
+                                            <h4>Métricas de Mercado</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Precio por m², tendencias de valorización, velocidad de venta, índice de demanda basado en actividad.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">5</div>
+                                        <div class="phase-info">
+                                            <h4>Análisis Temporal y Predictivo</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Evolución histórica 2 años, proyección crecimiento 6-24 meses, factores de riesgo, recomendaciones compra/venta.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">6</div>
+                                        <div class="phase-info">
+                                            <h4>Datos Técnicos y Metodológicos</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Modelo XGBoost v2.1 (R²=0.94, MAE=8.5%), 47 variables analizadas, fecha actualización, disclaimer legal.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Template de Implementación</div>
+                        <div class="subsection-content">
+                            <div class="db-schema">
+                                <h4>Generador de Reportes en Python</h4>
+                                <div class="db-table">
+class ReporteAvaluoGenerator:
+    def __init__(self, inmueble_id: int):
+        self.inmueble = self.get_inmueble_data(inmueble_id)
+        self.prediccion = self.get_prediccion_actual(inmueble_id)
+        self.comparables = self.get_comparables(inmueble_id)
+        
+    def generar_reporte_completo(self) -> str:
+        template = Template('reporte_avaluo.html')
+        context = {
+            'inmueble': self.inmueble,
+            'prediccion': self.prediccion,
+            'comparables': self.comparables,
+            'graficas': self.generar_graficas(),
+            'mapa': self.generar_mapa(),
+            'fecha_generacion': datetime.now(),
+            'modelo_version': self.get_modelo_version()
+        }
+        html_content = template.render(context)
+        return self.convert_to_pdf(html_content)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{else if (eq this.title "Plan de Entregables")}}
+                    <div class="subsection">
+                        <div class="subsection-title">Documentación Técnica</div>
+                        <div class="subsection-content">
+                            <h4>1. Arquitectura y Diseño del Sistema</h4>
+                            <ul>
+                                <li><strong>Documento de Arquitectura</strong> (40 páginas): Diagramas detallados, flujos de datos, decisiones técnicas</li>
+                                <li><strong>Especificaciones API</strong>: Documentación OpenAPI 3.0 con Swagger UI interactivo</li>
+                                <li><strong>Esquema de Base de Datos</strong>: ERD completo con diccionario de datos</li>
+                                <li><strong>Manual de Despliegue</strong>: Instrucciones paso a paso para producción</li>
+                            </ul>
+
+                            <h4>2. Código y Configuraciones</h4>
+                            <ul>
+                                <li><strong>Pipeline de Scraping</strong>: Scrapy spiders configurados para 5+ portales principales</li>
+                                <li><strong>Modelos ML</strong>: Notebooks Jupyter con análisis exploratorio y entrenamiento</li>
+                                <li><strong>API Backend</strong>: FastAPI con endpoints RESTful documentados</li>
+                                <li><strong>Frontend Dashboard</strong>: Next.js con componentes reutilizables y responsive design</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Estructura de Entregables de Código</div>
+                        <div class="subsection-content">
+                            <div class="db-schema">
+                                <h4>Organización del Proyecto</h4>
+                                <div class="db-table">
+SACI/
+├── backend/
+│   ├── src/
+│   │   ├── scrapers/          # Spiders para cada portal
+│   │   ├── ml_models/         # Modelos entrenados y pipeline
+│   │   ├── api/               # Endpoints FastAPI
+│   │   ├── database/          # Modelos SQLAlchemy
+│   │   └── utils/             # Utilidades compartidas
+│   ├── tests/                 # Test suite completo
+│   ├── docker/                # Dockerfiles y docker-compose
+│   └── requirements.txt       # Dependencias Python
+├── frontend/
+│   ├── src/
+│   │   ├── components/        # Componentes React reutilizables
+│   │   ├── pages/             # Páginas Next.js
+│   │   ├── hooks/             # Custom hooks
+│   │   ├── services/          # Clientes API
+│   │   └── styles/            # TailwindCSS personalizado
+│   └── package.json           # Dependencias Node.js
+├── ml_pipeline/
+│   ├── notebooks/             # Análisis exploratorio
+│   ├── models/                # Modelos entrenados (.pkl)
+│   ├── data/                  # Datasets de entrenamiento
+│   └── scripts/               # Scripts de entrenamiento
+└── infrastructure/
+    ├── kubernetes/            # Manifiestos K8s
+    ├── terraform/             # Infraestructura como código
+    └── monitoring/            # Configuración Prometheus/Grafana
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Prototipo Web Funcional</div>
+                        <div class="subsection-content">
+                            <div class="phases-container">
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">📊</div>
+                                        <div class="phase-info">
+                                            <h4>Dashboard Principal</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        KPIs del mercado inmobiliario, búsqueda avanzada con filtros, mapa interactivo con clustering, análisis comparativo side-by-side de hasta 4 propiedades.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">📄</div>
+                                        <div class="phase-info">
+                                            <h4>Generador de Reportes</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Configurador visual de secciones, vista previa en tiempo real, descarga múltiple (PDF, Excel, CSV), programación de reportes recurrentes.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">⚙️</div>
+                                        <div class="phase-info">
+                                            <h4>Panel Administrativo</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Monitoreo scraping en tiempo real, gestión de modelos ML, analytics de uso, configuración de parámetros del sistema.
+                                    </div>
+                                </div>
+                                <div class="phase-card">
+                                    <div class="phase-header">
+                                        <div class="phase-number">🚀</div>
+                                        <div class="phase-info">
+                                            <h4>Sistema de Despliegue</h4>
+                                        </div>
+                                    </div>
+                                    <div class="phase-content">
+                                        Docker Compose desarrollo, Kubernetes producción, README técnico ejecutivo, configuración CI/CD automatizada.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{else if (eq this.title "Consideraciones de Escalabilidad")}}
+                    <div class="subsection">
+                        <div class="subsection-title">Optimizaciones de Base de Datos</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li><strong>Particionado Temporal</strong>: Tablas particionadas por mes para datos históricos</li>
+                                <li><strong>Índices Compuestos</strong>: Optimización para consultas geoespaciales frecuentes</li>
+                                <li><strong>Materialización de Vistas</strong>: Pre-cálculo de agregaciones complejas</li>
+                                <li><strong>Cache Inteligente</strong>: Redis para consultas recurrentes y resultados ML</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Escalabilidad Horizontal</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li><strong>Microservicios</strong>: Cada módulo puede escalar independientemente</li>
+                                <li><strong>Load Balancing</strong>: HAProxy/NGINX para distribución de carga</li>
+                                <li><strong>Queue System</strong>: Celery + Redis para procesamiento asíncrono</li>
+                                <li><strong>CDN Integration</strong>: CloudFlare para assets estáticos y caché global</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Monitoring y Observabilidad</div>
+                        <div class="subsection-content">
+                            <div class="compliance-grid">
+                                <div class="compliance-item">
+                                    <div class="compliance-icon">📊</div>
+                                    <div class="compliance-title">APM (Application Performance)</div>
+                                    <div class="compliance-desc">
+                                        Sentry para monitoreo de errores en tiempo real y análisis de performance de aplicación
+                                    </div>
+                                </div>
+                                <div class="compliance-item">
+                                    <div class="compliance-icon">📈</div>
+                                    <div class="compliance-title">Métricas en Tiempo Real</div>
+                                    <div class="compliance-desc">
+                                        Prometheus + Grafana para dashboards personalizados y alertas proactivas
+                                    </div>
+                                </div>
+                                <div class="compliance-item">
+                                    <div class="compliance-icon">📝</div>
+                                    <div class="compliance-title">Logs Centralizados</div>
+                                    <div class="compliance-desc">
+                                        ELK Stack para agregación, búsqueda y análisis avanzado de logs del sistema
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{else}}
+                    <p>{{this.content}}</p>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+
+        <!-- Metrics Section -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Métricas Clave del Proyecto</h2>
+            </div>
+            <div class="section-content">
+                <div class="benefits-grid">
+                    {{#each metrics}}
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            {{#if (eq this.trend "up")}}📈{{else if (eq this.trend "down")}}📉{{else}}📊{{/if}}
+                        </div>
+                        <div class="benefit-title">{{this.name}}</div>
+                        <div class="benefit-desc">{{this.value}}{{#if this.unit}} {{this.unit}}{{/if}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Findings and Recommendations -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Hallazgos y Recomendaciones</h2>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-title">Hallazgos Principales</div>
+                    <div class="subsection-content">
+                        <ul>
+                            {{#each findings}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-title">Recomendaciones Estratégicas</div>
+                    <div class="subsection-content">
+                        <ul>
+                            {{#each recommendations}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="document-footer">
+            <div class="contact-grid">
+                <div>
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-info">
+                        <strong>Contacto:</strong> Jhoan Karlo Sebastian Garcia Casanova<br>
+                        <strong>Teléfono:</strong> 3024816706<br>
+                        <strong>Email:</strong> support@apexaisolutions.dev<br>
+                        <strong>Empresa:</strong> APEX AI Solutions
+                    </div>
+                </div>
+                <div>
+                    <h3>Equipo de Desarrollo</h3>
+                    <div class="contact-info">
+                        <strong>Equipo:</strong> PlanMaestro Development Team<br>
+                        <strong>Especialización:</strong> PropTech & ML Solutions<br>
+                        <strong>Experiencia:</strong> Sistemas inmobiliarios avanzados<br>
+                        <strong>Metodología:</strong> Desarrollo ágil, entregas incrementales
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> Este documento constituye una propuesta técnica integral para el desarrollo del Sistema de Avalúos Catastrales Inteligente. Los plazos, especificaciones y entregables descritos están sujetos a refinamiento durante la fase de planificación detallada y pueden variar según los requerimientos específicos del cliente. El desarrollo se realizará siguiendo metodologías ágiles con entregas incrementales y documentación completa en cada fase.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

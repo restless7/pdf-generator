@@ -1,0 +1,44 @@
+{
+    "title": "Documentación Técnica - Manglar AI",
+    "subtitle": "Infraestructura de Resiliencia Climática Basada en IA",
+    "projectTitle": "Manglar AI - Documentación Técnica",
+    "author": "Manglar AI Colombia",
+    "reportDate": "30 de Diciembre de 2025",
+    "executiveSummary": "Manglar AI es una plataforma de inteligencia climática 'Offline-First' diseñada para operar en entornos de baja conectividad. Integra modelos de aprendizaje profundo (LSTM) para predicción climática hiperlocal, procesamiento de lenguaje natural (NLP) para triaje de emergencias y una arquitectura distribuida (Edge Computing) que garantiza la funcionalidad crítica sin dependencia de la nube. El sistema reduce la brecha de información climática democratizando el acceso a alertas tempranas y optimizando la respuesta humanitaria mediante priorización algorítmica.",
+    "sections": [
+        {
+            "title": "Arquitectura General del Sistema",
+            "content": "El sistema Manglar AI implementa una arquitectura híbrida Edge-Cloud diseñada para la resiliencia.",
+            "modules": [
+                {
+                    "name": "Componente Edge (Dispositivo Usuario)",
+                    "desc": "Aplicación móvil PWA/Nativa con capacidad de inferencia local (TensorFlow Lite) para clasificación inicial de reportes y almacenamiento offline seguro."
+                },
+                {
+                    "name": "Componente Core (Nube Central)",
+                    "desc": "Orquestador de servicios basado en Kubernetes que gestiona la ingesta masiva de datos IDEAM/Satelitales, reentrenamiento de modelos y sincronización con organismos de socorro."
+                },
+                {
+                    "name": "Módulo de Conectividad Adaptativa",
+                    "desc": "Capa de transporte agnóstica que prioriza canales según disponibilidad: 4G/5G -> SMS (Gateway) -> LoRaWAN (Nodos comunitarios) -> Satelital."
+                }
+            ]
+        },
+        {
+            "title": "Stack Tecnológico y Herramientas",
+            "content": "Selección de tecnologías robustas y de código abierto priorizando eficiencia energética y compatibilidad con hardware limitado."
+        },
+        {
+            "title": "Plan de Desarrollo Escalable",
+            "content": "Estrategia de despliegue progresivo basada en la madurez tecnológica y validación territorial."
+        },
+        {
+            "title": "Diseño de la Base de Datos",
+            "content": "Esquema relacional geoespacial optimizado para consultas de alta concurrencia y series temporales."
+        },
+        {
+            "title": "Aspectos Legales y Éticos",
+            "content": "Cumplimiento riguroso de normativas de privacidad y principios de IA ética."
+        }
+    ]
+}

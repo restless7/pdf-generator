@@ -1,0 +1,207 @@
+{
+  "proposalTitle": "Propuesta Técnica y Acuerdo de Prestación de Servicios",
+  "proposalSubtitle": "Sistema de Avalúos Catastrales Inteligente (SACI) — Jhereis Salim Eljach & APEX AI Solutions",
+  "proposalDate": "Octubre 16, 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "El Sistema de Avalúos Catastrales Inteligente (SACI) es una plataforma PropTech modular y escalable diseñada para revolucionar el sector inmobiliario colombiano. Inicia con un MVP basado en análisis estadístico convencional y regresión multivariable, ofreciendo la capacidad de evolucionar hacia Machine Learning avanzado en fases posteriores. Reducción del 70% en tiempo de generación de avalúos tradicionales con arquitectura modular que permite crecimiento gradual según necesidades y presupuesto.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Santander, Colombia",
+  "providerTaxId": "NIT: En trámite",
+  "providerEmail": "sebastian@apexaisolutions.dev",
+  "providerPhone": "+57 302 481 6706",
+  
+  "clientCompany": "Jhereis Salim Eljach",
+  "clientAddress": "Dirección: Bucaramanga, Santander, Colombia",
+  "clientRepresentative": "Representante: Jhereis Salim Eljach",
+  "clientContact": "Contacto: Por confirmar",
+  
+  "contractObject": "Desarrollo, implementación y entrega del Sistema de Avalúos Catastrales Inteligente (SACI), plataforma PropTech integral para automatización de valuaciones inmobiliarias, análisis predictivo de mercado y generación de reportes profesionales, incluyendo todos los módulos descritos, modelos ML, capacitación del personal y soporte técnico según modalidad seleccionada.",
+  
+  "scopeDescription": "El sistema SACI utiliza un enfoque modular y escalable con un núcleo MVP sólido y módulos adicionales opcionales. Jhereis Salim Eljach puede comenzar con el módulo base y agregar funcionalidades avanzadas según crecimiento del negocio. Cada módulo es independiente y se integra perfectamente con la arquitectura base.",
+  
+  "modules": [
+    {
+      "title": "🔍 Módulo de Ingesta de Datos Inteligente",
+      "description": "Web scraping automatizado desde portales inmobiliarios (Fincaraíz, MetroCuadrado, Ciencuadras), validación y normalización de datos masivos. Base de datos nacional actualizada en tiempo real con más de 500,000 propiedades activas."
+    },
+    {
+      "title": "🤖 Motor de Valuación Inteligente",
+      "description": "Modelos de Machine Learning (XGBoost, Random Forest) para predicción de valores inmobiliarios con precisión superior al 90%. Estimaciones precisas que reducen riesgo crediticio y optimizan decisiones de inversión."
+    },
+    {
+      "title": "🗺️ Módulo de Análisis Geoespacial",
+      "description": "Procesamiento de coordenadas, análisis de proximidad, integración con mapas interactivos y análisis de factores de ubicación. Visualización territorial que identifica zonas de alta valorización."
+    },
+    {
+      "title": "📊 Generador de Reportes Profesionales",
+      "description": "Creación automática de avalúos en PDF con estándares bancarios, visualizaciones avanzadas y análisis comparativo. Documentos que cumplen normativas financieras y agilizan procesos crediticios."
+    },
+    {
+      "title": "🔗 API Gateway Empresarial",
+      "description": "Endpoints RESTful documentados, autenticación OAuth2, rate limiting y monitoreo de uso. Integración perfecta con sistemas externos, CRMs y plataformas de terceros."
+    },
+    {
+      "title": "🎯 Dashboard de Inteligencia de Mercado",
+      "description": "Visualización interactiva de tendencias, comparadores automáticos y simuladores de escenarios. Insights estratégicos para toma de decisiones informadas y identificación de oportunidades.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo SaaS (Suscripción Mensual)",
+      "description": "Acceso a la plataforma SACI mediante suscripción mensual con hosting empresarial, actualizaciones automáticas de modelos ML, soporte técnico 24/7 y escalabilidad automática según demanda.",
+      "features": [
+        "Hosting empresarial con 99.9% uptime garantizado",
+        "Actualizaciones automáticas de modelos ML y funcionalidades",
+        "Soporte técnico especializado 24/7 con SLA <4 horas",
+        "Escalabilidad automática según volumen de consultas",
+        "Backups automáticos cada 6 horas con retención de 90 días",
+        "Hasta 10,000 consultas de valuación mensual incluidas"
+      ]
+    },
+    {
+      "title": "Implementación Local (On-Premise)",
+      "description": "Desarrollo e implementación completa del sistema SACI en infraestructura del cliente con pago único, código fuente completo y propiedad total de datos inmobiliarios.",
+      "highlight": true,
+      "features": [
+        "Control total sobre datos inmobiliarios sensibles",
+        "Propiedad completa del código fuente y modelos ML",
+        "Personalización avanzada sin restricciones funcionales",
+        "Integración profunda con sistemas internos existentes",
+        "Pago único sin recurrencia mensual",
+        "Capacitación del equipo técnico (80 horas presenciales)"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "A continuación se presentan los costos del sistema SACI PropTech completo en cada modalidad. Los valores están expresados en Pesos Colombianos (COP) e incluyen todos los módulos, modelos ML y funcionalidades descritas.",
+  "subscriptionColumnTitle": "Suscripción Mensual SaaS",
+  "localColumnTitle": "Implementación Local (Pago Único)",
+  
+  "pricingRows": [
+    { "module": "SACI - Plataforma PropTech Completa", "subscription": "$4,500,000 COP", "local": "$120,000,000 COP" },
+    { "module": "Setup Inicial y Onboarding", "subscription": "$6,000,000 COP (único)", "local": "Incluido" },
+    { "module": "Modelos ML y Pipeline Completo", "subscription": "Incluido", "local": "Incluido" },
+    { "module": "Soporte y Capacitación Especializada", "subscription": "24/7 incluido", "local": "18 meses incluidos" },
+    { "module": "Total Inversión", "subscription": "$4,500,000 COP/mes*", "local": "$120,000,000 COP", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "Descuento por pago anticipado: Hasta 12% para modalidad On-Premise",
+    "Facilidades de pago hasta 18 meses para implementación local",
+    "Conversión de SaaS a On-Premise con descuento del 30% en primer año",
+    "Modalidad de arrendamiento operativo disponible con opción de compra"
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: Implementación Local con descuento por pago anticipado",
+    "originalAmount": "$120,000,000 COP",
+    "discountPercent": "12%",
+    "discountAmount": "$14,400,000 COP",
+    "finalAmount": "$105,600,000 COP"
+  },
+  
+  "paymentPlanDescription": "Para la modalidad de Implementación Local ofrecemos condiciones de pago estructurado por hitos de desarrollo PropTech, alineando los pagos con entregables específicos del proyecto SACI y modelos ML.",
+  
+  "paymentPlan": {
+    "totalAmount": "$120,000,000 COP",
+    "payments": [
+      {
+        "stage": "Pago 1 - Inicio del Proyecto (25%)",
+        "description": "Firma de contrato, análisis de requerimientos específicos, arquitectura técnica detallada y configuración de ambientes de desarrollo PropTech.",
+        "amount": "$30,000,000 COP"
+      },
+      {
+        "stage": "Pago 2 - MVP Funcional (35%)",
+        "description": "Sistema base con scraping automatizado, modelos ML básicos, reportes PDF y dashboard web responsive con mapas interactivos.",
+        "amount": "$42,000,000 COP"
+      },
+      {
+        "stage": "Pago 3 - Sistema Avanzado (25%)",
+        "description": "Modelos ML avanzados con precisión >90%, API pública completa, dashboard administrativo y sistema de cache inteligente.",
+        "amount": "$30,000,000 COP"
+      },
+      {
+        "stage": "Pago 4 - Entrega Final (15%)",
+        "description": "Sistema completo optimizado, documentación integral, capacitación finalizada (80 horas) y soporte activado por 18 meses.",
+        "amount": "$18,000,000 COP"
+      }
+    ],
+    "notes": "Facilidades de pago hasta 18 meses. Cada pago se activa al cumplimiento satisfactorio de los entregables correspondientes. Modalidad de arrendamiento operativo disponible."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — MVP - Fundación del Sistema (10 semanas)",
+      "description": "Establecimiento de la base tecnológica con scraping funcional para 3 portales principales, base de datos PostgreSQL con PostGIS, modelo predictivo con R² > 0.75 y dashboard web responsive."
+    },
+    {
+      "phase": "Fase 2 — Inteligencia Avanzada (12 semanas)",
+      "description": "Implementación de modelos ML avanzados (XGBoost, Random Forest) con precisión >90%, mapas interactivos con clustering, API pública documentada y sistema de cache con Redis."
+    },
+    {
+      "phase": "Fase 3 — Sistema Predictivo Autoentrenado (14 semanas)",
+      "description": "Pipeline MLOps completo con reentrenamiento automático, análisis predictivo de tendencias de valorización, arquitectura cloud-native con Kubernetes e integración con APIs gubernamentales."
+    },
+    {
+      "phase": "Fase 4 — Expansión Nacional (16 semanas)",
+      "description": "Cobertura nacional de 20+ ciudades colombianas, conectores con entidades oficiales (IGAC, Catastro), sistema de suscripciones premium y aplicación móvil nativa.",
+      "fullWidth": true
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollo completo del sistema SACI PropTech según especificaciones técnicas",
+        "Implementación de todos los módulos: Scraping, ML, Geoespacial, Reportes, API y Dashboard",
+        "Entrenamiento de modelos ML con precisión mínima garantizada del 85%",
+        "Capacitación del equipo técnico y usuarios finales (80 horas presenciales)",
+        "Documentación técnica integral (200+ páginas) y manuales de usuario",
+        "Soporte técnico especializado durante 18 meses post-entrega",
+        "Cumplimiento de normativas de protección de datos (Ley 1581/2012) y scraping ético"
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de EL CLIENTE",
+      "items": [
+        "Provisión de infraestructura técnica mínima para modalidad On-Premise",
+        "Facilitación de acceso a APIs y fuentes de datos inmobiliarias existentes",
+        "Designación de equipo técnico para capacitación y transferencia de conocimiento",
+        "Validación y aprobación de entregables en cada fase del desarrollo",
+        "Cumplimiento de cronograma de pagos según hitos acordados",
+        "Participación activa en sesiones de capacitación y testing del sistema",
+        "Provisión de requerimientos específicos y validación funcional continua"
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte, Seguridad y Garantía PropTech",
+    "description": "Incluye garantía de 18 meses contra defectos de software, SLA de 99.9% de disponibilidad, respuesta de soporte técnico <4 horas para issues críticos, cumplimiento integral de Ley 1581/2012 y Decreto 1377/2013, aspectos éticos de scraping con respeto a robots.txt, certificación ISO 27001 de seguridad y precisión mínima garantizada del 85% en predicciones ML."
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan los términos de esta propuesta técnica PropTech, el alcance completo del proyecto SACI descrito y la modalidad de pago seleccionada. Esta propuesta constituye oferta válida por 45 días a partir de la fecha indicada.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Jhoan Karlo Sebastián García Casanova",
+      "position": "Director Técnico y Fundador"
+    },
+    "client": {
+      "company": "CLIENTE PROPTECH",
+      "name": "REPRESENTANTE LEGAL",
+      "position": "CARGO DEL REPRESENTANTE"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • sebastian@apexaisolutions.dev",
+  "footerRight": "Documento confidencial · Validez: 45 días · SACI PropTech v1.0"
+}

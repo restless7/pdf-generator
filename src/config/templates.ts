@@ -150,6 +150,44 @@ export const ReportSchema = z.object({
   }).optional()
 });
 
+// Operations Manual Data Schema
+export const OperationsManualSchema = z.object({
+  documentTitle: z.string().min(1, 'Document title is required'),
+  subtitle: z.string().optional(),
+  version: z.string(),
+  effectiveDate: z.string(),
+  confidentialityNotice: z.string().optional(),
+  companyInfo: z.object({
+    name: z.string(),
+    logo: z.string().optional(),
+    website: z.string().optional(),
+    supportEmail: z.string().optional()
+  }).optional(),
+  branding: z.object({
+    primaryColor: z.string().optional(),
+    secondaryColor: z.string().optional(),
+    accentColor: z.string().optional()
+  }).optional(),
+  parts: z.array(z.object({
+    partNumber: z.string(),
+    partTitle: z.string(),
+    sections: z.array(z.object({
+      sectionNumber: z.string(),
+      title: z.string(),
+      content: z.string(),
+      tables: z.array(z.object({
+        headers: z.array(z.string()),
+        rows: z.array(z.array(z.string()))
+      })).optional(),
+      callout: z.object({
+        title: z.string(),
+        content: z.string()
+      }).optional()
+    }))
+  }))
+});
+
+
 // Template Registry
 export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
   'business-plan': {
@@ -277,8 +315,101 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
       supported: ['es', 'en'],
       defaultLocale: 'es'
     }
+  },
+  'technical-proposal': {
+    id: 'technical-proposal',
+    name: 'Technical Development Proposal Template',
+    description: 'Comprehensive software development proposal with technical specifications',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'proposal',
+    templatePath: 'templates/technical-proposal/index.hbs',
+    partials: [],
+    assets: ['logos'],
+    schema: ReportSchema,
+    defaultOptions: {
+      format: 'A4',
+      margins: {
+        top: '1.5cm',
+        right: '1.5cm',
+        bottom: '1.5cm',
+        left: '1.5cm'
+      },
+      printBackground: true,
+      displayHeaderFooter: false,
+      watermark: {
+        enabled: false
+      }
+    },
+    localization: {
+      supported: ['es', 'en'],
+      defaultLocale: 'es'
+    }
+  },
+  'operations-manual': {
+    id: 'operations-manual',
+    name: 'Operations Manual Template',
+    description: 'Comprehensive operational manual for franchise replication',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/operations-manual/index.hbs',
+    partials: [],
+    assets: ['logos'],
+    schema: OperationsManualSchema,
+    defaultOptions: {
+      format: 'A4',
+      margins: {
+        top: '1.5cm',
+        right: '1.5cm',
+        bottom: '1.5cm',
+        left: '1.5cm'
+      },
+      printBackground: true,
+      displayHeaderFooter: true,
+      watermark: {
+        enabled: false,
+        text: 'CONFIDENTIAL',
+        opacity: 0.05
+      }
+    },
+    localization: {
+      supported: ['es', 'en'],
+      defaultLocale: 'es'
+    }
+  },
+  'ice-operations-manual': {
+    id: 'ice-operations-manual',
+    name: 'ICE Operations Manual',
+    description: 'ICE specific manual',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/ice-operations-manual.hbs',
+    partials: [],
+    assets: ['logos'],
+    schema: OperationsManualSchema,
+    defaultOptions: {
+      format: 'A4',
+      margins: {
+        top: '1.5cm',
+        right: '1.5cm',
+        bottom: '1.5cm',
+        left: '1.5cm'
+      },
+      printBackground: true,
+      displayHeaderFooter: true,
+      watermark: {
+        enabled: false
+      }
+    },
+    localization: {
+      supported: ['es', 'en'],
+      defaultLocale: 'es'
+    }
   }
 };
+
 
 // Asset configuration
 export interface AssetConfig {

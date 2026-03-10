@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="{{_generation.locale}}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{documentTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+
+            /* Branded Colors */
+            --primary: {
+                    {
+                    default branding.primaryColor '#c53030'
+                }
+            }
+
+            ;
+
+            --secondary: {
+                    {
+                    default branding.secondaryColor '#742a2a'
+                }
+            }
+
+            ;
+
+            --accent: {
+                    {
+                    default branding.accentColor '#e53e3e'
+                }
+            }
+
+            ;
+
+            /* Neutrals */
+            --text-dark: #1a202c;
+            --text-light: #718096;
+            --bg-light: #fff5f5;
+            /* Subtle red tint */
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            font-size: 10pt;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* Helper Utilities */
+        .page-break {
+            page-break-before: always;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+        }
+
+        /* Links */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ========================================
+           COVER PAGE
+        ======================================== */
+        .cover-page {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: var(--white);
+            overflow: hidden;
+            padding: 60px;
+        }
+
+        /* Decorative Pattern */
+        .cover-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            background-image:
+                radial-gradient(var(--white) 1px, transparent 1px),
+                radial-gradient(var(--white) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            border-left: 8px solid var(--accent);
+            padding-left: 40px;
+        }
+
+        .cover-logo {
+            max-width: 220px;
+            margin-bottom: 50px;
+            filter: brightness(0) invert(1);
+            /* Make logo white */
+        }
+
+        .cover-supertitle {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 80px;
+            max-width: 80%;
+        }
+
+        .cover-footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cover-confidential {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        /* ========================================
+           TABLE OF CONTENTS
+        ======================================== */
+        .toc-page {
+            padding: 60px;
+            background-color: var(--white);
+        }
+
+        .toc-header {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid var(--accent);
+            display: inline-block;
+        }
+
+        .toc-part-group {
+            margin-bottom: 30px;
+        }
+
+        .toc-part-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--bg-light);
+            padding: 10px 15px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            padding: 8px 15px;
+            margin-bottom: 5px;
+            transition: background 0.2s;
+            border-bottom: 1px dotted #edf2f7;
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .toc-number {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 40px;
+        }
+
+        .toc-text {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .toc-page-ref {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           LAYOUT & CONTENT
+        ======================================== */
+        .page-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            z-index: 100;
+        }
+
+        .page-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: var(--white);
+            border-top: 2px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            z-index: 100;
+        }
+
+        .part-separator {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .part-separator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: var(--accent);
+        }
+
+        .part-separator-number {
+            font-size: 5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
+            margin-bottom: -20px;
+        }
+
+        .part-separator-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            z-index: 2;
+            padding: 0 40px;
+        }
+
+        .content-section {
+            padding: 40px 60px;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-number-box {
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-right: 20px;
+            box-shadow: 0 4px 6px rgba(197, 48, 48, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Typography */
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin: 15px 0 15px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Tables */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .styled-table thead tr {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: var(--bg-light);
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary);
+        }
+
+        /* Callouts */
+        .callout-box {
+            background-color: var(--bg-light);
+            border-left: 6px solid var(--accent);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+
+        .callout-box::before {
+            content: '!';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .callout-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Diagrams */
+        .diagram-box {
+            border: 2px dashed var(--border);
+            background: #fafafa;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Code/Pre */
+        code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d53f8c;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Bar on every page -->
+    <div class="page-header"></div>
+
+    <!-- ========================================
+         COVER PAGE
+    ======================================== -->
+    <div class="cover-page">
+        <div class="cover-pattern"></div>
+        <div class="cover-confidential">
+            {{default confidentialityNotice 'CONFIDENTIAL'}}
+        </div>
+
+        <div class="cover-content">
+            {{#if companyInfo.logo}}
+            <img src="{{companyInfo.logo}}" alt="{{companyInfo.name}}" class="cover-logo">
+            {{/if}}
+
+            <div class="cover-supertitle">Operational Manual</div>
+            <h1 class="cover-title">{{documentTitle}}</h1>
+            <p class="cover-subtitle">{{subtitle}}</p>
+
+            <div class="cover-footer">
+                <div>
+                    <strong>Version:</strong> {{version}}<br>
+                    <strong>Date:</strong> {{effectiveDate}}
+                </div>
+                <div style="text-align: right;">
+                    {{companyInfo.name}}<br>
+                    {{companyInfo.website}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         TABLE OF CONTENTS
+    ======================================== -->
+    <div class="toc-page page-break">
+        <h2 class="toc-header">Table of Contents</h2>
+
+        {{#each parts}}
+        <div class="toc-part-group">
+            <div class="toc-part-title">Part {{partNumber}} &mdash; {{partTitle}}</div>
+
+            {{#each sections}}
+            <a href="#section-{{sectionNumber}}">
+                <div class="toc-item">
+                    <span class="toc-number">{{sectionNumber}}</span>
+                    <span class="toc-text">{{title}}</span>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+
+    <!-- ========================================
+         MAIN CONTENT
+    ======================================== -->
+    {{#each parts}}
+    <!-- Part Separator Page -->
+    <div class="part-separator page-break">
+        <div class="part-separator-number">{{partNumber}}</div>
+        <h2 class="part-separator-title">{{partTitle}}</h2>
+    </div>
+
+    <!-- Sections -->
+    {{#each sections}}
+    <div class="content-section page-break" id="section-{{sectionNumber}}">
+        <div class="section-header">
+            <div class="section-number-box">{{sectionNumber}}</div>
+            <h2 class="section-title">{{title}}</h2>
+        </div>
+
+        <div class="section-content">
+            {{{content}}}
+        </div>
+
+        <!-- Tables -->
+        {{#if tables}}
+        {{#each tables}}
+        <table class="styled-table avoid-break">
+            <thead>
+                <tr>
+                    {{#each headers}}
+                    <th>{{this}}</th>
+                    {{/each}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each rows}}
+                <tr>
+                    {{#each this}}
+                    <td>{{{this}}}</td>
+                    {{/each}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{/each}}
+        {{/if}}
+
+        <!-- Callout -->
+        {{#if callout}}
+        <div class="callout-box avoid-break">
+            <div class="callout-title">{{callout.title}}</div>
+            <div>{{{callout.content}}}</div>
+        </div>
+        {{/if}}
+    </div>
+    {{/each}}
+    {{/each}}
+
+    <!-- Footer on every page (technically fixed) -->
+    <div class="page-footer">
+        <div>{{documentTitle}} &mdash; v{{version}}</div>
+        <div>{{companyInfo.name}} &copy; 2026</div>
+    </div>
+</body>
+
+</html>

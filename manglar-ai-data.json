@@ -1,0 +1,111 @@
+{
+    "proposalTitle": "Propuesta de Desarrollo para Manglar AI Colombia",
+    "proposalSubtitle": "Inteligencia Artificial para la Resiliencia Climática",
+    "proposalDate": "30 de Diciembre de 2025",
+    "proposalVersion": "1.0",
+    "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+    "companyName": "Manglar AI Colombia",
+    "executiveSummary": "Manglar AI busca democratizar el acceso a la inteligencia climática avanzada para empoderar a las comunidades más vulnerables de Colombia. Transformamos la gestión del riesgo de reactiva a proactiva mediante una red de protección civil descentralizada que integra saberes tradicionales con IA.",
+    "mission": {
+        "text": "Democratizar el acceso a la inteligencia climática avanzada para empoderar a las comunidades más vulnerables, aisladas y marginadas de Colombia. Buscamos transformar la gestión del riesgo de un modelo reactivo y centralizado a uno proactivo, hiperlocal y comunitario, utilizando tecnología de vanguardia para salvar vidas y proteger medios de subsistencia ancestrales.",
+        "objectives": [
+            "Reducción de Mortalidad: Disminuir en un 20% la tasa de mortalidad y desapariciones asociadas a eventos climáticos súbitos (avenidas torrenciales, deslizamientos) en las zonas piloto durante los primeros 18 meses de operación.",
+            "Adopción Preventiva: Lograr que el 50% de los hogares en las regiones objetivo (La Guajira, Chocó, La Mojana) incorporen alertas tempranas en sus rutinas diarias de toma de decisiones (agrícolas, de movilidad y vivienda).",
+            "Eficiencia en Respuesta: Reducir el tiempo de 'primer contacto' institucional ante emergencias en zonas rurales dispersas en un 35%, pasando de un promedio actual de 48+ horas a menos de 15 horas mediante triaje automatizado."
+        ]
+    },
+    "problem": {
+        "context": "Colombia se encuentra en una encrucijada climática. A pesar de una robusta institucionalidad central (UNGRD, IDEAM), la 'última milla' de la gestión del riesgo está rota. Según el índice ND-GAIN, Colombia ocupa el puesto 84 en vulnerabilidad climática global, pero este promedio esconde desigualdades abismales. Mientras Bogotá cuenta con sistemas modernos como IDIGER, la ruralidad dispersa vive en una ceguera informativa casi total. Para el periodo 2024-2025, el IDEAM pronostica una intensificación de la variabilidad climática con la alternancia de fenómenos de La Niña (exceso de lluvias) y El Niño (sequías extremas), afectando desproporcionadamente a poblaciones históricamente marginadas.",
+        "cases": [
+            {
+                "region": "A. Rionegro: Gestión del Riesgo en Ladera y Agro",
+                "issue": "<strong>Contexto Ambiental:</strong> Rionegro es la despensa agrícola del norte de Santander, pero su topografía quebrada y suelos arcillosos lo hacen altamente susceptible a fenómenos de remoción en masa (deslizamientos).<br><br><strong>La Amenaza:</strong> Durante los fenómenos de La Niña, la saturación de los suelos provoca deslizamientos que bloquean vías terciarias y destruyen cultivos de café y cacao. Las comunidades campesinas a menudo quedan incomunicadas sin previo aviso.<br><br><strong>Intervención Manglar AI:</strong> Despliegue de sensores de humedad de suelo IoT y análisis de precipitaciones acumuladas para emitir alertas de \"Saturación Crítica\" a los agricultores 6 horas antes de un derrumbe potencial."
+            },
+            {
+                "region": "B. Cuenca Río de Oro: Alerta Temprana de Inundación Urbana",
+                "issue": "<strong>Contexto Ambiental:</strong> Este río, que atraviesa el área metropolitana (Girón y Bucaramanga), funciona como un sistema de drenaje natural que se ha visto estrangulado por el desarrollo urbano no planificado en sus márgenes.<br><br><strong>La Amenaza:</strong> Las crecientes súbitas. Las lluvias fuertes en la parte alta de la cuenca (Lebrija/Piedecuesta) generan ondas de crecida que llegan a los asentamientos humanos en la parte baja (Girón) con fuerza destructiva, a menudo de noche.<br><br><strong>Intervención Manglar AI:</strong> Instalación de limnímetros (medidores de nivel) sónicos en puentes clave aguas arriba. El sistema calcula el tiempo de viaje de la onda de crecida y notifica vía WhatsApp/Sirenas a los barrios bajos con tiempo suficiente para evacuar enseres y personas."
+            },
+            {
+                "region": "C. Páramo de Santurbán: Monitoreo de Seguridad Hídrica",
+                "issue": "<strong>Contexto Ambiental:</strong> Es la \"fábrica de agua\" de los santanderes. Un ecosistema estratégico de alta montaña, hogar de frailejones y lagunas glaciares, vital para el acueducto metropolitano pero frágil ante el cambio climático.<br><br><strong>La Amenaza:</strong> La variabilidad climática extrema. El riesgo dual de incendios de cobertura vegetal en épocas secas (El Niño) y la disminución de los niveles de las lagunas que abastecen el acueducto.<br><br><strong>Intervención Manglar AI:</strong> Monitoreo satelital y sensores térmicos para detección temprana de focos de calor (incendios) y monitoreo de caudales ecológicos. Protegemos la fuente del recurso hídrico antes de que llegue a la ciudad."
+            }
+        ],
+        "gap": "La Brecha Tecnológica: El problema no es la falta de datos satelitales globales, sino su inaccionabilidad local. Un boletín PDF del IDEAM no sirve de nada a una lideresa comunitaria sin plan de datos en Uribia. Existe una desconexión fatal entre la 'Big Data' climática y la realidad operativa del territorio.",
+        "mapPlaceholder": "Placeholder: Infografía detallada 'Mapa de Riesgo y Silencio Digital'. Mapa de Colombia destacando con zonas de calor (heatmaps) las regiones de alta vulnerabilidad climática superpuestas con zonas de baja conectividad 4G. Callouts específicos para: La Guajira (Riesgo: Sequía Extrema | Conectividad: <20%), Chocó (Riesgo: Inundación Pluvial | Conectividad: Intermitente), Amazonía (Riesgo: Incendio Forestal | Conectividad: Satelital precaria). Incluir estadísticas de población en riesgo por región."
+    },
+    "solution": {
+        "intro": "Nuestra propuesta no es solo una 'app', es una infraestructura digital de resiliencia diseñada bajo el principio de 'Offline-First' (funcionalidad sin conexión) y centrada en el usuario rural.",
+        "components": [
+            {
+                "title": "A. Componente de Respuesta a Crisis ('Auxilio IA')",
+                "description": "Este módulo actúa como el 'botón de pánico inteligente' para la Colombia profunda. Arquitectura de Triaje: Utiliza modelos de Procesamiento de Lenguaje Natural (NLP) ajustados a dialectos colombianos (ej. reconocer 'se vino la montaña' como deslizamiento grave) para clasificar reportes de voz y texto. Priorización Dinámica: Un algoritmo de IA analiza la gravedad reportada cruzándola con datos de vulnerabilidad preexistentes (ej. presencia de adultos mayores, tipo de vivienda). Esto genera un 'Mapa de Calor de Emergencia' en tiempo real para los organismos de socorro (Defensa Civil, Bomberos), permitiéndoles saber a dónde ir primero. Validación Satelital: Ante un reporte masivo, el sistema solicita automáticamente imágenes satelitales recientes (Copernicus/Planet) para confirmar la extensión del daño visualmente, filtrando falsos positivos.",
+                "placeholder": "Placeholder: Diagrama técnico de flujo 'Arquitectura de Respuesta Auxilio IA'. Muestra el viaje del dato: 1. Input Usuario (Voz/SMS en red 2G/LoRa) -> 2. Edge Processing (Clasificación inicial en dispositivo) -> 3. Sync Nube (cuando hay señal) -> 4. Motor de Inferencia IA (Triaje y Priorización) -> 5. Dashboard UNGRD (Despacho de recursos). Iconografía técnica pero accesible."
+            },
+            {
+                "title": "B. Componente Preventivo ('Vigia Climático')",
+                "description": "Un oráculo predictivo que democratiza la ciencia de datos meteorológicos. Modelos Predictivos (LSTM & Transformers): Empleamos redes neuronales recurrentes de memoria a corto y largo plazo (LSTM) para analizar series temporales históricas del IDEAM (50+ años de lluvias y temperatura) y detectar patrones anómalos locales inminentes. Hiperlocalización: A diferencia de los modelos globales (resolución de 25km), Vigia utiliza 'downscaling' estadístico para ofrecer predicciones a nivel de vereda (resolución de 1-3km), integrando datos de micro-estaciones meteorológicas locales si existen. Alertas Multicanal Escalonadas: Nivel Verde (Informativo) con consejos agrícolas; Nivel Naranja (Precaución) con SMS y push; Nivel Rojo (Evacuación) con sirenas comunitarias IoT y llamadas robóticas."
+            },
+            {
+                "title": "C. Módulos Complementarios de Fortalecimiento",
+                "description": "Para asegurar una adopción holística, la plataforma incluye: 1. Educación Adaptativa (Chatbots Culturales): Asistentes virtuales entrenados no solo en clima, sino en cultura. Un usuario en la Sierra Nevada puede consultar en Kogui o español sobre cuándo sembrar según el clima, recibiendo respuestas que integran ciencia occidental y saberes ancestrales. 2. Red de Datos Ciudadana (Blockchain): Un 'banco de datos' descentralizado donde las comunidades son dueñas de su información. Si una ONG o universidad quiere usar los datos hiperlocales recolectados por los usuarios para investigaciones, el sistema basado en Blockchain registra el acceso y, en el futuro, podría gestionar micro-pagos o beneficios comunitarios por compartir esa data, cumpliendo rigurosamente con la Ley 1581 de 2012. 3. Gestión de Recursos Hídricos (IoT): En zonas de sequía como La Guajira, sensores IoT de bajo costo monitorean niveles de pozos subterráneos, alimentando a la IA para predecir el agotamiento del agua semanas antes de que ocurra, permitiendo racionamiento preventivo."
+            },
+            {
+                "title": "1.4 Módulo de Accesibilidad Universal: \"Manglar Bot\" (WhatsApp)",
+                "description": "Reconociendo que la descarga de nuevas aplicaciones puede ser una barrera en comunidades con dispositivos de gama baja o almacenamiento limitado, introducimos Manglar Bot, una integración directa con la API de WhatsApp Business, la aplicación de mensajería más omnipresente en Colombia.<br><br><strong>Estrategia \"Zero-Rating\":</strong> Aprovechamos que la mayoría de los planes prepago y pospago en Colombia incluyen WhatsApp ilimitado sin consumo de datos. Esto garantiza que el reporte de emergencias no dependa de tener saldo o un plan de datos activo, eliminando la fricción económica en momentos de crisis.<br><br><strong>Reporte Conversacional Simplificado:</strong> En lugar de formularios complejos, el usuario interactúa con un chatbot guiado.<br><em>Flujo: \"Hola\" -> El bot responde con menú visual simple: \"1. Reportar Emergencia 🚨\", \"2. Consultar Clima 🌦️\".</em><br><br><strong>Geolocalización Nativa:</strong> El usuario puede enviar su \"Ubicación Actual\" con un solo clic dentro del chat, la cual es procesada inmediatamente por nuestro motor geoespacial.<br><br><strong>Integración con NLP de Voz:</strong> El bot permite el envío de notas de voz (audios) describiendo la situación (ej: \"El río se llevó el puente\"). Estos audios son ingeridos por el mismo motor de Procesamiento de Lenguaje Natural (NLP) dialectal del componente \"Auxilio IA\", transcribiendo y clasificando la alerta automáticamente sin intervención humana.<br><br><strong>Canal Bidireccional de Alertas:</strong> Funciona también como canal de difusión masiva. Cuando el sistema \"Vigía Climático\" detecta una alerta roja, envía notificaciones proactivas de evacuación directamente al WhatsApp de los líderes comunitarios registrados en la zona de impacto, asegurando una tasa de apertura superior al 90% comparado con SMS tradicionales.",
+                "placeholder": "Placeholder: Ilustración del flujo de Manglar Bot en WhatsApp. Interfaz de Chat mostrando: 1. Usuario envía audio -> 2. Bot responde con mapa y confirmación -> 3. Alerta llegando a dashboard central."
+            }
+        ]
+    },
+    "impact": {
+        "theory": "Nuestra intervención rompe el ciclo de desastre-reconstrucción mediante la anticipación. Brecha que cerramos: La asimetría de información. Hoy, un funcionario en Bogotá sabe más sobre el clima en el Chocó que el habitante del Chocó. Manglar AI invierte esta pirámide, poniendo la inteligencia en manos del primer respondiente: el vecino. Innovación Social: No imponemos tecnología; la co-creamos. Los algoritmos se calibran con 'verdad terreno' (ground truth) aportada por la comunidad, reduciendo el sesgo algorítmico que suele afectar a regiones con pocos datos históricos.",
+        "benefits": [
+            "Agricultores de Subsistencia: Alertas precisas de heladas o sequías permiten cosechar antes de tiempo o proteger cultivos, salvaguardando la seguridad alimentaria de familias que dependen de su parcela.",
+            "Mujeres Cabeza de Hogar: En muchas comunidades rurales, las mujeres gestionan el agua y el hogar. La herramienta les empodera con información para asegurar el bienestar de sus hijos y ancianos frente a olas de calor o escasez hídrica.",
+            "Caso de Uso Simulado (Mocoa): Reconstruyendo la tragedia de Mocoa con nuestros modelos, estimamos que las alertas habrían llegado a los celulares y sirenas 4.5 horas antes del flujo torrencial, tiempo suficiente para una evacuación ordenada hacia puntos de encuentro seguros, reduciendo potencialmente las fatalidades en un 60-70%."
+        ],
+        "graphPlaceholder": "Placeholder: Gráfico de Barras Comparativo 'Tiempos de Respuesta Crítica'. Sistema Actual: Telefonía/Radio (48h respuesta efectiva) vs Manglar AI (2h alerta preventiva + 12h respuesta estatal).",
+        "metrics": [
+            "KPI de Precisión: >85% de correlación entre la alerta emitida y el evento climático (validado con estaciones IDEAM).",
+            "KPI de Adopción: >10,000 usuarios activos mensuales (MAU) en las 3 zonas piloto.",
+            "KPI de Resiliencia: 30% de reducción de pérdidas económicas reportadas por usuarios en cultivos de pancoger."
+        ]
+    },
+    "scale": {
+        "roadmap": [
+            {
+                "phase": "Fase 1: Validación y Anclaje (Año 1)",
+                "desc": "Foco: 3 Micro-regiones (Alta Guajira, Cuenca Atrato, Ladera Medellín). Hito: Desarrollo del MVP, entrenamiento de modelos con datasets locales, alianzas con Juntas de Acción Comunal."
+            },
+            {
+                "phase": "Fase 2: Expansión Regional y Tech-Transfer (Años 2-3)",
+                "desc": "Foco: Región Caribe completa y Eje Cafetero. Hito: Integración técnica con la plataforma nacional de la UNGRD. Lograr estatus de 'App Oficial Recomendada' por MinTIC para obtener zero-rating (datos gratuitos) en operadores móviles principales (Claro, Tigo, Movistar)."
+            },
+            {
+                "phase": "Fase 3: Nacionalización y Réplica (Años 4-5)",
+                "desc": "Foco: Cobertura Nacional (32 departamentos). Hito: Exportación del modelo a países vecinos con desafíos similares (Ecuador, Perú, Bolivia). Creación del 'Centro de Excelencia en IA Climática Andina'."
+            }
+        ],
+        "roadmapPlaceholder": "Placeholder: Gráfico de Línea de Tiempo 'Ruta de Escalamiento 2025-2030'. Eje X: Años. Eje Y: Usuarios Activos. Curva exponencial mostrando hitos clave (Año 1: 10k usuarios -> Año 3: 150k -> Año 5: 1M+).",
+        "revenuePlaceholder": "Placeholder: Gráfico de Áreas Apiladas 'Proyección de Ingresos'. Muestra la diversificación de fuentes de financiamiento a lo largo de 5 años.",
+        "businessModel": "Para garantizar que Manglar AI no sea un proyecto efímero dependiente de grants, operaremos un modelo híbrido: 1. B2G (Gobierno como Cliente): Contratos de prestación de servicios tecnológicos con Alcaldías y Gobernaciones. El sistema les ayuda a cumplir sus metas del Plan de Desarrollo en gestión del riesgo, justificando la inversión recurrente anual. 2. B2B (Sector Privado): Seguros Paramétricos (Venta de APIs de riesgo micro-local) y Logística (Servicios de inteligencia climática para empresas de transporte). 3. Filantropía Estratégica: Continuar aplicando a fondos internacionales (Green Climate Fund, BID) exclusivamente para componentes de I+D y expansión a zonas de no-mercado."
+    },
+    "team": {
+        "intro": "Para ejecutar esta visión ambiciosa, hemos reunido un equipo interdisciplinario que une la excelencia técnica de Silicon Valley con la sensibilidad social del trabajo comunitario en Colombia.",
+        "members": [
+            {
+                "role": "Emprendedor Principal / CEO",
+                "desc": "Buscamos un perfil con experiencia dual en tecnología y gestión pública o desarrollo social. Debe tener capacidad probada para negociar con entidades gubernamentales (MinTIC, UNGRD) y liderar equipos ágiles.",
+                "cvPlaceholder": "Placeholder: Adjunte CV del Emprendedor Principal (e.g., CEO) – Inserte archivo PDF aquí. Debe destacar experiencia en liderazgo de proyectos tecnológicos de impacto social."
+            },
+            {
+                "role": "Director de Tecnología (CTO)",
+                "desc": "Experto en Inteligencia Artificial y Ciencia de Datos, preferiblemente con experiencia en modelado climático o sistemas de información geográfica (GIS). Crucial experiencia en Edge Computing y desarrollo de apps para entornos de baja conectividad.",
+                "cvPlaceholder": "Placeholder: Adjunte CV del Miembro Clave del Equipo (e.g., CTO) – Inserte archivo PDF aquí. Debe evidenciar experiencia técnica en IA/Machine Learning y arquitectura de software."
+            },
+            {
+                "role": "Líder de Impacto Comunitario",
+                "desc": "Antropólogo/a o Sociólogo/a con experiencia en trabajo campo en regiones de conflicto o alta vulnerabilidad. Encargado de asegurar que la tecnología sea culturalmente apropiada y adoptada."
+            }
+        ]
+    }
+}

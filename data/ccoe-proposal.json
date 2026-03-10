@@ -1,0 +1,529 @@
+{
+  "title": "Centro de Control de Operaciones Electorales (CCOE)",
+  "subtitle": "Plataforma Integral de Inteligencia Electoral y Gestión de Operaciones",
+  "author": "Jhoan Karlo Sebastian Garcia Casanova",
+  "reportDate": "Octubre 2025",
+  "version": "Documento Técnico v1.0",
+  "scope": "Sistema Electoral Nacional",
+  "duration": "24 semanas (4 fases)",
+  "company": "APEX AI Solutions",
+  "companyTagline": "Especialistas en Desarrollo Electoral y Tecnología de Inteligencia",
+  "email": "support@apexaisolutions.dev",
+  "phone": "3024816706",
+  
+  "executiveSummary": "El Centro de Control de Operaciones Electorales (CCOE) es una plataforma tecnológica integral diseñada para planificar, monitorear y optimizar operaciones electorales a gran escala. El sistema integra la lógica de un CRM avanzado con módulos de georreferenciación, seguimiento de votantes, gestión de líderes, predicción de intención de voto y análisis operativo en tiempo real.",
+
+  "strategicBenefits": [
+    {
+      "icon": "🎯",
+      "title": "Centralización Operativa",
+      "description": "Control total de operaciones electorales desde una única plataforma"
+    },
+    {
+      "icon": "⚡",
+      "title": "Inteligencia en Tiempo Real",
+      "description": "Dashboard con KPIs dinámicos y alertas automáticas por zonas críticas"
+    },
+    {
+      "icon": "🗺️",
+      "title": "Georreferenciación Avanzada",
+      "description": "Visualización territorial con análisis de densidad y mapas de calor"
+    },
+    {
+      "icon": "🚀",
+      "title": "Escalabilidad Predictiva",
+      "description": "Arquitectura preparada para ML avanzado y análisis multivariado"
+    }
+  ],
+
+  "systemModules": [
+    {
+      "icon": "👥",
+      "name": "Módulo de Gestión de Votantes (Voter CRM)",
+      "type": "Sistema CRM",
+      "features": [
+        "Registro individualizado de votantes con variables clave",
+        "Estados dinámicos: confirmado, por convencer, no contactado, opositor",
+        "Geolocalización con visualización en mapa interactivo",
+        "Segmentación por zonas y características sociodemográficas"
+      ]
+    },
+    {
+      "icon": "🏛️",
+      "name": "Módulo de Líderes y Estructuras",
+      "type": "Gestión Jerárquica",
+      "features": [
+        "Gestión de líderes con redes de influencia (votantes asociados)",
+        "Métricas: eficacia, tasa de conversión, participación en campo",
+        "Jerarquías configurables (coordinadores, líderes, voluntarios)",
+        "Dashboard de rendimiento por líder y estructura"
+      ]
+    },
+    {
+      "icon": "📊",
+      "name": "Módulo de Operaciones y Seguimiento de Campo",
+      "type": "Dashboard Operativo",
+      "features": [
+        "Visualización en tiempo real de actividades y movilización",
+        "Registro de visitas, eventos, reuniones y encuestas",
+        "KPIs operativos: % cobertura, contactos efectivos, intención favorable",
+        "Sistema de alertas automáticas por zonas críticas"
+      ]
+    },
+    {
+      "icon": "🤖",
+      "name": "Módulo de Analítica y Proyección Electoral",
+      "type": "ML Predictivo",
+      "features": [
+        "Modelos de probabilidad de voto (MVP con regresión logística)",
+        "Predicciones por región, líder y grupo demográfico",
+        "Visualizaciones dinámicas: mapas de calor, evolución temporal",
+        "Escalabilidad hacia machine learning avanzado"
+      ]
+    },
+    {
+      "icon": "📄",
+      "name": "Módulo de Comunicación y Reportes",
+      "type": "Generación Automática",
+      "features": [
+        "Generación automática de reportes PDF por zona/líder",
+        "Sistema interno de notificaciones segmentadas",
+        "Exportación de reportes analíticos personalizados",
+        "Dashboard ejecutivo con métricas consolidadas"
+      ]
+    }
+  ],
+
+  "architectureDescription": "El CCOE se estructura bajo una arquitectura de microservicios especialmente diseñada para operaciones electorales, garantizando alta disponibilidad, seguridad de datos y escalabilidad operativa durante períodos críticos.",
+
+  "architectureDiagram": {
+    "note": "Diagrama completo será integrado en la versión final del documento",
+    "placeholder": "FRONTEND (Next.js + Dashboard) → API GATEWAY (FastAPI) → MICROSERVICIOS → BASE DE DATOS (PostgreSQL + PostGIS)"
+  },
+
+  "systemFlows": [
+    {
+      "name": "Flujo de Gestión de Votantes",
+      "flow": "Registro/Importación → Validación → Geolocalización → Segmentación → Dashboard CRM"
+    },
+    {
+      "name": "Flujo de Operaciones de Campo", 
+      "flow": "Interacción Campo → Actualización Estado → Cálculo KPIs → Alertas Automáticas → Reportes"
+    },
+    {
+      "name": "Flujo de Analítica Electoral",
+      "flow": "Datos Históricos → Modelos Predictivos → Visualizaciones → Reportes Ejecutivos → Decisiones"
+    }
+  ],
+
+  "techStack": [
+    {
+      "category": "Backend",
+      "technologies": "Python, FastAPI, SQLAlchemy, PostgreSQL",
+      "description": "API modular con endpoints seguros y consultas optimizadas"
+    },
+    {
+      "category": "Base de Datos",
+      "technologies": "PostgreSQL + PostGIS + Redis",
+      "description": "Soporte geoespacial jerárquico con cache para consultas frecuentes"
+    },
+    {
+      "category": "Frontend",
+      "technologies": "Next.js 15, TypeScript, TailwindCSS, Framer Motion",
+      "description": "Dashboard moderno con animaciones y diseño responsive"
+    },
+    {
+      "category": "Visualización",
+      "technologies": "Leaflet.js, Mapbox, Recharts, D3.js",
+      "description": "Mapas interactivos con clustering y gráficos analíticos"
+    },
+    {
+      "category": "Modelamiento",
+      "technologies": "Scikit-learn, XGBoost, Pandas, NumPy",
+      "description": "Modelos de predicción electoral y análisis operativo"
+    },
+    {
+      "category": "Autenticación",
+      "technologies": "JWT, OAuth2, RBAC (Role-Based Access)",
+      "description": "Control granular por roles: administrador, líder, coordinador"
+    },
+    {
+      "category": "Geolocalización",
+      "technologies": "PostGIS, Leaflet.markercluster, Google Maps API",
+      "description": "Análisis territorial con clustering inteligente"
+    },
+    {
+      "category": "Reportes",
+      "technologies": "ReportLab, Jinja2, Chart.js",
+      "description": "Generación automática de PDFs con visualizaciones"
+    },
+    {
+      "category": "Monitoreo",
+      "technologies": "Grafana, Prometheus, Sentry",
+      "description": "Métricas de rendimiento y estado operativo en tiempo real"
+    },
+    {
+      "category": "Despliegue",
+      "technologies": "Docker, Kubernetes, Railway, Vercel",
+      "description": "Contenedores escalables con CI/CD automatizado"
+    }
+  ],
+
+  "developmentPhases": [
+    {
+      "name": "Fase 1: MVP - Núcleo CRM Electoral",
+      "duration": "8-12 semanas",
+      "objectives": [
+        "Implementar núcleo CRM con geolocalización básica",
+        "Dashboard funcional con KPIs esenciales", 
+        "Base de datos estructurada con PostGIS",
+        "Sistema de roles y autenticación"
+      ],
+      "deliverables": [
+        "Dashboard operativo con 5 módulos principales",
+        "CRUD completo para votantes y líderes",
+        "Mapa interactivo con marcadores y clustering",
+        "Sistema de autenticación con 3 roles diferenciados",
+        "API RESTful con documentación Swagger"
+      ]
+    },
+    {
+      "name": "Fase 2: Analítica Inicial y Operaciones",
+      "duration": "12-16 semanas",
+      "objectives": [
+        "Integrar modelos predictivos básicos (regresión logística)",
+        "Implementar métricas operativas en tiempo real",
+        "Sistema de alertas automáticas por zonas",
+        "Reportes PDF automatizados"
+      ],
+      "deliverables": [
+        "Modelos de intención de voto con precisión >75%",
+        "Dashboard con alertas automáticas configurables",
+        "Generación de reportes PDF por zona/líder/período",
+        "KPIs operativos: cobertura, efectividad, conversión",
+        "Sistema de notificaciones internas"
+      ]
+    },
+    {
+      "name": "Fase 3: Visualización Avanzada y Escalabilidad",
+      "duration": "16-20 semanas",
+      "objectives": [
+        "Dashboards regionales con análisis comparativo",
+        "Mapas de calor y visualizaciones avanzadas",
+        "Optimización de performance para grandes volúmenes",
+        "Integración con fuentes de datos externas"
+      ],
+      "deliverables": [
+        "Mapas de calor con análisis de densidad electoral",
+        "Dashboard ejecutivo con métricas consolidadas",
+        "Sistema de importación masiva (CSV/Excel)",
+        "Optimización para 100k+ votantes simultáneos",
+        "Cache inteligente con Redis"
+      ]
+    },
+    {
+      "name": "Fase 4: Inteligencia Predictiva Avanzada",
+      "duration": "20-24 semanas",
+      "objectives": [
+        "Machine learning avanzado con XGBoost",
+        "Predicciones multivariadas y segmentación IA",
+        "Análisis predictivo de participación electoral",
+        "Simulaciones y escenarios electorales"
+      ],
+      "deliverables": [
+        "Modelos ML con precisión >90%",
+        "Predicciones de participación por segmento",
+        "Simulador de escenarios electorales",
+        "IA de segmentación automática de votantes",
+        "Analytics predictivos con visualización temporal"
+      ]
+    }
+  ],
+
+  "databaseDescription": "El diseño de base de datos utiliza PostgreSQL con la extensión PostGIS para manejo eficiente de datos geoespaciales y operaciones electorales:",
+
+  "databaseSchemas": [
+    {
+      "title": "Tabla Principal de Votantes",
+      "schema": "CREATE TABLE voters (\n    id SERIAL PRIMARY KEY,\n    document_id VARCHAR(20) UNIQUE NOT NULL,\n    full_name VARCHAR(255) NOT NULL,\n    phone VARCHAR(20),\n    email VARCHAR(100),\n    address TEXT,\n    coordinates GEOMETRY(POINT, 4326), -- PostGIS\n    neighborhood VARCHAR(100),\n    socioeconomic_level INTEGER,\n    age_group VARCHAR(20),\n    gender VARCHAR(10),\n    voting_intention INTEGER CHECK (voting_intention BETWEEN 0 AND 100),\n    voter_status VARCHAR(20) DEFAULT 'no_contactado',\n    tags TEXT[],\n    leader_id INTEGER REFERENCES leaders(id),\n    created_at TIMESTAMP DEFAULT NOW(),\n    updated_at TIMESTAMP DEFAULT NOW()\n);"
+    },
+    {
+      "title": "Tabla de Líderes y Estructuras",
+      "schema": "CREATE TABLE leaders (\n    id SERIAL PRIMARY KEY,\n    full_name VARCHAR(255) NOT NULL,\n    phone VARCHAR(20),\n    email VARCHAR(100),\n    level VARCHAR(20), -- coordinador, lider, voluntario\n    territory_assigned TEXT[],\n    effectiveness_score DECIMAL(5,2) DEFAULT 0.0,\n    conversion_rate DECIMAL(5,4) DEFAULT 0.0,\n    active_voters_count INTEGER DEFAULT 0,\n    parent_leader_id INTEGER REFERENCES leaders(id),\n    created_at TIMESTAMP DEFAULT NOW()\n);"
+    },
+    {
+      "title": "Tabla de Interacciones y Seguimiento",
+      "schema": "CREATE TABLE interactions (\n    id SERIAL PRIMARY KEY,\n    voter_id INTEGER REFERENCES voters(id),\n    leader_id INTEGER REFERENCES leaders(id),\n    interaction_type VARCHAR(50),\n    channel VARCHAR(30),\n    result VARCHAR(30),\n    intention_before INTEGER,\n    intention_after INTEGER,\n    notes TEXT,\n    interaction_date TIMESTAMP DEFAULT NOW(),\n    geo_location GEOMETRY(POINT, 4326)\n);"
+    },
+    {
+      "title": "Índices Geoespaciales de Optimización",
+      "schema": "-- Índices para optimización de consultas\nCREATE INDEX idx_voters_coordinates ON voters USING GIST(coordinates);\nCREATE INDEX idx_voters_neighborhood ON voters(neighborhood);\nCREATE INDEX idx_voters_status_intention ON voters(voter_status, voting_intention);\nCREATE INDEX idx_interactions_date ON interactions(interaction_date);\nCREATE INDEX idx_interactions_voter ON interactions(voter_id);\nCREATE INDEX idx_leaders_effectiveness ON leaders(effectiveness_score DESC);"
+    }
+  ],
+
+  "kpiMetrics": [
+    {
+      "icon": "📊",
+      "title": "Cobertura Total",
+      "value": "100k+",
+      "description": "Votantes registrados y gestionados"
+    },
+    {
+      "icon": "🎯",
+      "title": "Precisión ML",
+      "value": "90%+",
+      "description": "Exactitud en predicciones de intención"
+    },
+    {
+      "icon": "⚡",
+      "title": "Tiempo Real",
+      "value": "<200ms",
+      "description": "Respuesta de consultas críticas"
+    },
+    {
+      "icon": "🔒",
+      "title": "Disponibilidad",
+      "value": "99.9%",
+      "description": "SLA durante períodos electorales"
+    }
+  ],
+
+  "dashboardComponents": [
+    {
+      "icon": "📈",
+      "name": "Vista Ejecutiva",
+      "features": [
+        "KPIs consolidados con tendencias",
+        "Mapa general con clustering inteligente", 
+        "Feed de actividad en tiempo real",
+        "Alertas críticas y notificaciones"
+      ]
+    },
+    {
+      "icon": "👥",
+      "name": "Gestión de Votantes",
+      "features": [
+        "Tabla avanzada con filtros múltiples",
+        "Búsqueda en tiempo real por múltiples campos",
+        "Perfil detallado con historial de interacciones",
+        "Acciones rápidas: contacto, edición, exportación"
+      ]
+    },
+    {
+      "icon": "🗺️",
+      "name": "Análisis Territorial",
+      "features": [
+        "Mapa fullscreen con capas configurables",
+        "Heatmaps de intención por zona",
+        "Clustering con métricas promedio",
+        "Análisis de densidad y cobertura"
+      ]
+    },
+    {
+      "icon": "🏛️",
+      "name": "Gestión de Líderes",
+      "features": [
+        "Dashboard de rendimiento individual",
+        "Comparativo de efectividad",
+        "Gestión de territorio asignado",
+        "Métricas de conversión y seguimiento"
+      ]
+    }
+  ],
+
+  "securityMeasures": [
+    {
+      "icon": "🔐",
+      "title": "Encriptación Integral",
+      "description": "AES-256 para datos sensibles, TLS 1.3 para comunicaciones"
+    },
+    {
+      "icon": "🛡️",
+      "title": "Control de Acceso Granular",
+      "description": "RBAC con 3 roles diferenciados y permisos específicos"
+    },
+    {
+      "icon": "📝",
+      "title": "Auditoría Completa",
+      "description": "Log detallado de todas las acciones y accesos al sistema"
+    },
+    {
+      "icon": "👤",
+      "title": "Pseudonimización",
+      "description": "Protección de identidad con consentimiento explícito rastreado"
+    },
+    {
+      "icon": "💾",
+      "title": "Backup Seguro",
+      "description": "Respaldos automáticos encriptados con rotación programada"
+    },
+    {
+      "icon": "🔍",
+      "title": "Monitoreo Continuo",
+      "description": "Detección proactiva de amenazas y análisis de comportamiento"
+    }
+  ],
+
+  "systemRoles": [
+    {
+      "icon": "👨‍💼",
+      "name": "Administrador",
+      "permissions": [
+        "Acceso completo a todos los módulos",
+        "Gestión de usuarios y permisos",
+        "Configuración de sistema y alertas",
+        "Exportación de reportes ejecutivos"
+      ]
+    },
+    {
+      "icon": "🎯",
+      "name": "Coordinador",
+      "permissions": [
+        "Gestión de líderes y estructuras",
+        "Análisis territorial de su zona",
+        "Reportes operativos por región",
+        "Configuración de alertas zonales"
+      ]
+    },
+    {
+      "icon": "🏃‍♂️",
+      "name": "Operador/Líder",
+      "permissions": [
+        "Gestión de votantes asignados",
+        "Registro de interacciones",
+        "Consulta de métricas personales",
+        "Reportes individuales"
+      ]
+    }
+  ],
+
+  "legalCompliance": [
+    {
+      "law": "Ley 1581 de 2012 (Habeas Data)",
+      "description": "Protección integral de datos personales"
+    },
+    {
+      "law": "Decreto 1377 de 2013",
+      "description": "Reglamentación de tratamiento de datos"
+    },
+    {
+      "law": "Código Electoral",
+      "description": "Cumplimiento de normas para procesos electorales"
+    },
+    {
+      "law": "Resoluciones CNE",
+      "description": "Adherencia a regulaciones específicas"
+    }
+  ],
+
+  "scalabilityFeatures": [
+    {
+      "icon": "🗄️",
+      "title": "Particionado por Territorio",
+      "features": [
+        "Tablas segmentadas por departamento/municipio",
+        "Optimización para consultas regionales",
+        "Escalabilidad horizontal por geografía",
+        "Replicación selectiva por zona"
+      ]
+    },
+    {
+      "icon": "🚀",
+      "title": "Cache Inteligente",
+      "features": [
+        "Redis para KPIs calculados",
+        "Cache de consultas recurrentes",
+        "Invalidación automática de datos",
+        "Gestión de memoria optimizada"
+      ]
+    },
+    {
+      "icon": "⚡",
+      "title": "Microservicios Independientes",
+      "features": [
+        "Cada módulo escala según demanda específica",
+        "Load balancing geográfico",
+        "Queue system electoral con Celery",
+        "CDN especializado para dashboards"
+      ]
+    },
+    {
+      "icon": "📊",
+      "title": "Monitoreo en Tiempo Real",
+      "features": [
+        "Grafana con métricas electorales",
+        "Prometheus para recolección",
+        "Sentry para detección de errores",
+        "Alertas automáticas por degradación"
+      ]
+    }
+  ],
+
+  "conclusion": "El Centro de Control de Operaciones Electorales (CCOE) representa una solución tecnológica integral que transformará la gestión de operaciones electorales mediante la aplicación de técnicas avanzadas de CRM especializado, análisis geoespacial y inteligencia predictiva.",
+
+  "competitiveAdvantages": [
+    {
+      "title": "Especialización Electoral",
+      "description": "Diseño específico para operaciones electorales con flujos optimizados"
+    },
+    {
+      "title": "Inteligencia Territorial",
+      "description": "Análisis geoespacial avanzado con clustering y mapas de calor"
+    },
+    {
+      "title": "Escalabilidad Predictiva",
+      "description": "Arquitectura preparada para ML y análisis multivariado"
+    },
+    {
+      "title": "Seguridad Normativa",
+      "description": "Cumplimiento integral de regulaciones electorales colombianas"
+    },
+    {
+      "title": "Operación en Tiempo Real",
+      "description": "Dashboard con KPIs dinámicos y alertas automáticas"
+    }
+  ],
+
+  "expectedImpact": [
+    {
+      "icon": "📈",
+      "metric": "Eficiencia Operativa",
+      "value": "+70%",
+      "description": "Incremento en efectividad de contacto electoral"
+    },
+    {
+      "icon": "🎯",
+      "metric": "Precisión Analítica", 
+      "value": ">90%",
+      "description": "Predicciones de intención (Fase 4)"
+    },
+    {
+      "icon": "🌐",
+      "metric": "Cobertura Territorial",
+      "value": "100k+",
+      "description": "Votantes simultáneos gestionados"
+    },
+    {
+      "icon": "⚡",
+      "metric": "Toma de Decisiones",
+      "value": "Real-time",
+      "description": "Dashboard ejecutivo con métricas"
+    }
+  ],
+
+  "contact": {
+    "name": "Jhoan Karlo Sebastian Garcia Casanova",
+    "phone": "3024816706",
+    "email": "support@apexaisolutions.dev",
+    "company": "APEX AI Solutions"
+  },
+
+  "team": {
+    "name": "PlanMaestro Development Team",
+    "specialization": "Sistemas Electorales y ML",
+    "experience": "Plataformas electorales avanzadas",
+    "methodology": "Desarrollo ágil, entregas incrementales"
+  },
+
+  "disclaimer": "Este documento constituye una propuesta técnica integral para el desarrollo del Centro de Control de Operaciones Electorales. Los plazos, especificaciones y entregables descritos están sujetos a refinamiento durante la fase de planificación detallada y pueden variar según los requerimientos específicos del proyecto electoral. El desarrollo se realizará siguiendo metodologías ágiles con entregas incrementales y documentación completa en cada fase."
+}

@@ -1,0 +1,198 @@
+{
+  "proposalTitle": "Manual de Manejo de Crisis",
+  "proposalSubtitle": "Programa H2B — International Cultural Experience (ICE)",
+  "proposalDate": "Octubre 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "International Cultural Experience - ICE",
+  
+  "executiveSummary": "El programa H2B, orientado a experiencias laborales temporales en Estados Unidos, presentó una situación crítica derivada de un incumplimiento por parte del sponsor asociado. ICE reconoce la afectación a sus estudiantes y está comprometido en gestionar soluciones responsables, justas y transparentes, priorizando el bienestar de cada participante y la sostenibilidad de la organización.",
+  
+  "providerCompany": "International Cultural Experience - ICE",
+  "providerAddress": "www.iceexperience.co",
+  "providerTaxId": "Programa H2B",
+  "providerEmail": "info@iceexperience.co",
+  "providerPhone": "Contacto disponible en sitio web",
+  
+  "clientCompany": "Estudiantes Programa H2B",
+  "clientAddress": "Participantes afectados",
+  "clientRepresentative": "Equipo de Crisis ICE",
+  "clientContact": "Departamento de Relaciones Internacionales",
+  
+  "contractObject": "Establecer un protocolo de comunicación ordenado y respetuoso para el manejo de la crisis del programa H2B, preservando la confianza de los estudiantes y ofreciendo alternativas que protejan su inversión y proyección internacional.",
+  
+  "scopeDescription": "Este manual establece los principios, procesos y modelos de comunicación para gestionar de manera profesional y empática los casos derivados de la situación excepcional del programa H2B.",
+  
+  "modules": [
+    {
+      "title": "🎯 Objetivos del Protocolo",
+      "description": "Preservar la confianza de estudiantes y familias. Mantener coherencia con el tono de voz y valores de ICE. Establecer proceso comunicativo ordenado y respetuoso. Ofrecer alternativas que protejan la inversión del estudiante.",
+      "fullWidth": true
+    },
+    {
+      "title": "🟦 Precisión Aspiracional",
+      "description": "Explicar con claridad la situación evitando ambigüedades. Enfatizar soluciones y caminos posibles, no el conflicto. Usar lenguaje que comunique dirección, acción y compromiso institucional."
+    },
+    {
+      "title": "💠 Empatía Guiada",
+      "description": "Reconocer la frustración del estudiante de forma genuina. Mostrar que ICE está presente, accesible y comprometido. Ofrecer alternativas que cuiden su inversión y mantengan abierta la posibilidad de crecimiento."
+    },
+    {
+      "title": "🕊️ Elegancia Narrativa",
+      "description": "Mantener tono digno, sereno y profesional, sin tecnicismos ni excesos emocionales. Usar lenguaje cuidado: 'situación excepcional', 'alternativas de continuidad', 'revisión personalizada'."
+    },
+    {
+      "title": "📧 Proceso de Comunicación en 3 Etapas",
+      "description": "Correo 1: Orientación y Reencuadre Positivo. Correo 2: Confirmación de Alternativas. Correo 3: Invitación a Conciliación Presencial. Cada etapa con objetivos específicos y tono apropiado.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Correo 1 — Orientación y Reencuadre Positivo",
+      "description": "Se informa la situación y se invita a considerar la opción de traslado a otro programa ICE.",
+      "highlight": true,
+      "features": [
+        "Mantener la relación activa",
+        "Ofrecer continuidad de valor",
+        "Presentar alternativas disponibles",
+        "Agendar llamada o videollamada",
+        "Programas en Canadá, Malta y Reino Unido",
+        "Convenios verificados con acompañamiento integral"
+      ]
+    },
+    {
+      "title": "Correo 2 — Confirmación de Alternativas",
+      "description": "Si el estudiante insiste en el reembolso, se presenta nuevamente la posibilidad de traslado con beneficios adicionales.",
+      "features": [
+        "Reforzar percepción de compromiso institucional",
+        "Mostrar empatía genuina",
+        "Plan de continuidad preferencial",
+        "Traslado de inversión sin pérdidas",
+        "Acompañamiento personalizado",
+        "Reunión individual para revisar caso"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "Modelo de Comunicación por Etapas - Cada etapa tiene objetivos específicos y herramientas de comunicación definidas.",
+  "subscriptionColumnTitle": "Objetivo Principal",
+  "localColumnTitle": "Herramientas de Comunicación",
+  
+  "pricingRows": [
+    { "module": "Correo 1 - Reencuadre", "subscription": "Mantener relación activa", "local": "Alternativas de continuidad" },
+    { "module": "Correo 2 - Confirmación", "subscription": "Reforzar compromiso", "local": "Plan preferencial" },
+    { "module": "Correo 3 - Conciliación", "subscription": "Resolución formal", "local": "Reunión con Gerencia" },
+    { "module": "Proceso Completo", "subscription": "Preservar confianza", "local": "Solución justa y transparente", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "Registro completo de cada comunicación en CRM",
+    "Uso exclusivo de plantillas aprobadas",
+    "Trazabilidad de fecha, canal, respuesta y seguimiento",
+    "Cierre con acta de conciliación o constancia de acuerdo"
+  ],
+  
+  "pricingExample": {
+    "title": "Lenguaje Recomendado vs. Evitar",
+    "originalAmount": "Palabras a EVITAR",
+    "discountPercent": "Palabras RECOMENDADAS",
+    "discountAmount": "problema, fraude, culpa, demanda",
+    "finalAmount": "situación excepcional, alternativas de continuidad, revisión personalizada"
+  },
+  
+  "paymentPlanDescription": "Estructura de Comunicación Escalonada - Cada etapa se activa según la respuesta del estudiante, manteniendo siempre el tono profesional y empático establecido por ICE.",
+  
+  "paymentPlan": {
+    "totalAmount": "3 Etapas de Comunicación",
+    "payments": [
+      {
+        "stage": "Etapa 1 - Primera Comunicación",
+        "description": "Asunto: Actualización importante sobre tu programa H2B y nuevas opciones de continuidad. Informar situación excepcional. Presentar alternativas en Canadá, Malta y Reino Unido.",
+        "amount": "Objetivo: Continuidad"
+      },
+      {
+        "stage": "Etapa 2 - Segunda Comunicación",
+        "description": "Asunto: Seguimiento personalizado a tu caso H2B. Reiterar plan de continuidad preferencial. Enfatizar beneficios y acompañamiento personalizado.",
+        "amount": "Objetivo: Compromiso"
+      },
+      {
+        "stage": "Etapa 3 - Conciliación Final",
+        "description": "Asunto: Invitación a reunión de conciliación con Gerencia ICE. Reunión formal con Gerencia General. Establecer plan de devolución si es necesario.",
+        "amount": "Objetivo: Resolución"
+      }
+    ],
+    "notes": "Solo personal autorizado (Gerencia o Relaciones Internacionales) puede enviar comunicaciones oficiales. Mantener consistencia en el tono y mensaje en todas las etapas."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Contexto General",
+      "description": "Situación crítica derivada del incumplimiento del sponsor asociado al programa H2B. ICE comprometido con soluciones responsables, justas y transparentes, priorizando el bienestar de cada participante.",
+      "fullWidth": true
+    },
+    {
+      "phase": "Principios de Comunicación",
+      "description": "Basados en los Pilares de la Voz de ICE: Precisión Aspiracional, Empatía Guiada y Elegancia Narrativa. Evitar ambigüedades y mantener tono profesional."
+    },
+    {
+      "phase": "Implementación del Protocolo",
+      "description": "Aplicación del proceso de 3 etapas de comunicación con registro completo en CRM. Seguimiento personalizado de cada caso hasta resolución final."
+    },
+    {
+      "phase": "Cierre y Documentación",
+      "description": "Todo caso debe concluir con acta de conciliación o constancia de acuerdo. Trazabilidad completa del proceso de comunicación y resolución."
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades del Equipo ICE",
+      "items": [
+        "Aplicar protocolo de comunicación establecido",
+        "Mantener registro completo en CRM de todas las comunicaciones",
+        "Usar exclusivamente plantillas aprobadas",
+        "Preservar tono profesional y empático en todas las interacciones",
+        "Ofrecer alternativas viables de continuidad",
+        "Gestionar reuniones de conciliación cuando sea necesario",
+        "Documentar acuerdos y resoluciones finales"
+      ]
+    },
+    "client": {
+      "title": "Expectativas del Proceso",
+      "items": [
+        "Comunicación transparente sobre la situación del programa H2B",
+        "Respeto por la inversión realizada por el estudiante",
+        "Alternativas viables de continuidad en otros programas",
+        "Trato digno y profesional durante todo el proceso",
+        "Resolución justa según cada caso individual",
+        "Información clara sobre opciones disponibles",
+        "Proceso ordenado y respetuoso de conciliación"
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Recomendaciones Adicionales",
+    "description": "Registro: Mantener trazabilidad completa en CRM. Consistencia: Usar plantillas aprobadas únicamente. Cierre: Acta de conciliación obligatoria. Vocería: Solo Gerencia o Relaciones Internacionales pueden comunicar oficialmente sobre el programa H2B."
+  },
+  
+  "acceptanceText": "Este manual constituye el protocolo oficial de ICE para el manejo de la crisis del programa H2B. Su aplicación es obligatoria para todo el personal involucrado en la gestión de casos relacionados.",
+  
+  "signatures": {
+    "provider": {
+      "company": "International Cultural Experience - ICE",
+      "name": "Gerencia General",
+      "position": "Dirección Ejecutiva"
+    },
+    "client": {
+      "company": "Equipo de Crisis H2B",
+      "name": "Coordinación de Programas Internacionales",
+      "position": "Responsable de Implementación"
+    }
+  },
+  
+  "footerLeft": "ICE — International Cultural Experience • www.iceexperience.co",
+  "footerRight": "Manual Interno · Uso Exclusivo Personal ICE · H2B Crisis v1.0"
+}

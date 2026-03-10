@@ -1,0 +1,60 @@
+{
+    "templateId": "business-plan",
+    "data": {
+        "businessName": "Café Catador",
+        "businessType": "Hospitalidad y Turismo",
+        "location": "Suroeste Antioqueño, Colombia",
+        "targetAudience": "Turistas extranjeros y locales",
+        "documentType": "Propuesta Comercial",
+        "generationDate": "2026-02-08T00:00:00.000Z",
+        "businessDescription": "Somos un Café del Suroeste Antioqueño, subregión cafetera del departamento. Cada espacio cuenta la memoria del suroeste, con colores, sabores y tradición que nos inspira traer su identidad al corazón de Medellín.",
+        "sections": [
+            {
+                "title": "Situación Actual y Retos",
+                "content": "<p>Actualmente, Café Catador enfrenta desafíos en la gestión de reservas y atención al cliente, típicos del sector de hospitalidad:</p><ul><li><strong>Reservas de Tours:</strong> Gestión manual propensa a errores e información incompleta.</li><li><strong>Atención a Habitaciones:</strong> Solicitudes de Alimentos y Bebidas (F&B) con tiempos de respuesta lentos.</li><li><strong>Canal Principal:</strong> Alta dependencia de WhatsApp, exigiendo disponibilidad 24/7.</li></ul>",
+                "highlights": "Necesidad crítica de optimizar la atención en WhatsApp, canal dominante en el turismo local."
+            },
+            {
+                "title": "Análisis de Oportunidad y Valor",
+                "content": "<p>La implementación de un Agente de Inteligencia Artificial (RAG) aborda directamente los puntos de dolor identificados y potencia los diferenciadores de la marca:</p><ul><li><strong>Confianza y Precisión:</strong> Respuestas contextuales exactas sobre inventario, menús y detalles técnicos de los tours, reduciendo errores.</li><li><strong>Venta Consultiva:</strong> El agente no solo responde, sino que sugiere y recomienda productos (upselling), aumentando el ticket promedio.</li><li><strong>Recuperación de Carrito:</strong> Mensajes proactivos para retomar reservas inconclusas (tasas de recuperación típicas del 10-20%).</li><li><strong>Cualificación de Leads:</strong> Filtra consultas rutinarias y escala solo prospectos 'calientes' al equipo humano.</li><li><strong>Disponibilidad Global:</strong> Atención inmediata 24/7, crucial para turistas de diferentes zonas horarias.</li></ul>",
+                "highlights": "Automatización inteligente que convierte consultas en ventas y fideliza clientes."
+            },
+            {
+                "title": "Benchmarks de la Industria",
+                "content": "<p>Datos comparativos del sector hospitalidad y chatbots en WhatsApp:</p><div style='display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:10px;'><div style='background:#f9fafb; padding:15px; border-radius:8px; border-left:4px solid #10b981;'><strong>Conversión</strong><p style='margin:5px 0 0; color:#4b5563; font-size:0.9em;'>Aumento de 2-3x en tasas de conversión (hasta 40-60% en WhatsApp).</p></div><div style='background:#f9fafb; padding:15px; border-radius:8px; border-left:4px solid #10b981;'><strong>Incremento en Ventas</strong><p style='margin:5px 0 0; color:#4b5563; font-size:0.9em;'>Mejora típica del 10-67% (con 5-20% realista en hospitalidad) por upselling.</p></div><div style='background:#f9fafb; padding:15px; border-radius:8px; border-left:4px solid #10b981;'><strong>Ahorro de Tiempo</strong><p style='margin:5px 0 0; color:#4b5563; font-size:0.9em;'>Personal 30-40% más productivo al eliminar tareas repetitivas.</p></div><div style='background:#f9fafb; padding:15px; border-radius:8px; border-left:4px solid #10b981;'><strong>Recuperación de Carritos</strong><p style='margin:5px 0 0; color:#4b5563; font-size:0.9em;'>10-20%+ de recuperación con mensajes proactivos.</p></div></div>",
+                "highlights": "Los asistentes de IA generan un impacto medible en ingresos y eficiencia operativa."
+            },
+            {
+                "title": "Estimación de Retorno de Inversión (ROI)",
+                "content": "<p>Basado en puntos de referencia de la industria y el volumen estimado de consultas (300-800/mes) con un AOV promedio de $80,000 - $150,000 COP:</p><table style='width:100%; border-collapse:collapse; margin-top:15px; font-size:0.85em;'><thead><tr style='background-color:#f3f4f6; text-align:left;'><th style='padding:8px; border:1px solid #e5e7eb;'>Escenario</th><th style='padding:8px; border:1px solid #e5e7eb;'>Lift Ingresos (COP)</th><th style='padding:8px; border:1px solid #e5e7eb;'>Lift Utilidad* (COP)</th><th style='padding:8px; border:1px solid #e5e7eb;'>Costo Mensual</th><th style='padding:8px; border:1px solid #e5e7eb;'>Multiplicador ROI**</th><th style='padding:8px; border:1px solid #e5e7eb;'>Retorno en</th></tr></thead><tbody><tr><td style='padding:8px; border:1px solid #e5e7eb;'><strong>Conservador</strong></td><td style='padding:8px; border:1px solid #e5e7eb;'>5M - 8M</td><td style='padding:8px; border:1px solid #e5e7eb;'>2M - 3.5M</td><td style='padding:8px; border:1px solid #e5e7eb;'>$590k</td><td style='padding:8px; border:1px solid #e5e7eb;'>3x - 6x</td><td style='padding:8px; border:1px solid #e5e7eb;'>2-4 meses</td></tr><tr><td style='padding:8px; border:1px solid #e5e7eb; background-color:#ecfdf5;'><strong>Base / Realista</strong></td><td style='padding:8px; border:1px solid #e5e7eb; background-color:#ecfdf5;'><strong>10M - 18M</strong></td><td style='padding:8px; border:1px solid #e5e7eb; background-color:#ecfdf5;'><strong>4M - 7M</strong></td><td style='padding:8px; border:1px solid #e5e7eb; background-color:#ecfdf5;'><strong>$590k</strong></td><td style='padding:8px; border:1px solid #e5e7eb; background-color:#ecfdf5;'><strong>7x - 12x</strong></td><td style='padding:8px; border:1px solid #e5e7eb; background-color:#ecfdf5;'><strong>1-2 meses</strong></td></tr><tr><td style='padding:8px; border:1px solid #e5e7eb;'><strong>Optimista</strong></td><td style='padding:8px; border:1px solid #e5e7eb;'>20M+</td><td style='padding:8px; border:1px solid #e5e7eb;'>8M+</td><td style='padding:8px; border:1px solid #e5e7eb;'>$590k</td><td style='padding:8px; border:1px solid #e5e7eb;'>12x - 20x+</td><td style='padding:8px; border:1px solid #e5e7eb;'>< 1 mes</td></tr></tbody></table><p style='font-size:0.8em; color:#6b7280; margin-top:10px;'>*Asumiendo ~40% de margen bruto en ventas adicionales. **ROI calculated on Monthly Net Gain / Monthly Cost.</p>",
+                "highlights": "El escenario realista proyecta un retorno de 7x a 12x de la inversión mensual."
+            },
+            {
+                "title": "Solución Propuesta: Plan GROWTH",
+                "content": "<div style='background:#f0f9ff; padding:20px; border-radius:8px; border:1px solid #bae6fd;'><h3 style='color:#0284c7; margin-top:0;'>Plan GROWTH (El Vendedor Consultivo)</h3><p>Ideal para escalar la operación y maximizar la conversión en WhatsApp.</p><ul style='margin-bottom:15px;'><li><strong>RAG Avanzado:</strong> Multi-fuente (CRM + Manuales + Inventario).</li><li><strong>Memoria:</strong> Historial de usuario a largo plazo.</li><li><strong>Capacidad:</strong> 5,000 conversaciones/mes.</li></ul><table style='width:100%; border-collapse:collapse; margin-top:15px;'><tr><td style='padding:8px; border-bottom:1px solid #ddd;'><strong>Inversión Mensual:</strong></td><td style='padding:8px; border-bottom:1px solid #ddd; text-align:right;'>$590.000 COP / mes</td></tr><tr><td style='padding:8px; border-bottom:1px solid #ddd;'>Setup Fee (Pago Único):</td><td style='padding:8px; border-bottom:1px solid #ddd; text-align:right;'><span style='text-decoration:line-through; color:#999;'>$800.000 COP</span></td></tr><tr><td style='padding:8px; font-weight:bold; color:#16a34a;'>Setup Fee Promocional (50% OFF):</td><td style='padding:8px; text-align:right; font-weight:bold; color:#16a34a;'>$400.000 COP</td></tr></table></div>"
+            },
+            {
+                "title": "Consideraciones y Riesgos",
+                "content": "<ul><li><strong>Calidad de Implementación:</strong> El éxito depende de una base de conocimiento robusta. El tiempo agresivo de 1 semana requiere colaboración estrecha.</li><li><strong>Adopción:</strong> Aunque WhatsApp es dominante, algunos usuarios pueden preferir el trato humano. El agente siempre ofrecerá la opción de escalar a un humano.</li><li><strong>Mantenimiento:</strong> Se requiere actualización periódica de menús y detalles de tours para mantener la precisión.</li></ul>"
+            },
+            {
+                "title": "Cronograma de Implementación",
+                "content": "<p>Implementación acelerada en <strong>1 semana</strong>:</p><ol><li><strong>Días 1-2:</strong> Configuración de entorno y carga de Conocimiento (RAG).</li><li><strong>Días 3-4:</strong> Ingeniería de Prompts y definición de personalidad de marca.</li><li><strong>Día 5:</strong> Integraciones (WhatsApp, Calendar) y Pruebas Internas.</li><li><strong>Día 6-7:</strong> Despliegue y capacitación básica.</li></ol>"
+            }
+        ],
+        "metadata": {
+            "plan": "professional",
+            "features": {
+                "watermark": false,
+                "highQuality": true
+            },
+            "branding": {
+                "companyName": "Apex AI Solutions",
+                "colors": {
+                    "primary": "#10b981",
+                    "secondary": "#064e3b"
+                }
+            }
+        }
+    }
+}

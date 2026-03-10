@@ -1,0 +1,197 @@
+{
+  "proposalTitle": "Propuesta Técnica y Acuerdo de Prestación de Servicios",
+  "proposalSubtitle": "Centro de Control de Operaciones Electorales (CCOE) — Jhereis Salim Eljach & APEX AI Solutions",
+  "proposalDate": "Octubre 16, 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "El Centro de Control de Operaciones Electorales (CCOE) es una solución integral diseñada para optimizar operaciones electorales mediante inteligencia territorial y automatización de procesos críticos. Esta plataforma combina un CRM electoral especializado con análisis geoespacial avanzado, modelos predictivos de intención de voto y dashboard ejecutivo en tiempo real. Incremento del 70% en efectividad de contacto electoral con precisión predictiva superior al 90% y gestión territorial optimizada para más de 100,000 votantes simultáneos.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Santander, Colombia",
+  "providerTaxId": "NIT: En trámite",
+  "providerEmail": "sebastian@apexaisolutions.dev",
+  "providerPhone": "+57 302 481 6706",
+  
+  "clientCompany": "Jhereis Salim Eljach",
+  "clientAddress": "Dirección: Bucaramanga, Santander, Colombia",
+  "clientRepresentative": "Representante: Jhereis Salim Eljach",
+  "clientContact": "Contacto: Por confirmar",
+  
+  "contractObject": "Desarrollo, implementación y entrega de la Plataforma Integral de Gestión Electoral CCOE (Centro de Control de Operaciones Electorales), incluyendo todos los módulos descritos, capacitación del personal y soporte técnico según modalidad seleccionada.",
+  
+  "scopeDescription": "El sistema CCOE está compuesto por 5 módulos principales integrados. EL CLIENTE recibe la solución completa con todos los módulos incluidos. A continuación se describe cada módulo y sus beneficios estratégicos.",
+  
+  "modules": [
+    {
+      "title": "🗳️ Voter CRM Electoral",
+      "description": "Gestión individualizada de votantes con estados dinámicos (confirmado, por convencer, no contactado, opositor) y geolocalización avanzada. Control granular de base electoral con segmentación inteligente por características sociodemográficas y territoriales."
+    },
+    {
+      "title": "👥 Gestión de Líderes y Estructuras",
+      "description": "Administración de estructuras jerárquicas con métricas de efectividad en tiempo real. Optimización de redes de influencia, asignación territorial inteligente y seguimiento de conversión por líder con dashboard personalizado."
+    },
+    {
+      "title": "📍 Operaciones de Campo en Tiempo Real",
+      "description": "Dashboard operativo con KPIs dinámicos, alertas automáticas por zonas críticas y monitoreo continuo de actividades. Registro de visitas, eventos y encuestas con geolocalización y respuesta inmediata a cambios territoriales."
+    },
+    {
+      "title": "📊 Analítica Predictiva Electoral",
+      "description": "Modelos de Machine Learning para predicción de intención de voto y participación electoral. Toma de decisiones basada en datos con precisión científica superior al 90% en fase final, incluyendo simulaciones de escenarios electorales."
+    },
+    {
+      "title": "📄 Reportes Ejecutivos Automatizados",
+      "description": "Generación automática de reportes PDF personalizados por zona, líder y período. Comunicación efectiva de resultados con visualizaciones avanzadas, mapas de calor y planificación estratégica automatizada.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo SaaS (Suscripción Mensual)",
+      "description": "Acceso a la plataforma CCOE mediante suscripción mensual con hosting empresarial, actualizaciones automáticas, soporte técnico 24/7 y escalabilidad inmediata durante períodos electorales críticos.",
+      "features": [
+        "Hosting en infraestructura empresarial optimizada",
+        "Actualizaciones automáticas con nuevas funcionalidades",
+        "Soporte técnico especializado 24/7 durante campañas",
+        "Escalabilidad automática hasta 100k+ votantes",
+        "Backups automáticos cada 6 horas con retención de 30 días",
+        "SSL certificado y monitoreo continuo de seguridad"
+      ]
+    },
+    {
+      "title": "Implementación Local (On-Premise)",
+      "description": "Desarrollo e implementación completa del CCOE en infraestructura del cliente con pago único, código fuente completo y propiedad total de datos electorales.",
+      "highlight": true,
+      "features": [
+        "Control total sobre datos electorales sensibles",
+        "Propiedad completa del código fuente CCOE",
+        "Personalización avanzada sin restricciones",
+        "Integración profunda con sistemas internos existentes",
+        "Pago único sin recurrencia mensual",
+        "Capacitación presencial incluida (40 horas)"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "A continuación se presentan los costos del sistema CCOE completo en cada modalidad. Los valores están expresados en Pesos Colombianos (COP) e incluyen todos los módulos descritos.",
+  "subscriptionColumnTitle": "Suscripción Mensual SaaS",
+  "localColumnTitle": "Implementación Local (Pago Único)",
+  
+  "pricingRows": [
+    { "module": "CCOE - Plataforma Completa", "subscription": "$2,500,000 COP", "local": "$45,000,000 COP" },
+    { "module": "Configuración Inicial (Único)", "subscription": "$3,500,000 COP", "local": "Incluida" },
+    { "module": "Soporte y Capacitación", "subscription": "Incluido 24/7", "local": "12 meses incluidos" },
+    { "module": "Total Inversión", "subscription": "$2,500,000 COP/mes*", "local": "$45,000,000 COP", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "Descuento por pago anticipado: Hasta 10% para modalidad On-Premise",
+    "Financiamiento disponible: Hasta 12 meses sin intereses",
+    "Modalidad de arrendamiento operativo disponible",
+    "Sin permanencia mínima en modalidad SaaS"
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: Implementación Local con descuento por pago anticipado",
+    "originalAmount": "$45,000,000 COP",
+    "discountPercent": "10%",
+    "discountAmount": "$4,500,000 COP",
+    "finalAmount": "$40,500,000 COP"
+  },
+  
+  "paymentPlanDescription": "Para la modalidad de Implementación Local ofrecemos condiciones de pago estructurado por hitos de desarrollo, alineando los pagos con entregables específicos del proyecto CCOE.",
+  
+  "paymentPlan": {
+    "totalAmount": "$45,000,000 COP",
+    "payments": [
+      {
+        "stage": "Pago 1 - Inicio del Proyecto (30%)",
+        "description": "Firma de contrato, arquitectura técnica detallada, diseños UX/UI validados y configuración de ambientes de desarrollo.",
+        "amount": "$13,500,000 COP"
+      },
+      {
+        "stage": "Pago 2 - Entrega MVP (40%)",
+        "description": "Sistema CRM funcional, mapa interactivo, módulos de líderes y operaciones, API completa con documentación.",
+        "amount": "$18,000,000 COP"
+      },
+      {
+        "stage": "Pago 3 - Entrega Final (30%)",
+        "description": "Sistema completo optimizado, analítica predictiva, reportes PDF, capacitación finalizada y soporte activado.",
+        "amount": "$13,500,000 COP"
+      }
+    ],
+    "notes": "Facilidades de pago hasta 12 meses. Cada pago se activa al cumplimiento satisfactorio de los entregables correspondientes. Modalidad de arrendamiento operativo disponible."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — Diseño y Auditoría (4 semanas)",
+      "description": "Definición arquitectónica detallada, análisis de requerimientos específicos electorales, diseño UX/UI optimizado para operaciones de campo y configuración de ambientes de desarrollo."
+    },
+    {
+      "phase": "Fase 2 — Desarrollo Núcleo CRM (8 semanas)",
+      "description": "Implementación del sistema central de gestión de votantes con geolocalización, mapa interactivo con clustering automático, sistema de autenticación con 3 roles y API RESTful documentada."
+    },
+    {
+      "phase": "Fase 3 — Integración y Analítica (8 semanas)",
+      "description": "Desarrollo de módulos de líderes con métricas de efectividad, dashboard operativo con KPIs en tiempo real, modelos predictivos de intención de voto (>75% precisión) y sistema de alertas automáticas."
+    },
+    {
+      "phase": "Fase 4 — Optimización y Lanzamiento (6 semanas)",
+      "description": "Testing integral del sistema, optimización para 100k+ votantes simultáneos, reportes PDF automatizados, documentación completa y capacitación del equipo operativo (40 horas presenciales).",
+      "fullWidth": true
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollo completo del sistema CCOE según especificaciones técnicas",
+        "Implementación de todos los módulos: CRM, Líderes, Operaciones, Analítica y Reportes",
+        "Capacitación del equipo técnico y usuarios finales (40 horas presenciales)",
+        "Documentación técnica completa y manuales de usuario",
+        "Soporte técnico durante 12 meses post-entrega",
+        "Garantía de funcionalidad y rendimiento según SLA establecido",
+        "Cumplimiento de normativas de protección de datos (Ley 1581/2012)"
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de Jhereis Salim Eljach",
+      "items": [
+        "Provisión de infraestructura técnica para modalidad On-Premise",
+        "Facilitación de acceso a datos electorales y fuentes de información",
+        "Designación de equipo técnico para capacitación y transferencia",
+        "Validación y aprobación de entregables en cada fase",
+        "Cumplimiento de cronograma de pagos según hitos acordados",
+        "Participación activa en sesiones de capacitación y testing",
+        "Provisión de requerimientos específicos y validación funcional"
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte, Garantía y Confidencialidad",
+    "description": "Incluye garantía de 12 meses contra defectos de software, SLA de 99.5% de disponibilidad, respuesta de soporte técnico en menos de 4 horas en días hábiles, cumplimiento integral de Ley 1581/2012 y Decreto 1377/2013 de protección de datos, confidencialidad total de información electoral y certificación ISO 27001 de seguridad."
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan los términos de esta propuesta técnica, el alcance completo del proyecto CCOE descrito y la modalidad de pago seleccionada. Esta propuesta constituye oferta válida por 30 días a partir de la fecha indicada.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Jhoan Karlo Sebastián García Casanova",
+      "position": "Director Técnico y Fundador"
+    },
+    "client": {
+      "company": "Jhereis Salim Eljach",
+      "name": "Jhereis Salim Eljach",
+      "position": "Cliente"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • sebastian@apexaisolutions.dev",
+  "footerRight": "Documento confidencial · Validez: 30 días · CCOE v1.0"
+}

@@ -1,0 +1,194 @@
+{
+  "proposalTitle": "Propuesta Profesional de Servicios",
+  "proposalSubtitle": "Creación de Contenido Digital Especializado — Psicología y Bienestar Emocional",
+  "proposalDate": "06 de octubre de 2025",
+  "proposalVersion": "2.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "una solución integral de marketing de contenidos especializada en psicología y bienestar emocional. Desarrollamos contenido profesional, auténtico y de alto valor que conecta emocionalmente con tu audiencia, fortalece tu autoridad como especialista y convierte seguidores en pacientes comprometidos con su transformación personal.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Bucaramanga, Colombia",
+  "providerTaxId": "NIT: ____________",
+  "providerEmail": "support@apexaisolutions.dev",
+  "providerPhone": "+57 302 4816706",
+  
+  "clientCompany": "Dra. Jessica Quintero Rodríguez",
+  "clientAddress": "Psicóloga Especializada • Bucaramanga, Colombia",
+  "clientRepresentative": "Dra. Jessica Quintero Rodríguez",
+  "clientContact": "jessi25quintero@hotmail.es",
+  
+  "contractObject": "Desarrollo y gestión integral de contenido digital especializado para posicionamiento profesional en psicología, incluyendo estrategia de redes sociales, creación de contenido educativo, materiales digitales y automatización de procesos de conversión para la práctica de la Dra. Jessica Quintero.",
+  
+  "scopeDescription": "Nuestro enfoque modular te permite seleccionar los servicios que mejor se adapten a tu estrategia profesional actual. Cada módulo está diseñado para fortalecer tu presencia digital y convertir tu expertise en resultados tangibles.",
+  
+  "modules": [
+    {
+      "title": "Estrategia de Contenido Emocional",
+      "description": "Desarrollo de estrategia personalizada con calendarios de contenido, copy emocional persuasivo y storytelling profesional que conecta con tu audiencia objetivo y refuerza tu autoridad como especialista."
+    },
+    {
+      "title": "Producción de Contenido Multimedia",
+      "description": "Creación de posts para Instagram, TikTok y Facebook, diseños gráficos profesionales, carousels educativos, reels con guiones especializados y contenido para stories que genera engagement genuino."
+    },
+    {
+      "title": "Recursos Digitales Profesionales",
+      "description": "Desarrollo de guías PDF, workbooks interactivos, meditaciones guiadas, ebooks especializados y materiales de valor que posicionan tu expertise y generan leads calificados."
+    },
+    {
+      "title": "Automatización de Conversión",
+      "description": "Implementación de funnels de conversión, chatbots para Instagram y WhatsApp, secuencias de email marketing y landing pages optimizadas para transformar seguidores en pacientes."
+    },
+    {
+      "title": "Gestión Integral de Redes Sociales",
+      "description": "Administración completa de tus redes sociales, programación de contenido, community management especializado en salud mental, análisis de métricas y optimización continua del engagement.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo de Gestión Mensual",
+      "description": "Servicio integral mensual con gestión completa de tu presencia digital, creación continua de contenido y optimización basada en resultados.",
+      "features": [
+        "Estrategia mensual personalizada",
+        "Contenido premium ilimitado",
+        "Gestión diaria de redes sociales",
+        "Análisis de métricas y optimización",
+        "Soporte directo vía WhatsApp"
+      ]
+    },
+    {
+      "title": "Proyecto de Transformación Digital",
+      "description": "Implementación completa de tu ecosistema digital con desarrollo de todos los assets, automatizaciones y estrategias en un proyecto integral con entrega específica.",
+      "highlight": true,
+      "features": [
+        "Audit completo de presencia digital actual",
+        "Desarrollo de identidad visual profesional",
+        "Creación de biblioteca de contenido personalizada",
+        "Implementación de sistemas de automatización",
+        "Capacitación integral para gestión independiente"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "Nuestros precios están estructurados para ofrecer máximo valor y flexibilidad según tus necesidades profesionales. Todos los valores incluyen IVA.",
+  "subscriptionColumnTitle": "Gestión Mensual",
+  "localColumnTitle": "Proyecto Integral (Pago Único)",
+  
+  "pricingRows": [
+    { "module": "Estrategia de Contenido Emocional", "subscription": "$800.000", "local": "$3.200.000" },
+    { "module": "Producción Multimedia Premium", "subscription": "$1.200.000", "local": "$4.800.000" },
+    { "module": "Recursos Digitales Profesionales", "subscription": "--", "local": "$2.800.000" },
+    { "module": "Automatización de Conversión", "subscription": "--", "local": "$3.500.000" },
+    { "module": "Gestión Integral Redes Sociales", "subscription": "$900.000", "local": "$2.200.000" },
+    { "module": "Total (suma módulos)", "subscription": "$2.900.000*", "local": "$16.500.000", "isTotal": true },
+    { "module": "*Total mensual considerando módulos disponibles en gestión continua. Algunos módulos se desarrollan mejor como proyecto integral; ver fila correspondiente.", "subscription": "", "local": "", "isNote": true }
+  ],
+  
+  "discounts": [
+    "-15% en tarifa mensual para contratación de paquete completo de módulos disponibles en gestión mensual.",
+    "-20% en monto total para contratación del Proyecto de Transformación Digital completo."
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: Proyecto de Transformación Digital con descuento",
+    "originalAmount": "$16.500.000 COP",
+    "discountPercent": "-20%",
+    "discountAmount": "$3.300.000 COP",
+    "finalAmount": "$13.200.000 COP"
+  },
+  
+  "paymentPlanDescription": "Para el Proyecto de Transformación Digital ofrecemos condiciones de pago flexibles que se alinean con los entregables y permiten distribuir la inversión según tu flujo de caja profesional.",
+  
+  "paymentPlan": {
+    "totalAmount": "$13.200.000 COP",
+    "payments": [
+      {
+        "stage": "1) Pago de inicio (40%)",
+        "description": "al confirmar proyecto y comenzar auditoría digital",
+        "amount": "$5.280.000 COP"
+      },
+      {
+        "stage": "2) Pago intermedio (35%)",
+        "description": "al entregar estrategia completa y primeros assets",
+        "amount": "$4.620.000 COP"
+      },
+      {
+        "stage": "3) Pago final (25%)",
+        "description": "a la entrega completa, capacitación y puesta en marcha",
+        "amount": "$3.300.000 COP"
+      }
+    ],
+    "notes": "Los pagos se realizarán a 15 días calendario por factura electrónica. Ofrecemos flexibilidad adicional con pagos en 4 cuotas o financiamiento si lo requieres para tu práctica profesional."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — Auditoría y Estrategia Digital",
+      "description": "Duración: 1 semana. Análisis completo de presencia actual, definición de buyer personas, mapeo de customer journey y estrategia de contenido personalizada."
+    },
+    {
+      "phase": "Fase 2 — Desarrollo de Identidad Visual",
+      "description": "Duración: 2 semanas. Creación de paleta de colores profesional, templates para redes sociales, elementos gráficos y guía de estilo visual."
+    },
+    {
+      "phase": "Fase 3 — Producción de Contenido y Assets",
+      "description": "Duración: 4-5 semanas. Creación de biblioteca de contenido, recursos digitales, automatizaciones y configuración de sistemas."
+    },
+    {
+      "phase": "Fase 4 — Implementación y Capacitación",
+      "description": "Duración: 1 semana. Puesta en marcha de todas las estrategias, capacitación en herramientas y entrega de manuales de gestión."
+    },
+    {
+      "phase": "Fase 5 — Seguimiento y Optimización",
+      "description": "Soporte continuo durante 30 días post-entrega, análisis de métricas iniciales y optimizaciones basadas en performance real de tu audiencia.",
+      "fullWidth": true
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollar e implementar todos los módulos contratados siguiendo las mejores prácticas de marketing digital en salud.",
+        "Crear contenido auténtico que respete la ética profesional en psicología y genere confianza en tu audiencia.",
+        "Capacitarte en todas las herramientas y estrategias implementadas para tu gestión independiente posterior.",
+        "Mantener absoluta confidencialidad sobre información de pacientes y respetar el código ético profesional."
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de la Dra. Jessica Quintero",
+      "items": [
+        "Proveer accesos a redes sociales y plataformas necesarias para implementación de estrategias.",
+        "Participar en reuniones de estrategia y proporcionar feedback en tiempos acordados para optimizar resultados.",
+        "Revisar y aprobar contenido antes de publicación para asegurar coherencia con su enfoque profesional.",
+        "Cumplir con cronograma de pagos acordado y facilitar información profesional necesaria para el proyecto."
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte, Garantía y Confidencialidad Profesional",
+    "description": "Incluimos 30 días de soporte post-entrega para ajustes y optimizaciones. Garantizamos confidencialidad total y cumplimiento con normativas de protección de datos en salud mental. Respaldo continuo vía WhatsApp durante la vigencia del contrato."
+  },
+  
+  "acceptanceText": "Al firmar digitalmente, ambas partes confirman la aceptación de esta propuesta, el alcance profesional descrito y la modalidad de inversión seleccionada. Esta propuesta constituye oferta válida por 15 días a partir de la fecha indicada, considerando la naturaleza especializada de los servicios profesionales en psicología.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Sebastian Garcia",
+      "position": "Director de Proyectos"
+    },
+    "client": {
+      "company": "Consulta Psicológica Especializada",
+      "name": "Dra. Jessica Quintero Rodríguez",
+      "position": "Psicóloga Licenciada"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Bucaramanga, Colombia • support@apexaisolutions.dev • +57 302 4816706",
+  "footerRight": "Documento confidencial · Validez: 15 días · Especializado en Salud Mental"
+}

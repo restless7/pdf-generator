@@ -1,0 +1,209 @@
+{
+  "proposalTitle": "Propuesta Técnica Modular y Acuerdo de Prestación de Servicios",
+  "proposalSubtitle": "Sistema de Avalúos Catastrales Inteligente (SACI) — Jhereis Salim Eljach & APEX AI Solutions",
+  "proposalDate": "Octubre 16, 2025",
+  "proposalVersion": "1.0 - Modular",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "El Sistema de Avalúos Catastrales Inteligente (SACI) es una plataforma PropTech modular y escalable diseñada específicamente para Jhereis Salim Eljach. Iniciamos con un MVP sólido basado en análisis estadístico convencional, regresión multivariable y visualización geoespacial básica. La arquitectura modular permite evolución gradual hacia Machine Learning avanzado según crecimiento del negocio y disponibilidad presupuestal. Reducción inmediata del 70% en tiempo de generación de avalúos con capacidad de crecimiento hacia precisión superior al 90%.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Santander, Colombia",
+  "providerTaxId": "NIT: En trámite",
+  "providerEmail": "sebastian@apexaisolutions.dev",
+  "providerPhone": "+57 302 481 6706",
+  
+  "clientCompany": "Jhereis Salim Eljach",
+  "clientAddress": "Dirección: Bucaramanga, Santander, Colombia",
+  "clientRepresentative": "Representante: Jhereis Salim Eljach",
+  "clientContact": "Contacto: Por confirmar",
+  
+  "contractObject": "Desarrollo modular del Sistema de Avalúos Catastrales Inteligente (SACI) para Jhereis Salim Eljach, comenzando con MVP basado en estadística convencional y análisis multivariable, con opción de agregar módulos avanzados de Machine Learning, analytics predictivos y funcionalidades empresariales según necesidades específicas y cronograma de inversión personalizado.",
+  
+  "scopeDescription": "SACI utiliza arquitectura modular que permite a Jhereis Salim Eljach iniciar con funcionalidades esenciales y expandir gradualmente. El MVP incluye scraping básico, análisis estadístico y reportes PDF. Los módulos adicionales se pueden adquirir independientemente según crecimiento del negocio.",
+  
+  "modules": [
+    {
+      "title": "📊 MÓDULO BASE MVP (Obligatorio)",
+      "description": "Sistema fundacional con scraping básico de 2 portales, base de datos PostgreSQL + PostGIS, análisis estadístico multivariable, regresión lineal, reportes PDF automatizados y dashboard web básico. R² > 0.70 garantizado.",
+      "fullWidth": true
+    },
+    {
+      "title": "🔍 Módulo de Scraping Avanzado",
+      "description": "Expansión a 5+ portales inmobiliarios, scraping inteligente con proxies rotativos, detección de cambios en tiempo real, validación automática de datos y sistema de alertas. Incremente cobertura de propiedades en 300%."
+    },
+    {
+      "title": "🤖 Módulo de Machine Learning",
+      "description": "Upgrade del MVP con modelos XGBoost y Random Forest, precisión superior al 90%, pipeline de reentrenamiento automático, feature engineering avanzado y predicciones con intervalos de confianza."
+    },
+    {
+      "title": "🗺️ Módulo Geoespacial Avanzado",
+      "description": "Mapas interactivos con clustering, análisis de proximidad avanzado, capas de datos múltiples, heatmaps de valorización, análisis de factores de ubicación y simulador de escenarios territoriales."
+    },
+    {
+      "title": "📈 Módulo de Analytics Predictivos",
+      "description": "Análisis de tendencias temporales, predicción de valorización a 6-12-24 meses, identificación de oportunidades de inversión, alertas de mercado y dashboard ejecutivo con KPIs avanzados."
+    },
+    {
+      "title": "🔗 Módulo API Empresarial",
+      "description": "API RESTful documentada, autenticación OAuth2, rate limiting inteligente, webhooks, integración con CRMs externos y sistema de monetización por consultas para terceros."
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Modelo SaaS Modular (Suscripción Mensual)",
+      "description": "Acceso modular a la plataforma SACI con pago mensual por módulos activos. Perfecto para comenzar con MVP e ir agregando funcionalidades según necesidades y flujo de caja.",
+      "features": [
+        "Inicio con MVP básico desde $1,200,000 COP/mes",
+        "Módulos adicionales desde $800,000 COP/mes cada uno",
+        "Hosting empresarial con 99.5% uptime incluido",
+        "Actualizaciones automáticas sin costo adicional",
+        "Soporte técnico 24/7 para módulos contratados",
+        "Escalabilidad inmediata sin inversión en infraestructura"
+      ]
+    },
+    {
+      "title": "Implementación Local Modular (Pago por Módulos)",
+      "description": "Desarrollo e implementación modular en infraestructura de Jhereis Salim Eljach con pagos escalonados por módulos implementados. Control total de datos y personalización completa.",
+      "highlight": true,
+      "features": [
+        "MVP base desde $25,000,000 COP (pago único)",
+        "Módulos adicionales desde $15,000,000 COP cada uno",
+        "Código fuente completo de módulos adquiridos",
+        "Personalización avanzada sin restricciones",
+        "Capacitación presencial especializada incluida",
+        "18 meses de soporte técnico garantizado"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "Estructura de precios modular que permite a Jhereis Salim Eljach iniciar con inversión mínima y escalar según crecimiento. Precios en Pesos Colombianos (COP) con descuentos por múltiples módulos.",
+  "subscriptionColumnTitle": "SaaS Modular (Mensual)",
+  "localColumnTitle": "On-Premise Modular (Único)",
+  
+  "pricingRows": [
+    { "module": "MÓDULO BASE MVP (Obligatorio)", "subscription": "$1,200,000 COP", "local": "$25,000,000 COP" },
+    { "module": "Scraping Avanzado", "subscription": "$800,000 COP", "local": "$15,000,000 COP" },
+    { "module": "Machine Learning", "subscription": "$1,000,000 COP", "local": "$20,000,000 COP" },
+    { "module": "Geoespacial Avanzado", "subscription": "$800,000 COP", "local": "$15,000,000 COP" },
+    { "module": "Analytics Predictivos", "subscription": "$900,000 COP", "local": "$18,000,000 COP" },
+    { "module": "API Empresarial", "subscription": "$600,000 COP", "local": "$12,000,000 COP" },
+    { "module": "Total Sistema Completo", "subscription": "$5,300,000 COP/mes", "local": "$105,000,000 COP", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "Descuento por múltiples módulos: 15% al contratar 3+ módulos simultáneamente",
+    "Descuento por pago anticipado: 10% adicional para modalidad On-Premise",
+    "Plan de crecimiento gradual: Agregue módulos con 20% descuento en primeros 12 meses",
+    "Conversión SaaS a On-Premise: 40% descuento del valor pagado en suscripción"
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo: MVP + 2 Módulos con descuentos",
+    "originalAmount": "$60,000,000 COP (MVP + ML + Geo)",
+    "discountPercent": "25%",
+    "discountAmount": "$15,000,000 COP",
+    "finalAmount": "$45,000,000 COP"
+  },
+  
+  "paymentPlanDescription": "Sistema de pagos modular flexible que se adapta al flujo de caja de Jhereis Salim Eljach. Cada módulo se desarrolla y paga independientemente, con facilidades de financiamiento personalizada.",
+  
+  "paymentPlan": {
+    "totalAmount": "Variable según módulos seleccionados",
+    "payments": [
+      {
+        "stage": "Pago 1 - Inicio MVP (40%)",
+        "description": "Desarrollo completo del módulo base MVP con scraping básico, análisis estadístico, reportes PDF y dashboard funcional.",
+        "amount": "$10,000,000 COP (ejemplo MVP)"
+      },
+      {
+        "stage": "Pago 2 - Entrega MVP (40%)",
+        "description": "MVP completamente funcional, documentación, capacitación inicial y soporte activado. Sistema listo para operación comercial.",
+        "amount": "$10,000,000 COP (ejemplo MVP)"
+      },
+      {
+        "stage": "Pago 3 - Garantía y Optimización (20%)",
+        "description": "Período de garantía de 30 días, optimizaciones basadas en uso real, ajustes finos y documentación final completa.",
+        "amount": "$5,000,000 COP (ejemplo MVP)"
+      },
+      {
+        "stage": "Módulos Adicionales",
+        "description": "Cada módulo adicional sigue el mismo esquema 40/40/20 con desarrollo independiente y sin afectar módulos ya funcionales.",
+        "amount": "Según módulo seleccionado"
+      }
+    ],
+    "notes": "Flexibilidad total de pagos hasta 24 meses. Jhereis puede pausar desarrollo entre módulos sin penalización. Cada módulo es independiente y funcional."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fase 1 — MVP Base (6-8 semanas)",
+      "description": "Desarrollo del módulo base con scraping de 2 portales, análisis estadístico multivariable (R² > 0.70), reportes PDF automatizados, dashboard básico y base de datos PostgreSQL optimizada. Sistema completamente funcional para operación inmediata.",
+      "fullWidth": true
+    },
+    {
+      "phase": "Módulo Scraping Avanzado (+4 semanas)",
+      "description": "Expansión a 5+ portales con sistema inteligente de proxies, detección de cambios en tiempo real y validación automática. Se integra perfectamente con MVP existente."
+    },
+    {
+      "phase": "Módulo Machine Learning (+6 semanas)",
+      "description": "Upgrade de análisis estadístico a ML avanzado (XGBoost, Random Forest) con precisión >90%. Reentrenamiento automático y feature engineering profesional."
+    },
+    {
+      "phase": "Módulos Adicionales (+4-6 semanas c/u)",
+      "description": "Cada módulo adicional (Geoespacial, Analytics, API) se desarrolla independientemente según prioridades de negocio de Jhereis, sin afectar operación de módulos existentes."
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollo modular del sistema SACI según especificaciones acordadas",
+        "Garantizar independencia funcional de cada módulo desarrollado",
+        "Capacitación especializada en cada módulo entregado",
+        "Documentación técnica completa por módulo",
+        "Soporte técnico durante 18 meses para módulos contratados",
+        "Actualizaciones gratuitas de módulos durante período de garantía",
+        "Cumplimiento de normativas legales y éticas de scraping"
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de Jhereis Salim Eljach",
+      "items": [
+        "Definición de prioridades de módulos según necesidades de negocio",
+        "Provisión de infraestructura técnica para modalidad On-Premise",
+        "Participación activa en capacitaciones y validación de entregables",
+        "Cumplimiento de cronograma de pagos según módulos contratados",
+        "Facilitación de acceso a fuentes de datos cuando sea necesario",
+        "Retroalimentación continua para optimización de funcionalidades",
+        "Validación de requerimientos específicos antes de cada desarrollo"
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Soporte Modular y Garantía Escalable",
+    "description": "Garantía independiente de 18 meses por módulo desarrollado, SLA diferenciado según criticidad del módulo, respuesta <4 horas para MVP y módulos críticos, cumplimiento integral de normativas colombianas, actualizaciones gratuitas durante garantía y soporte técnico especializado 24/7 para Jhereis Salim Eljach."
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan esta propuesta técnica modular, el desarrollo escalable del proyecto SACI y las condiciones de pago flexibles. Esta propuesta modular está válida por 60 días y permite modificaciones según necesidades específicas de Jhereis Salim Eljach.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Jhoan Karlo Sebastián García Casanova",
+      "position": "Director Técnico y Fundador"
+    },
+    "client": {
+      "company": "Jhereis Salim Eljach",
+      "name": "Jhereis Salim Eljach",
+      "position": "Cliente Inmobiliario"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • sebastian@apexaisolutions.dev",
+  "footerRight": "Propuesta Modular · Validez: 60 días · SACI MVP v1.0"
+}

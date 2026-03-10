@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{proposalTitle}} - {{companyName}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #4338ca;
+            --accent: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --card: #ffffff;
+            --background: #f8fafc;
+            --gradient-voice: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: white;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--gradient-voice);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="100" y1="0" y2="0"><stop offset="0" stop-color="%23667eea"/><stop offset="1" stop-color="%23764ba2"/></linearGradient></defs><polygon fill="url(%23a)" points="0,0 100,0 100,15 0,20"/></svg>');
+            opacity: 0.1;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Voice Pillars */
+        .voice-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pillar-card {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-voice);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .pillar-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pillar-card p {
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Communication Types */
+        .communication-types {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .comm-type {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comm-type.highlight {
+            border-left: 6px solid var(--warning);
+        }
+
+        .comm-type .badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comm-type.highlight .badge {
+            background: var(--warning);
+        }
+
+        .comm-type-header {
+            background: var(--gradient-voice);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .comm-type-header h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .comm-type-content {
+            padding: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: var(--background);
+            border-radius: 8px;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            background: var(--success);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* Language Guide */
+        .language-guide {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .language-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .language-table th {
+            background: var(--gradient-voice);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .language-table th.recommended {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .language-table th.avoid {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .language-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            font-size: 1rem;
+        }
+
+        .language-table tr:nth-child(even) td {
+            background: #f9fafb;
+        }
+
+        .language-table tr.total-row td {
+            background: var(--background);
+            font-weight: 600;
+            border-top: 2px solid var(--primary);
+        }
+
+        .language-table .recommended-text {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .language-table .avoid-text {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        /* Audience Adaptation */
+        .audience-timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin: 3rem 0;
+        }
+
+        .audience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-voice);
+            border-radius: 2px;
+        }
+
+        .audience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            margin-left: 4rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .audience-item::before {
+            content: '';
+            position: absolute;
+            left: -3.2rem;
+            top: 2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .audience-header {
+            background: var(--gradient-voice);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .audience-content {
+            padding: 1.5rem 2rem;
+        }
+
+        .audience-objective {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Example Transformation */
+        .transformation-example {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            border-left: 6px solid var(--warning);
+            border-radius: 0 16px 16px 0;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .transformation-example h3 {
+            color: #d97706;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .before-after {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .before, .after {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid;
+        }
+
+        .before {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .before h4 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .after {
+            background: #ecfdf5;
+            border-color: var(--success);
+        }
+
+        .after h4 {
+            color: #059669;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 4rem;
+            height: 4px;
+            background: var(--gradient-voice);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Guidelines Box */
+        .guidelines-box {
+            background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .guidelines-box h3 {
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .guidelines-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guidelines-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .guidelines-list li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Responsibilities */
+        .responsibilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .responsibility-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .responsibility-header {
+            background: var(--gradient-voice);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .responsibility-content {
+            padding: 2rem;
+        }
+
+        .responsibility-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .responsibility-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .responsibility-list li:last-child {
+            border-bottom: none;
+        }
+
+        .responsibility-list li::before {
+            content: '✓';
+            background: var(--success);
+            color: white;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-voice);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        .footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Print Styles */
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .avoid-break {
+                page-break-inside: avoid;
+            }
+            
+            body {
+                font-size: 11pt;
+            }
+            
+            .header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 0 1rem;
+            }
+            
+            .voice-pillars,
+            .responsibilities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Header and Brand Identity -->
+    <div class="header">
+        <h1>{{proposalTitle}}</h1>
+        <h2>{{proposalSubtitle}}</h2>
+        <div class="meta">
+            <span>{{companyName}}</span>
+            <span>{{proposalDate}} - Versión {{proposalVersion}}</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="transformation-example avoid-break">
+            <h3>🎯 Identidad de Comunicación ICE</h3>
+            <p style="font-size: 1.1rem; line-height: 1.7; color: #d97706;">{{executiveSummary}}</p>
+        </div>
+
+        <div class="guidelines-box avoid-break">
+            <h3>📋 Propósito del Manual</h3>
+            <p>{{contractObject}}</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Voice Pillars -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Los Tres Pilares del Tono ICE</h1>
+        <p class="section-subtitle">{{scopeDescription}}</p>
+
+        <div class="voice-pillars">
+            {{#each modules}}
+            <div class="pillar-card avoid-break {{#if fullWidth}}full-width{{/if}}">
+                <h3>{{{title}}}</h3>
+                <p>{{description}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Page 3: Communication Types -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Tipos de Comunicación</h1>
+        
+        <div class="communication-types">
+            {{#each deliveryModels}}
+            <div class="comm-type avoid-break {{#if highlight}}highlight{{/if}}">
+                {{#if highlight}}<span class="badge">Esencial</span>{{/if}}
+                <div class="comm-type-header">
+                    <h3>{{title}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                <div class="comm-type-content">
+                    <ul class="features-list">
+                        {{#each features}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Page 4: Language Guidelines -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Guía de Lenguaje</h1>
+        <p class="section-subtitle">{{pricingDescription}}</p>
+
+        <div class="language-guide avoid-break">
+            <table class="language-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Contexto</th>
+                        <th class="recommended">{{subscriptionColumnTitle}}</th>
+                        <th class="avoid">{{localColumnTitle}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each pricingRows}}
+                    <tr {{#if isTotal}}class="total-row"{{/if}}>
+                        <td><strong>{{module}}</strong></td>
+                        <td class="recommended-text">{{subscription}}</td>
+                        <td class="avoid-text">{{local}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="guidelines-box avoid-break">
+            <h3>💡 Principios Generales</h3>
+            <ul class="guidelines-list">
+                {{#each discounts}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page 5: Message Transformation Example -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Transformación de Mensajes</h1>
+        
+        <div class="transformation-example avoid-break">
+            <h3>{{pricingExample.title}}</h3>
+            <div class="before-after">
+                <div class="before">
+                    <h4>{{pricingExample.originalAmount}}</h4>
+                    <p>{{pricingExample.discountAmount}}</p>
+                </div>
+                <div class="after">
+                    <h4>{{pricingExample.discountPercent}}</h4>
+                    <p>{{pricingExample.finalAmount}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-subtitle">{{paymentPlanDescription}}</div>
+
+        <div class="audience-timeline">
+            {{#each paymentPlan.payments}}
+            <div class="audience-item avoid-break">
+                <div class="audience-header">{{stage}}</div>
+                <div class="audience-content">
+                    <p>{{description}}</p>
+                    <div class="audience-objective">{{amount}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="guidelines-box avoid-break">
+            <h3>⚡ Nota Importante</h3>
+            <p>{{paymentPlan.notes}}</p>
+        </div>
+    </div>
+
+    <!-- Page 6: Implementation Timeline -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Implementación del Tono de Voz</h1>
+        
+        <div class="audience-timeline">
+            {{#each timeline}}
+            <div class="audience-item avoid-break {{#if fullWidth}}full-width{{/if}}">
+                <div class="audience-header">{{phase}}</div>
+                <div class="audience-content">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Page 7: Responsibilities -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Responsabilidades y Expectativas</h1>
+
+        <div class="responsibilities-grid">
+            <div class="responsibility-card avoid-break">
+                <div class="responsibility-header">{{responsibilities.provider.title}}</div>
+                <div class="responsibility-content">
+                    <ul class="responsibility-list">
+                        {{#each responsibilities.provider.items}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="responsibility-card avoid-break">
+                <div class="responsibility-header">{{responsibilities.client.title}}</div>
+                <div class="responsibility-content">
+                    <ul class="responsibility-list">
+                        {{#each responsibilities.client.items}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformation-example avoid-break">
+            <h3>{{supportTerms.title}}</h3>
+            <p>{{supportTerms.description}}</p>
+        </div>
+    </div>
+
+    <!-- Page 8: Implementation and Signatures -->
+    <div class="page-break"></div>
+    
+    <div class="section">
+        <h1 class="section-title">Compromiso Institucional</h1>
+
+        <div class="guidelines-box avoid-break">
+            <h3>📋 Declaración de Compromiso</h3>
+            <p>{{acceptanceText}}</p>
+        </div>
+
+        <div class="responsibilities-grid">
+            <div class="responsibility-card avoid-break">
+                <div class="responsibility-header">{{signatures.provider.company}}</div>
+                <div class="responsibility-content">
+                    <p><strong>Responsable:</strong> {{signatures.provider.name}}</p>
+                    <p><strong>Posición:</strong> {{signatures.provider.position}}</p>
+                    <div style="margin-top: 3rem; border-bottom: 2px solid var(--border); width: 250px;"></div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Firma y Fecha</p>
+                </div>
+            </div>
+
+            <div class="responsibility-card avoid-break">
+                <div class="responsibility-header">{{signatures.client.company}}</div>
+                <div class="responsibility-content">
+                    <p><strong>Responsable:</strong> {{signatures.client.name}}</p>
+                    <p><strong>Posición:</strong> {{signatures.client.position}}</p>
+                    <div style="margin-top: 3rem; border-bottom: 2px solid var(--border); width: 250px;"></div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Firma y Fecha</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <span>{{footerLeft}}</span>
+            <span>{{footerRight}}</span>
+        </div>
+    </div>
+</body>
+</html>

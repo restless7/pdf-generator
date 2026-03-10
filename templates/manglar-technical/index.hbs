@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{projectTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #059669;
+            /* Emerald 600 */
+            --secondary-color: #047857;
+            /* Emerald 700 */
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f0fdf4;
+            /* Emerald 50 */
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --accent-color: #0ea5e9;
+            /* Sky 500 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            font-size: 13px;
+        }
+
+        .page {
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 25px;
+            min-height: 29.7cm;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            page-break-after: always;
+        }
+
+        .cover-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cover-details {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .cover-details h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .cover-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .cover-info div {
+            margin-bottom: 8px;
+        }
+
+        .cover-footer {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 30px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 0 10px;
+            line-height: 1.7;
+        }
+
+        .subsection {
+            margin-bottom: 25px;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .subsection-content {
+            margin-left: 19px;
+            line-height: 1.6;
+        }
+
+        /* Diagrams & Tables */
+        .architecture-diagram {
+            background: var(--bg-light);
+            border: 3px dashed var(--border-color);
+            padding: 50px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .diagram-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .diagram-note {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+
+        .tech-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tech-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .tech-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        /* Phases */
+        .phases-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .phase-card {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .phase-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+
+        .phase-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .phase-duration {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        .phase-objectives h5,
+        .phase-deliverables h5 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .phase-objectives ul,
+        .phase-deliverables ul {
+            padding-left: 20px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* Code & DB */
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .db-schema {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .db-schema h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .db-table {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            line-height: 1.3;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Compliance & Benefits */
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .compliance-item {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .compliance-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--success-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .compliance-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .compliance-desc {
+            font-size: 11px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .benefit-desc {
+            font-size: 12px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .document-footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h3 {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            .no-break {
+                page-break-inside: avoid;
+            }
+
+            .page {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Cover -->
+        <div class="cover-page">
+            <h1 class="cover-title">{{title}}</h1>
+            <h2 class="cover-subtitle">{{subtitle}}</h2>
+
+            <div class="cover-details">
+                <h3>Detalles del Proyecto</h3>
+                <div class="cover-info">
+                    <div><strong>Autor:</strong> {{author}}</div>
+                    <div><strong>Fecha:</strong> {{reportDate}}</div>
+                    <div><strong>Tipo:</strong> Documentación Técnica</div>
+                    <div><strong>Versión:</strong> 1.0</div>
+                    <div><strong>Alcance:</strong> Nacional / Regional</div>
+                    <div><strong>Duración:</strong> 5 Años (Fases 1-3)</div>
+                </div>
+            </div>
+
+            <div class="cover-footer">
+                <strong>Manglar AI Colombia</strong><br>
+                Tecnología Climática . Offline-First . Edge Computing
+            </div>
+        </div>
+
+        <!-- Exec Summary -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Resumen Ejecutivo</h2>
+            </div>
+            <div class="section-content">
+                <p><strong>{{executiveSummary}}</strong></p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📡</div>
+                        <div class="benefit-title">Offline-First</div>
+                        <div class="benefit-desc">Operatividad total sin conexión</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🧠</div>
+                        <div class="benefit-title">IA Hiperlocal</div>
+                        <div class="benefit-desc">Predicción granular (1-3km)</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🗣️</div>
+                        <div class="benefit-title">NLP Dialectal</div>
+                        <div class="benefit-desc">Entendimiento de contexto local</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚖️</div>
+                        <div class="benefit-title">Blockchain</div>
+                        <div class="benefit-desc">Soberanía de datos comunitaria</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{#each sections}}
+        <div class="section page-break">
+            <div class="section-header">
+                <h2 class="section-title">{{this.title}}</h2>
+            </div>
+            <div class="section-content">
+                {{#if (eq this.title "Arquitectura General del Sistema")}}
+                <div class="subsection">
+                    <div class="subsection-title">Descripción Modular</div>
+                    <div class="subsection-content">
+                        <p>Manglar AI utiliza una arquitectura distribuida (Edge Computing) para garantizar resiliencia:
+                        </p>
+                        <h4>Componentes Principales:</h4>
+                        <ul>
+                            <li><strong>Nodo Edge (Usuario):</strong> Inferencia ligera (TensorFlow Lite) en dispositivo
+                                para triaje inmediato de voz/texto.</li>
+                            <li><strong>Sync Engine:</strong> Protocolo de sincronización oportunista que aprovecha
+                                cualquier ventana de conectividad (2G/LoRa/WiFi).</li>
+                            <li><strong>Cloud Core (Central):</strong> Entrenamiento de modelos pesados (LSTM) y
+                                orquestación de recursos de socorro.</li>
+                            <li><strong>Gateway IoT:</strong> Concentradores solares para sensores hídricos y sirenas
+                                comunitarias.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="architecture-diagram">
+                    <div class="diagram-title">### Diagrama de Flujo de Datos</div>
+                    <div class="diagram-note">[Sensor IoT / App Usuario] -> [Edge Processing] -> (LoRa/SMS/4G) -> [Cloud
+                        Sync] -> [Dashboard UNGRD]</div>
+                </div>
+
+                {{else if (eq this.title "Stack Tecnológico y Herramientas")}}
+                <p>{{this.content}}</p>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Capa</th>
+                            <th>Tecnología</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mobile App</strong></td>
+                            <td>Flutter / React Native</td>
+                            <td>Multiplataforma, optimizado para gama baja, PWA Offline.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Edge</strong></td>
+                            <td>TensorFlow Lite</td>
+                            <td>Modelos cuantizados para NLP y Computer Vision en local.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Cloud</strong></td>
+                            <td>PyTorch / Keras</td>
+                            <td>Entrenamiento de redes LSTM para predicción climática.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Backend</strong></td>
+                            <td>Node.js / Go</td>
+                            <td>Microservicios de alta concurrencia y bajo latencia.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Database</strong></td>
+                            <td>PostgreSQL + PostGIS</td>
+                            <td>Gestión geoespacial de incidentes y zonas de riesgo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IoT / LoRa</strong></td>
+                            <td>Arduino / ESP32</td>
+                            <td>Firmware para nodos sensores de bajo consumo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                {{else if (eq this.title "Plan de Desarrollo Escalable")}}
+                <div class="phases-container">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">1</div>
+                            <div class="phase-info">
+                                <h4>Validación y Anclaje</h4>
+                                <div>Año 1</div>
+                            </div>
+                        </div>
+                        <div class="phase-objectives">
+                            <h5>Objetivos:</h5>
+                            <ul>
+                                <li>MVP Funcional (App+Dashboard)</li>
+                                <li>Entrenamiento piloto modelos NLP</li>
+                                <li>3 Comunidades activas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">2</div>
+                            <div class="phase-info">
+                                <h4>Expansión Regional</h4>
+                                <div>Años 2-3</div>
+                            </div>
+                        </div>
+                        <div class="phase-objectives">
+                            <h5>Objetivos:</h5>
+                            <ul>
+                                <li>Integración API UNGRD</li>
+                                <li>Cobertura Caribe y Eje Cafetero</li>
+                                <li>Zero-rating con telcos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">3</div>
+                            <div class="phase-info">
+                                <h4>Nacionalización</h4>
+                                <div>Años 4-5</div>
+                            </div>
+                        </div>
+                        <div class="phase-objectives">
+                            <h5>Objetivos:</h5>
+                            <ul>
+                                <li>Cobertura 32 departamentos</li>
+                                <li>Centro de Excelencia Andino</li>
+                                <li>Exportación del modelo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {{else if (eq this.title "Diseño de la Base de Datos")}}
+                <div class="subsection">
+                    <div class="subsection-content">
+                        <div class="db-schema">
+                            <h4>Tabla: Reportes (Emergencias)</h4>
+                            <div class="db-table">
+                                CREATE TABLE reportes (
+                                id UUID PRIMARY KEY,
+                                usuario_id UUID,
+                                tipo_incidente VARCHAR(50), -- 'inundacion', 'sequia', 'deslizamiento'
+                                nivel_urgencia INTEGER, -- 1-5 (Calculado por NLP Edge)
+                                coordenadas GEOMETRY(POINT, 4326),
+                                audio_url TEXT,
+                                transcripcion TEXT,
+                                validado_satelite BOOLEAN DEFAULT FALSE,
+                                estado_atencion VARCHAR(20), -- 'pendiente', 'en_curso', 'resuelto'
+                                creado_offline_at TIMESTAMP,
+                                sincronizado_at TIMESTAMP DEFAULT NOW()
+                                );
+                            </div>
+                        </div>
+                        <div class="db-schema">
+                            <h4>Tabla: Alertas Climáticas</h4>
+                            <div class="db-table">
+                                CREATE TABLE alertas_climaticas (
+                                id SERIAL PRIMARY KEY,
+                                region_geohash VARCHAR(12),
+                                tipo_alerta VARCHAR(50),
+                                pronostico_json JSONB,
+                                nivel_riesgo VARCHAR(20), -- 'VERDE', 'NARANJA', 'ROJO'
+                                fecha_inicio TIMESTAMP,
+                                fecha_fin_estimada TIMESTAMP
+                                );
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{else if (eq this.title "Aspectos Legales y Éticos")}}
+                <div class="compliance-grid">
+                    <div class="compliance-item">
+                        <div class="compliance-icon">⚖️</div>
+                        <div class="compliance-title">Ley 1581 (Habeas Data)</div>
+                        <div class="compliance-desc">Anonimización estricta y consentimiento informado para uso de datos
+                            comunitarios.</div>
+                    </div>
+                    <div class="compliance-item">
+                        <div class="compliance-icon">🔍</div>
+                        <div class="compliance-title">IA Ética</div>
+                        <div class="compliance-desc">Auditoría continua de sesgos en modelos de priorización para evitar
+                            discriminación.</div>
+                    </div>
+                    <div class="compliance-item">
+                        <div class="compliance-icon">🔐</div>
+                        <div class="compliance-title">Soberanía de Datos</div>
+                        <div class="compliance-desc">Blockchain para trazar quién accede a la data y garantizar
+                            propiedad comunitaria.</div>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+
+        <div class="document-footer">
+            <div class="contact-grid">
+                <div class="contact-section">
+                    <h3>Manglar AI Colombia</h3>
+                    <div class="contact-info">
+                        <strong>Líder de Proyecto</strong><br>
+                        Jhoan Karlo Sebastián García Casanova<br>
+                        sebastian@apexaisolutions.dev
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                Este documento técnico es propiedad intelectual de Manglar AI Colombia. Su distribución está
+                restringida.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

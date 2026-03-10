@@ -1,0 +1,162 @@
+{
+  "proposalTitle": "Propuesta de Desarrollo Web",
+  "proposalSubtitle": "Sitio Web Profesional para Joyería — Lucas Espinosa & APEX AI Solutions",
+  "proposalDate": "15 de octubre de 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "APEX AI Solutions",
+  
+  "executiveSummary": "una solución web integral diseñada específicamente para el sector joyero, combinando diseño elegante, funcionalidad de catálogo avanzada y sistema de pagos seguro. La propuesta incluye desarrollo frontend premium con tecnologías modernas y un sistema completo de gestión de productos con pasarela de pagos integrada.",
+  
+  "providerCompany": "APEX AI Solutions",
+  "providerAddress": "Cra 47 #55-71, Bucaramanga, Colombia",
+  "providerTaxId": "NIT: 1098706707",
+  "providerEmail": "support@apexaisolutions.dev",
+  "providerPhone": "+573024816706",
+  
+  "clientCompany": "Lucas Espinosa - Joyería",
+  "clientAddress": "Dirección: ___________________",
+  "clientRepresentative": "Lucas Espinosa",
+  "clientContact": "Contacto: ___________________",
+  
+  "contractObject": "Diseño, desarrollo e implementación de sitio web profesional para joyería, incluyendo catálogo de productos, sistema de pagos integrado y optimización para conversiones comerciales.",
+  
+  "scopeDescription": "La solución web está compuesta por módulos especializados para el sector joyero. Cada módulo ha sido diseñado para maximizar las conversiones y brindar una experiencia premium a los clientes.",
+  
+  "modules": [
+    {
+      "title": "Frontend Premium - Desarrollo Web Completo",
+      "description": "Sitio web moderno y responsive con diseño elegante específico para joyería, optimizado para SEO y velocidad de carga. Incluye páginas principales, galería de productos y formularios de contacto."
+    },
+    {
+      "title": "Sistema de Catálogo Avanzado",
+      "description": "Gestión completa de productos con categorización, filtros avanzados, zoom de imágenes de alta calidad y sistema de búsqueda inteligente para facilitar la navegación del cliente."
+    },
+    {
+      "title": "Pasarela de Pagos Integrada",
+      "description": "Integración segura con múltiples métodos de pago (tarjetas, PSE, transferencias), procesamiento de órdenes y sistema de notificaciones automáticas.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Desarrollo Web Completo",
+      "description": "Implementación completa del sitio web con todas las funcionalidades, diseño personalizado y optimizaciones técnicas para el sector joyero.",
+      "highlight": true,
+      "features": [
+        "Diseño responsive optimizado para móviles",
+        "SEO técnico y optimización de velocidad",
+        "Integración con redes sociales",
+        "Panel de administración intuitivo",
+        "Hosting y dominio incluido por 1 año",
+        "Certificado SSL y medidas de seguridad"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "Inversión total para el desarrollo completo del sitio web profesional para joyería. Los valores están expresados en COP.",
+  "subscriptionColumnTitle": "Descripción del Servicio",
+  "localColumnTitle": "Inversión (COP)",
+  
+  "pricingRows": [
+    { "module": "Frontend Premium - Desarrollo Web Completo", "subscription": "Sitio web moderno, responsive y optimizado", "local": "1.000.000" },
+    { "module": "Sistema de Catálogo + Pasarela de Pagos", "subscription": "Gestión de productos e integración de pagos", "local": "1.000.000" },
+    { "module": "Total de la Inversión", "subscription": "", "local": "2.000.000", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "-25% en monto total para contratación del paquete completo."
+  ],
+  
+  "pricingExample": {
+    "title": "Inversión Total del Proyecto",
+    "originalAmount": "2.000.000 COP",
+    "discountPercent": "-25%",
+    "discountAmount": "500.000 COP",
+    "finalAmount": "1.500.000 COP"
+  },
+  
+  "paymentPlanDescription": "Facilidades de pago estructuradas por hitos de entrega para optimizar el flujo de caja y asegurar la calidad en cada etapa del desarrollo.",
+  
+  "paymentPlan": {
+    "totalAmount": "1.500.000 COP",
+    "payments": [
+      {
+        "stage": "1) Pago inicial (75%)",
+        "description": "al firmar contrato e iniciar diseño y desarrollo",
+        "amount": "1.000.000 COP"
+      },
+      {
+        "stage": "2) Pago final (25%)",
+        "description": "a la entrega completa y puesta en producción",
+        "amount": "500.000 COP"
+      }
+    ],
+    "notes": "Los pagos se realizarán a 8 días hábiles por factura electrónica. Se incluye garantía de 30 días post-entrega y opción de plan de mantenimiento mensual."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Semana 1-2 — Diseño y Prototipado",
+      "description": "Creación de mockups, definición de la identidad visual y estructura del sitio. Revisiones y ajustes con el cliente."
+    },
+    {
+      "phase": "Semana 3-4 — Desarrollo Frontend",
+      "description": "Implementación del diseño, desarrollo responsive, optimización de imágenes y configuración de SEO básico."
+    },
+    {
+      "phase": "Semana 5 — Integración del Sistema",
+      "description": "Implementación del catálogo de productos, configuración de la pasarela de pagos y pruebas de funcionalidad."
+    },
+    {
+      "phase": "Semana 6 — Testing y Entrega",
+      "description": "Pruebas finales, optimización de velocidad, configuración de hosting y capacitación para administración del sitio.",
+      "fullWidth": true
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades de APEX AI Solutions",
+      "items": [
+        "Desarrollar el sitio web completo según especificaciones acordadas y mejores prácticas del sector joyero.",
+        "Entregar documentación técnica y manual de administración del sitio web.",
+        "Brindar capacitación para la gestión del catálogo de productos y procesamiento de órdenes.",
+        "Garantizar la seguridad de la información y cumplimiento con estándares de protección de datos."
+      ]
+    },
+    "client": {
+      "title": "Responsabilidades de EL CLIENTE (Lucas Espinosa)",
+      "items": [
+        "Proveer contenido, imágenes de productos y información comercial necesaria para el sitio web.",
+        "Participar activamente en las revisiones de diseño y dar retroalimentación oportuna.",
+        "Realizar pagos según cronograma acordado y facilitar acceso a cuentas necesarias (hosting, dominio).",
+        "Cumplir con requisitos legales aplicables al comercio electrónico y tratamiento de datos."
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Garantía, Soporte y Mantenimiento",
+    "description": "Se incluye garantía completa de 30 días para corrección de errores y ajustes menores. Plan de mantenimiento mensual disponible por $200.000 COP/mes (opcional)."
+  },
+  
+  "acceptanceText": "Al firmar abajo, las partes aceptan los términos de esta propuesta, el alcance descrito y las condiciones de pago establecidas. Esta propuesta constituye oferta válida por 15 días a partir de la fecha indicada.",
+  
+  "signatures": {
+    "provider": {
+      "company": "APEX AI Solutions",
+      "name": "Sebastián García",
+      "position": "Director de Proyectos"
+    },
+    "client": {
+      "company": "Lucas Espinosa - Joyería",
+      "name": "________________________",
+      "position": "________________________"
+    }
+  },
+  
+  "footerLeft": "APEX AI Solutions — Cra 47 #55-71, Bucaramanga • support@apexaisolutions.dev — +573024816706",
+  "footerRight": "Documento confidencial · Validez: 15 días"
+}

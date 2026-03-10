@@ -1,0 +1,204 @@
+{
+  "proposalTitle": "Manual de Tono de Voz",
+  "proposalSubtitle": "International Cultural Experience (ICE) — Guía de Comunicación Institucional",
+  "proposalDate": "Octubre 2025",
+  "proposalVersion": "1.0",
+  "logoDataUri": "{{LOGO_BASE64_PLACEHOLDER}}",
+  "companyName": "International Cultural Experience - ICE",
+  
+  "executiveSummary": "El Manual de Tono de Voz de ICE establece los principios fundamentales de comunicación que reflejan la identidad, valores y propósito de la organización. Define cómo ICE se comunica con estudiantes, familias, partners y stakeholders, garantizando coherencia, profesionalismo y conexión emocional auténtica en todas las interacciones.",
+  
+  "providerCompany": "International Cultural Experience - ICE",
+  "providerAddress": "www.iceexperience.co",
+  "providerTaxId": "Comunicación Institucional",
+  "providerEmail": "info@iceexperience.co",
+  "providerPhone": "Contacto disponible en sitio web",
+  
+  "clientCompany": "Equipos de ICE y Stakeholders",
+  "clientAddress": "Comunicación Interna y Externa",
+  "clientRepresentative": "Personal de ICE",
+  "clientContact": "Departamento de Comunicaciones",
+  
+  "contractObject": "Establecer un marco coherente y profesional para todas las comunicaciones de ICE, asegurando que cada interacción refleje los valores institucionales y fortalezca la relación con estudiantes, familias y partners mediante un tono auténtico, empático y orientado a resultados.",
+  
+  "scopeDescription": "Este manual define los tres pilares fundamentales del tono de voz de ICE y proporciona guías prácticas para su implementación en todas las comunicaciones institucionales, desde emails y redes sociales hasta documentos oficiales y atención al cliente.",
+  
+  "modules": [
+    {
+      "title": "🎯 Identidad de Marca ICE",
+      "description": "ICE es una organización que transforma vidas a través de experiencias internacionales. Nuestra comunicación refleja profesionalismo, calidez humana, expertise global y compromiso genuino con el crecimiento personal y profesional de cada estudiante.",
+      "fullWidth": true
+    },
+    {
+      "title": "🟦 Precisión Aspiracional",
+      "description": "Comunicamos con claridad absoluta, evitando ambigüedades. Cada mensaje transmite dirección, acción y compromiso institucional. Enfatizamos soluciones, oportunidades y caminos posibles, no obstáculos o limitaciones."
+    },
+    {
+      "title": "💠 Empatía Guiada",
+      "description": "Reconocemos genuinamente las emociones, preocupaciones y aspiraciones de nuestros interlocutores. Mostramos que ICE está presente, accesible y comprometido, ofreciendo alternativas que cuiden inversiones y mantengan abiertas las posibilidades de crecimiento."
+    },
+    {
+      "title": "🕊️ Elegancia Narrativa",
+      "description": "Mantenemos un tono digno, sereno y profesional, sin tecnicismos innecesarios ni excesos emocionales. Utilizamos un lenguaje cuidado, positivo y constructivo que inspire confianza y proyecte expertise internacional."
+    },
+    {
+      "title": "📝 Aplicación Transversal",
+      "description": "Los pilares del tono de voz se aplican consistentemente en: emails institucionales, redes sociales, documentos oficiales, atención telefónica, presentaciones comerciales, material educativo y comunicaciones de crisis.",
+      "fullWidth": true
+    }
+  ],
+  
+  "deliveryModels": [
+    {
+      "title": "Comunicaciones de Rutina",
+      "description": "Para interacciones cotidianas con estudiantes, familias y partners. Tono cálido, profesional y orientado a la acción.",
+      "highlight": true,
+      "features": [
+        "Lenguaje claro y directo",
+        "Enfoque en beneficios y oportunidades",
+        "Respuestas proactivas y soluciones",
+        "Personalización según el interlocutor",
+        "Llamadas a la acción específicas y motivadoras",
+        "Refuerzo de la propuesta de valor de ICE"
+      ]
+    },
+    {
+      "title": "Comunicaciones Sensibles",
+      "description": "Para situaciones delicadas, cambios de programas, inconvenientes o crisis. Tono empático, transparente y orientado a soluciones.",
+      "features": [
+        "Reconocimiento genuino de la situación",
+        "Transparencia absoluta sin alarmar",
+        "Énfasis en alternativas y continuidad",
+        "Lenguaje que calma y tranquiliza",
+        "Compromiso claro con resoluciones",
+        "Mantener la confianza y credibilidad"
+      ]
+    }
+  ],
+  
+  "pricingDescription": "Guía de Lenguaje ICE - Palabras, frases y expresiones que fortalecen vs. debilitan nuestra comunicación institucional.",
+  "subscriptionColumnTitle": "LENGUAJE RECOMENDADO ✅",
+  "localColumnTitle": "LENGUAJE A EVITAR ❌",
+  
+  "pricingRows": [
+    { "module": "Situaciones Difíciles", "subscription": "Situación excepcional, circunstancia imprevista", "local": "Problema, crisis, falla" },
+    { "module": "Alternativas", "subscription": "Opciones de continuidad, nuevas oportunidades", "local": "Plan B, sustituto, reemplazo" },
+    { "module": "Procesos", "subscription": "Revisión personalizada, análisis individual", "local": "Investigación, auditoría, revisión" },
+    { "module": "Resoluciones", "subscription": "Reunión de conciliación, solución acordada", "local": "Negociación, reclamo, demanda" },
+    { "module": "Comunicación General", "subscription": "Experiencia internacional, crecimiento, desarrollo", "local": "Curso, trámite, servicio básico", "isTotal": true }
+  ],
+  
+  "discounts": [
+    "Usar siempre un lenguaje que inspire y proyecte expertise internacional",
+    "Evitar tecnicismos innecesarios que puedan generar confusión",
+    "Personalizar el mensaje según el interlocutor (estudiante, familia, partner)",
+    "Incluir siempre una llamada a la acción clara y motivadora"
+  ],
+  
+  "pricingExample": {
+    "title": "Ejemplo de Transformación de Mensaje",
+    "originalAmount": "ANTES (❌)",
+    "discountPercent": "DESPUÉS (✅)",
+    "discountAmount": "Tu programa tiene problemas y necesitamos revisar tu caso",
+    "finalAmount": "Tu experiencia internacional ha presentado una situación excepcional que queremos resolver juntos con nuevas oportunidades de crecimiento"
+  },
+  
+  "paymentPlanDescription": "Estructura de Comunicación por Audiencias - Adaptación del tono de voz según el interlocutor y contexto, manteniendo siempre los pilares fundamentales de ICE.",
+  
+  "paymentPlan": {
+    "totalAmount": "4 Audiencias Principales",
+    "payments": [
+      {
+        "stage": "Estudiantes Actuales",
+        "description": "Tono: Motivador y de acompañamiento. Enfoque en crecimiento personal, logros y próximos pasos. Lenguaje inspirador que refuerce su decisión de elegir ICE.",
+        "amount": "Objetivo: Engagement"
+      },
+      {
+        "stage": "Estudiantes Potenciales",
+        "description": "Tono: Aspiracional y profesional. Enfoque en oportunidades, transformación de vida y expertise de ICE. Lenguaje que genere deseo y confianza en la propuesta.",
+        "amount": "Objetivo: Conversión"
+      },
+      {
+        "stage": "Familias",
+        "description": "Tono: Tranquilizador y detallado. Enfoque en seguridad, acompañamiento, ROI educativo y comunicación constante. Lenguaje que transmita confianza y profesionalismo.",
+        "amount": "Objetivo: Confianza"
+      },
+      {
+        "stage": "Partners y Stakeholders",
+        "description": "Tono: Estratégico y técnico. Enfoque en resultados, métricas, colaboración y crecimiento mutuo. Lenguaje empresarial que demuestre solidez institucional.",
+        "amount": "Objetivo: Alianzas"
+      }
+    ],
+    "notes": "Todos los equipos de ICE deben adaptar su comunicación según la audiencia, pero siempre manteniendo los tres pilares: Precisión Aspiracional, Empatía Guiada y Elegancia Narrativa."
+  },
+  
+  "timeline": [
+    {
+      "phase": "Fundamentos del Tono ICE",
+      "description": "ICE es una organización que transforma vidas a través de experiencias internacionales. Nuestro tono refleja profesionalismo, calidez humana, expertise global y compromiso genuino con el crecimiento de cada estudiante.",
+      "fullWidth": true
+    },
+    {
+      "phase": "Implementación por Equipos",
+      "description": "Cada departamento (Admisiones, Relaciones Internacionales, Atención al Cliente, Marketing) adapta el tono según su función, pero mantiene la coherencia con los pilares institucionales."
+    },
+    {
+      "phase": "Monitoreo y Consistencia",
+      "description": "Revisión periódica de comunicaciones para asegurar adherencia al manual. Capacitación continua del personal y actualización de templates según evolución de la marca."
+    },
+    {
+      "phase": "Evolución Continua",
+      "description": "El manual evoluciona con ICE. Se actualiza según feedback de audiencias, cambios en servicios, expansión internacional y nuevas tendencias en comunicación educativa."
+    }
+  ],
+  
+  "responsibilities": {
+    "provider": {
+      "title": "Responsabilidades del Equipo ICE",
+      "items": [
+        "Aplicar consistentemente los tres pilares del tono de voz en todas las comunicaciones",
+        "Personalizar el mensaje según la audiencia sin perder la esencia institucional",
+        "Usar exclusivamente el lenguaje recomendado en situaciones sensibles",
+        "Mantener un registro de comunicaciones para asegurar coherencia",
+        "Capacitarse continuamente en los principios del manual",
+        "Reportar inconsistencias o situaciones no contempladas en el manual",
+        "Contribuir con ejemplos y mejores prácticas para evolución del documento"
+      ]
+    },
+    "client": {
+      "title": "Experiencia Esperada por las Audiencias",
+      "items": [
+        "Comunicación clara, transparente y libre de ambigüedades",
+        "Trato empático que reconozca sus emociones y preocupaciones",
+        "Respuestas profesionales que transmitan expertise y confianza",
+        "Lenguaje inspirador que refuerce la propuesta de valor de ICE",
+        "Alternativas y soluciones proactivas ante cualquier situación",
+        "Consistencia en el tono sin importar el canal o representante",
+        "Comunicación que fortalezca la relación a largo plazo con ICE"
+      ]
+    }
+  },
+  
+  "supportTerms": {
+    "title": "Implementación y Mantenimiento",
+    "description": "Este manual debe ser consultado por todo el personal de ICE antes de comunicaciones importantes. Se actualizará semestralmente y incluirá nuevos ejemplos según la evolución de servicios. La adherencia al tono es responsabilidad de cada colaborador y será evaluada en revisiones de desempeño."
+  },
+  
+  "acceptanceText": "Este Manual de Tono de Voz constituye la guía oficial de comunicación de ICE. Su aplicación es obligatoria para todo el personal y representa el compromiso institucional de mantener una comunicación coherente, profesional y empática que fortalezca la marca y las relaciones con todas las audiencias.",
+  
+  "signatures": {
+    "provider": {
+      "company": "International Cultural Experience - ICE",
+      "name": "Dirección de Comunicaciones",
+      "position": "Responsable de Implementación"
+    },
+    "client": {
+      "company": "Equipos ICE",
+      "name": "Personal de Comunicación",
+      "position": "Usuarios del Manual"
+    }
+  },
+  
+  "footerLeft": "ICE — International Cultural Experience • www.iceexperience.co",
+  "footerRight": "Manual Interno · Comunicación Institucional · Tono de Voz v1.0"
+}

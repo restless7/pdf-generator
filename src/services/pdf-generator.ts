@@ -7,6 +7,7 @@ import { TemplateEngineFactory } from '../engines';
 import { CacheManager } from './cache-manager';
 import { AssetManager } from './asset-manager';
 import { ValidationService } from './validation-service';
+import { pdfGenerationCounter, pdfGenerationDuration } from '../metrics';
 
 export interface GenerationOptions {
   templateId: string;
@@ -166,6 +167,7 @@ export class EnhancedPDFGenerator {
     templateConfig: TemplateConfig,
     options: GenerationOptions
   ): Promise<void> {
+    const endMetric = pdfGenerationDuration.startTimer();
     try {
       // Update job status
       job.status = 'processing';
@@ -187,6 +189,8 @@ export class EnhancedPDFGenerator {
         job.status = 'completed';
         job.progress = 100;
         job.updatedAt = new Date();
+        pdfGenerationCounter.inc({ status: 'success' });
+        endMetric();
         return;
       }
 
@@ -241,11 +245,15 @@ export class EnhancedPDFGenerator {
       job.status = 'completed';
       job.progress = 100;
       job.updatedAt = new Date();
+      pdfGenerationCounter.inc({ status: 'success' });
+      endMetric();
 
     } catch (error) {
       job.status = 'failed';
       job.error = error instanceof Error ? error.message : 'Unknown error';
       job.updatedAt = new Date();
+      pdfGenerationCounter.inc({ status: 'error' });
+      endMetric();
       throw error;
     }
   }

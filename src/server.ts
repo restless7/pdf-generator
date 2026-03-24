@@ -5,6 +5,7 @@ import { createServer } from 'http';
 import pdfRoutes from './api/pdf-routes';
 import path from 'path';
 import { ValidationService } from './services/validation-service';
+import { metricsMiddleware } from './metrics';
 
 // Load environment variables
 dotenv.config();
@@ -12,7 +13,7 @@ dotenv.config();
 console.log('🚀 Initializing PDF Generator Service...');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 9091;
 
 // Create HTTP server
 const server = createServer(app);
@@ -38,6 +39,9 @@ app.use((req, res, next) => {
   res.setTimeout(600000); // 10 minutes
   next();
 });
+
+// Prometheus metrics endpoint
+app.get('/metrics', metricsMiddleware);
 
 console.log('✅ Middlewares configured');
 

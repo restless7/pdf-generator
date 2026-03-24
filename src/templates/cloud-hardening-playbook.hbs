@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Cloud Hardening Playbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; }
+        
+        .cover-page {
+            height: 100vh;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .cover-page h1 { font-size: 48px; margin-bottom: 20px; color: #64ffda; }
+        .cover-page h2 { font-size: 24px; font-weight: 300; margin-bottom: 40px; color: #8892b0; }
+        .cover-page .meta { margin-top: auto; font-size: 14px; color: #ccd6f6; }
+
+        .page {
+            padding: 40px;
+            page-break-after: always;
+        }
+
+        .header {
+            border-bottom: 2px solid #0a192f;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header h3 { color: #0a192f; font-size: 24px; }
+        .header span { color: #666; font-size: 12px; }
+
+        h4 { margin-top: 30px; margin-bottom: 15px; font-size: 20px; color: #112240; }
+        p { margin-bottom: 15px; font-size: 14px; text-align: justify; }
+        ul { margin-bottom: 20px; margin-left: 20px; font-size: 14px; }
+        li { margin-bottom: 8px; }
+        
+        .box {
+            background-color: #f4f6f8;
+            border-left: 4px solid #64ffda;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .table-container { margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #0a192f; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        @media print {
+            .cover-page { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1>AWS Cloud Hardening Playbook</h1>
+        <h2>Enterprise Security Baseline & Terraform Implementation</h2>
+        
+        <div style="margin: 50px 0;">
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+        </div>
+        
+        <div class="meta">
+            <p>PlanMaestro Ecosystem</p>
+            <p>Version 2.0.0 | Mapped to CIS Foundations Benchmark v1.5</p>
+        </div>
+    </div>
+
+    <!-- Page 1: Introduction & Architecture -->
+    <div class="page">
+        <div class="header">
+            <h3>1. Introduction & Core Tenets</h3>
+            <span>AWS Cloud Hardening Playbook</span>
+        </div>
+        
+        <p>This document serves as the definitive reference for the PlanMaestro AWS security baseline. It provides a codified, opinionated, and production-ready architecture built exclusively with Terraform. The posture described herein is strictly aligned to the CIS AWS Foundations Benchmark v1.5 and is designed for multi-account AWS Organizations.</p>
+        
+        <h4>Core Security Tenets</h4>
+        <ul>
+            <li><strong>Security by Default:</strong> S3 buckets are private and encrypted, EBS volumes are encrypted, and VPCs are isolated without implicit internet gateways.</li>
+            <li><strong>Blast Radius Containment:</strong> Workloads are separated into discrete accounts within AWS Organizations, heavily restricted by Service Control Policies (SCPs).</li>
+            <li><strong>Least Privilege Identity:</strong> Long-term IAM access keys are prohibited. AWS IAM Identity Center (SSO) with MFA is enforced for all human operators.</li>
+            <li><strong>Assume Breach:</strong> Detective controls—including GuardDuty, Security Hub, and CloudTrail—are operationalized and alerting from Day 1 in all regions.</li>
+        </ul>
+
+        <h4>Multi-Account Architecture</h4>
+        <p>We deploy a 7-account architecture separating organizational management, security tooling, log archives, shared services, and environment-specific workloads (Prod, Staging, Sandbox). This ensures that a compromise in a sandbox environment has zero lateral movement path to production data or central logging resources.</p>
+        
+        <div class="box">
+            Root Account (Billing only, MFA locked)<br>
+            ├── Security Account (GuardDuty Admin, Security Hub)<br>
+            ├── Log Archive (Immutable CloudTrail bucket)<br>
+            ├── Shared Services (CI/CD Runners, Image Builder)<br>
+            ├── Prod (Customer Workloads)<br>
+            ├── Staging (Prod Replica)<br>
+            └── Sandbox (Ephemeral Developer Environments)
+        </div>
+    </div>
+
+    <!-- Page 2: Foundation & IAM -->
+    <div class="page">
+        <div class="header">
+            <h3>2. Foundation & Identity Management</h3>
+            <span>Phase 1 & 2 Execution</span>
+        </div>
+
+        <h4>Service Control Policies (SCPs)</h4>
+        <p>Before any workloads are deployed, the foundational AWS Organization is restricted using SCPs. These act as organizational-level guardrails that cannot be overridden by any user, including local account administrators.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>Policy Name</th><th>Prevention Scope</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>deny-public-s3</code></td><td>Blocks public ACLs and bucket policies across all non-root accounts.</td></tr>
+                    <tr><td><code>deny-root-usage</code></td><td>Prevents Root user API calls (except unavoidable billing tasks).</td></tr>
+                    <tr><td><code>require-imdsv2</code></td><td>Prevents launch of EC2 instances lacking IMDSv2 protections.</td></tr>
+                    <tr><td><code>deny-unencrypted-volumes</code></td><td>Blocks <code>ec2:CreateVolume</code> if encryption flag is missing.</td></tr>
+                    <tr><td><code>restrict-regions</code></td><td>Restricts resource creation to approved geographical regions.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Identity and Access Management (IAM) Baseline</h4>
+        <p>The IAM baseline ensures zero standing privileges. Developers interact with AWS exclusively via Single Sign-On (SSO) roles, while CI/CD pipelines utilize strictly scoped OpenID Connect (OIDC) roles.</p>
+        <ul>
+            <li><strong>Password Policy:</strong> Minimum 14 characters, require uppercase, lowercase, numbers, symbols. Prevent last 24 passwords. Expire in 90 days.</li>
+            <li><strong>Permission Boundaries:</strong> All developer-created roles must attach an approved permission boundary limiting their effective permissions to a safe subset of services.</li>
+            <li><strong>CI/CD OIDC:</strong> GitHub Actions assume roles via federation, tied exclusively to specific repository branches (e.g., <code>repo:org/name:ref:refs/heads/main</code>). Long-term keys for automation are strictly banned.</li>
+        </ul>
+    </div>
+
+    <!-- Page 3: Network & Data -->
+    <div class="page">
+        <div class="header">
+            <h3>3. Network Security & Data Encryption</h3>
+            <span>Phase 3 Execution</span>
+        </div>
+
+        <h4>VPC Security Baseline</h4>
+        <p>The network topography follows a strict internal-first model. The default VPCs provided by AWS in all regions are immediately deleted upon account creation.</p>
+        <ul>
+            <li><strong>Private Subnets:</strong> All compute instances live in private subnets, routing outbound traffic through highly monitored NAT Gateways.</li>
+            <li><strong>Security Groups:</strong> "Default deny". Explicit allow rules are required. Ingress rules permitting <code>0.0.0.0/0</code> for administrative ports (SSH/RDP) are actively auto-remediated by AWS Config.</li>
+            <li><strong>VPC Flow Logs:</strong> All ENI traffic (accepted and rejected) is logged and stored centrally in CloudWatch and the Log Archive S3 bucket for forensic analysis.</li>
+            <li><strong>VPC Endpoints (PrivateLink):</strong> Interactions with AWS Services (S3, DynamoDB, ECR, SSM) happen via private endpoints, completely avoiding traversal over the public internet.</li>
+        </ul>
+
+        <h4>Encryption Standards (KMS)</h4>
+        <p>To assure Data at Rest (DaR) confidentiality, Customer Managed Keys (CMKs) via AWS KMS are utilized extensively. Automatic annual key rotation is enforced across the board.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>AWS Service</th><th>Encryption Method</th><th>Key Management Strategy</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>S3 Buckets</td><td>SSE-KMS</td><td>Account-level default CMK; rotation 365 days</td></tr>
+                    <tr><td>EBS Volumes</td><td>AES-256</td><td>Account-level "Encrypt by default" enabled</td></tr>
+                    <tr><td>RDS Databases</td><td>SSE-KMS</td><td>Dedicated RDS CMK with automated rotation</td></tr>
+                    <tr><td>Secrets Manager</td><td>KMS</td><td>90-day automated rotation using Lambda</td></tr>
+                    <tr><td>CloudTrail Logs</td><td>SSE-KMS</td><td>Immutable vault key; multi-region usage</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Page 4: Detective Controls -->
+    <div class="page">
+        <div class="header">
+            <h3>4. Detective Controls & Incident Response</h3>
+            <span>Phase 4 Execution & Runbooks</span>
+        </div>
+
+        <h4>Continuous Monitoring Stack</h4>
+        <p>Prevention inevitably fails. Our detective controls ensure rapid identification and automated containment of security events.</p>
+        <ul>
+            <li><strong>Amazon GuardDuty:</strong> Intelligent threat detection enabled natively across all accounts. Alerts on malicious IP communications, unexpected API calls, and EC2 compromises.</li>
+            <li><strong>AWS Security Hub:</strong> Central aggregator for GuardDuty, Inspector, and IAM Access Analyzer findings, continuously measuring posture against the CIS Benchmark.</li>
+            <li><strong>AWS CloudTrail:</strong> Multi-region organizational trails with log file integrity validation. Stored in an MFA-delete protected S3 bucket in the Log Archive.</li>
+        </ul>
+
+        <h4>AWS Config Auto-Remediation</h4>
+        <p>We leverage AWS Config Rules combined with Systems Manager (SSM) Automation Documents to automatically revert risky configuration changes instantly.</p>
+        <div class="box">
+            ✓ s3-bucket-public-read-prohibited → [Auto-Remediates by stripping ACLs]<br>
+            ✓ vpc-sg-open-only-to-authorized-ports → [Auto-Remediates by revoking rules]<br>
+            ✓ restricted-ssh → [Auto-Remediates by removing port 22 global ingress]<br>
+            ✓ cloudtrail-enabled → [Critical Alert generated if disabled]
+        </div>
+
+        <h4>Incident Response: Compromised Credentials Runbook</h4>
+        <p>If an IAM role session or identity token is suspected to be compromised, the following standardized response is executed:</p>
+        <ol>
+            <li><strong>Contain:</strong> Detach all existing policies from the user/role. Attach a strict <code>DenyAll</code> policy.</li>
+            <li><strong>Invalidate:</strong> Revoke all active STS sessions using the AWS CLI: <code>aws iam put-role-policy --role-name TARGET_ROLE --policy-name RevokeOldSessions --policy-document ...</code></li>
+            <li><strong>Investigate:</strong> Execute predefined Athena queries against the CloudTrail Log Archive to track the attacker's API footprint (specifically <code>sts:AssumeRole</code> and <code>ec2:*</code>).</li>
+            <li><strong>Recover:</strong> Rotate the underlying identity provider secrets, notify stakeholders, and remove the Deny policy once cleared.</li>
+        </ol>
+    </div>
+
+</body>
+</html>

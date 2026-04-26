@@ -1,0 +1,82 @@
+{
+  "title": "The Ultimate Guide to Information Discernment",
+  "subtitle": "Navigating Truth in the Age of Information Overload — A Curated Preview",
+  "badge": "Educational Preview Edition",
+  "date": "April 2026",
+  "author": "Knowledge Exchange Series",
+  "footerRight": "For Educational Use Only — Not for Resale",
+  "ctaText": "Explore the Full Interactive Guide →",
+
+  "stats": [
+    { "value": "74%", "label": "Adults can't identify misinformation" },
+    { "value": "6×", "label": "Faster falsehoods spread than truth" },
+    { "value": "5K+", "label": "Ads seen per person daily" }
+  ],
+
+  "biases": [
+    {
+      "name": "Confirmation Bias",
+      "description": "We instinctively seek information that confirms our existing beliefs, creating invisible walls around our worldview."
+    },
+    {
+      "name": "Anchoring Effect",
+      "description": "The first piece of information we encounter disproportionately influences all subsequent judgments — even when it's wrong."
+    },
+    {
+      "name": "Availability Heuristic",
+      "description": "We overestimate the probability of events that come easily to mind, typically those that are recent, dramatic, or emotionally charged."
+    }
+  ],
+
+  "sharingChecklist": [
+    "Have I verified this information through at least two independent, credible sources?",
+    "Am I sharing this because it is true, or because it confirms what I already believe?",
+    "Could sharing this cause harm to a person, group, or institution — even if it's technically correct?",
+    "Would I be comfortable defending this information in a professional or academic setting?",
+    "Am I emotionally triggered right now? If yes, I should wait 24 hours before sharing."
+  ],
+
+  "truthSandwich": [
+    {
+      "step": "1",
+      "name": "Lead with the Truth",
+      "description": "Start with the verified fact, clearly and simply stated."
+    },
+    {
+      "step": "2",
+      "name": "Mention the Myth",
+      "description": "Briefly reference the false claim — but only after establishing the truth."
+    },
+    {
+      "step": "3",
+      "name": "Explain the Fallacy",
+      "description": "Clarify why the myth is wrong and what mechanism makes it persuasive."
+    },
+    {
+      "step": "4",
+      "name": "Reinforce the Truth",
+      "description": "Close by restating the verified fact with supporting evidence."
+    }
+  ],
+
+  "selfAssessment": [
+    "Can I name at least 3 specific news sources I regularly consult, along with their political leanings?",
+    "When I encounter a surprising statistic, do I check the original study or dataset before accepting it?",
+    "Do I actively seek out perspectives that challenge my core beliefs at least once a week?",
+    "Can I explain the difference between an ad hominem attack and a legitimate critique?",
+    "Have I ever changed a strongly held opinion based on new evidence in the last 12 months?"
+  ],
+
+  "tableOfContents": [
+    { "title": "1. The Architecture of Modern Misinformation", "status": "Included", "statusClass": "included" },
+    { "title": "2. Six Cognitive Biases That Shape Your Reality", "status": "Included", "statusClass": "included" },
+    { "title": "3. The Sharing Decision Matrix", "status": "Included", "statusClass": "included" },
+    { "title": "4. The Truth Sandwich Method", "status": "Included", "statusClass": "included" },
+    { "title": "5. Historical Evolution of Propaganda", "status": "Full Guide", "statusClass": "full-guide" },
+    { "title": "6. Neuroscience: System 1 vs System 2", "status": "Full Guide", "statusClass": "full-guide" },
+    { "title": "7. The Manipulation Toolkit (16 Techniques)", "status": "Full Guide", "statusClass": "full-guide" },
+    { "title": "8. Interactive Cognitive Immune System Audit", "status": "Full Guide", "statusClass": "full-guide" },
+    { "title": "9. Epistemological Humility Vocabulary", "status": "Full Guide", "statusClass": "full-guide" },
+    { "title": "10. Platform-Specific Defense Strategies", "status": "Full Guide", "statusClass": "full-guide" }
+  ]
+}

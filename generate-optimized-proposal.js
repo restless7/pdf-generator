@@ -41,6 +41,14 @@ async function generateOptimizedProposal(templateFile = 'propuesta-optimizada.ht
     console.log('🖼️ Procesando logo...');
     const logoBase64 = fs.readFileSync(logoPath).toString('base64');
     data.logoDataUri = `data:image/png;base64,${logoBase64}`;
+
+    // Procesar imagen de portada si existe
+    const coverPath = path.join(__dirname, 'voice-cover.png');
+    if (fs.existsSync(coverPath)) {
+      console.log('🖼️ Procesando imagen de portada...');
+      const coverBase64 = fs.readFileSync(coverPath).toString('base64');
+      data.coverImageDataUri = `data:image/png;base64,${coverBase64}`;
+    }
     
     // Generar HTML final
     console.log('⚡ Compilando template con datos...');

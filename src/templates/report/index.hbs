@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{reportTitle}} - Reporte Técnico</title>
+    <style>
+        /* Modern Professional Design System - Technical Report Template */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary-emerald: #10B981;
+            --primary-emerald-dark: #059669;
+            --emerald-light: #D1FAE5;
+            --emerald-50: #ECFDF5;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --accent-orange: #F59E0B;
+            --accent-red: #EF4444;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--gray-700);
+            background: var(--white);
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--gray-900);
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-emerald), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--emerald-light);
+            position: relative;
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-emerald), var(--accent-blue));
+        }
+        
+        h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray-600);
+            text-align: justify;
+        }
+        
+        /* Page breaks */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .page-break-avoid {
+            page-break-inside: avoid;
+        }
+        
+        /* Cover page */
+        .cover-page {
+            height: 297mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--emerald-50) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 3rem;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            padding: 3rem;
+        }
+        
+        .cover-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-emerald), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+        
+        .cover-details {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            margin: 2rem 0;
+        }
+        
+        .cover-detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .cover-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cover-detail-label {
+            font-weight: 600;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .cover-detail-value {
+            color: var(--gray-800);
+            font-weight: 500;
+        }
+        
+        /* Executive Summary Box */
+        .executive-summary {
+            background: linear-gradient(135deg, var(--emerald-50) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border-left: 4px solid var(--primary-emerald);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .executive-summary h3 {
+            color: var(--primary-emerald-dark);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        /* Status indicators */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .status-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .status-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-emerald);
+        }
+        
+        .status-card.warning::before { background: var(--accent-orange); }
+        .status-card.error::before { background: var(--accent-red); }
+        .status-card.success::before { background: var(--primary-emerald); }
+        .status-card.info::before { background: var(--accent-blue); }
+        
+        .status-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-value.success { color: var(--primary-emerald); }
+        .status-value.warning { color: var(--accent-orange); }
+        .status-value.error { color: var(--accent-red); }
+        .status-value.info { color: var(--accent-blue); }
+        
+        .status-label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Code blocks */
+        .code-block {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin: 1.5rem 0;
+            font-family: 'JetBrains Mono', 'Monaco', 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            background: var(--primary-emerald);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-md);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding-top: 1rem;
+        }
+        
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .data-table th {
+            background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+            color: var(--white);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-600);
+            vertical-align: top;
+        }
+        
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: var(--gray-50);
+        }
+        
+        /* Findings section */
+        .findings-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .finding-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        
+        .finding-item.critical::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-red); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+        .finding-item.high::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-orange); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+        .finding-item.medium::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-blue); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+        .finding-item.low::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary-emerald); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+        
+        .finding-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .finding-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: 0;
+        }
+        
+        .finding-severity {
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .severity-critical { background: var(--accent-red); color: var(--white); }
+        .severity-high { background: var(--accent-orange); color: var(--white); }
+        .severity-medium { background: var(--accent-blue); color: var(--white); }
+        .severity-low { background: var(--primary-emerald); color: var(--white); }
+        
+        .finding-description {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+        
+        .finding-recommendation {
+            background: var(--emerald-50);
+            border-left: 3px solid var(--primary-emerald);
+            padding: 1rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .finding-recommendation h5 {
+            color: var(--primary-emerald-dark);
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        /* Charts placeholder */
+        .chart-placeholder {
+            background: var(--gray-100);
+            border: 2px dashed var(--gray-300);
+            border-radius: var(--radius-lg);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-style: italic;
+            margin: 2rem 0;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-emerald);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Print optimizations */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+            
+            h1 {
+                font-size: 24pt;
+            }
+            
+            h2 {
+                font-size: 18pt;
+            }
+            
+            h3 {
+                font-size: 14pt;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .page-break-avoid {
+                page-break-inside: avoid;
+            }
+            
+            .status-card,
+            .finding-item,
+            .code-block {
+                page-break-inside: avoid;
+            }
+            
+            .cover-page {
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page page-break-avoid">
+            <div class="cover-content">
+                <div class="cover-title">{{reportTitle}}</div>
+                <div class="cover-subtitle">Reporte Técnico Profesional</div>
+                
+                <div class="cover-details">
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Proyecto:</span>
+                        <span class="cover-detail-value">{{projectName}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Cliente:</span>
+                        <span class="cover-detail-value">{{clientName}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Autor:</span>
+                        <span class="cover-detail-value">{{authorName}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Fecha de Reporte:</span>
+                        <span class="cover-detail-value">{{formatDate reportDate}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Versión:</span>
+                        <span class="cover-detail-value">{{version}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="page-break">
+            <h2>Resumen Ejecutivo</h2>
+            <div class="executive-summary">
+                <h3>Resumen General</h3>
+                <p>{{formatContent executiveSummary}}</p>
+                
+                {{#if keyFindings}}
+                <h4>Hallazgos Clave</h4>
+                <ul>
+                    {{#each keyFindings}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+
+        <!-- Status Overview -->
+        {{#if statusMetrics}}
+        <h2>Métricas del Proyecto</h2>
+        <div class="status-grid">
+            {{#each statusMetrics}}
+            <div class="status-card {{type}}">
+                <div class="status-value {{type}}">{{value}}</div>
+                <div class="status-label">{{label}}</div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Technical Details -->
+        {{#each sections}}
+        <div class="page-break-avoid">
+            <h2>{{title}}</h2>
+            {{#if content}}
+            <p>{{formatContent content}}</p>
+            {{/if}}
+            
+            {{#if subsections}}
+            {{#each subsections}}
+            <h3>{{title}}</h3>
+            <p>{{formatContent content}}</p>
+            
+            {{#if codeBlock}}
+            <div class="code-block" data-language="{{codeBlock.language}}">
+                <pre><code>{{codeBlock.code}}</code></pre>
+            </div>
+            {{/if}}
+            
+            {{#if dataTable}}
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        {{#each dataTable.headers}}
+                        <th>{{this}}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each dataTable.rows}}
+                    <tr>
+                        {{#each this}}
+                        <td>{{this}}</td>
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{/if}}
+            
+            {{#if chart}}
+            <div class="chart-placeholder">
+                Gráfico: {{chart.title}} ({{chart.type}})
+            </div>
+            {{/if}}
+            {{/each}}
+            {{/if}}
+        </div>
+        {{/each}}
+
+        <!-- Findings and Issues -->
+        {{#if findings}}
+        <div class="page-break">
+            <h2>Hallazgos e Incidencias</h2>
+            <ul class="findings-list">
+                {{#each findings}}
+                <li class="finding-item {{severity}}">
+                    <div class="finding-header">
+                        <h4 class="finding-title">{{title}}</h4>
+                        <span class="finding-severity severity-{{severity}}">{{severity}}</span>
+                    </div>
+                    <div class="finding-description">
+                        {{formatContent description}}
+                    </div>
+                    {{#if recommendation}}
+                    <div class="finding-recommendation">
+                        <h5>Recomendación</h5>
+                        <p>{{formatContent recommendation}}</p>
+                    </div>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+
+        <!-- Performance Metrics -->
+        {{#if performanceMetrics}}
+        <div class="page-break">
+            <h2>Métricas de Rendimiento</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Métrica</th>
+                        <th>Valor Actual</th>
+                        <th>Objetivo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each performanceMetrics}}
+                    <tr>
+                        <td><strong>{{metric}}</strong></td>
+                        <td>{{currentValue}}</td>
+                        <td>{{targetValue}}</td>
+                        <td>
+                            <span class="finding-severity severity-{{status}}">{{status}}</span>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{/if}}
+
+        <!-- Recommendations -->
+        {{#if recommendations}}
+        <div class="page-break">
+            <h2>Recomendaciones</h2>
+            {{#each recommendations}}
+            <div class="executive-summary">
+                <h3>{{title}}</h3>
+                <p>{{formatContent description}}</p>
+                {{#if priority}}
+                <p><strong>Prioridad:</strong> 
+                    <span class="finding-severity severity-{{priority}}">{{priority}}</span>
+                </p>
+                {{/if}}
+                {{#if timeline}}
+                <p><strong>Plazo estimado:</strong> {{timeline}}</p>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Appendices -->
+        {{#if appendices}}
+        <div class="page-break">
+            <h2>Apéndices</h2>
+            {{#each appendices}}
+            <h3>Apéndice {{@index}}: {{title}}</h3>
+            <p>{{formatContent content}}</p>
+            
+            {{#if code}}
+            <div class="code-block" data-language="{{code.language}}">
+                <pre><code>{{code.content}}</code></pre>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">{{companyName}}</div>
+            <p>Reporte generado el {{formatDate currentDate}} • Documento {{confidentiality}}</p>
+            {{#if metadata.branding.companyName}}
+            <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--gray-400);">
+                Generado con {{metadata.branding.companyName}} PDF Generator v2.0
+            </p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>

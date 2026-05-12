@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{proposalTitle}} - Strategic Partnership Proposal</title>
+    <style>
+        /* Modern Professional Design System - Partnership Proposal Template */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-emerald: #10B981;
+            --primary-emerald-dark: #059669;
+            --emerald-light: #D1FAE5;
+            --emerald-50: #ECFDF5;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --warning-orange: #F59E0B;
+            --success-green: #10B981;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--gray-700);
+            background: var(--white);
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--gray-900);
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-emerald), var(--primary-emerald-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--emerald-light);
+            position: relative;
+            page-break-after: avoid;
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-emerald), var(--primary-emerald-dark));
+        }
+        
+        h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray-600);
+            text-align: justify;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--gray-600);
+        }
+        
+        ul li::marker {
+            color: var(--primary-emerald);
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+        
+        /* Page breaks */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .page-break-avoid {
+            page-break-inside: avoid;
+        }
+        
+        /* Cover page */
+        .cover-page {
+            height: 297mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--emerald-50) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 3rem;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            padding: 3rem;
+        }
+        
+        .cover-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-emerald), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+        
+        .cover-details {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+            margin: 2rem 0;
+        }
+        
+        .cover-detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .cover-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cover-detail-label {
+            font-weight: 600;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .cover-detail-value {
+            color: var(--gray-800);
+            font-weight: 500;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: var(--white);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-100);
+            page-break-inside: avoid;
+        }
+        
+        .content-page {
+            padding: 3rem;
+            min-height: auto;
+        }
+        
+        /* Highlight boxes */
+        .highlight-box {
+            background: var(--emerald-50);
+            border-left: 4px solid var(--primary-emerald);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            page-break-inside: avoid;
+        }
+        
+        .highlight-box h4 {
+            color: var(--primary-emerald-dark);
+            margin-top: 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #FEF3C7 0%, rgba(245, 158, 11, 0.05) 100%);
+            border-left: 4px solid var(--warning-orange);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            page-break-inside: avoid;
+        }
+        
+        .warning-box h4 {
+            color: var(--warning-orange);
+            margin-top: 0;
+        }
+        
+        /* Code-style boxes for technical content */
+        .code-box {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            white-space: pre-line;
+            page-break-inside: avoid;
+        }
+        
+        /* Ensure proper text formatting */
+        p, .content-section p {
+            white-space: pre-line;
+        }
+        
+        /* Partnership structure grid */
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .partner-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            page-break-inside: avoid;
+        }
+        
+        .partner-card.primary {
+            border-color: var(--primary-emerald);
+            background: var(--emerald-50);
+        }
+        
+        .partner-card h4 {
+            color: var(--primary-emerald-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .equity-percentage {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-emerald);
+            margin-bottom: 1rem;
+        }
+        
+        /* Implementation timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-emerald), var(--emerald-light));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-100);
+            page-break-inside: avoid;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-emerald);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--emerald-light);
+        }
+        
+        .timeline-phase {
+            font-weight: 600;
+            color: var(--primary-emerald);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-duration {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            page-break-inside: avoid;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-emerald), var(--primary-emerald-dark));
+            color: var(--white);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-600);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: var(--gray-50);
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-emerald);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Print optimizations */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+            
+            h1 {
+                font-size: 24pt;
+            }
+            
+            h2 {
+                font-size: 18pt;
+            }
+            
+            h3 {
+                font-size: 14pt;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .page-break-avoid {
+                page-break-inside: avoid;
+            }
+            
+            .partner-card,
+            .timeline-item,
+            .content-section {
+                page-break-inside: avoid;
+            }
+            
+            .cover-page {
+                height: 100vh;
+            }
+            
+            .partnership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page page-break-avoid">
+            <div class="cover-content">
+                <div class="cover-title">{{proposalTitle}}</div>
+                <div class="cover-subtitle">{{subtitle}}</div>
+                
+                <div class="cover-details">
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Partnership Partners:</span>
+                        <span class="cover-detail-value">{{partnerNames}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Proposed Entity:</span>
+                        <span class="cover-detail-value">{{proposedEntity}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Proposal Date:</span>
+                        <span class="cover-detail-value">{{formatDate proposalDate}}</span>
+                    </div>
+                    <div class="cover-detail-item">
+                        <span class="cover-detail-label">Document Status:</span>
+                        <span class="cover-detail-value">{{documentStatus}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="page-break">
+            <div class="content-page">
+                <h2>Executive Summary</h2>
+                <div class="content-section">
+                    <p>{{formatContent executiveSummary}}</p>
+                    
+                    {{#if proposedStructure}}
+                    <div class="highlight-box">
+                        <h4>Proposed Partnership Structure</h4>
+                        <p>{{formatContent proposedStructure}}</p>
+                    </div>
+                    {{/if}}
+                    
+                    {{#if entityDetails}}
+                    <div class="highlight-box">
+                        <h4>Business Entity & Structure</h4>
+                        <p>{{formatContent entityDetails}}</p>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Partnership Foundation & Value Proposition -->
+        {{#if partnershipFoundation}}
+        <h2>Partnership Foundation & Value Proposition</h2>
+        
+        {{#if partnerContributions}}
+        <h3>Partner Contributions & Equity Justification</h3>
+        <div class="partnership-grid">
+            {{#each partnerContributions}}
+            <div class="partner-card {{#if primary}}primary{{/if}}">
+                <h4>{{partnerName}}</h4>
+                <div class="equity-percentage">{{equityPercentage}}</div>
+                <ul>
+                    {{#each contributions}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        
+        <div class="content-section">
+            <p>{{formatContent partnershipFoundation}}</p>
+        </div>
+        {{/if}}
+
+        <!-- Independent Work Preservation -->
+        {{#if independentWork}}
+        <div class="page-break">
+            <h2>Independent Work Preservation & Scope Separation</h2>
+            <div class="content-section">
+                <p>{{formatContent independentWork.overview}}</p>
+                
+                {{#if independentWork.scopeSeparation}}
+                <h4>Business Scope Separation</h4>
+                <div class="partnership-grid">
+                    <div class="partner-card primary">
+                        <h4>APEX Partnership Scope</h4>
+                        <p>{{independentWork.scopeSeparation.apexScope}}</p>
+                    </div>
+                    <div class="partner-card">
+                        <h4>Independent Work Scope</h4>
+                        <p>{{independentWork.scopeSeparation.independentScope}}</p>
+                    </div>
+                </div>
+                {{/if}}
+                
+                
+                {{#if independentWork.preservationFramework}}
+                <h4>Independent Work Preservation Framework</h4>
+                <ul>
+                    <li><strong>Non-Compete Scope:</strong> {{independentWork.preservationFramework.nonCompeteScope}}</li>
+                    <li><strong>Client Ownership:</strong> {{independentWork.preservationFramework.clientOwnership}}</li>
+                    <li><strong>Future Opportunities:</strong> {{independentWork.preservationFramework.futureOpportunities}}</li>
+                    <li><strong>Time Allocation:</strong> {{independentWork.preservationFramework.timeAllocation}}</li>
+                    <li><strong>IP Separation:</strong> {{independentWork.preservationFramework.ipSeparation}}</li>
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- Technical Background & APEX Foundation -->
+        {{#if technicalBackground}}
+        <div class="page-break">
+            <h2>Technical Background & APEX Foundation</h2>
+            <div class="content-section">
+                <p>{{formatContent technicalBackground.overview}}</p>
+                
+                
+                {{#if technicalBackground.technicalAssets}}
+                <h4>Technical Assets & IP Portfolio</h4>
+                <ul>
+                    {{#each technicalBackground.technicalAssets}}
+                    <li><strong>{{assetName}}:</strong> {{description}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+                
+                {{#if technicalBackground.expertise}}
+                <h4>Core Technical Expertise</h4>
+                <div class="code-box">{{formatContent technicalBackground.expertise}}</div>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- IP Protection Framework -->
+        {{#if ipProtection}}
+        <h2>Intellectual Property Protection Framework</h2>
+        <div class="content-section">
+            {{#if ipProtection.overview}}
+            <p>{{formatContent ipProtection.overview}}</p>
+            {{/if}}
+            
+            {{#if ipProtection.mechanisms}}
+            <h4>Core Protection Mechanisms</h4>
+            {{#each ipProtection.mechanisms}}
+            <div class="code-box">
+{{mechanismTitle}}
+
+{{formatContent details}}
+            </div>
+            {{/each}}
+            {{/if}}
+            
+            {{#if ipProtection.technicalControls}}
+            <h4>Technical Control Mechanisms</h4>
+            <ul>
+                {{#each ipProtection.technicalControls}}
+                <li><strong>{{controlName}}:</strong> {{description}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- Governance & Decision-Making -->
+        {{#if governance}}
+        <h2>Governance & Decision-Making Structure</h2>
+        <div class="content-section">
+            {{#if governance.overview}}
+            <p>{{formatContent governance.overview}}</p>
+            {{/if}}
+            
+            {{#if governance.managementHierarchy}}
+            <h4>Management Hierarchy</h4>
+            <div class="code-box">{{formatContent governance.managementHierarchy}}</div>
+            {{/if}}
+            
+            {{#if governance.responsibilities}}
+            <h4>Operational Responsibilities</h4>
+            {{#each governance.responsibilities}}
+            <div class="highlight-box">
+                <h4>{{roleName}}</h4>
+                <ul>
+                    {{#each responsibilities}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+            {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- Financial Structure -->
+        {{#if financialStructure}}
+        <h2>Financial Structure & Compensation</h2>
+        <div class="content-section">
+            {{#if financialStructure.overview}}
+            <p>{{formatContent financialStructure.overview}}</p>
+            {{/if}}
+            
+            {{#if financialStructure.equityDistribution}}
+            <h4>Equity Distribution & Vesting</h4>
+            <div class="code-box">{{formatContent financialStructure.equityDistribution}}</div>
+            {{/if}}
+            
+            {{#if financialStructure.compensation}}
+            <h4>Compensation Framework</h4>
+            <div class="code-box">{{formatContent financialStructure.compensation}}</div>
+            {{/if}}
+            
+            {{#if financialStructure.revenueDistribution}}
+            <h4>Revenue Distribution</h4>
+            <ul>
+                {{#each financialStructure.revenueDistribution}}
+                <li><strong>{{category}}:</strong> {{percentage}} - {{description}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- Business Entity & Tax Optimization -->
+        {{#if businessEntity}}
+        <h2>Business Entity & Tax Optimization</h2>
+        <div class="content-section">
+            {{#if businessEntity.recommendation}}
+            <div class="highlight-box">
+                <h4>Recommended Structure</h4>
+                <p>{{formatContent businessEntity.recommendation}}</p>
+            </div>
+            {{/if}}
+            
+            {{#if businessEntity.advantages}}
+            <h4>Key Advantages</h4>
+            <ul>
+                {{#each businessEntity.advantages}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+            
+            {{#if businessEntity.taxOptimization}}
+            <h4>Tax Optimization Strategy</h4>
+            <div class="code-box">{{formatContent businessEntity.taxOptimization}}</div>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- Risk Mitigation -->
+        {{#if riskMitigation}}
+        <h2>Risk Mitigation & Protection Mechanisms</h2>
+        <div class="content-section">
+            {{#if riskMitigation.overview}}
+            <p>{{formatContent riskMitigation.overview}}</p>
+            {{/if}}
+            
+            {{#each riskMitigation.protectionMechanisms}}
+            <h4>{{protectionType}}</h4>
+            <div class="code-box">{{formatContent details}}</div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Implementation Timeline -->
+        {{#if timeline}}
+        <h2>Implementation Timeline</h2>
+        <div class="timeline">
+            {{#each timeline}}
+            <div class="timeline-item">
+                <div class="timeline-phase">{{phase}}</div>
+                <div class="timeline-title">{{title}}</div>
+                <div class="timeline-duration">{{duration}}</div>
+                <p>{{formatContent description}}</p>
+                {{#if tasks}}
+                <h4>Key Tasks:</h4>
+                <ul>
+                    {{#each tasks}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Performance Metrics -->
+        {{#if performanceMetrics}}
+        <h2>Performance Metrics & Success Indicators</h2>
+        <div class="content-section">
+            {{#if performanceMetrics.overview}}
+            <p>{{formatContent performanceMetrics.overview}}</p>
+            {{/if}}
+            
+            {{#if performanceMetrics.businessKPIs}}
+            <h4>Business Performance KPIs</h4>
+            <div class="code-box">{{formatContent performanceMetrics.businessKPIs}}</div>
+            {{/if}}
+            
+            {{#if performanceMetrics.individualMetrics}}
+            <h4>Individual Performance Metrics</h4>
+            <div class="code-box">{{formatContent performanceMetrics.individualMetrics}}</div>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- Legal Framework -->
+        {{#if legalFramework}}
+        <h2>Dispute Resolution & Legal Framework</h2>
+        <div class="content-section">
+            {{#if legalFramework.conflictResolution}}
+            <h4>Conflict Resolution Process</h4>
+            <div class="code-box">{{formatContent legalFramework.conflictResolution}}</div>
+            {{/if}}
+            
+            {{#if legalFramework.documentation}}
+            <h4>Legal Documentation Requirements</h4>
+            <div class="code-box">{{formatContent legalFramework.documentation}}</div>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- Implementation Roadmap -->
+        {{#if implementation}}
+        <h2>Implementation Roadmap</h2>
+        <div class="content-section">
+            {{#each implementation.phases}}
+            <h4>{{phaseName}} ({{duration}})</h4>
+            <ul>
+                {{#each tasks}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <!-- Conclusion & Next Steps -->
+        {{#if conclusion}}
+        <div class="page-break">
+            <h2>Conclusion & Next Steps</h2>
+            <div class="content-section">
+                <p>{{formatContent conclusion.summary}}</p>
+                
+                {{#if conclusion.actionItems}}
+                <h4>Immediate Action Items</h4>
+                <ol>
+                    {{#each conclusion.actionItems}}
+                    <li><strong>{{action}}:</strong> {{description}}</li>
+                    {{/each}}
+                </ol>
+                {{/if}}
+                
+                {{#if conclusion.successCriteria}}
+                <h4>Success Criteria</h4>
+                <ul>
+                    {{#each conclusion.successCriteria}}
+                    <li>{{criterion}} - {{description}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- Contact Information -->
+        <div class="page-break">
+            <h2>Contact Information</h2>
+            <div class="content-section">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                    {{#if contactInfo}}
+                    <div>
+                        <h4>{{contactInfo.name}}</h4>
+                        <p><strong>{{contactInfo.title}}</strong></p>
+                        <p>{{contactInfo.company}}</p>
+                        {{#if contactInfo.address}}
+                        <p>{{formatContent contactInfo.address}}</p>
+                        {{/if}}
+                        {{#if contactInfo.phone}}<p>Phone: {{contactInfo.phone}}</p>{{/if}}
+                        {{#if contactInfo.email}}<p>Email: {{contactInfo.email}}</p>{{/if}}
+                        {{#if contactInfo.website}}<p>Website: {{contactInfo.website}}</p>{{/if}}
+                    </div>
+                    {{/if}}
+                </div>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-300);">
+                    <p style="text-align: center; font-size: 0.9rem; color: var(--gray-500);">
+                        <strong>🔒 CONFIDENTIAL DOCUMENT</strong><br>
+                        This partnership proposal contains confidential and proprietary information.<br>
+                        Distribution is restricted to authorized parties only.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">{{companyName}}</div>
+            <p>Partnership proposal generated on {{formatDate currentDate}} • Strategic alliance framework</p>
+            {{#if branding}}
+            <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--gray-400);">
+                Generated with {{branding}} Professional Document System
+            </p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>

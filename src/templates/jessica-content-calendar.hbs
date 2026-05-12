@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Propuesta - Fujiyama & APEX AI Solutions</title>
+  <style>
+    /* --- RESET / PAGE --- */
+    :root{
+      --bg:#0b1220;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --white:#ffffff;
+      --emerald:#10b981;
+      --accent:#06b6d4;
+      --paper:#ffffff;
+      --border:#e5e7eb;
+      --text:#1f2937;
+    }
+    html,body{height:100%;margin:0;font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background:var(--paper); color:var(--text); line-height:1.5;}
+    .page{max-width:210mm;margin:0 auto;padding:15mm;background:var(--paper);}
+    header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;}
+    .header-content{flex:1;}
+    .logo{width:120px;height:auto;}
+    h1{margin:0;font-size:24px;color:var(--text);font-weight:600;}
+    .subtitle{margin:6px 0 0;color:var(--muted);font-size:14px;font-weight:400;}
+    .meta{text-align:right;font-size:12px;color:var(--muted);margin-top:4px;}
+    .meta strong{color:var(--text);font-weight:500;}
+    hr.sep{border:none;border-top:1px solid var(--border);margin:20px 0;}
+    .section{margin-bottom:20px;}
+    .lead{color:var(--text);font-size:14px;line-height:1.6;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:16px;}
+    .card h3{margin:0 0 8px;font-size:14px;color:var(--text);font-weight:600;}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.4;}
+    ul.clean{padding-left:20px;margin:12px 0;color:var(--muted);font-size:13px;}
+    table.pricing{width:100%;border-collapse:collapse;margin-top:12px;}
+    table.pricing thead th{background:#f9fafb;color:var(--text);padding:12px;text-align:left;border-bottom:2px solid var(--border);font-weight:600;font-size:13px;}
+    table.pricing td{padding:12px;border-bottom:1px solid var(--border);color:var(--text);font-size:13px;}
+    .muted{color:var(--muted);font-size:13px;}
+    .badge{display:inline-block;padding:4px 8px;border-radius:4px;background:#f0f9f4;color:#065f46;font-weight:500;font-size:11px;}
+    .badge-blue{display:inline-block;padding:4px 8px;border-radius:4px;background:#eff6ff;color:#1d4ed8;font-weight:500;font-size:11px;}
+    .cta{display:inline-block;margin-top:12px;padding:8px 16px;background:var(--emerald);color:white;border-radius:4px;text-decoration:none;font-weight:500;font-size:14px;}
+    .two-cols{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start;}
+    .small-note{font-size:11px;color:var(--muted);margin-top:8px;}
+    .sig-blocks{display:flex;gap:20px;margin-top:32px;}
+    .sig{flex:1;border-top:1px solid var(--border);padding-top:12px;text-align:center;font-size:12px;color:var(--text);}
+    footer{margin-top:32px;border-top:1px solid var(--border);padding-top:16px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;}
+    h2{color:var(--text);font-size:18px;margin:0 0 12px;font-weight:600;}
+    h3{color:var(--text);font-weight:600;}
+    .highlight-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:16px;margin-top:12px;}
+    .highlight-box h3{color:#065f46;margin:0 0 8px;font-size:14px;}
+    .discount-badge{display:inline-block;padding:4px 10px;border-radius:12px;background:#065f46;color:white;font-weight:600;font-size:12px;margin-left:6px;}
+    .price-tag{font-size:18px;font-weight:700;color:var(--text);}
+    .price-original{text-decoration:line-through;color:var(--muted);font-size:14px;margin-right:8px;}
+    /* print friendly */
+    @media print{
+      body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+      .page{box-shadow:none;border:none;margin:0;border-radius:0;padding:10mm;}
+      .section { page-break-before: always; }
+      .section:first-of-type { page-break-before: auto; }
+      hr.sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header>
+      <div class="header-content">
+        <h1>Propuesta de Desarrollo Web y Automatización Digital</h1>
+        <div class="subtitle">Plataforma Premium y Sistema "Digital Concierge" — Restaurante Fujiyama & APEX AI Solutions</div>
+        <div class="meta">
+          <div>Fecha: <strong>30 de Marzo de 2026</strong></div>
+          <div>Referencia: <strong>APEX-2026-0330-FUJ</strong></div>
+          <div>Versión: <strong>1.0</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <hr class="sep" />
+
+    <section class="section">
+      <h2>Introducción: A la Altura de su Prestigio</h2>
+      <p class="lead">Es un honor para nosotros dirigirnos a un establecimiento que representa la cúspide de la gastronomía china gourmet en Bucaramanga. Entendemos que <strong>Fujiyama</strong> no es solo un restaurante, sino una experiencia culinaria de alto nivel donde cada detalle está meticulosamente cuidado.</p>
+      <p class="lead">Sabemos que un restaurante premium exige una presencia digital premium. Su sitio web no debe ser un simple catálogo, sino la extensión natural de la elegancia y el excelente servicio que sus comensales ya conocen y esperan. Nuestro objetivo es trasladar esa misma excelencia al entorno digital, protegiendo su identidad y elevando su marca.</p>
+    </section>
+
+    <hr class="sep" />
+
+    <section class="section">
+      <h2>Nuestra Filosofía: Confianza, Escucha y Colaboración</h2>
+      <p class="muted">Comprendemos las frustraciones que han experimentado en el pasado con otras agencias: la falta de comunicación, la rigidez, la alteración de su logotipo y la negativa a realizar cambios. En <strong>APEX AI Solutions</strong>, nuestra metodología se basa en el respeto absoluto:</p>
+
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <h3>🤝 Verdadera Colaboración</h3>
+          <p>No imponemos diseños; construimos junto a usted. Escuchamos activamente sus necesidades antes de escribir una sola línea de código.</p>
+        </div>
+        <div class="card">
+          <h3>🎨 Respeto por su Identidad</h3>
+          <p>Su logotipo, sus colores corporativos y su estética gourmet son innegociables. Nos adaptamos a sus manuales de marca con estricta precisión.</p>
+        </div>
+        <div class="card" style="grid-column:1 / -1;">
+          <h3>📋 Transparencia y Flexibilidad</h3>
+          <p>Ofrecemos un proceso claro con rondas de revisión garantizadas y razonables. Nuestro trabajo no termina hasta que el diseño refleje exactamente la esencia de Fujiyama.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <section class="section">
+      <h2>La Solución: El Sistema "Digital Concierge"</h2>
+      <p class="muted">Entendemos su legítima preocupación de que la automatización estándar deshumanice la experiencia. Por ello, hemos diseñado un sistema híbrido exclusivo para Fujiyama.</p>
+
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <h3>1. Exploración Premium</h3>
+          <p>El cliente navega por un menú digital visualmente deslumbrante, con fotografías de alta calidad y descripciones que resaltan la naturaleza gourmet de cada plato.</p>
+        </div>
+        <div class="card">
+          <h3>2. Solicitud de Compra (Purchase Request)</h3>
+          <p>En lugar de un pago frío y automatizado o un bot genérico, el cliente selecciona sus platillos y envía una "Solicitud de Pedido" directamente a través de la plataforma.</p>
+        </div>
+        <div class="card">
+          <h3>3. Alerta Inmediata</h3>
+          <p>Esta solicitud genera una alerta instantánea para su equipo en el restaurante, asegurando un tiempo de respuesta óptimo.</p>
+        </div>
+        <div class="card">
+          <h3>4. Contacto Humano y Detalle</h3>
+          <p>Un miembro de su personal realiza una <strong>llamada telefónica personalizada</strong> al cliente para confirmar la orden, tomar nota de alergias o detalles, y finalizar el proceso.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <section class="section">
+      <h2>Fases del Proyecto</h2>
+      <p class="muted">Para garantizar resultados excepcionales, estructuramos nuestro trabajo en cuatro fases transparentes:</p>
+
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <h3>Fase 1 — Discovery y Escucha</h3>
+          <p>Nos reuniremos para entender profundamente su identidad de marca, revisar su logotipo original y los valores que desean transmitir.</p>
+        </div>
+        <div class="card">
+          <h3>Fase 2 — Diseño Premium (UI/UX)</h3>
+          <p>Crearemos la interfaz visual de la plataforma, enfocada en la elegancia. Le presentaremos propuestas visuales que reflejen la alta gastronomía.</p>
+        </div>
+        <div class="card">
+          <h3>Fase 3 — Revisiones y Feedback</h3>
+          <p>Implementaremos los ajustes necesarios de manera proactiva. Esta fase es su garantía de que el producto final será exactamente lo que usted espera.</p>
+        </div>
+        <div class="card">
+          <h3>Fase 4 — Lanzamiento</h3>
+          <p>Construiremos la plataforma, integraremos el sistema "Digital Concierge", realizaremos pruebas exhaustivas de funcionalidad y acompañaremos el lanzamiento oficial.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <section class="section">
+      <h2>Inversión y Valor Entregable</h2>
+      <p class="muted">Para garantizar un producto a la altura de su prestigio, hemos diseñado un paquete integral que incluye tanto el desarrollo tecnológico como la dirección de arte visual.</p>
+
+      <table class="pricing" aria-label="Tabla de precios">
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Modalidad</th>
+            <th style="text-align:right;">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plataforma Premium & Sistema "Digital Concierge"</strong><br/><small class="muted">Desarrollo de la interfaz de alta gama, UI/UX, menú interactivo y optimización de experiencia.</small></td>
+            <td><span class="badge">Pago Único</span></td>
+            <td style="text-align:right;">Incluido</td>
+          </tr>
+          <tr>
+            <td><strong>Fotografía Profesional y Dirección de Arte</strong><br/><small class="muted">Sesión fotográfica profesional de cada producto del menú y material visual general para ambientar la página web.</small></td>
+            <td><span class="badge">Pago Único</span></td>
+            <td style="text-align:right;">Incluido</td>
+          </tr>
+          <tr style="background:#f0fdf4;">
+            <td colspan="2"><strong>Inversión Total (Desarrollo Web + Fotografía Profesional)</strong></td>
+            <td style="text-align:right;"><span class="price-tag">$2.200.000 COP</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small-note">Nota: Esta inversión cubre el proyecto completo llave en mano, garantizando que el diseño y el material fotográfico resalten la exclusividad de Fujiyama.</p>
+    </section>
+
+    <hr class="sep" />
+
+    <section class="section">
+      <h2>Próximos Pasos</h2>
+      <p class="lead">Agradecemos profundamente su tiempo al leer esta propuesta. Estamos convencidos de que, trabajando juntos, podemos crear una experiencia digital que rinda verdadero homenaje a la calidad de Fujiyama. Nos encantaría invitarle a una breve y cordial reunión —sin ningún tipo de presión ni compromiso— para conversar sobre esta visión y resolver cualquier duda que pueda tener.</p>
+    </section>
+
+    <div class="sig-blocks">
+      <div class="sig">
+        <div style="font-weight:600;color:var(--text);">APEX AI Solutions</div>
+        <div style="margin-top:12px;">________________________</div>
+        <div style="margin-top:8px;color:var(--muted);">Partner Estratégico en Transformación Digital</div>
+      </div>
+      <div class="sig">
+        <div style="font-weight:600;color:var(--text);">Restaurante Fujiyama</div>
+        <div style="margin-top:12px;">________________________</div>
+        <div style="margin-top:8px;color:var(--muted);">Equipo Directivo</div>
+      </div>
+    </div>
+
+    <footer>
+      <div>APEX AI Solutions — Bucaramanga, Colombia • support@apexaisolutions.dev</div>
+      <div class="muted">Documento confidencial · Validez: 30 días · Ref: APEX-2026-0330-FUJ</div>
+    </footer>
+  </div>
+</body>
+</html>

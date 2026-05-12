@@ -1,0 +1,87 @@
+{
+  "proposalTitle": "Propuesta: Agente de Voz IA para Llamadas de Ventas – Distribuciones Aura",
+  "client": {
+    "name": "Maria Paula",
+    "company": "Distribuciones Aura",
+    "phone": "300 655 9539",
+    "city": "Bucaramanga, Santander"
+  },
+  "service": {
+    "name": "Agente de Voz Inteligente (Voice Bot)",
+    "tech": "Eleven Labs",
+    "description": "50 llamadas diarias automatizadas con voz natural colombiana ofreciendo pollo, embutidos, productos diarios y frescos."
+  },
+  "executiveSummary": {
+    "benefits": [
+      "Automatización total de la captación de pedidos.",
+      "Voz hiperrealista con acento local (Bucaramanga).",
+      "Escalabilidad inmediata a bajo costo.",
+      "Agenda automática de pedidos en CRM/Google Sheets."
+    ],
+    "roiEstimated": "Retorno de Inversión proyectado en los primeros 30 días operando a máxima capacidad."
+  },
+  "challenge": {
+    "points": [
+      "Alto costo y limitaciones de vendedores humanos en Bucaramanga.",
+      "Dificultad para contactar consistentemente a 1.500 amas de casa al mes.",
+      "Baja tasa de contacto y conversión en cold calling manual."
+    ]
+  },
+  "solution": {
+    "features": [
+      { "title": "Voces Hiperrealistas", "desc": "Desarrollado con Eleven Labs para una voz natural que no parece un robot." },
+      { "title": "Volumen Masivo", "desc": "50 llamadas diarias (1.500/mes) sin cansancio ni ausencias." },
+      { "title": "Script Inteligente", "desc": "Detección de intención y manejo de objeciones personalizado." },
+      { "title": "Integración Total", "desc": "Agenda de pedidos en tiempo real en Google Sheets o su sistema actual." },
+      { "title": "Transferencia de Leads", "desc": "Llamadas de alta intención transferidas directamente a Maria Paula." }
+    ]
+  },
+  "metrics": {
+    "comparison": [
+      { "label": "Vendedor Humano", "cost": 2000000, "note": "Salario + Prestaciones" },
+      { "label": "Agente de Voz IA", "cost": 1900000, "note": "Servicio Todo Incluido" }
+    ],
+    "funnel": {
+      "contactRate": "60-75%",
+      "conversionRate": "8-15%",
+      "traditionalRate": "1-3%"
+    },
+    "timeDistribution": [
+      { "label": "Llamadas Automáticas", "percent": 60 },
+      { "label": "Agenda de Pedidos", "percent": 25 },
+      { "label": "Seguimiento", "percent": 15 }
+    ],
+    "table": [
+      { "item": "Llamadas/mes", "value": "1.500" },
+      { "item": "Pedidos estimados", "value": "120 - 225" },
+      { "item": "Ingreso adicional", "value": "+4.5M a +8M COP/mes" }
+    ]
+  },
+  "investment": {
+    "standard": {
+      "monthly": "1.900.000 COP",
+      "calls": "1.500 llamadas",
+      "desc": "Plan Premium: Volumen masivo para cobertura total."
+    },
+    "tiered": {
+      "base": "1.200.000 COP",
+      "calls": "300 - 500 llamadas",
+      "additional": "3.000 - 5.000 COP",
+      "desc": "Plan Flexible: Ideal para pruebas y escalado progresivo."
+    },
+    "setup": "2.500.000 COP",
+    "notes": "Setup incluye configuración completa, clonación de voz y script optimizado."
+  },
+  "timeline": [
+    { "day": "Día 1-2", "event": "Clonación de voz y Diseño de Script de Ventas." },
+    { "day": "Día 3-5", "event": "Configuración técnica e integración con WhatsApp/CRM." },
+    { "day": "Día 6-7", "event": "Pruebas piloto y ajustes de flujo." },
+    { "day": "Día 8-10", "event": "Lanzamiento oficial y monitoreo de resultados." }
+  ],
+  "cta": {
+    "text": "Agenda una demostración en vivo de 15 minutos donde verás el bot haciendo llamadas reales.",
+    "button": "Reservar Demo Ahora",
+    "contact": "300 655 9539"
+  },
+  "footer": "Distribuciones Aura merece vender más sin trabajar más. • Bucaramanga, 2026"
+}

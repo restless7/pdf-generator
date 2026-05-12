@@ -1,0 +1,111 @@
+{
+  "proposalTitle": "Mercagán Core 360 – Sistema Unificado 100% a Medida",
+  "subtitle": "Una sola plataforma. Cero reprocesos. Relación a largo plazo.",
+  "client": {
+    "name": "Gerencia Mercagán Parrilla",
+    "company": "Mercagán Parrilla",
+    "city": "Bucaramanga, Santander",
+    "operation": "Mesas, Domicilios y Punto San Pio (Tarjetas de Crédito)"
+  },
+  "executiveSummary": {
+    "problem": "Actualmente, Mercagán opera con tres sistemas fragmentados (Terceros Desktop, KGM y Excels manuales), lo que genera una brecha crítica de información, triple digitación y riesgos de auditoría en los cierres de caja.",
+    "solution": "Mercagán Core 360 es una plataforma 100% a medida que unifica la recepción web, el POS móvil, la facturación DIAN y el cierre contable en una sola base de datos, eliminando la dependencia de software genérico de terceros.",
+    "benefit": "Ahorro proyectado de 3.5 a 4.5 horas diarias en procesos administrativos y cierres de caja en menos de 8 minutos.",
+    "investment": "Inversión inicial estimada entre $52M y $65M COP, con recuperación de inversión (ROI) proyectada entre 6 y 8 meses.",
+    "partnership": "Enfoque en partnership a largo plazo con soporte directo y evolución constante sin licencias mensuales restrictivas."
+  },
+  "currentSituation": {
+    "systems": [
+      { "name": "Aplicación 'Terceros'", "type": "Legacy Desktop", "desc": "Utilizada para la operación básica pero desconectada del flujo contable real." },
+      { "name": "KGM Administrative Software", "type": "Contabilidad/Facturación", "desc": "Sistema donde se debe re-digitar información para legalizar ventas." },
+      { "name": "Ecosistema de Excels", "type": "Manual", "desc": "Múltiples hojas para control de domicilios, gastos, propinas, vouchers de San Pio y cierre final." }
+    ],
+    "flowchart": {
+      "steps": [
+        { "from": "Website/WhatsApp", "to": "Re-digitación Manual", "desc": "Transmisión lenta" },
+        { "from": "Re-digitación", "to": "KGM Software", "desc": "Triple entrada" },
+        { "from": "KGM", "to": "Excel de Cierre", "desc": "Riesgo de error" },
+        { "from": "Excel", "to": "Cierre Final", "desc": "60-90 min de trabajo" }
+      ]
+    },
+    "photos_description": "Auditoría visual de los flujos actuales: Interfaces legacy que requieren intervención humana constante y hojas de cálculo con fórmulas complejas propensas a errores de digitación."
+  },
+  "identifiedProblems": [
+    { "problem": "Triple Digitación", "impact": "Pérdida de productividad masiva y fatiga del personal.", "priority": "Alta" },
+    { "problem": "Riesgo de Errores", "impact": "Descuadres en caja y falta de integridad en datos contables.", "priority": "Crítica" },
+    { "problem": "Cierre Lento", "impact": "Operación administrativa extendida innecesariamente (1-1.5h/día).", "priority": "Alta" },
+    { "problem": "Falta de Visibilidad", "impact": "Imposibilidad de ver ventas y gastos consolidados en tiempo real.", "priority": "Media" },
+    { "problem": "Dependencia Legacy", "impact": "Dificultad para integrar nuevas tecnologías o escalar el negocio.", "priority": "Alta" },
+    { "problem": "Costo de Licenciamiento", "impact": "Pago a terceros por software que no se adapta al 100% a Mercagán.", "priority": "Media" }
+  ],
+  "proposedSolution": {
+    "concept": "Core 360 es el corazón tecnológico de Mercagán. Un sistema propietario que reemplaza la fragmentación actual por un flujo digital fluido que integra el Portal Web (pedidos externos) y el POS Interno (ventas locales) directamente con su contabilidad.",
+    "techStack": [
+      { "layer": "Frontend Web", "tech": "Next.js 15 + TypeScript", "desc": "Panel admin moderno, rápido y seguro." },
+      { "layer": "Mobile POS", "tech": "React Native", "desc": "Comanderas para meseros en tablets (soporte offline)." },
+      { "layer": "Backend API", "tech": "NestJS", "desc": "Arquitectura modular, robusta y escalable." },
+      { "layer": "Base de Datos", "tech": "PostgreSQL", "desc": "Integridad referencial para contabilidad impecable." },
+      { "layer": "Real-time", "tech": "WebSockets", "desc": "Kitchen Display System con pedidos instantáneos." },
+      { "layer": "Infraestructura", "tech": "AWS (Colombia)", "desc": "Servidores de alta disponibilidad y backups automáticos." }
+    ]
+  },
+  "modules": [
+    { "title": "Portal Web Express", "desc": "Sitio de pedidos online sincronizado. Los pedidos entran al sistema sin re-digitación, impactando automáticamente la parte contable y financiera." },
+    { "title": "POS de Mesa Optimizado", "desc": "Ingreso ultra-rápido de pedidos locales. Aunque requiere digitación por ser venta física, el proceso está diseñado para minimizar clics y errores." },
+    { "title": "Mesas + Domicilios", "desc": "Control total de salón y despacho móvil en una sola pantalla visual." },
+    { "title": "Kitchen Display System (KDS)", "desc": "Elimina comandas de papel. Pantallas táctiles en cocina para gestión de tiempos y platos." },
+    { "title": "Facturación DIAN Automática", "desc": "Generación de factura electrónica en el momento del pago, sin pasos manuales extra." },
+    { "title": "Cierre de Caja Inteligente", "desc": "Motor de cálculo que consolida efectivo, datafonos, vouchers de San Pio y gastos menores." },
+    { "title": "Inventario en Tiempo Real", "desc": "Mermas automáticas por plato vendido. Alertas de stock crítico para compras inteligentes." },
+    { "title": "Dashboard Gerencial", "desc": "Ventas por punto, platos estrella, rentabilidad y San Pio – todo en su celular." },
+    { "title": "Módulo de Auditoría", "desc": "Log completo de cada transacción y cambio en el sistema para transparencia total." }
+  ],
+  "collaboration": {
+    "title": "Alianza Técnica: Trabajo en Equipo",
+    "desc": "Reconocemos el valor de la ingeniería interna de Mercagán. El proyecto se ejecutará en constante colaboración con su Ingeniera de Sistemas actual, facilitando la transferencia de conocimiento y asegurando que la transición sea técnica y operativamente impecable."
+  },
+  "benefitsMetrics": {
+    "timeSavings": "3.5 - 4.5 Horas diarias",
+    "errorReduction": "> 92%",
+    "closingTime": "5 - 8 Minutos",
+    "roi": "6 - 8 Meses",
+    "charts": {
+      "timeComparison": [
+        { "label": "Actual (Sistemas fragmentados)", "value": 90, "note": "Minutos por cierre" },
+        { "label": "Core 360 (Unificado)", "value": 8, "note": "Minutos por cierre" }
+      ],
+      "roiProjection": {
+        "xAxis": ["Mes 1", "Mes 6", "Mes 12"],
+        "yAxis": ["$0", "$20M", "$40M", "$60M", "$80M"],
+        "legend": [
+          { "label": "Inversión Acumulada", "color": "var(--primary)" },
+          { "label": "Retorno Económico", "color": "var(--accent)" }
+        ]
+      }
+    }
+  },
+  "pricing": {
+    "development": "$42.000.000 COP",
+    "hardware": "Incluido (Mercagán ya cuenta con los equipos necesarios)",
+    "support": "$600.000 COP",
+    "year1Total": "$49.200.000 COP",
+    "year2Cost": "$7.200.000 COP (Soporte anual)"
+  },
+  "paymentPlans": [
+    { "option": "Contado con Descuento", "desc": "Un solo pago al inicio con un 10% de descuento sobre el desarrollo ($37.8M COP)." },
+    { "option": "Hitos (40/30/30)", "desc": "$16.8M al inicio, $12.6M al MVP (Fase 2) y $12.6M a la entrega final." },
+    { "option": "Financiado Apex", "desc": "Cuota inicial de $15M + 6 cuotas mensuales de $4.5M COP sin intereses." }
+  ],
+  "implementationPhases": [
+    { "phase": "1. Levantamiento & Diseño", "duration": "2 Semanas", "goal": "Análisis de flujos exactos de San Pio y diseño de prototipos." },
+    { "phase": "2. Desarrollo MVP", "duration": "5 Semanas", "goal": "Pedidos web, POS móvil y Facturación DIAN activa." },
+    { "phase": "3. Módulos Avanzados", "duration": "3 Semanas", "goal": "Cierre inteligente, Inventarios y Dashboard Gerencial." },
+    { "phase": "4. Go-Live & Soporte", "duration": "2 Semanas", "goal": "Capacitación de staff, salida a producción y monitoreo intensivo." }
+  ],
+  "cta": {
+    "message": "Agenda una reunión de 60 minutos para mapear tus flujos exactos de San Pio y domicilios.",
+    "phone": "3024816706",
+    "email": "aisolutionsapex@gmail.com"
+  },
+  "footer": "Mercagán Parrilla - Construyendo el futuro de la gastronomía santandereana. • Bucaramanga, 2026"
+}

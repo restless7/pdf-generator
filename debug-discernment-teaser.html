@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Ultimate Guide to Information Discernment</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #4338ca;
+            --primary-light: #6366f1;
+            --primary-dark: #312e81;
+            --accent: #0d9488;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+            font-size: 11pt;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* ===== COVER PAGE ===== */
+        .cover-page {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 70%, #0f172a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 50px;
+        }
+
+        .cover-page .shield-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 60px rgba(99, 102, 241, 0.35);
+        }
+
+        .cover-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            max-width: 480px;
+        }
+
+        .cover-page .subtitle {
+            font-size: 14pt;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 60px;
+            max-width: 400px;
+        }
+
+        .cover-page .meta-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .cover-page .date {
+            font-size: 9pt;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .cover-page .footer-line {
+            position: absolute;
+            bottom: 40px;
+            left: 50px;
+            right: 50px;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 8pt;
+            color: var(--text-secondary);
+        }
+
+        /* ===== CONTENT PAGES ===== */
+        .content-page {
+            background: var(--bg-dark);
+            padding: 40px 50px;
+        }
+
+        .content-page .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+
+        .content-page .page-header .section-label {
+            font-size: 8pt;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .content-page .page-header .page-num {
+            font-size: 8pt;
+            color: var(--text-secondary);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22pt;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 13pt;
+            color: var(--primary-light);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 10.5pt;
+            line-height: 1.7;
+        }
+
+        .lead {
+            font-size: 12pt;
+            color: #cbd5e1;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        /* Key insight card */
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+        }
+
+        .insight-card h4 {
+            font-size: 11pt;
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .insight-card p {
+            font-size: 10pt;
+            margin-bottom: 0;
+        }
+
+        /* Stat highlight */
+        .stat-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-box {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(13, 148, 136, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 26pt;
+            font-weight: 700;
+            color: var(--primary-light);
+            font-family: 'Inter', sans-serif;
+            line-height: 1;
+        }
+
+        .stat-box .label {
+            font-size: 8pt;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 6px;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            color: var(--text-secondary);
+            font-size: 10.5pt;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist .check {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--primary-light);
+            margin-top: 2px;
+        }
+
+        /* Framework grid */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .framework-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .framework-item .tag {
+            font-size: 8pt;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .framework-item h4 {
+            font-size: 11pt;
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .framework-item p {
+            font-size: 9pt;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* CTA Page */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), #1e1b4b);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20pt;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            color: #c7d2fe;
+            font-size: 11pt;
+            max-width: 400px;
+            margin: 0 auto 20px;
+        }
+
+        .cta-section .cta-link {
+            display: inline-block;
+            background: var(--primary-light);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 11pt;
+            text-decoration: none;
+        }
+
+        /* Table of contents */
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dotted var(--border);
+        }
+
+        .toc-item .title {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .toc-item .status {
+            font-size: 9pt;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .toc-item .status.included {
+            background: rgba(13, 148, 136, 0.15);
+            color: var(--accent);
+        }
+
+        .toc-item .status.full-guide {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--primary-light);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 28px 0;
+        }
+
+        .quote {
+            border-left: 3px solid var(--primary-light);
+            padding: 16px 24px;
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .quote p {
+            font-style: italic;
+            color: #cbd5e1;
+            font-size: 11pt;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: COVER -->
+    <div class="page cover-page">
+        <div class="shield-icon">🛡️</div>
+        <h1>The Ultimate Guide to Information Discernment</h1>
+        <p class="subtitle">Navigating Truth in the Age of Information Overload — A Curated Preview</p>
+        <span class="meta-badge">Educational Preview Edition</span>
+        <p class="date">April 2026</p>
+        <div class="footer-line">
+            <span>Knowledge Exchange Series</span>
+            <span>For Educational Use Only — Not for Resale</span>
+        </div>
+    </div>
+
+    <!-- PAGE 2: WHY THIS MATTERS -->
+    <div class="page content-page">
+        <div class="page-header">
+            <span class="section-label">Chapter 1 — The Problem</span>
+            <span class="page-num">02</span>
+        </div>
+
+        <h2>Why Information Discernment Matters Now</h2>
+        <p class="lead">In today's information ecosystem, the ability to distinguish signal from noise is no longer optional — it's a cognitive survival skill.</p>
+
+        <div class="stat-row">
+            <div class="stat-box">
+                <div class="number">74%</div>
+                <div class="label">Adults can&#x27;t identify misinformation</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">6×</div>
+                <div class="label">Faster falsehoods spread than truth</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">5K+</div>
+                <div class="label">Ads seen per person daily</div>
+            </div>
+        </div>
+
+        <p>We consume more information daily than a person in the 15th century encountered in a lifetime. Yet our brains still operate with the same hardware — a System 1 that craves speed and a System 2 that requires deliberate effort.</p>
+        <p>This asymmetry between our biological processing and our digital environment creates a vulnerability that is aggressively exploited by political actors, advertisers, and algorithmic systems designed to maximize engagement over truth.</p>
+
+        <div class="divider"></div>
+
+        <h3>The Six Cognitive Biases That Shape Your Reality</h3>
+        <div class="insight-card">
+            <h4>Confirmation Bias</h4>
+            <p>We instinctively seek information that confirms our existing beliefs, creating invisible walls around our worldview.</p>
+        </div>
+        <div class="insight-card">
+            <h4>Anchoring Effect</h4>
+            <p>The first piece of information we encounter disproportionately influences all subsequent judgments — even when it&#x27;s wrong.</p>
+        </div>
+        <div class="insight-card">
+            <h4>Availability Heuristic</h4>
+            <p>We overestimate the probability of events that come easily to mind, typically those that are recent, dramatic, or emotionally charged.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 3: KEY FRAMEWORKS PREVIEW -->
+    <div class="page content-page">
+        <div class="page-header">
+            <span class="section-label">Chapter 2 — Frameworks Preview</span>
+            <span class="page-num">03</span>
+        </div>
+
+        <h2>Essential Frameworks for Clear Thinking</h2>
+        <p class="lead">The full guide provides 5 actionable frameworks. Here is a curated preview of the most impactful ones.</p>
+
+        <h3>The Sharing Decision Matrix</h3>
+        <p>Before amplifying any information, run it through these four checkpoints:</p>
+        <ul class="checklist">
+            <li>
+                <span class="check">✓</span>
+                <span>Have I verified this information through at least two independent, credible sources?</span>
+            </li>
+            <li>
+                <span class="check">✓</span>
+                <span>Am I sharing this because it is true, or because it confirms what I already believe?</span>
+            </li>
+            <li>
+                <span class="check">✓</span>
+                <span>Could sharing this cause harm to a person, group, or institution — even if it&#x27;s technically correct?</span>
+            </li>
+            <li>
+                <span class="check">✓</span>
+                <span>Would I be comfortable defending this information in a professional or academic setting?</span>
+            </li>
+            <li>
+                <span class="check">✓</span>
+                <span>Am I emotionally triggered right now? If yes, I should wait 24 hours before sharing.</span>
+            </li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>The Truth Sandwich Method</h3>
+        <p>When correcting misinformation, never lead with the myth. Instead, use this evidence-based structure:</p>
+
+        <div class="framework-grid">
+            <div class="framework-item">
+                <div class="tag">Step 1</div>
+                <h4>Lead with the Truth</h4>
+                <p>Start with the verified fact, clearly and simply stated.</p>
+            </div>
+            <div class="framework-item">
+                <div class="tag">Step 2</div>
+                <h4>Mention the Myth</h4>
+                <p>Briefly reference the false claim — but only after establishing the truth.</p>
+            </div>
+            <div class="framework-item">
+                <div class="tag">Step 3</div>
+                <h4>Explain the Fallacy</h4>
+                <p>Clarify why the myth is wrong and what mechanism makes it persuasive.</p>
+            </div>
+            <div class="framework-item">
+                <div class="tag">Step 4</div>
+                <h4>Reinforce the Truth</h4>
+                <p>Close by restating the verified fact with supporting evidence.</p>
+            </div>
+        </div>
+
+        <div class="quote">
+            <p>"The goal is not to make people distrust everything — it is to help them trust wisely."</p>
+        </div>
+    </div>
+
+    <!-- PAGE 4: SELF-ASSESSMENT TEASER + TABLE OF CONTENTS -->
+    <div class="page content-page">
+        <div class="page-header">
+            <span class="section-label">Chapter 3 — Your Cognitive Audit</span>
+            <span class="page-num">04</span>
+        </div>
+
+        <h2>Quick Self-Assessment: How Strong Is Your Cognitive Immune System?</h2>
+        <p class="lead">Answer these five questions honestly — they are drawn from the full interactive diagnostic available in the complete guide.</p>
+
+        <ul class="checklist">
+            <li>
+                <span class="check">?</span>
+                <span>Can I name at least 3 specific news sources I regularly consult, along with their political leanings?</span>
+            </li>
+            <li>
+                <span class="check">?</span>
+                <span>When I encounter a surprising statistic, do I check the original study or dataset before accepting it?</span>
+            </li>
+            <li>
+                <span class="check">?</span>
+                <span>Do I actively seek out perspectives that challenge my core beliefs at least once a week?</span>
+            </li>
+            <li>
+                <span class="check">?</span>
+                <span>Can I explain the difference between an ad hominem attack and a legitimate critique?</span>
+            </li>
+            <li>
+                <span class="check">?</span>
+                <span>Have I ever changed a strongly held opinion based on new evidence in the last 12 months?</span>
+            </li>
+        </ul>
+
+        <p style="margin-top: 8px; font-size: 9pt; color: #64748b;">If you answered "No" to two or more questions, the full guide's 20-minute Cognitive Immune System Audit is designed specifically for you.</p>
+
+        <div class="divider"></div>
+
+        <h3>What's Inside the Full Guide</h3>
+        <p>This teaser only scratches the surface. Below is the complete table of contents:</p>
+
+        <div class="toc-item">
+            <span class="title">1. The Architecture of Modern Misinformation</span>
+            <span class="status included">Included</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">2. Six Cognitive Biases That Shape Your Reality</span>
+            <span class="status included">Included</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">3. The Sharing Decision Matrix</span>
+            <span class="status included">Included</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">4. The Truth Sandwich Method</span>
+            <span class="status included">Included</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">5. Historical Evolution of Propaganda</span>
+            <span class="status full-guide">Full Guide</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">6. Neuroscience: System 1 vs System 2</span>
+            <span class="status full-guide">Full Guide</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">7. The Manipulation Toolkit (16 Techniques)</span>
+            <span class="status full-guide">Full Guide</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">8. Interactive Cognitive Immune System Audit</span>
+            <span class="status full-guide">Full Guide</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">9. Epistemological Humility Vocabulary</span>
+            <span class="status full-guide">Full Guide</span>
+        </div>
+        <div class="toc-item">
+            <span class="title">10. Platform-Specific Defense Strategies</span>
+            <span class="status full-guide">Full Guide</span>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Build Your Cognitive Immune System?</h3>
+            <p>Access the complete interactive guide with all 5 diagnostic modules, historical analysis, and neuroscience deep-dives.</p>
+            <span class="cta-link">Explore the Full Interactive Guide →</span>
+        </div>
+    </div>
+
+</body>
+</html>

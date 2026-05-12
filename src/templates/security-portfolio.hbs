@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Security Portfolio Documentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            /* Security Theme - Guardian Silent */
+            --primary-cyan: #00ffff;
+            --primary-green: #00ff88;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --border-color: #222222;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #888888;
+            --success: #00ff88;
+            --warning: #ffaa00;
+            --danger: #ff4444;
+            --terminal-bg: #0d1117;
+            --glow: 0 0 10px rgba(0, 255, 255, 0.3);
+            --glow-green: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--dark-bg);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary-cyan);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: var(--glow);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            text-shadow: var(--glow-green);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            margin-top: 1.5rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-top: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+        
+        /* Cover Page */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--terminal-bg) 100%);
+            position: relative;
+            page-break-after: always;
+            padding: 2rem;
+        }
+        
+        .cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 3rem;
+        }
+        
+        .shield-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: var(--primary-cyan);
+            text-shadow: var(--glow);
+        }
+        
+        .project-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .project-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .security-badge {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-green));
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--dark-bg);
+            margin-bottom: 2rem;
+            box-shadow: var(--glow);
+        }
+        
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .meta-item {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        /* Content Pages */
+        .content-page {
+            padding: 3rem;
+            page-break-before: always;
+            min-height: calc(100vh - 6rem);
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            page-break-inside: avoid;
+        }
+        
+        /* Code and Terminal Elements */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--terminal-bg);
+            color: var(--primary-green);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .terminal-block {
+            background: var(--terminal-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: auto;
+        }
+        
+        .terminal-header {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terminal-content {
+            color: var(--primary-green);
+            white-space: pre-line;
+        }
+        
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-green));
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+        }
+        
+        .feature-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .feature-list li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: '▸';
+            color: var(--primary-green);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Status Indicators */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .status-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .status-completed {
+            border-left: 4px solid var(--success);
+        }
+        
+        .status-progress {
+            border-left: 4px solid var(--warning);
+        }
+        
+        .status-icon {
+            font-size: 1.5rem;
+        }
+        
+        .status-icon.completed {
+            color: var(--success);
+        }
+        
+        .status-icon.progress {
+            color: var(--warning);
+        }
+        
+        .status-text {
+            flex: 1;
+        }
+        
+        .status-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .status-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Architecture Diagram */
+        .architecture {
+            background: var(--terminal-bg);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .architecture-title {
+            color: var(--primary-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .tech-name {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+        
+        .footer-brand {
+            color: var(--primary-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+        
+        /* Print Optimizations */
+        @media print {
+            body {
+                font-size: 12px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .cover {
+                height: 100vh;
+            }
+            
+            .content-page {
+                padding: 2rem;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+            border: 1px solid var(--primary-cyan);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-title {
+            color: var(--primary-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 1rem;
+        }
+        
+        .security-score {
+            background: var(--card-bg);
+            border: 2px solid var(--success);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .score-value {
+            font-size: 3rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--success);
+            font-weight: 700;
+            text-shadow: var(--glow-green);
+        }
+        
+        .score-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <div class="cover-content">
+                <div class="shield-icon">🛡️</div>
+                <h1 class="project-title">{{title}}</h1>
+                <p class="project-subtitle">{{subtitle}}</p>
+                
+                <div class="security-badge">
+                    {{philosophy}}
+                </div>
+                
+                <div class="security-score">
+                    <div class="score-value">{{securityScore}}</div>
+                    <div class="score-label">Security Score</div>
+                </div>
+                
+                <div class="meta-info">
+                    <div class="meta-item">
+                        <div class="meta-label">Framework</div>
+                        <div class="meta-value">{{framework}}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Language</div>
+                        <div class="meta-value">{{language}}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Status</div>
+                        <div class="meta-value">{{status}}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Generated</div>
+                        <div class="meta-value">{{generationDate}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture Overview -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🚨 Security-First Architecture</h2>
+                <p>{{architectureDescription}}</p>
+                
+                <div class="features-grid">
+                    {{#each securityFeatures}}
+                    <div class="feature-card">
+                        <div class="feature-icon">{{this.icon}}</div>
+                        <h3 class="feature-title">{{this.title}}</h3>
+                        <p>{{this.description}}</p>
+                        {{#if this.features}}
+                        <ul class="feature-list">
+                            {{#each this.features}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+        </div>
+
+        <!-- Technical Stack -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🏗️ Technical Stack</h2>
+                
+                <div class="architecture">
+                    <h3 class="architecture-title">Core Technologies</h3>
+                    <div class="tech-stack">
+                        {{#each techStack.core}}
+                        <div class="tech-item">
+                            <div class="tech-name">{{this.name}}</div>
+                            <div class="tech-description">{{this.description}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <h4 class="highlight-title">Security Dependencies</h4>
+                    <div class="tech-stack">
+                        {{#each techStack.security}}
+                        <div class="tech-item">
+                            <div class="tech-name">{{this.name}}</div>
+                            <div class="tech-description">{{this.description}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Project Structure -->
+        <div class="content-page">
+            <section class="section">
+                <h2>📁 Project Structure</h2>
+                
+                <div class="terminal-block">
+                    <div class="terminal-header"># Security Portfolio Directory Structure</div>
+                    <div class="terminal-content">{{projectStructure}}</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Development Status -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🎯 Development Status</h2>
+                
+                <h3>Completed ✅</h3>
+                <div class="status-grid">
+                    {{#each developmentStatus.completed}}
+                    <div class="status-item status-completed">
+                        <div class="status-icon completed">✅</div>
+                        <div class="status-text">
+                            <div class="status-label">{{this.title}}</div>
+                            <div class="status-description">{{this.description}}</div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                
+                <h3>Security Features Implemented ✅</h3>
+                <div class="status-grid">
+                    {{#each developmentStatus.securityFeatures}}
+                    <div class="status-item status-completed">
+                        <div class="status-icon completed">🔒</div>
+                        <div class="status-text">
+                            <div class="status-label">{{this.title}}</div>
+                            <div class="status-description">{{this.description}}</div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                
+                {{#if developmentStatus.nextPhase}}
+                <h3>Next Phase 📋</h3>
+                <div class="status-grid">
+                    {{#each developmentStatus.nextPhase}}
+                    <div class="status-item status-progress">
+                        <div class="status-icon progress">📋</div>
+                        <div class="status-text">
+                            <div class="status-label">{{this.title}}</div>
+                            <div class="status-description">{{this.description}}</div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </section>
+        </div>
+
+        <!-- Security Testing -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🧪 Security Testing</h2>
+                
+                <div class="highlight">
+                    <h4 class="highlight-title">Current Security Score: {{currentSecurityScore}}</h4>
+                    <p>{{securityTestingDescription}}</p>
+                </div>
+                
+                <h3>Automated Security Test Suite</h3>
+                <div class="terminal-block">
+                    <div class="terminal-header"># Security Testing Commands</div>
+                    <div class="terminal-content">{{securityCommands}}</div>
+                </div>
+                
+                <h3>Manual Security Testing</h3>
+                {{#each manualTesting}}
+                <div class="highlight">
+                    <h4 class="highlight-title">{{this.title}}</h4>
+                    <div class="terminal-block">
+                        <div class="terminal-content">{{this.commands}}</div>
+                    </div>
+                </div>
+                {{/each}}
+                
+                <h3>External Security Verification</h3>
+                <div class="tech-stack">
+                    {{#each externalVerification}}
+                    <div class="tech-item">
+                        <div class="tech-name">{{this.name}}</div>
+                        <div class="tech-description">{{this.description}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+        </div>
+
+        <!-- Security Implementation Details -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🔒 {{securityImplementation.title}}</h2>
+                <p>{{securityImplementation.description}}</p>
+                
+                <h3>Security Objectives</h3>
+                <div class="features-grid">
+                    {{#each securityImplementation.objectives}}
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <p>{{this}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+                
+                <h3>Implemented Security Controls</h3>
+                {{#each securityImplementation.securityControls}}
+                <div class="highlight">
+                    <h4 class="highlight-title">{{this.title}}</h4>
+                    <p><strong>Threat Mitigation:</strong> {{this.threat}}</p>
+                    
+                    {{#if this.headers}}
+                    <div class="tech-stack">
+                        {{#each this.headers}}
+                        <div class="tech-item">
+                            <div class="tech-name">{{this.name}}</div>
+                            <div class="tech-description">{{this.purpose}}</div>
+                            <code style="font-size: 0.8rem; color: var(--text-muted);">{{this.config}}</code>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    
+                    {{#if this.features}}
+                    <ul class="feature-list">
+                        {{#each this.features}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                    
+                    {{#if this.configuration}}
+                    <ul class="feature-list">
+                        {{#each this.configuration}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                    
+                    {{#if this.verification}}
+                    <div class="terminal-block">
+                        <div class="terminal-header"># Verification</div>
+                        <div class="terminal-content">{{this.verification}}</div>
+                    </div>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </section>
+        </div>
+
+        <!-- OWASP Compliance -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🛡️ {{owaspCompliance.title}}</h2>
+                
+                {{#each owaspCompliance.categories}}
+                <div class="highlight">
+                    <h4 class="highlight-title">{{this.category}}</h4>
+                    <ul class="feature-list">
+                        {{#each this.items}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/each}}
+            </section>
+        </div>
+
+        <!-- Live Security Monitoring -->
+        <div class="content-page">
+            <section class="section">
+                <h2>📊 {{liveMonitoring.title}}</h2>
+                
+                <div class="highlight">
+                    <h4 class="highlight-title">Access Real-time Security Posture</h4>
+                    <p><strong>Endpoint:</strong> <code>{{liveMonitoring.endpoint}}</code></p>
+                    <p><strong>API:</strong> <code>{{liveMonitoring.apiEndpoint}}</code></p>
+                    
+                    <h4 style="margin-top: 1rem;">Features</h4>
+                    <ul class="feature-list">
+                        {{#each liveMonitoring.features}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    
+                    <div class="terminal-block">
+                        <div class="terminal-header"># API Usage</div>
+                        <div class="terminal-content">curl https://your-domain.com{{liveMonitoring.apiEndpoint}}</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Incident Response -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🚨 {{incidentResponse.title}}</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📧</div>
+                        <h3 class="feature-title">Security Issue Reporting</h3>
+                        <p><strong>Email:</strong> {{incidentResponse.contact.email}}</p>
+                        <p><strong>Response Time:</strong> {{incidentResponse.contact.responseTime}}</p>
+                        <p><strong>Disclosure:</strong> {{incidentResponse.contact.disclosure}}</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Monitoring & Alerts</h3>
+                        <ul class="feature-list">
+                            {{#each incidentResponse.monitoring}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="content-page">
+            <section class="section">
+                <h2>🚀 Getting Started</h2>
+                
+                <h3>Prerequisites</h3>
+                <ul class="feature-list">
+                    {{#each prerequisites}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                
+                <h3>Installation</h3>
+                {{#each installation}}
+                <div class="terminal-block">
+                    <div class="terminal-header"># {{this.title}}</div>
+                    <div class="terminal-content">{{this.command}}</div>
+                </div>
+                {{/each}}
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>{{quote}}</p>
+            <p><strong class="footer-brand">{{brandFooter}}</strong></p>
+            <p>Generated on {{generationDate}}</p>
+        </div>
+    </div>
+</body>
+</html>

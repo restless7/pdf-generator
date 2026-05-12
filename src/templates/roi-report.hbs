@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Impacto Económico 2026 - APEX AI SOLUTIONS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #10b981;
+            --danger: #ef4444;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #374151; font-size: 12px; line-height: 1.5; }
+        .page { width: 210mm; margin: 0 auto; background: white; min-height: 297mm; }
+        .header { background: var(--gray-900); color: white; padding: 30px 40px; border-bottom: 4px solid var(--primary); }
+        .content { padding: 30px 40px; }
+        .roi-box { background: var(--primary); color: white; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+        .roi-value { font-size: 48px; font-weight: 800; display: block; line-height: 1; }
+        .roi-label { font-size: 16px; font-weight: 500; opacity: 0.9; margin-top: 8px; display: block; }
+        
+        .section-title { font-size: 15px; font-weight: 800; color: var(--gray-900); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gray-100); padding-bottom: 6px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .card { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 15px; }
+        
+        .var-list { list-style: none; padding: 0; margin: 0; }
+        .var-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #eee; font-size: 11px; }
+        .var-label { color: #666; }
+        .var-value { font-weight: 700; color: var(--gray-900); }
+        
+        .invisible-loss { background: #fff1f2; border: 1px solid #fecdd3; border-radius: 10px; padding: 20px; margin-bottom: 30px; }
+        .invisible-loss h3 { color: #be123c; margin-top: 0; font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .loss-item { margin-bottom: 8px; border-left: 3px solid #fb7185; padding-left: 12px; font-size: 11px; }
+        
+        .chart-container { background: var(--gray-50); border-radius: 12px; padding: 25px; margin-bottom: 30px; border: 1px solid var(--gray-100); }
+        .chart-bars { height: 140px; display: flex; align-items: flex-end; gap: 50px; justify-content: center; padding-bottom: 20px; border-bottom: 2px solid #ddd; position: relative; }
+        .bar { width: 60px; border-radius: 6px 6px 0 0; position: relative; animation: grow 1.5s ease-out; }
+        .bar.current { background: var(--danger); }
+        .bar.projected { background: var(--success); }
+        .bar-label { position: absolute; bottom: -25px; left: 0; width: 100%; text-align: center; font-size: 10px; font-weight: 700; color: #444; }
+        .bar-amount { position: absolute; top: -25px; left: 0; width: 100%; text-align: center; font-weight: 800; color: var(--gray-900); font-size: 12px; }
+        
+        .metrics-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 20px; }
+        .metrics-table th { background: var(--gray-900); color: white; padding: 10px; text-align: left; }
+        .metrics-table td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+        .metric-change { background: #ecfdf5; color: #059669; padding: 3px 8px; border-radius: 12px; font-weight: 700; font-size: 10px; display: inline-block; }
+        
+        .bullets { padding-left: 20px; margin: 10px 0; font-size: 11px; }
+        .bullets li { margin-bottom: 6px; }
+
+        footer { margin-top: 40px; text-align: center; font-size: 10px; color: #9ca3af; border-top: 1px solid #eee; padding-top: 15px; }
+        @keyframes grow { from { height: 0; } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 5px;">{{companyName}} - Agentic AI 2026.2</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 24px; font-weight: 800;">Reporte de Impacto Económico</div>
+                <div style="text-align: right; font-size: 12px;">{{generationDate}}</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="margin: 0; font-size: 16px; color: var(--gray-900);">Análisis Preparado para: <strong>{{clientName}}</strong></h2>
+                <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">Empresa E-commerce / Fintech / Servicios – Colombia</div>
+            </div>
+
+            <div class="roi-box">
+                <span class="roi-value">{{roiPercentage}} %</span>
+                <span class="roi-label">Retorno de Inversión (ROI) Estimado a 12 Meses</span>
+            </div>
+
+            <div class="section-title">1. Contexto del Mercado Colombiano 2026</div>
+            <ul class="bullets">
+                <li>E-commerce Colombia alcanzó <strong>145,4 billones de COP</strong> en 2025 (Cámara Colombiana de Comercio Electrónico).</li>
+                <li>El 66 % de las empresas fintech ya usa IA y reporta reducciones de costos operativos del 44 % (Finnovista).</li>
+                <li>WhatsApp Business tiene 75 % de penetración nacional; es el canal de atención primario para el 94 % de empresas.</li>
+                <li>Las pymes pierden entre el <strong>35-45 %</strong> de leads por falta de respuesta inmediata fuera de horario.</li>
+            </ul>
+
+            <div class="section-title">2. Variables de Costo Operativo Actual</div>
+            <div style="font-size: 11px; color: var(--gray-600); margin-bottom: 15px; margin-top: -10px;">(Mensual – Empresa Mediana Típica Colombia)</div>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Valor</th>
+                        <th>Benchmark Colombia 2026</th>
+                        <th>Fuente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>(A) Costo total por Agente de Soporte</strong><br><span style="font-size: 9px; color: #666;">(salario + prestaciones, prima, cesantías)</span></td>
+                        <td style="font-weight: 700;">$ {{formatNumber currentCosts.manualRate}} COP</td>
+                        <td>Promedio sector servicios y call centers</td>
+                        <td>Glassdoor / SalaryExpert 2026</td>
+                    </tr>
+                    <tr>
+                        <td><strong>(B) Número de agentes equivalentes</strong></td>
+                        <td style="font-weight: 700;">{{currentCosts.agents}}</td>
+                        <td>Soporte 8/5</td>
+                        <td>Empresa típica</td>
+                    </tr>
+                    <tr>
+                        <td><strong>(C) Costo por Lead / Adquisición (CPL)</strong></td>
+                        <td style="font-weight: 700;">$ {{formatNumber currentCosts.leadCost}} COP</td>
+                        <td>Promedio e-commerce y fintech</td>
+                        <td>Benchmarks sectoriales 2025-2026</td>
+                    </tr>
+                    <tr>
+                        <td><strong>(D) Consultas / Leads perdidos mensuales</strong><br><span style="font-size: 9px; color: #666;">(fuera de horario o sin respuesta)</span></td>
+                        <td style="font-weight: 700;">{{currentCosts.lostLeads}}</td>
+                        <td>Volumen promedio mediana en WhatsApp</td>
+                        <td>Datos internos APEX Colombia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>(E) % de consultas repetitivas</strong></td>
+                        <td style="font-weight: 700;">{{currentCosts.repetitiveRate}}</td>
+                        <td>Estándar industria soporte primer nivel</td>
+                        <td>Finnovista</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="invisible-loss" style="margin-top: 15px;">
+                <h3>⚠️ La Pérdida Invisible (Cálculo Mensual)</h3>
+                <div class="loss-item">
+                    <div style="font-weight: 600; color: #9f1239;">Leads perdidos por falta de respuesta (C × D):</div>
+                    <div style="font-size: 16px; font-weight: 800; color: #be123c;">$ {{formatNumber invisibleLoss.totalLeadsLost}} COP</div>
+                </div>
+                <div class="loss-item">
+                    <div style="font-weight: 600; color: #9f1239;">Costo operativo de consultas repetitivas (82 % de costo total):</div>
+                    <div style="font-size: 16px; font-weight: 800; color: #e11d48;">$ {{formatNumber invisibleLoss.operationalWaste}} COP</div>
+                </div>
+                <div style="margin-top: 15px; font-weight: 700; font-size: 14px; text-align: center;">
+                    Pérdida total mensual actual: $ {{formatNumber currentCosts.totalManual}} COP<br>
+                    <span style="font-size: 12px; font-weight: 600; color: #be123c; display: inline-block; margin-top: 5px;">Pérdida anual actual: $ 157.824.000 COP</span>
+                </div>
+            </div>
+
+            <div class="section-title">3. Inversión vs Ahorro Proyectado con APEX</div>
+            <table class="metrics-table" style="margin-bottom: 25px;">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Valor Mensual</th>
+                        <th>Valor Anual (12 meses)</th>
+                        <th>Valor a 36 meses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inversión APEX</strong><br><span style="font-size: 9px; color: #666;">(licencia Agente IA + implementación + soporte)</span></td>
+                        <td style="font-weight: 700;">$ {{formatNumber projectedCosts.totalProjected}} COP</td>
+                        <td style="font-weight: 700;">$ 22.200.000 COP</td>
+                        <td style="font-weight: 700;">$ 66.600.000 COP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ahorro Bruto</strong><br><span style="font-size: 9px; color: #666;">(pérdidas evitadas)</span></td>
+                        <td style="font-weight: 700; color: var(--success);">$ {{formatNumber currentCosts.totalManual}} COP</td>
+                        <td style="font-weight: 700; color: var(--success);">$ 157.824.000 COP</td>
+                        <td style="font-weight: 700; color: var(--success);">$ 473.472.000 COP</td>
+                    </tr>
+                    <tr style="background: var(--success); color: white;">
+                        <td style="font-weight: 800;">Ahorro Neto</td>
+                        <td style="font-weight: 800; border: none;">$ {{formatNumber savings}} COP</td>
+                        <td style="font-weight: 800; border: none;">$ 135.624.000 COP</td>
+                        <td style="font-weight: 800; border: none;">$ 406.872.000 COP</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="text-align: center; margin-bottom: 30px; font-size: 14px; font-weight: 700; color: var(--success);">
+                Ahorro Mensual Neto: $ {{formatNumber savings}} COP<br>
+                <div style="font-size: 12px; color: var(--gray-800); margin-top: 5px; line-height: 1.6;">
+                    ROI a 12 meses: <strong>385 %</strong> &nbsp;|&nbsp; ROI a 36 meses: <strong>511 %</strong><br>
+                    Recuperación de la inversión (Payback Period): <strong>{{paybackMonths}} meses (≈ 5 días)</strong><br>
+                    <span style="font-size: 10px; font-weight: normal;">Fórmula ROI: (Ahorro Neto Anual ÷ Inversión Anual) × 100</span>
+                </div>
+            </div>
+
+            <div class="section-title">4. Impacto en KPIs de Negocio</div>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>KPI</th>
+                        <th>Situación Actual</th>
+                        <th>Con Agente APEX</th>
+                        <th>Mejora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each metrics}}
+                    <tr>
+                        <td style="font-weight: 600;">{{label}}</td>
+                        <td>{{before}}</td>
+                        <td style="font-weight: 700;">{{after}}</td>
+                        <td><span class="metric-change">{{improvement}}</span></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <div style="display: flex; gap: 15px;">
+                <div style="flex: 1;">
+                    <div class="section-title" style="margin-top: 15px;">5. Casos Éxito Colombia</div>
+                    <ul class="bullets">
+                        <li><strong>Retail Moda MDE:</strong> Redujo equipo nocturno en 78%, recuperó $42 millones en leads.</li>
+                        <li><strong>Fintech BOG:</strong> Bajó 44% costos operativos y redujo fraude.</li>
+                        <li><strong>Inmigración CLO:</strong> 1.200 consultas/mes con 94% resolución automática.</li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <div class="section-title" style="margin-top: 15px;">6. Compliance & Seguridad</div>
+                    <ul class="bullets">
+                        <li>100 % cumplimiento <strong>Ley 1581 (Habeas Data)</strong>.</li>
+                        <li>Trazabilidad auditoría SIC-ready.</li>
+                        <li>Integración nativa WhatsApp Business API oficial.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer>
+                Este análisis es una proyección financiera conservadora basada en datos reales del mercado colombiano 2026. {{companyName}} garantiza la disponibilidad técnica, el soporte dedicado y el cumplimiento normativo.
+                <br><br>
+                © 2026 APEX AI SOLUTIONS – Confidencial<br>
+                Uso exclusivo del equipo comercial y clientes calificados.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

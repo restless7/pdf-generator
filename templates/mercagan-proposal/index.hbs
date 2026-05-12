@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mercagán Core 360 – Sistema Unificado 100% a Medida</title>
+    <title>{{proposalTitle}}</title>
     <style>
         :root {
             --primary: #06574a; /* Verde Mercagán */
@@ -96,9 +96,9 @@
         <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #facc15 0%, #fbbf24 100%); padding-top: 20mm;">
             <div style="text-align: center; max-width: 90%;">
                 <div style="margin-bottom: 30px; border-bottom: 5px solid var(--accent); display: inline-block; padding-bottom: 10px;">
-                    <h1 style="margin: 0; text-transform: uppercase; letter-spacing: -1px; color: var(--primary); line-height: 1.1;">Mercagán Core 360 – Sistema Unificado 100% a Medida</h1>
+                    <h1 style="margin: 0; text-transform: uppercase; letter-spacing: -1px; color: var(--primary); line-height: 1.1;">{{proposalTitle}}</h1>
                 </div>
-                <div style="font-size: 22px; color: var(--text-dark); font-weight: 500; margin-bottom: 40px; max-width: 80%; margin-left: auto; margin-right: auto;">Una sola plataforma. Cero reprocesos. Relación a largo plazo.</div>
+                <div style="font-size: 22px; color: var(--text-dark); font-weight: 500; margin-bottom: 40px; max-width: 80%; margin-left: auto; margin-right: auto;">{{subtitle}}</div>
                 
                 <div style="width: 110mm; height: 110mm; background: #fff; border: 2px dashed var(--border); margin: 0 auto 50px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
                     LOGO MERCAGÁN
@@ -127,11 +127,11 @@
             <div class="grid-2">
                 <div class="card" style="border-left: 4px solid var(--danger);">
                     <h3>El Desafío</h3>
-                    <p>Actualmente, Mercagán opera con tres sistemas fragmentados (Terceros Desktop, KGM y Excels manuales), lo que genera una brecha crítica de información, triple digitación y riesgos de auditoría en los cierres de caja.</p>
+                    <p>{{executiveSummary.problem}}</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--success);">
                     <h3>La Solución</h3>
-                    <p>Mercagán Core 360 es una plataforma 100% a medida que unifica la recepción web, el POS móvil, la facturación DIAN y el cierre contable en una sola base de datos, eliminando la dependencia de software genérico de terceros.</p>
+                    <p>{{executiveSummary.solution}}</p>
                 </div>
             </div>
 
@@ -153,11 +153,11 @@
             </div>
 
             <h3 style="margin-top: 30px;">Nuestro Compromiso de Partnership</h3>
-            <p>Enfoque en partnership a largo plazo con soporte directo y evolución constante sin licencias mensuales restrictivas.</p>
+            <p>{{executiveSummary.partnership}}</p>
             <p>A diferencia de los proveedores tradicionales, entregamos la <strong>propiedad del código</strong> y un soporte directo que evoluciona con el restaurante, garantizando que el software nunca sea una limitación, sino una ventaja competitiva.</p>
         </div>
         <div class="page-footer">
-            <div>Mercagán Core 360 – Sistema Unificado 100% a Medida - Confidencial</div>
+            <div>{{proposalTitle}} - Confidencial</div>
             <div>© 2026 APEX AI Solutions</div>
         </div>
     </div>
@@ -169,21 +169,13 @@
             <p>Tras el análisis de la operación en Mercagán, identificamos un ecosistema de software desconectado que depende críticamente de la intervención humana y la re-digitación de datos.</p>
 
             <div class="grid-3">
+                {{#each currentSituation.systems}}
                 <div class="card">
-                    <div style="font-weight: 700; color: var(--accent); margin-bottom: 5px;">Aplicación &#x27;Terceros&#x27;</div>
-                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Legacy Desktop</div>
-                    <p style="font-size: 11px; margin: 0;">Utilizada para la operación básica pero desconectada del flujo contable real.</p>
+                    <div style="font-weight: 700; color: var(--accent); margin-bottom: 5px;">{{name}}</div>
+                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">{{type}}</div>
+                    <p style="font-size: 11px; margin: 0;">{{desc}}</p>
                 </div>
-                <div class="card">
-                    <div style="font-weight: 700; color: var(--accent); margin-bottom: 5px;">KGM Administrative Software</div>
-                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Contabilidad/Facturación</div>
-                    <p style="font-size: 11px; margin: 0;">Sistema donde se debe re-digitar información para legalizar ventas.</p>
-                </div>
-                <div class="card">
-                    <div style="font-weight: 700; color: var(--accent); margin-bottom: 5px;">Ecosistema de Excels</div>
-                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Manual</div>
-                    <p style="font-size: 11px; margin: 0;">Múltiples hojas para control de domicilios, gastos, propinas, vouchers de San Pio y cierre final.</p>
-                </div>
+                {{/each}}
             </div>
 
             <h3 style="margin-top: 20px;">Flujo de Información Actual (Triple Digitación)</h3>
@@ -208,36 +200,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each identifiedProblems}}
                     <tr>
-                        <td><strong>Triple Digitación</strong></td>
-                        <td>Pérdida de productividad masiva y fatiga del personal.</td>
-                        <td><span class="badge badge-warning">Alta</span></td>
+                        <td><strong>{{problem}}</strong></td>
+                        <td>{{impact}}</td>
+                        <td><span class="badge {{#if (eq priority "Crítica")}}badge-danger{{else}}badge-warning{{/if}}">{{priority}}</span></td>
                     </tr>
-                    <tr>
-                        <td><strong>Riesgo de Errores</strong></td>
-                        <td>Descuadres en caja y falta de integridad en datos contables.</td>
-                        <td><span class="badge badge-danger">Crítica</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cierre Lento</strong></td>
-                        <td>Operación administrativa extendida innecesariamente (1-1.5h/día).</td>
-                        <td><span class="badge badge-warning">Alta</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Falta de Visibilidad</strong></td>
-                        <td>Imposibilidad de ver ventas y gastos consolidados en tiempo real.</td>
-                        <td><span class="badge badge-warning">Media</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Dependencia Legacy</strong></td>
-                        <td>Dificultad para integrar nuevas tecnologías o escalar el negocio.</td>
-                        <td><span class="badge badge-warning">Alta</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Costo de Licenciamiento</strong></td>
-                        <td>Pago a terceros por software que no se adapta al 100% a Mercagán.</td>
-                        <td><span class="badge badge-warning">Media</span></td>
-                    </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>
@@ -251,11 +220,11 @@
     <div class="page">
         <div class="content-padding">
             <h2>3. Solución: Mercagán Core 360</h2>
-            <p>Core 360 es el corazón tecnológico de Mercagán. Un sistema propietario que reemplaza la fragmentación actual por un flujo digital fluido que integra el Portal Web (pedidos externos) y el POS Interno (ventas locales) directamente con su contabilidad.</p>
+            <p>{{proposedSolution.concept}}</p>
 
             <div class="card" style="border-top: 8px solid var(--primary);">
                 <h3>Alianza Estratégica: Trabajo en Equipo</h3>
-                <p style="font-size: 12px; margin-bottom: 0;">Reconocemos el valor de la ingeniería interna de Mercagán. El proyecto se ejecutará en constante colaboración con su Ingeniera de Sistemas actual, facilitando la transferencia de conocimiento y asegurando que la transición sea técnica y operativamente impecable.</p>
+                <p style="font-size: 12px; margin-bottom: 0;">{{collaboration.desc}}</p>
             </div>
             
             <div class="card" style="border-top: 8px solid var(--accent); margin-top: 20px;">
@@ -285,36 +254,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each proposedSolution.techStack}}
                     <tr>
-                        <td><span style="font-weight: 700; color: var(--primary);">Frontend Web</span></td>
-                        <td><span class="text-accent">Next.js 15 + TypeScript</span></td>
-                        <td>Panel admin moderno, rápido y seguro.</td>
+                        <td><span style="font-weight: 700; color: var(--primary);">{{layer}}</span></td>
+                        <td><span class="text-accent">{{tech}}</span></td>
+                        <td>{{desc}}</td>
                     </tr>
-                    <tr>
-                        <td><span style="font-weight: 700; color: var(--primary);">Mobile POS</span></td>
-                        <td><span class="text-accent">React Native</span></td>
-                        <td>Comanderas para meseros en tablets (soporte offline).</td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-weight: 700; color: var(--primary);">Backend API</span></td>
-                        <td><span class="text-accent">NestJS</span></td>
-                        <td>Arquitectura modular, robusta y escalable.</td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-weight: 700; color: var(--primary);">Base de Datos</span></td>
-                        <td><span class="text-accent">PostgreSQL</span></td>
-                        <td>Integridad referencial para contabilidad impecable.</td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-weight: 700; color: var(--primary);">Real-time</span></td>
-                        <td><span class="text-accent">WebSockets</span></td>
-                        <td>Kitchen Display System con pedidos instantáneos.</td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-weight: 700; color: var(--primary);">Infraestructura</span></td>
-                        <td><span class="text-accent">AWS (Colombia)</span></td>
-                        <td>Servidores de alta disponibilidad y backups automáticos.</td>
-                    </tr>
+                    {{/each}}
                 </tbody>
             </table>
 
@@ -340,69 +286,15 @@
             <p>Mercagán Core 360 unifica todas las áreas críticas del restaurante en una sola interfaz intuitiva y potente.</p>
 
             <div class="grid-3" style="margin-top: 15px;">
+                {{#each modules}}
                 <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
                     <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
                         <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Portal Web Express
+                        {{title}}
                     </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Sitio de pedidos online sincronizado. Los pedidos entran al sistema sin re-digitación, impactando automáticamente la parte contable y financiera.</p>
+                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">{{desc}}</p>
                 </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        POS de Mesa Optimizado
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Ingreso ultra-rápido de pedidos locales. Aunque requiere digitación por ser venta física, el proceso está diseñado para minimizar clics y errores.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Mesas + Domicilios
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Control total de salón y despacho móvil en una sola pantalla visual.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Kitchen Display System (KDS)
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Elimina comandas de papel. Pantallas táctiles en cocina para gestión de tiempos y platos.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Facturación DIAN Automática
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Generación de factura electrónica en el momento del pago, sin pasos manuales extra.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Cierre de Caja Inteligente
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Motor de cálculo que consolida efectivo, datafonos, vouchers de San Pio y gastos menores.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Inventario en Tiempo Real
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Mermas automáticas por plato vendido. Alertas de stock crítico para compras inteligentes.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Dashboard Gerencial
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Ventas por punto, platos estrella, rentabilidad y San Pio – todo en su celular.</p>
-                </div>
-                <div class="card" style="padding: 12px; min-height: 28mm; margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px; display: flex; align-items:center;">
-                        <span style="display:inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px;"></span>
-                        Módulo de Auditoría
-                    </div>
-                    <p style="font-size: 10px; margin: 0; line-height: 1.3;">Log completo de cada transacción y cambio en el sistema para transparencia total.</p>
-                </div>
+                {{/each}}
             </div>
 
             <div class="card" style="margin-top: 30px; background: #fff7ed; border-color: #fdba74;">
@@ -425,24 +317,17 @@
                 <div class="card">
                     <h3>Comparativa de Cierre de Caja</h3>
                     <div class="bar-chart">
+                        {{#each benefitsMetrics.charts.timeComparison}}
                         <div class="bar-row">
                             <div class="bar-label">
-                                <span>Actual (Sistemas fragmentados)</span>
-                                <span>90 min</span>
+                                <span>{{label}}</span>
+                                <span>{{value}} min</span>
                             </div>
                             <div class="bar-rail">
-                                <div class="bar-fill " style="width: 100%;"></div>
+                                <div class="bar-fill {{#if @index}}accent{{/if}}" style="width: {{#if @index}}10%{{else}}100%{{/if}};"></div>
                             </div>
                         </div>
-                        <div class="bar-row">
-                            <div class="bar-label">
-                                <span>Core 360 (Unificado)</span>
-                                <span>8 min</span>
-                            </div>
-                            <div class="bar-rail">
-                                <div class="bar-fill accent" style="width: 10%;"></div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                     <p style="font-size: 11px; color: var(--text-muted);">Hoy Mercagán pierde 15 horas a la semana solo en cierres de caja manuales.</p>
                 </div>
@@ -450,8 +335,8 @@
                 <div class="card" style="border-top: 5px solid var(--success);">
                     <h3>Eficiencia Operativa</h3>
                     <ul style="padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Reducción de errores:</strong> &gt; 92%</li>
-                        <li style="margin-bottom: 10px;"><strong>Ahorro administrativo:</strong> 3.5 - 4.5 Horas diarias</li>
+                        <li style="margin-bottom: 10px;"><strong>Reducción de errores:</strong> {{benefitsMetrics.errorReduction}}</li>
+                        <li style="margin-bottom: 10px;"><strong>Ahorro administrativo:</strong> {{benefitsMetrics.timeSavings}}</li>
                         <li><strong>Visibilidad Gerencial:</strong> 100% en tiempo real</li>
                     </ul>
                 </div>
@@ -462,11 +347,9 @@
                 <div class="roi-chart-container">
                     <!-- Y Axis Labels -->
                     <div class="roi-y-axis">
-                        <span>$0</span>
-                        <span>$20M</span>
-                        <span>$40M</span>
-                        <span>$60M</span>
-                        <span>$80M</span>
+                        {{#each benefitsMetrics.charts.roiProjection.yAxis}}
+                        <span>{{this}}</span>
+                        {{/each}}
                     </div>
                     
                     <!-- Grid Lines -->
@@ -487,21 +370,19 @@
                     
                     <!-- X Axis Labels -->
                     <div style="position: absolute; left: 0; bottom: -25px; width: 100%; display: flex; justify-content: space-between; font-size: 10px; color: var(--text-dark); font-weight: 600;">
-                        <span>Mes 1</span>
-                        <span style="color: var(--primary);">Mes 6</span>
-                        <span>Mes 12</span>
+                        <span>{{benefitsMetrics.charts.roiProjection.xAxis.[0]}}</span>
+                        <span style="color: var(--primary);">{{benefitsMetrics.charts.roiProjection.xAxis.[1]}}</span>
+                        <span>{{benefitsMetrics.charts.roiProjection.xAxis.[2]}}</span>
                     </div>
                 </div>
 
                 <div class="roi-legend">
+                    {{#each benefitsMetrics.charts.roiProjection.legend}}
                     <div class="legend-item">
-                        <div class="legend-dot" style="background: var(--primary);"></div>
-                        <span>Inversión Acumulada</span>
+                        <div class="legend-dot" style="background: {{this.color}};"></div>
+                        <span>{{this.label}}</span>
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-dot" style="background: var(--accent);"></div>
-                        <span>Retorno Económico</span>
-                    </div>
+                    {{/each}}
                 </div>
             </div>
             <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 11px;">"La inversión en tecnología a medida deja de ser un gasto y se convierte en una máquina de ahorro operativo desde el primer día."</p>
@@ -529,59 +410,40 @@
                     <tr>
                         <td><strong>Desarrollo del Sistema Core 360</strong><br/><small>Unificación, integraciones, POS Móvil y Facturación.</small></td>
                         <td>Pago Único</td>
-                        <td style="text-align: right; font-weight: 700;">$42.000.000 COP</td>
+                        <td style="text-align: right; font-weight: 700;">{{pricing.development}}</td>
                     </tr>
                     <tr>
                         <td><strong>Hardware Recomendado</strong><br/><small>Tablets industriales, impresoras térmicas y KDS Display.</small></td>
                         <td>Inversión Inicial</td>
-                        <td style="text-align: right;">Incluido (Mercagán ya cuenta con los equipos necesarios)</td>
+                        <td style="text-align: right;">{{pricing.hardware}}</td>
                     </tr>
                     <tr>
                         <td><strong>Plan de Soporte y Evolución</strong><br/><small>Soporte 24/7, updates DIAN y mantenimiento preventivo.</small></td>
                         <td>Mensual</td>
-                        <td style="text-align: right;">$600.000 COP</td>
+                        <td style="text-align: right;">{{pricing.support}}</td>
                     </tr>
                 </tbody>
             </table>
 
             <h3 style="margin-top: 20px;">Opciones y Planes de Pago</h3>
             <div class="grid-3" style="margin-top: 10px;">
+                {{#each paymentPlans}}
                 <div class="card" style="padding: 15px; border-top: 3px solid var(--accent); margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 5px;">Contado con Descuento</div>
-                    <p style="font-size: 10px; margin: 0;">Un solo pago al inicio con un 10% de descuento sobre el desarrollo ($37.8M COP).</p>
+                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 5px;">{{option}}</div>
+                    <p style="font-size: 10px; margin: 0;">{{desc}}</p>
                 </div>
-                <div class="card" style="padding: 15px; border-top: 3px solid var(--accent); margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 5px;">Hitos (40/30/30)</div>
-                    <p style="font-size: 10px; margin: 0;">$16.8M al inicio, $12.6M al MVP (Fase 2) y $12.6M a la entrega final.</p>
-                </div>
-                <div class="card" style="padding: 15px; border-top: 3px solid var(--accent); margin-bottom: 10px;">
-                    <div style="font-weight: 700; color: var(--primary); margin-bottom: 5px;">Financiado Apex</div>
-                    <p style="font-size: 10px; margin: 0;">Cuota inicial de $15M + 6 cuotas mensuales de $4.5M COP sin intereses.</p>
-                </div>
+                {{/each}}
             </div>
 
             <h3 style="margin-top: 30px;">Fases de Implementación (10 - 12 Semanas)</h3>
             <div class="timeline">
+                {{#each implementationPhases}}
                 <div class="timeline-item">
-                    <div class="timeline-bubble">1</div>
-                    <div style="font-weight: 700; color: var(--primary);">1. Levantamiento &amp; Diseño <span style="font-weight: 400; color: var(--accent); margin-left:10px;">2 Semanas</span></div>
-                    <p style="font-size: 11px; margin-top: 5px;">Análisis de flujos exactos de San Pio y diseño de prototipos.</p>
+                    <div class="timeline-bubble">{{#if (eq @index 0)}}1{{/if}}{{#if (eq @index 1)}}2{{/if}}{{#if (eq @index 2)}}3{{/if}}{{#if (eq @index 3)}}4{{/if}}</div>
+                    <div style="font-weight: 700; color: var(--primary);">{{phase}} <span style="font-weight: 400; color: var(--accent); margin-left:10px;">{{duration}}</span></div>
+                    <p style="font-size: 11px; margin-top: 5px;">{{goal}}</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-bubble">2</div>
-                    <div style="font-weight: 700; color: var(--primary);">2. Desarrollo MVP <span style="font-weight: 400; color: var(--accent); margin-left:10px;">5 Semanas</span></div>
-                    <p style="font-size: 11px; margin-top: 5px;">Pedidos web, POS móvil y Facturación DIAN activa.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-bubble">3</div>
-                    <div style="font-weight: 700; color: var(--primary);">3. Módulos Avanzados <span style="font-weight: 400; color: var(--accent); margin-left:10px;">3 Semanas</span></div>
-                    <p style="font-size: 11px; margin-top: 5px;">Cierre inteligente, Inventarios y Dashboard Gerencial.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-bubble">4</div>
-                    <div style="font-weight: 700; color: var(--primary);">4. Go-Live &amp; Soporte <span style="font-weight: 400; color: var(--accent); margin-left:10px;">2 Semanas</span></div>
-                    <p style="font-size: 11px; margin-top: 5px;">Capacitación de staff, salida a producción y monitoreo intensivo.</p>
-                </div>
+                {{/each}}
             </div>
         </div>
         <div class="page-footer">
@@ -595,20 +457,20 @@
         <div class="content-padding" style="height: 100%; display: flex; flex-direction: column;">
             <h2>7. Relación a Largo Plazo y Próximos Pasos</h2>
             <div class="card" style="border-left: 5px solid var(--accent);">
-                <p>Nuestra propuesta de soporte de <strong>$600.000 COP mensuales</strong> no es un simple seguro técnico. Es un compromiso de evolución. Este valor nos permite estar cerca de Mercagán, ajustando el sistema según el negocio crezca o las leyes de la DIAN cambien, garantizando que su inversión nunca quede obsoleta.</p>
+                <p>Nuestra propuesta de soporte de <strong>{{pricing.support}} mensuales</strong> no es un simple seguro técnico. Es un compromiso de evolución. Este valor nos permite estar cerca de Mercagán, ajustando el sistema según el negocio crezca o las leyes de la DIAN cambien, garantizando que su inversión nunca quede obsoleta.</p>
             </div>
 
             <h3 style="margin-top: 40px;">¿Cómo Avanzamos?</h3>
             <div style="background: var(--primary); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-top: 20px;">
-                <p style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">Agenda una reunión de 60 minutos para mapear tus flujos exactos de San Pio y domicilios.</p>
+                <p style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">{{cta.message}}</p>
                 <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
                     <div>
                         <div style="font-size: 10px; opacity: 0.8; text-transform: uppercase;">WhatsApp Directo</div>
-                        <div style="font-size: 18px; font-weight: 700;">3024816706</div>
+                        <div style="font-size: 18px; font-weight: 700;">{{cta.phone}}</div>
                     </div>
                     <div>
                         <div style="font-size: 10px; opacity: 0.8; text-transform: uppercase;">Correo Electrónico</div>
-                        <div style="font-size: 18px; font-weight: 700;">aisolutionsapex@gmail.com</div>
+                        <div style="font-size: 18px; font-weight: 700;">{{cta.email}}</div>
                     </div>
                 </div>
                 <div style="margin-top: 40px; background: var(--accent); display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 700; cursor: pointer;">SOLICITAR REUNIÓN TÉCNICA</div>
@@ -616,7 +478,7 @@
 
             <div style="margin-top: auto; text-align: center; padding-bottom: 40px;">
                 <p style="font-size: 16px; font-weight: 600; color: var(--primary);">Estamos listos para acompañar a Mercagán en esta transformación digital con un sistema hecho exactamente para ustedes.</p>
-                <div style="color: var(--text-muted); font-size: 12px;">Mercagán Parrilla - Construyendo el futuro de la gastronomía santandereana. • Bucaramanga, 2026</div>
+                <div style="color: var(--text-muted); font-size: 12px;">{{footer}}</div>
             </div>
         </div>
     </div>

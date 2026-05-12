@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{proposalTitle}}</title>
+    <style>
+        :root {
+            --primary: #06574a; /* Verde Distribuciones Aura / Corporativo */
+            --secondary: #0ea5e9; /* Azul Eleven Labs / Moderno */
+            --bg-light: #f8fafc;
+            --card: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; font-size: 13px; }
+        .page { max-width: 210mm; margin: 0 auto; padding: 15mm; background: white; min-height: 297mm; position: relative; }
+        
+        header { border-bottom: 2px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .header-main h1 { font-size: 22px; color: var(--primary); font-weight: 700; margin-bottom: 5px; }
+        .header-main h2 { font-size: 14px; color: var(--text-muted); font-weight: 400; }
+        .meta { text-align: right; font-size: 11px; }
+        .meta strong { color: var(--primary); }
+
+        .section { margin-bottom: 25px; page-break-inside: avoid; }
+        .section-title { font-size: 16px; color: var(--primary); border-left: 4px solid var(--secondary); padding-left: 10px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase; }
+
+        .lead { font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 15px; }
+        .lead-secondary { color: var(--text-muted); margin-bottom: 20px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .card { border: 1px solid var(--border); border-radius: 8px; padding: 15px; background: white; }
+        .card h3 { font-size: 13px; color: var(--primary); margin-bottom: 8px; font-weight: 600; display: flex; align-items: center; }
+        .card p { color: var(--text-muted); font-size: 12px; }
+
+        /* Charts & Visuals */
+        .chart-box { margin-top: 15px; padding: 15px; background: var(--bg-light); border-radius: 8px; }
+        .bar-container { margin: 10px 0; }
+        .bar-label { display: flex; justify-content: space-between; margin-bottom: 4px; font-weight: 500; font-size: 11px; }
+        .bar-rail { height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+        .bar-fill { height: 100%; background: var(--primary); border-radius: 5px; }
+        .bar-fill.secondary { background: var(--secondary); }
+
+        .funnel-step { display: flex; align-items: center; margin-bottom: 10px; }
+        .funnel-box { padding: 10px; color: white; font-weight: 600; text-align: center; border-radius: 4px; }
+        .step-1 { width: 100%; background: var(--primary); }
+        .step-2 { width: 80%; background: #0891b2; margin-left: 10%; }
+        .step-3 { width: 60%; background: var(--secondary); margin-left: 20%; }
+
+        .pricing-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .pricing-table th { background: var(--primary); color: white; padding: 10px; text-align: left; font-size: 12px; }
+        .pricing-table td { padding: 10px; border-bottom: 1px solid var(--border); }
+        .pricing-total { background: #f1f5f9; font-weight: 700; }
+
+        .highlight-box { background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .highlight-box h3 { color: #065f46; margin-bottom: 5px; }
+
+        .timeline { position: relative; margin-top: 20px; padding-left: 30px; border-left: 2px solid var(--border); }
+        .timeline-item { margin-bottom: 15px; position: relative; }
+        .timeline-item::before { content: ""; position: absolute; left: -36px; top: 0; width: 10px; height: 10px; background: var(--secondary); border-radius: 50%; }
+        .timeline-day { font-weight: 700; color: var(--primary); font-size: 11px; }
+
+        .cta-box { background: var(--primary); color: white; padding: 25px; border-radius: 12px; text-align: center; margin-top: 30px; page-break-inside: avoid; }
+        .cta-btn { display: inline-block; background: var(--secondary); color: white; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+        footer { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 15px; display: flex; justify-content: space-between; font-size: 10px; color: var(--text-muted); }
+
+        @media print {
+            .page-break { page-break-before: always; border-top: 1px solid transparent; }
+            .no-break { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PORTADA -->
+    <div class="page" style="padding: 0; min-height: 296mm;">
+        <div style="height: 120mm; background: var(--primary); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;">
+            <div style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">{{proposalTitle}}</div>
+            <div style="font-size: 18px; opacity: 0.9;">50 llamadas diarias automatizadas con voz natural colombiana</div>
+        </div>
+        
+        <div style="margin-top: -30mm; padding: 0 15mm;">
+            {{#if coverImageDataUri}}
+            <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 5px solid white;">
+                <img src="{{coverImageDataUri}}" style="width: 100%; height: 90mm; object-fit: cover; display: block;">
+            </div>
+            {{/if}}
+        </div>
+
+        <div style="padding: 15mm; margin-top: 10mm; display: flex; justify-content: space-between;">
+            <div>
+                <div style="text-transform: uppercase; font-size: 11px; color: var(--text-muted); margin-bottom: 5px; font-weight: 600;">Preparado para:</div>
+                <div style="font-size: 18px; font-weight: 700; color: var(--text-dark);">{{client.name}}</div>
+                <div style="color: var(--primary); font-weight: 600;">{{client.company}}</div>
+                <div style="color: var(--text-muted);">{{client.city}}</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="text-transform: uppercase; font-size: 11px; color: var(--text-muted); margin-bottom: 5px; font-weight: 600;">Fecha de emisión:</div>
+                <div style="font-size: 14px; font-weight: 600;">Abril 21, 2026</div>
+                <div style="margin-top: 10px; font-size: 11px; color: var(--text-muted);">REF: AURA-VOICE-2026</div>
+            </div>
+        </div>
+
+        <div style="position: absolute; bottom: 20mm; width: 100%; text-align: center;">
+            <div style="width: 80mm; height: 1px; background: var(--border); margin: 0 auto 10px;"></div>
+            <div style="font-weight: 700; color: var(--primary); letter-spacing: 2px;">APEX AI SOLUTIONS</div>
+        </div>
+    </div>
+
+    <!-- DOCUMENT CONTENT -->
+    <div class="page page-break">
+        <header>
+            <div class="header-main">
+                <div style="text-transform: uppercase; font-size: 10px; color: var(--secondary); font-weight: 700; margin-bottom: 5px;">Distribuciones Aura | Propuesta Técnica</div>
+                <h1>Distribuciones Aura: Propuesta de Expansión</h1>
+            </div>
+            <div class="meta">
+                <div style="background: var(--bg-light); padding: 5px 10px; border-radius: 4px;">Piso de Venta: <strong>Bucaramanga</strong></div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">1. Resumen Ejecutivo</h2>
+            <p class="lead">Distribuciones Aura tiene hoy la oportunidad de liderar el mercado santandereano mediante la <strong>automatización inteligente de sus procesos comerciales</strong>.</p>
+            <p class="lead-secondary">Implementaremos un Agente de Voz IA capaz de realizar el trabajo de un equipo de telemercadeo completo, con la precisión de Eleven Labs y la calidez de la voz colombiana.</p>
+            
+            <div class="grid-2">
+                {{#each executiveSummary.benefits}}
+                <div class="card" style="border-left: 3px solid var(--success);">
+                    <p style="color: var(--text-dark);"><strong>✓</strong> {{this}}</p>
+                </div>
+                {{/each}}
+            </div>
+            <p style="margin-top: 15px; font-weight: 600; color: var(--primary);">{{executiveSummary.roiEstimated}}</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">2. El Desafío del Crecimiento</h2>
+            <div class="card" style="background: #fff1f2; border-color: #fecaca;">
+                <ul style="padding-left: 20px;">
+                    {{#each challenge.points}}
+                    <li style="margin-bottom: 8px;">{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">3. Nuestra Solución: Eleven Labs Voice Bot</h2>
+            <div class="grid-2">
+                {{#each solution.features}}
+                <div class="card">
+                    <h3>● {{title}}</h3>
+                    <p>{{desc}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <section class="section">
+            <h2 class="section-title">4. Métricas y Proyecciones de Éxito</h2>
+            <div class="grid-2">
+                <div class="chart-box">
+                    <h3 style="font-size: 12px; margin-bottom: 10px;">Costo Mensual: Humano vs IA</h3>
+                    {{#each metrics.comparison}}
+                    <div class="bar-container">
+                        <div class="bar-label">
+                            <span>{{label}}</span>
+                            <span>${{cost}} COP</span>
+                        </div>
+                        <div class="bar-rail">
+                            <div class="bar-fill {{#if @index}}secondary{{/if}}" style="width: {{#if @index}}95%{{else}}100%{{/if}};"></div>
+                        </div>
+                        <small style="font-size: 9px; color: var(--text-muted);">{{note}}</small>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="chart-box">
+                    <h3 style="font-size: 12px; margin-bottom: 10px;">Embudo de Conversión (Voice Bot)</h3>
+                    <div class="funnel-box step-1">Contacto: {{metrics.funnel.contactRate}}</div>
+                    <div style="text-align: center; color: var(--primary);">▼</div>
+                    <div class="funnel-box step-3">Pedidos: {{metrics.funnel.conversionRate}}</div>
+                    <p style="font-size: 10px; margin-top: 10px; text-align: center;">Vs. 1-3% en telemercadeo tradicional</p>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 15px;">
+                <div class="card">
+                    <h3>Distribución de Tiempo Ahorrado</h3>
+                    {{#each metrics.timeDistribution}}
+                    <div style="margin-bottom: 5px; font-size: 11px;">
+                        <span style="display:inline-block; width: 10px; height: 10px; background: var(--secondary); margin-right: 5px; border-radius: 2px;"></span>
+                        {{label}}: <strong>{{percent}}%</strong>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="card" style="background: #f0fdf4;">
+                    <h3>Resultados Esperados (Mes 1)</h3>
+                    <table style="width: 100%; font-size: 11px;">
+                        {{#each metrics.table}}
+                        <tr>
+                            <td style="padding: 4px 0;">{{item}}:</td>
+                            <td style="text-align: right; font-weight: 700; color: var(--primary);">{{value}}</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </section>
+
+           <section class="section">
+            <h2 class="section-title">5. Inversión Estratégica</h2>
+            
+            <div class="card" style="background: var(--bg-light); border-color: var(--primary); margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin-bottom: 2px;">Setup Inicial (Único)</h3>
+                        <p>{{investment.notes}}</p>
+                    </div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--primary);">{{investment.setup}} COP</div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <!-- PLAN PREMIUM -->
+                <div class="card" style="position: relative; border-top: 5px solid var(--primary);">
+                    <div style="position: absolute; top: -12px; right: 10px; background: var(--primary); color: white; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700;">RECOMENDADO</div>
+                    <h3 style="font-size: 14px;">Plan Premium</h3>
+                    <p style="margin-bottom: 15px; font-style: italic;">{{investment.standard.desc}}</p>
+                    <div style="font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">{{investment.standard.monthly}} <small style="font-size: 10px; font-weight: 400; color: var(--text-muted); font-style: normal;">/ mes</small></div>
+                    <ul style="padding-left: 15px; font-size: 11px; color: var(--text-dark);">
+                        <li>Incluye <strong>{{investment.standard.calls}}</strong></li>
+                        <li>Hosting y Soporte 24/7</li>
+                        <li>Actualizaciones de IA ilimitadas</li>
+                    </ul>
+                </div>
+
+                <!-- PLAN TIERED -->
+                <div class="card" style="border-top: 5px solid var(--secondary);">
+                    <h3 style="font-size: 14px;">Plan de Prueba (Tiered)</h3>
+                    <p style="margin-bottom: 15px; font-style: italic;">{{investment.tiered.desc}}</p>
+                    <div style="font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 5px;">{{investment.tiered.base}} <small style="font-size: 10px; font-weight: 400; color: var(--text-muted); font-style: normal;">/ mes</small></div>
+                    <ul style="padding-left: 15px; font-size: 11px; color: var(--text-dark);">
+                        <li>Incluye <strong>{{investment.tiered.calls}}</strong></li>
+                        <li>Llamada Adicional: <strong>{{investment.tiered.additional}} COP</strong></li>
+                        <li>Ideal para validar impacto rápido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Bono Pilot Program:</h3>
+                <p>Garantía de resultados en el primer mes o ajuste de script sin costo adicional hasta alcanzar los KPIs.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">6. Cronograma de Implementación</h2>
+            <div class="timeline">
+                {{#each timeline}}
+                <div class="timeline-item">
+                    <div class="timeline-day">{{day}}</div>
+                    <div style="font-size: 12px;">{{event}}</div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <div class="cta-box">
+            <h3>¿Listos para transformar su distribución?</h3>
+            <p>{{cta.text}}</p>
+            <a href="#" class="cta-btn">{{cta.button}}</a>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.9;">O contáctanos vía WhatsApp al <strong>{{cta.contact}}</strong></p>
+        </div>
+
+        <footer>
+            <div>{{footer}}</div>
+            <div>Ref: AURA-2026-V1</div>
+        </footer>
+    </div>
+</body>
+</html>

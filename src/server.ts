@@ -5,6 +5,8 @@ import { createServer } from 'http';
 import pdfRoutes from './api/pdf-routes';
 import path from 'path';
 import { ValidationService } from './services/validation-service';
+import { setupWorker } from './services/queue-service';
+import { EnhancedPDFGenerator } from './services/pdf-generator';
 import { metricsMiddleware } from './metrics';
 
 // Load environment variables
@@ -109,6 +111,18 @@ try {
 } catch (error) {
   console.error('❌ Error mounting legacy routes:', error);
 }
+
+// Initialize Queue Worker
+const pdfWorkerGenerator = new EnhancedPDFGenerator(
+  path.join(__dirname, '../output'),
+  path.join(__dirname, '../cache'),
+  path.join(__dirname, '../temp')
+);
+pdfWorkerGenerator.initialize().then(() => {
+  setupWorker(pdfWorkerGenerator).then(() => {
+    console.log('✅ BullMQ Worker started');
+  });
+}).catch(console.error);
 
 // Additional endpoints for admin panel compatibility
 const validationService = new ValidationService();

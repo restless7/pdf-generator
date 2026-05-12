@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual de Ventas Consultiva 2026 - APEX AI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+            --success: #10b981;
+            --accent: #0ea5e9;
+        }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            margin: 0; padding: 0; color: var(--gray-700); font-size: 13px; line-height: 1.6; 
+        }
+        .page { width: 210mm; margin: 0 auto; background: white; }
+        .cover { 
+            height: 297mm; 
+            background: linear-gradient(135deg, var(--gray-900) 0%, #064e3b 50%, #047857 100%); 
+            color: white; display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; text-align: center; padding: 60px 50px; position: relative; 
+            overflow: hidden; page-break-after: always; 
+        }
+        .cover::before {
+            content: ''; position: absolute; top: -10%; right: -10%; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%); border-radius: 50%;
+        }
+        .badge { 
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 28px; border-radius: 40px; font-size: 12px; font-weight: 700; 
+            letter-spacing: 3px; text-transform: uppercase; margin-bottom: 50px; color: var(--success);
+        }
+        .title { font-size: 44px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; max-width: 700px; }
+        .subtitle { font-size: 20px; font-weight: 400; opacity: 0.9; margin-bottom: 60px; max-width: 550px; }
+        .edition-info { font-size: 14px; background: rgba(0,0,0,0.3); padding: 15px 30px; border-radius: 8px; border-top: 2px solid var(--success); }
+        
+        .content-page { padding: 35mm 20mm 20mm; position: relative; min-height: 297mm; page-break-before: always; }
+        .page-header { 
+            position: absolute; top: 15mm; left: 20mm; right: 20mm; 
+            border-bottom: 1px solid var(--gray-200); padding-bottom: 15px; display: flex; 
+            justify-content: space-between; align-items: center; color: var(--gray-400); 
+            font-weight: 600; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+        }
+        
+        .section { margin-bottom: 40px; page-break-inside: avoid; }
+        .section-title { 
+            font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 20px; 
+            display: flex; align-items: center; gap: 12px; 
+        }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: var(--gray-100); }
+        
+        .card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 22px; margin-bottom: 18px; }
+        .highlight-box { background: #eff6ff; border-left: 6px solid var(--success); padding: 25px; border-radius: 4px; margin-bottom: 25px; }
+        
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 11px; }
+        .data-table th { background: var(--gray-900); color: white; padding: 14px 10px; text-align: left; }
+        .data-table td { padding: 12px 10px; border: 1px solid var(--gray-200); vertical-align: top; }
+        .data-table tr:nth-child(even) { background: #fcfdfe; }
+        
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+        .stat-card { text-align: center; background: white; border: 1px solid var(--gray-200); padding: 15px; border-radius: 12px; }
+        .stat-val { font-size: 22px; font-weight: 800; color: var(--success); display: block; }
+        .stat-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-500); }
+
+        .process-flow { display: flex; flex-direction: column; gap: 12px; }
+        .process-step { display: flex; align-items: flex-start; gap: 15px; }
+        .step-num { 
+            min-width: 32px; height: 32px; background: var(--gray-900); color: white; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            font-weight: 800; font-size: 14px; 
+        }
+        .step-content { padding-top: 5px; }
+        .step-title { font-weight: 800; color: var(--gray-900); font-size: 14px; margin-bottom: 4px; }
+        
+        .script-container { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin-top: 25px; }
+        .script-quote { font-style: italic; font-size: 15px; color: var(--gray-700); line-height: 1.8; position: relative; }
+        
+        .mexico-tag { 
+            display: inline-block; background: #fce7f3; color: #be185d; 
+            padding: 4px 12px; border-radius: 4px; font-weight: 700; font-size: 10px; 
+            margin-bottom: 10px; text-transform: uppercase;
+        }
+
+        footer { margin-top: 60px; text-align: center; font-size: 10px; color: var(--gray-400); border-top: 1px solid var(--gray-100); padding-top: 30px; padding-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- PORTADA 2026.2 MEXICO -->
+        <div class="cover">
+            <div class="badge">AGENTIC AI REVOLUTION — 2026</div>
+            <div class="title">Manual de Ventas Consultiva: Agentes de IA Generativa Autónomos</div>
+            <div class="subtitle">Estrategias de Cierre, Auditoría de Valor e Impacto en el Mercado Mexicano.</div>
+            <div class="edition-info">
+                <strong>Edición México</strong> — Abril 2026<br>
+                <span style="opacity: 0.7; font-size: 12px;">Versión 2026.2 | Confidencial — {{companyName}}</span>
+            </div>
+        </div>
+
+        <div class="content-page">
+            <div class="page-header">
+                <span>VENTA CONSULTIVA AGENTIC AI</span>
+                <span>PÁGINA 01 — CONFIDENCIAL</span>
+            </div>
+
+            <!-- 1. VISION -->
+            <div class="section">
+                <div class="section-title">1. Visión y Filosofía de Venta Consultiva</div>
+                <div class="mexico-tag">Contexto Mercado Nacional 2025-2026</div>
+                <div class="highlight-box">
+                    <p style="margin: 0; font-size: 15px; line-height: 1.7;">
+                        No vendemos software ni chatbots. Vendemos <strong>Eficiencia Operativa Transformadora</strong>, <strong>Escalabilidad Inmediata</strong> y <strong>Libertad Estratégica</strong>. Liberamos a las empresas mexicanas de la saturación operativa.
+                    </p>
+                </div>
+                <div class="grid-3">
+                    <div class="stat-card">
+                        <span class="stat-val">$54.4B</span>
+                        <span class="stat-lbl">USD E-COMMERCE</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-val">1,000+</span>
+                        <span class="stat-lbl">EMPRESAS FINTECH</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-val">95M</span>
+                        <span class="stat-lbl">USUARIOS WHATSAPP</span>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <p><strong>Promesa APEX:</strong> Un Agente de IA Autónomo que piensa, razona y ejecuta integrado con WhatsApp Business, SPEI, CRM y ERP. Reducción operativa del <strong>70-85%</strong> en soporte de primer nivel y aumento de conversión de leads del <strong>25-40%</strong>.</p>
+                </div>
+            </div>
+
+            <!-- 2. DIFERENCIA AGENTIC -->
+            <div class="section">
+                <div class="section-title">2. La Diferencia Agentic 2026</div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Aspecto</th>
+                            <th style="width: 35%;">Chatbot Tradicional (2020-2024)</th>
+                            <th style="width: 45%;">Agente de IA Autónomo APEX (2026)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tecnología</strong></td>
+                            <td>Reglas rígidas y flujos predefinidos.</td>
+                            <td>IA Generativa + Memoria + Tool Use + Multi-agente.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comprensión</strong></td>
+                            <td>Frases exactas y keywords limitadas.</td>
+                            <td>Contexto completo, sarcasmo y español mexicano nativo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Capacidad de Acción</strong></td>
+                            <td>Solo responde y envía links genéricos.</td>
+                            <td>Ejecuta: agenda citas, consulta DB, procesa pagos y actualiza CRM.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memoria</strong></td>
+                            <td>Sin memoria entre llamadas.</td>
+                            <td>Memoria persistente por cliente y aprendizaje continuo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Integraciones</strong></td>
+                            <td>Limitadas / Plugins básicos.</td>
+                            <td>Nativa: WhatsApp API, SPEI, Salesforce, SAP, ERP.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cumplimiento</strong></td>
+                            <td>Básico / No local.</td>
+                            <td><strong>LFPDPPP</strong> + Guardrails de seguridad total.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 11px; margin-top: 10px;"><strong>Tendencia 2026:</strong> Según Gartner y PwC, para finales de 2026 más del 40 % de las aplicaciones empresariales incorporarán agentes autónomos. APEX ya está ahí.</p>
+            </div>
+
+            <!-- 3. ICP MEXICO -->
+            <div class="section">
+                <div class="section-title">3. Oportunidad en México + ICP</div>
+                <p>Sectores estratégicos para despliegue inmediato en el mercado mexicano:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Sector</th>
+                            <th style="width: 40%;">Dolor Principal</th>
+                            <th style="width: 35%;">Oportunidad APEX</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>E-commerce / Retail</strong></td>
+                            <td>Rastreo pedidos, devoluciones, carritos abandonados.</td>
+                            <td>Agente omnicanal 24/7 + Recuperación automática.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fintech / Banca</strong></td>
+                            <td>Registro clientes, soporte técnico, consultas de saldo.</td>
+                            <td>Agente compliant + Integración SPEI y core banking.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inmigración / Visas</strong></td>
+                            <td>Consultas masivas de estatus y agendamiento.</td>
+                            <td>Agente multilingüe + Agenda en tiempo real.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Servicios B2B</strong></td>
+                            <td>Soporte técnico, onboarding continuo.</td>
+                            <td>Agente que ejecuta workflows completos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="card" style="font-size: 11px;">
+                    <strong>Criterios de Calificación (BANT adaptado):</strong><br>
+                    • Budget: Presupuesto de soporte > $500,000 MXN.<br>
+                    • Authority: C-level o Head of Operations.<br>
+                    • Need: > 1,000 tickets/mes o > 40% leads perdidos.<br>
+                    • Timeline: MVP en < 7 días.
+                </div>
+            </div>
+
+            <div class="page-break" style="page-break-before: always;"></div>
+            
+            <div class="page-header">
+                <span>VENTA CONSULTIVA AGENTIC AI</span>
+                <span>PÁGINA 02 — CONFIDENCIAL</span>
+            </div>
+
+            <!-- 4. PILARES -->
+            <div class="section">
+                <div class="section-title">4. El Método de los 3 Pilares (Valor Cuantificable)</div>
+                <div class="pillar-grid" style="grid-template-columns: 1fr 1fr; display: grid; gap: 15px;">
+                    <div class="stat-card" style="text-align: left; padding: 20px;">
+                        <div class="pillar-title" style="font-weight: 800; color: var(--gray-900); margin-bottom: 10px;">Pilar 1: Latencia Cero</div>
+                        <p style="font-size: 11px;">Respuesta en < 800ms. En México, 5 minutos de espera = lead perdido.</p>
+                    </div>
+                    <div class="stat-card" style="text-align: left; padding: 20px;">
+                        <div class="pillar-title" style="font-weight: 800; color: var(--gray-900); margin-bottom: 10px;">Pilar 2: El Soporte Rentable</div>
+                        <p style="font-size: 11px;">Maneja el 80-95% de consultas. Ejemplo en CDMX: reducción del 78% en equipo nocturno y +34 pts NPS.</p>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 15px; background: #f0fdf4; border-color: #bbf7d0;">
+                    <p style="margin: 0; font-size: 12px; color: #166534;"><strong>Pilar 3 (Memoria) y Bonus Multi-agente:</strong> El Agente recuerda toda la historia del cliente y orquesta agentes de ventas, soporte y cumplimiento trabajando en simultáneo.</p>
+                </div>
+            </div>
+
+            <!-- 5. PROCESO -->
+            <div class="section">
+                <div class="section-title">5. Proceso de Venta Consultiva APEX</div>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Descubrimiento Táctico (15-20 min)</div>
+                            <p style="font-size: 11px;">Auditoría de tickets y detección de cuellos de botella mediante logs reales.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Auditoría de Valor</div>
+                            <p style="font-size: 11px;">Análisis profundo: "¿Cuánto habría resuelto APEX en estos 1,000 tickets?"</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Demo Teaser (< 24h)</div>
+                            <p style="font-size: 11px;">Creación de agente funcional con el logo y voz del cliente para impacto inmediato.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Implementación MVP</div>
+                            <p style="font-size: 11px;">Entrada en producción funcional en un máximo de <strong>7 días calendario</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. OBJECIONES -->
+            <div class="section">
+                <div class="section-title">6. Manejo de Objeciones (Handling 2026)</div>
+                <div class="card" style="border-left: 4px solid var(--success);">
+                    <p><strong>"Es muy caro"</strong> → Un lead perdido cuesta entre $150,000-$350,000 MXN en B2B corporativo. El Agente se paga solo en < 45 días.</p>
+                    <p><strong>"Ya tengo un bot de WhatsApp"</strong> → ¿Su bot actual agenda citas en su calendario o procesa devoluciones? Nosotros somos ejecutores autónomos, no contestadoras.</p>
+                    <p><strong>"Datos y cumplimiento"</strong> → Cumplimos 100% LFPDPPP. Auditoría INAI-ready y trazabilidad completa.</p>
+                </div>
+            </div>
+
+            <!-- 7. SCRIPT -->
+            <div class="section">
+                <div class="section-title">7. Script de Ventas y Discovery</div>
+                <div class="script-container">
+                    <div class="script-quote">
+                        "Ayudamos a empresas como la tuya en México a automatizar el 90% del soporte con Agentes Autónomos. En 2025, México movió más de 1.1 billones de MXN en e-commerce y muchos los perdieron por demora. ¿Dedicamos 5 minutos a recuperar esos leads?"
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding-left: 10px;">
+                    <p style="font-size: 11px; font-weight: 700; margin-bottom: 5px;">Preguntas de calificación clave:</p>
+                    <ul style="font-size: 11px; margin-top: 5px;">
+                        <li>¿Cuántos tickets al mes reciben por WhatsApp?</li>
+                        <li>¿Cuánto cuesta un lead que abandona el chat por demora?</li>
+                        <li>¿Qué CRM (Salesforce) o Bases de datos usan hoy?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 8. FINAL -->
+            <div class="section">
+                <div class="section-title">8. Próximos Pasos Proactivos</div>
+                <div class="grid-3">
+                    <div class="card" style="text-align: center; background: var(--success); color: white; border: none;">
+                        <strong>1. AGENDAR DEMO</strong><br><span style="font-size: 10px;">En < 72 horas</span>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <strong>2. LOG AUDIT</strong><br><span style="font-size: 10px;">Análisis de valor gratuito</span>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <strong>3. LANZAMIENTO MVP</strong><br><span style="font-size: 10px;">En 7 días o menos</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                © 2026 APEX AI SOLUTIONS — Todos los derechos reservados.<br>
+                Confidencial. Prohibida su reproducción o distribución sin autorización.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+{
+  "documentTitle": "ICE Colombia — Software Modules & Infrastructure",
+  "subtitle": "Enterprise Platform Technical Brief for Investor Review",
+  "version": "2.0",
+  "effectiveDate": "April 2026",
+  "confidentialityNotice": "CONFIDENTIAL — TECHNICAL BRIEF",
+  "companyInfo": {
+    "name": "Apex AI Solutions LLC",
+    "website": "apexaisolutions.dev",
+    "supportEmail": "support@apexaisolutions.dev"
+  },
+  "branding": {
+    "primaryColor": "#4338ca",
+    "secondaryColor": "#1e1b4b",
+    "accentColor": "#6366f1"
+  },
+  "parts": [
+    {
+      "partNumber": "I",
+      "partTitle": "Platform Overview",
+      "sections": [
+        {
+          "sectionNumber": "01",
+          "title": "System Architecture",
+          "content": "<p>ICE Colombia is a monolithic Next.js 15 application with a modular internal architecture. The platform processes the entire business lifecycle — from lead acquisition to student enrollment, from visa automation to payroll disbursement.</p><h3>Architecture Stack</h3>",
+          "tables": [
+            {
+              "headers": ["Layer", "Technology", "Version", "Purpose"],
+              "rows": [
+                ["Frontend", "Next.js (App Router)", "15.x", "React framework with SSR/SSG"],
+                ["Language", "TypeScript", "5.x", "Type-safe development"],
+                ["Styling", "TailwindCSS", "3.x", "Utility-first CSS"],
+                ["Backend", "Next.js API Routes", "15.x", "50+ REST API endpoints"],
+                ["ORM", "Prisma", "6.x", "60+ models with full relational integrity"],
+                ["Database", "PostgreSQL", "14+", "Primary data store"],
+                ["Queue", "BullMQ", "5.x", "Job queue for automation tasks"],
+                ["Cache/Session", "Redis", "6+", "Caching and queue backend"],
+                ["Automation", "Playwright", "1.x", "Visa portal headless automation"],
+                ["File Storage", "MinIO", "Latest", "S3-compatible document storage"],
+                ["Secrets", "HashiCorp Vault", "Latest", "Encrypted credential management"],
+                ["Email", "Resend / Nodemailer", "Latest", "Transactional email delivery"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Platform Scale",
+            "content": "80,000+ lines of production TypeScript · 60+ database models · 50+ API namespaces · 17 portal modules · 8-tier RBAC · 15+ enums · 100+ indexed database fields · 80+ relations"
+          }
+        },
+        {
+          "sectionNumber": "02",
+          "title": "Role-Based Access Control (RBAC)",
+          "content": "<p>The platform enforces fine-grained access control through 8 system roles, enabling secure multi-role, multi-location franchise operations.</p>",
+          "tables": [
+            {
+              "headers": ["Role", "Access Scope"],
+              "rows": [
+                ["SUPER_ADMIN", "Full system access — all modules, all data, system configuration"],
+                ["ADMIN", "Operations management — all modules except system config"],
+                ["SUPERVISOR", "Agent management, lead oversight, QA review"],
+                ["TEAM_LEAD", "Agent capabilities + mentoring access"],
+                ["AGENT", "Assigned leads, tasks, client communication"],
+                ["ACCOUNTANT", "Invoices, payments, financial reports, daily closures"],
+                ["MARKETING", "Campaigns, analytics, lead source management"],
+                ["STUDENT", "Student Portal only — self-service document upload, progress tracking"]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "partNumber": "II",
+      "partTitle": "Revenue Engine — CRM & Lead Management",
+      "sections": [
+        {
+          "sectionNumber": "03",
+          "title": "CRM & Lead Pipeline",
+          "content": "<p>The CRM module manages the entire lead lifecycle from initial capture to conversion. It includes AI-powered scoring, automated assignment, ETL ingestion from multiple channels, and a structured follow-up cadence engine.</p>",
+          "tables": [
+            {
+              "headers": ["Module", "Portal Route", "API Namespace", "Key Capability"],
+              "rows": [
+                ["Lead Dashboard", "/portal/leads", "/api/leads", "Kanban pipeline (6 stages), drag-and-drop stage management"],
+                ["Lead Scoring Engine", "—", "/api/scoring", "6-component weighted AI scoring (0–100) with conversion probability"],
+                ["Lead Assignment", "/portal/assignments", "/api/routing", "Auto round-robin, skill-based routing, manual override"],
+                ["ETL Ingestion", "—", "/api/datasync", "Batch import from spreadsheets, API webhooks, deduplication"],
+                ["Analytics", "/portal/analytics", "/api/analytics", "Conversion funnels, source attribution, cohort analysis"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Data Models",
+            "content": "<code>Lead</code>, <code>LeadScoreHistory</code>, <code>LeadUpdateBackup</code>, <code>LeadEmbedding</code>, <code>Event</code>, <code>ContactLog</code>"
+          }
+        },
+        {
+          "sectionNumber": "04",
+          "title": "AI Lead Scoring Algorithm",
+          "content": "<p>Each lead receives an automated score from 0 to 100, driving prioritization and agent allocation.</p>",
+          "tables": [
+            {
+              "headers": ["Scoring Component", "Weight", "Description"],
+              "rows": [
+                ["Fit", "25%", "Program compatibility, age, country, eligibility"],
+                ["Intent", "25%", "Program interest indicated, budget signals"],
+                ["Engagement", "20%", "Email opens, replies, calls answered, events attended"],
+                ["Source Quality", "10%", "Historical conversion rate of the source channel"],
+                ["Recency", "10%", "Time since last contact (more recent = higher)"],
+                ["Agent Performance", "10%", "Assigned agent's historical conversion rate"]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "partNumber": "III",
+      "partTitle": "Operations Platform — Visa & Student Lifecycle",
+      "sections": [
+        {
+          "sectionNumber": "05",
+          "title": "Visa Rescheduler Bot (Core IP)",
+          "content": "<p>The proprietary Visa Rescheduler Bot is the <strong>core differentiating technology</strong> of the ICE ecosystem. No competitor has automated this process.</p><h3>How It Works</h3><ol><li><strong>Credential Intake</strong> — Agent registers client credentials securely via HashiCorp Vault encryption</li><li><strong>Job Scheduling</strong> — BullMQ creates concurrent monitoring jobs with retry logic</li><li><strong>Portal Automation</strong> — Playwright headless browser logs into US consulate appointment portals</li><li><strong>Date Monitoring</strong> — System monitors for earlier available appointment slots 24/7</li><li><strong>Auto-Reschedule</strong> — When a better slot is found, the system automatically reschedules</li><li><strong>Notification</strong> — Client receives Email/SMS confirmation of the new appointment</li></ol>",
+          "tables": [
+            {
+              "headers": ["Component", "API Namespace", "Capability"],
+              "rows": [
+                ["Operations Dashboard", "/api/applicants", "Live job monitoring, queue status, success metrics"],
+                ["Credential Vault", "/api/ice", "HashiCorp Vault integration for encrypted storage"],
+                ["Job Scheduler", "/api/ice", "BullMQ-powered concurrent jobs with retry logic"],
+                ["Browser Engine", "Worker processes", "Playwright headless automation of consulate portals"],
+                ["Notification Engine", "/api/notifications", "Email/SMS alerts on successful reschedules"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Competitive Moat",
+            "content": "This is the proprietary technology that no competitor has. It monitors consulate appointment portals 24/7 and automatically reschedules clients to earlier available dates. The combination of encrypted credential management, headless browser automation, and intelligent retry logic creates a significant barrier to replication."
+          }
+        },
+        {
+          "sectionNumber": "06",
+          "title": "Student Lifecycle Management",
+          "content": "<p>The Student module manages the complete lifecycle from lead conversion through enrollment, document collection, payment processing, and program completion.</p>",
+          "tables": [
+            {
+              "headers": ["Module", "Portal Route", "Key Capability"],
+              "rows": [
+                ["Student Registry", "/portal/students", "Full profiles with enrollment, payments, documents"],
+                ["Student Portal", "/student-portal", "Self-service: document upload, progress tracking, GPA view"],
+                ["Document Workflow", "/portal/students/[id]", "PENDING → REVIEW → APPROVED pipeline with MinIO storage"],
+                ["Enrollment Engine", "/portal/enrollments", "Multi-program enrollment with completion tracking"],
+                ["Program Management", "/portal/programs", "Work & Travel, Au Pair, University — with editions"],
+                ["Payment System", "/students/[id]/payments", "Multi-method (Cash, Transfer, POS, Card) with installments"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Data Models",
+            "content": "<code>Student</code>, <code>StudentDocument</code>, <code>Enrollment</code>, <code>Program</code>, <code>ProgramEdition</code>, <code>University</code>, <code>Payment</code>, <code>PaymentInstallment</code>"
+          }
+        }
+      ]
+    },
+    {
+      "partNumber": "IV",
+      "partTitle": "Enterprise Operations — Finance, HR & Admin",
+      "sections": [
+        {
+          "sectionNumber": "07",
+          "title": "Universal Cashflow & Accounting System",
+          "content": "<p>The financial module provides a <strong>unified general ledger</strong> that automatically synchronizes with all revenue and expense channels across the platform.</p><h3>Dual-Write Engine</h3><p>Every student payment automatically creates an accounting transaction. Every payroll disbursement automatically registers as an expense. This ensures real-time financial visibility without manual data entry.</p>",
+          "tables": [
+            {
+              "headers": ["Module", "Portal Route", "Key Capability"],
+              "rows": [
+                ["Accounting Ledger", "/portal/accounting", "Universal Income/Expense ledger with TRM exchange rates"],
+                ["Payment Management", "/students/[id]/payments", "Multi-method payments with installment tracking"],
+                ["Invoice System", "/api/finance", "Auto-invoicing linked to programs and students"],
+                ["Daily Closure", "/api/accounting/daily-closure", "POS-grade end-of-day reconciliation"],
+                ["Dual-Write Engine", "Built into APIs", "Every payment auto-creates accounting transaction"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Key Innovation",
+            "content": "The dual-write system ensures that payment activity from the Student module, Payroll system, and general accounting are all unified in a single cashflow ledger. This enables instant daily closure and real-time financial visibility across all franchise locations."
+          }
+        },
+        {
+          "sectionNumber": "08",
+          "title": "Enterprise HR & Workforce System",
+          "content": "<p>The HR module provides two integrated interfaces: the <strong>Employee Portal</strong> (self-service for each agent) and the <strong>Workforce Command Center</strong> (admin dashboard for supervisors).</p><h3>Automated Payroll Pipeline</h3><ol><li>Agent status changes (Active, Lunch, Break, Offline) are continuously logged into <code>AgentStatusLog</code></li><li>The payroll API aggregates these logs into billable hours for any period</li><li>Pay slips are auto-calculated using the agent's hourly rate</li><li>When payroll is approved and marked as PAID, it dual-writes as an <code>EXPENSE</code> in the accounting ledger</li></ol>",
+          "tables": [
+            {
+              "headers": ["Module", "Portal Route", "Key Capability"],
+              "rows": [
+                ["Employee Portal", "/portal/hr-hub", "3-tab view: Overview, Payroll & Commissions, Daily Timeline"],
+                ["Payroll System", "/api/hr/payroll", "Auto hour aggregation from status logs → payroll generation"],
+                ["Workforce Command Center", "/portal/agents", "Admin KPIs, department charts, 14-day attendance heatmap"],
+                ["Commission Tracking", "/api/hr/commissions", "Per-agent commission history with status tracking"],
+                ["Leave Management", "/api/hr/leaves", "Vacation/sick leave requests with approval workflow"],
+                ["Real-Time Monitoring", "/portal/my-workspace", "Live agent status with timeline visualization"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Key Innovation",
+            "content": "Agent status changes are continuously logged. The payroll system automatically reads these logs to compute worked hours, generates pay slips, and when approved, creates an EXPENSE in the accounting ledger — a fully automated payroll-to-ledger pipeline with zero manual data entry."
+          }
+        },
+        {
+          "sectionNumber": "09",
+          "title": "Administrative & Support Modules",
+          "content": "<p>Additional enterprise modules that support the core business operations.</p>",
+          "tables": [
+            {
+              "headers": ["Module", "Portal Route", "Key Capability"],
+              "rows": [
+                ["User Management", "/admin/users", "Role assignment (8 levels), permission management"],
+                ["IT Support", "/portal/it-support", "Internal helpdesk ticketing system with SLA tracking"],
+                ["Knowledge Base", "/portal/knowledge-base", "AI-powered document embeddings for agent assistance"],
+                ["Company Intranet", "/portal/hr-admin", "Memos, announcements with read receipts"],
+                ["AI Coaching", "/api/coaching", "Performance-based coaching recommendations"],
+                ["Workflow Engine", "/workflow", "Configurable workflow designer and monitoring"]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "partNumber": "V",
+      "partTitle": "Infrastructure & Franchise Readiness",
+      "sections": [
+        {
+          "sectionNumber": "10",
+          "title": "Infrastructure & DevOps",
+          "content": "<p>The platform is self-hosted with enterprise-grade infrastructure that provides full control, zero vendor lock-in, and production-ready reliability.</p>",
+          "tables": [
+            {
+              "headers": ["Layer", "Technology", "Purpose"],
+              "rows": [
+                ["Hosting", "Self-hosted Linux VPS", "Full control, no vendor lock-in"],
+                ["Reverse Proxy", "Cloudflare Tunnels", "Zero-trust access, DDoS protection"],
+                ["Process Manager", "PM2", "Auto-restart, clustering, log management"],
+                ["Database", "PostgreSQL 14+", "60+ tables, indexed, production-grade"],
+                ["Cache/Queue", "Redis 6+", "Session cache, BullMQ job backend"],
+                ["ORM", "Prisma 6", "Type-safe DB access, migration management"],
+                ["Secret Management", "HashiCorp Vault", "Encrypted credential storage"],
+                ["File Storage", "MinIO", "S3-compatible document storage"],
+                ["Email", "Resend / Nodemailer", "Transactional email delivery"],
+                ["Monitoring", "PM2 + Custom Dashboards", "Health checks, error tracking"]
+              ]
+            }
+          ]
+        },
+        {
+          "sectionNumber": "11",
+          "title": "Franchise Replication Readiness",
+          "content": "<p>The ICE platform is designed from the ground up for franchise replication. Each component required for a new location launch has been either completed or is in active development.</p>",
+          "tables": [
+            {
+              "headers": ["Component", "Status", "Notes"],
+              "rows": [
+                ["Multi-tenant database architecture", "✅ Ready", "Location-isolated data with shared schema"],
+                ["Operations Manual (15 chapters)", "✅ Complete", "Comprehensive franchise replication guide"],
+                ["Training Curriculum (24–39h by role)", "✅ Certified", "Agent, Supervisor, and Admin paths"],
+                ["Branded portal with custom domain support", "✅ Supported", "White-label ready"],
+                ["RBAC per franchise location", "✅ Implemented", "8-tier role hierarchy"],
+                ["Financial isolation per franchise", "✅ Architectured", "Ledger partitioning by location"],
+                ["Automated deployment scripts", "🔄 In Progress", "Docker + CI/CD pipeline"],
+                ["Mobile Application (React Native)", "📋 Planned", "Agent and student apps"],
+                ["AI Chatbot Integration", "📋 Planned", "Intelligent client support"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Investor Summary",
+            "content": "ICE Colombia is not a single application — it is a <strong>franchise operating system</strong> comprising 6 business domains, 30+ interconnected modules, 60+ database models, 50+ API namespaces, 8-tier RBAC, proprietary visa automation, automated payroll-to-ledger pipeline, a 15-chapter operations manual, and a certified training program. <strong>The platform is production-grade, revenue-generating, and franchise-ready today.</strong>"
+          }
+        }
+      ]
+    }
+  ]
+}

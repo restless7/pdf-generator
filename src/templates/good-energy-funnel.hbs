@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{funnelTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --solar-yellow: #fbbf24;
+            --solar-orange: #f59e0b;
+            --energy-green: #10b981;
+            --deep-green: #047857;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --border-light: #e5e7eb;
+            --bg-white: #ffffff;
+            --bg-light: #f9fafb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            height: 277mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--energy-green) 0%, var(--deep-green) 100%);
+            color: white;
+            padding: 40px;
+            page-break-after: always;
+        }
+        
+        .cover-icon {
+            font-size: 72px;
+            margin-bottom: 30px;
+        }
+        
+        .cover-title {
+            font-size: 42pt;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .cover-subtitle {
+            font-size: 18pt;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cover-meta {
+            margin-top: 60px;
+            font-size: 12pt;
+            opacity: 0.8;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            background: var(--energy-green);
+            color: white;
+            padding: 20px 30px;
+            margin: 40px -15mm 30px -15mm;
+            font-size: 24pt;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 32px;
+        }
+        
+        .section-content {
+            margin: 30px 0;
+        }
+        
+        h1 {
+            font-size: 28pt;
+            font-weight: 700;
+            color: var(--deep-green);
+            margin: 30px 0 20px 0;
+            border-bottom: 3px solid var(--solar-yellow);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 20pt;
+            font-weight: 600;
+            color: var(--energy-green);
+            margin: 25px 0 15px 0;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 20px 0 10px 0;
+        }
+        
+        p {
+            margin: 12px 0;
+            text-align: justify;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card-highlight {
+            border-left: 5px solid var(--solar-yellow);
+            background: linear-gradient(to right, #fffbeb 0%, white 100%);
+        }
+        
+        .card-green {
+            border-left: 5px solid var(--energy-green);
+            background: linear-gradient(to right, #ecfdf5 0%, white 100%);
+        }
+        
+        /* Stage Cards */
+        .stage-card {
+            background: white;
+            border: 2px solid var(--energy-green);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .stage-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-light);
+        }
+        
+        .stage-number {
+            width: 45px;
+            height: 45px;
+            background: var(--energy-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20pt;
+            font-weight: 700;
+        }
+        
+        .stage-title {
+            font-size: 18pt;
+            font-weight: 700;
+            color: var(--deep-green);
+            margin: 0;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+        
+        .emoji-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .emoji-list li::before {
+            content: "☀️ ";
+            margin-right: 8px;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        
+        th {
+            background: var(--energy-green);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid var(--border-light);
+        }
+        
+        tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+        
+        /* Message Schedule */
+        .message-schedule {
+            margin: 20px 0;
+        }
+        
+        .message-day {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 15px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+        
+        .day-label {
+            background: var(--solar-yellow);
+            color: var(--text-dark);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: 700;
+            min-width: 90px;
+            text-align: center;
+        }
+        
+        .message-content {
+            flex: 1;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 9pt;
+            font-weight: 600;
+            margin: 4px;
+        }
+        
+        .badge-yellow {
+            background: var(--solar-yellow);
+            color: var(--text-dark);
+        }
+        
+        .badge-green {
+            background: var(--energy-green);
+            color: white;
+        }
+        
+        .badge-outline {
+            border: 2px solid var(--energy-green);
+            color: var(--energy-green);
+            background: transparent;
+        }
+        
+        /* Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .metric-box {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .metric-label {
+            font-size: 9pt;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        
+        .metric-value {
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--energy-green);
+        }
+        
+        /* Tech Stack */
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .tech-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            font-size: 10pt;
+        }
+        
+        .tech-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .tech-value {
+            color: var(--text-muted);
+        }
+        
+        /* Page Breaks */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .avoid-break {
+            page-break-inside: avoid;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        
+        /* Webinar Structure */
+        .webinar-structure {
+            margin: 20px 0;
+        }
+        
+        .webinar-step {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 15px;
+            border-left: 4px solid var(--solar-yellow);
+            background: var(--bg-light);
+            page-break-inside: avoid;
+        }
+        
+        .step-number {
+            font-size: 18pt;
+            font-weight: 700;
+            color: var(--solar-orange);
+            min-width: 30px;
+        }
+        
+        /* Footer */
+        .document-footer {
+            margin-top: 60px;
+            padding: 30px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 10pt;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+        <div class="cover-icon">☀️</div>
+        <h1 class="cover-title">{{funnelTitle}}</h1>
+        <p class="cover-subtitle">{{funnelSubtitle}}</p>
+        <div class="cover-meta">
+            <p><strong>Proyecto:</strong> {{projectName}}</p>
+            <p><strong>Fecha:</strong> {{date}}</p>
+            <p><strong>Versión:</strong> {{version}}</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- VISION GENERAL -->
+        <div class="section-header">
+            <span class="section-icon">🧭</span>
+            <span>Visión General del Funnel</span>
+        </div>
+        
+        <div class="card card-highlight">
+            <h2>Objetivo Principal</h2>
+            <p>{{objetivo}}</p>
+        </div>
+
+        <h2>Etapas del Proceso</h2>
+        <ol>
+            {{#each etapas}}
+            <li><strong>{{this}}</strong></li>
+            {{/each}}
+        </ol>
+
+        <div class="card card-green">
+            <p><strong>Meta final:</strong> {{metaFinal}}</p>
+        </div>
+
+        <!-- STAGES -->
+        {{#each stages}}
+        {{#if @first}}
+        <div class="page-break"></div>
+        {{/if}}
+        <div class="section-header">
+            <span class="section-icon">{{icon}}</span>
+            <span>{{title}}</span>
+        </div>
+
+        <div class="stage-card">
+            <div class="stage-header">
+                <div class="stage-number">{{number}}</div>
+                <h2 class="stage-title">{{stageName}}</h2>
+            </div>
+            
+            <div class="section-content">
+                <h3>Objetivo</h3>
+                <p>{{objetivo}}</p>
+
+                {{#if canales}}
+                <h3>Canales</h3>
+                <ul>
+                    {{#each canales}}
+                    <li><strong>{{name}}</strong> → {{description}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+
+                {{#if activosClave}}
+                <h3>Activos Clave</h3>
+                <ul>
+                    {{#each activosClave}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+
+                {{#if formato}}
+                <h3>Formato</h3>
+                <p>{{formato}}</p>
+                {{/if}}
+
+                {{#if nombreGrupo}}
+                <div class="card card-highlight">
+                    <p><strong>Nombre sugerido:</strong> {{nombreGrupo}}</p>
+                </div>
+                {{/if}}
+
+                {{#if secuenciaMensajes}}
+                <h3>Secuencia de Mensajes (Semana Tipo)</h3>
+                <div class="message-schedule">
+                    {{#each secuenciaMensajes}}
+                    <div class="message-day">
+                        <div class="day-label">{{dia}}</div>
+                        <div class="message-content">
+                            <p><strong>{{mensaje}}</strong></p>
+                            <p><em>Objetivo:</em> {{objetivo}}</p>
+                            <span class="badge badge-yellow">{{formato}}</span>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if frecuencia}}
+                <div class="card">
+                    <p><strong>Frecuencia:</strong> {{frecuencia}}</p>
+                    <p><strong>Duración:</strong> {{duracion}}</p>
+                </div>
+                {{/if}}
+
+                {{#if estructuraNarrativa}}
+                <h3>Estructura Narrativa</h3>
+                <div class="webinar-structure">
+                    {{#each estructuraNarrativa}}
+                    <div class="webinar-step">
+                        <span class="step-number">{{@index}}</span>
+                        <p>{{this}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if secuencia}}
+                <h3>Secuencia de Cierre</h3>
+                <ol>
+                    {{#each secuencia}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ol>
+                {{/if}}
+
+                {{#if acciones}}
+                <h3>Acciones</h3>
+                <ul class="emoji-list">
+                    {{#each acciones}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+
+                {{#if automatizacion}}
+                <div class="card card-green">
+                    <h3>Automatización Sugerida</h3>
+                    <ul>
+                        {{#each automatizacion}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                {{#if gestion}}
+                <div class="card">
+                    <h3>Gestión</h3>
+                    <ul>
+                        {{#each gestion}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                {{#if stack}}
+                <div class="card">
+                    <h3>Stack Recomendado</h3>
+                    <ul>
+                        {{#each stack}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+
+                {{#if formatos}}
+                <h3>Formatos de Contenido</h3>
+                <ul>
+                    {{#each formatos}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+
+        <!-- METRICAS -->
+        <div class="section-header">
+            <span class="section-icon">📈</span>
+            <span>Métricas y Optimización</span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>KPI</th>
+                    <th>Objetivo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each metricas}}
+                <tr>
+                    <td>{{kpi}}</td>
+                    <td><strong>{{objetivo}}</strong></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <div class="card card-highlight">
+            <h3>Optimización Continua</h3>
+            <ul>
+                {{#each optimizacion}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <!-- ECOSISTEMA TECNOLOGICO -->
+        <div class="section-header">
+            <span class="section-icon">🧠</span>
+            <span>Ecosistema Tecnológico</span>
+        </div>
+
+        <div class="tech-stack">
+            {{#each ecosistemaTecnologico}}
+            <div class="tech-item">
+                <span class="tech-label">{{fase}}</span>
+                <span class="tech-value">{{herramienta}}</span>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- CICLO ESTRATEGICO -->
+        <div class="section-header">
+            <span class="section-icon">📅</span>
+            <span>Ciclo Estratégico Mensual</span>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Semana</th>
+                    <th>Foco</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each cicloEstrategico}}
+                <tr>
+                    <td><strong>{{semana}}</strong></td>
+                    <td>{{foco}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <!-- RESULTADO -->
+        <div class="card card-green avoid-break">
+            <h2>Resultado Esperado</h2>
+            <p>{{resultadoEsperado}}</p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="document-footer">
+            <p>{{footerText}}</p>
+            <p><strong>{{companyName}}</strong></p>
+        </div>
+    </div>
+</body>
+</html>

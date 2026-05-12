@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta - {{proposalTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-blue: #2563eb;
+            --blue-dark: #1d4ed8;
+            --blue-light: #bfdbfe;
+            --blue-50: #eff6ff;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--white);
+            font-size: 14px;
+        }
+        .container { max-width: 210mm; margin: 0 auto; padding: 2rem; }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .proposal-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        .client-info {
+            font-size: 1.1em;
+            color: var(--gray-600);
+            margin-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        .section-title {
+            font-size: 1.4em;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--gray-300);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .service-item {
+            background: var(--blue-50);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        .service-title {
+            font-weight: bold;
+            color: var(--blue-dark);
+            margin-bottom: 8px;
+        }
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: 10px;
+        }
+        .timeline-item {
+            background: var(--gray-50);
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border: 1px solid var(--gray-300);
+        }
+        .total {
+            background: var(--primary-blue);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.9em;
+        }
+        @media print {
+            body { font-size: 12px; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="proposal-title">{{proposalTitle}}</div>
+            <div class="client-info">Para: {{clientName}}</div>
+            <div class="client-info">De: {{companyName}}</div>
+            <div class="client-info">Fecha: {{date}}</div>
+        </div>
+
+        {{#if executiveSummary}}
+        <div class="section">
+            <h2 class="section-title">Resumen Ejecutivo</h2>
+            <p>{{executiveSummary}}</p>
+        </div>
+        {{/if}}
+
+        {{#if services}}
+        <div class="section">
+            <h2 class="section-title">Servicios Propuestos</h2>
+            {{#each services}}
+            <div class="service-item">
+                <div class="service-title">{{this.title}}</div>
+                <p>{{this.description}}</p>
+                <p><strong>Duración:</strong> {{this.duration}}</p>
+                {{#if this.price}}
+                <div class="price">{{formatCurrency this.price 'EUR'}}</div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if timeline}}
+        <div class="section">
+            <h2 class="section-title">Cronograma</h2>
+            {{#each timeline}}
+            <div class="timeline-item">
+                <strong>{{this.phase}} - {{this.title}}</strong> ({{this.duration}})<br>
+                {{this.description}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if totalAmount}}
+        <div class="total">
+            INVERSIÓN TOTAL: {{formatCurrency totalAmount 'EUR'}}
+        </div>
+        {{/if}}
+
+        {{#if validUntil}}
+        <div class="section">
+            <p><strong>Válida hasta:</strong> {{validUntil}}</p>
+        </div>
+        {{/if}}
+
+        <div class="footer">
+            <p>Gracias por considerarnos para su proyecto</p>
+            <p>Generado con PlanMaestro - Sistema de Generación de PDFs v2.0</p>
+        </div>
+    </div>
+</body>
+</html>

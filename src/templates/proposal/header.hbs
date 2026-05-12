@@ -1,0 +1,21 @@
+<header class="proposal-header" style="
+    background: linear-gradient(135deg, var(--primary-emerald) 0%, var(--primary-emerald-dark) 100%);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h1 style="color: var(--white); margin: 0; font-size: 1.5rem;">{{companyName}}</h1>
+            <p style="margin: 0; opacity: 0.9; font-size: 0.9rem;">Propuesta Comercial Profesional</p>
+        </div>
+        <div style="text-align: right;">
+            <div style="font-size: 0.85rem; opacity: 0.9;">
+                <div>Fecha: {{formatDate currentDate}}</div>
+                <div>Propuesta #: {{proposalNumber}}</div>
+            </div>
+        </div>
+    </div>
+</header>

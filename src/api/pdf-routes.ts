@@ -2,6 +2,8 @@ import { Router, Request, Response } from 'express';
 import { EnhancedPDFGenerator, GenerationOptions } from '../services/pdf-generator';
 import { ValidationService } from '../services/validation-service';
 import { TEMPLATE_REGISTRY } from '../config/templates';
+import { pdfQueue } from '../services/queue-service';
+import { Job } from 'bullmq';
 import * as path from 'path';
 
 const router = Router();
@@ -29,13 +31,13 @@ router.post('/generate', async (req: Request, res: Response) => {
     validationService.validateTemplateOptions(options);
 
     // Generate PDF
-    const job = await pdfGenerator.generatePDF(options);
+    const bullJob = await pdfQueue.add('pdf', options);
 
     res.status(202).json({
       success: true,
-      jobId: job.id,
-      status: job.status,
-      message: 'PDF generation started',
+      jobId: bullJob.id,
+      status: 'pending',
+      message: 'PDF generation queued in BullMQ',
       estimatedTime: '30-60 seconds'
     });
 
@@ -121,6 +123,34 @@ router.post('/generate-sync', async (req: Request, res: Response) => {
 router.get('/jobs/:jobId', async (req: Request, res: Response) => {
   try {
     const { jobId } = req.params;
+    const bullJob = await Job.fromId(pdfQueue, jobId);
+    
+    // Check if it exists in BullMQ
+    if (bullJob) {
+      const state = await bullJob.getState();
+      const progress = bullJob.progress || 0;
+      
+      const response: any = {
+        success: true,
+        jobId: bullJob.id,
+        status: state === 'active' ? 'processing' : state === 'waiting' ? 'pending' : state,
+        progress: progress,
+        createdAt: bullJob.timestamp,
+        updatedAt: bullJob.finishedOn || new Date()
+      };
+
+      if (state === 'completed' && bullJob.returnvalue) {
+        response.result = bullJob.returnvalue;
+      }
+
+      if (state === 'failed') {
+        response.error = bullJob.failedReason;
+      }
+
+      return res.json(response);
+    }
+    
+    // Fallback to legacy local map
     const job = await pdfGenerator.getJob(jobId);
 
     if (!job) {

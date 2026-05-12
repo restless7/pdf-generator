@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{productName}} - Software Documentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --primary-blue: #0ea5e9;
+            --dark-blue: #0284c7;
+            --soft-blue: #e0f2fe;
+            --gray-900: #0f172a;
+            --gray-800: #1e293b;
+            --gray-700: #334155;
+            --gray-600: #475569;
+            --gray-500: #64748b;
+            --gray-400: #94a3b8;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --gray-50: #f8fafc;
+            --white: #ffffff;
+            --green: #10b981;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.65;
+            color: var(--gray-700);
+            background: var(--white);
+            font-size: 14px;
+        }
+        
+        .container { max-width: 210mm; margin: 0 auto; }
+        
+        /* Cover Page */
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--soft-blue) 0%, var(--white) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .cover-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 60px 48px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            max-width: 700px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 16px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 24px;
+        }
+        
+        .product-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        
+        .product-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            line-height: 1.3;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        
+        .cover-footer {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+        
+        /* Content Pages */
+        .page {
+            padding: 40px 48px;
+            min-height: calc(100vh - 80px);
+            page-break-before: always;
+        }
+        
+        .section {
+            margin-bottom: 32px;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 12px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            margin-top: 24px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 32px;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        /* Code blocks */
+        .code-block {
+            background: var(--gray-900);
+            color: var(--gray-100);
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            margin: 16px 0;
+            overflow-x: auto;
+            border: 1px solid var(--gray-800);
+        }
+        
+        .inline-code {
+            background: var(--gray-100);
+            color: var(--gray-800);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+        }
+        
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--soft-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .feature-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        /* Architecture diagram */
+        .arch-diagram {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .diagram-placeholder {
+            background: var(--white);
+            border: 2px dashed var(--gray-300);
+            border-radius: 8px;
+            padding: 40px 20px;
+            color: var(--gray-500);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        /* Table */
+        .config-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .config-table th,
+        .config-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .config-table th {
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 14px;
+        }
+        
+        .config-table td {
+            font-size: 13px;
+        }
+        
+        /* Status badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .badge-required { background: var(--red); color: white; }
+        .badge-optional { background: var(--gray-200); color: var(--gray-700); }
+        .badge-conditional { background: var(--yellow); color: white; }
+        
+        /* Call-out boxes */
+        .callout {
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid;
+        }
+        
+        .callout-info {
+            background: var(--soft-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        .callout-warning {
+            background: #fef3c7;
+            border-color: var(--yellow);
+        }
+        
+        .callout-danger {
+            background: #fee2e2;
+            border-color: var(--red);
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+        
+        /* Footer */
+        .page-footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 12px;
+        }
+        
+        /* Print styles */
+        @media print {
+            body { font-size: 12px; }
+            .page { padding: 32px 40px; }
+            .cover { height: auto; min-height: 100vh; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <div class="cover-content">
+                <div class="logo-placeholder">🤖</div>
+                <h1 class="product-title">{{productName}}</h1>
+                <p class="product-subtitle">{{description}}</p>
+                <div class="version-badge">{{version}}</div>
+                <div class="intro-text">{{tagline}}</div>
+            </div>
+            <div class="cover-footer">
+                Generated with APEX PDF Generator • {{generationDate}}
+            </div>
+        </div>
+
+        <!-- Overview -->
+        <div class="page">
+            <h1>🌟 Product Overview</h1>
+            <p class="intro-text">{{overview.description}}</p>
+            
+            <h2>Target Users</h2>
+            <ul>
+                {{#each overview.targetUsers}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            
+            <h2>Core Outcomes</h2>
+            <ul>
+                {{#each overview.coreOutcomes}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <!-- Key Features -->
+        <div class="page">
+            <h1>🚀 Key Features</h1>
+            
+            <div class="features-grid">
+                {{#each features}}
+                <div class="feature-card">
+                    <div class="feature-icon">{{this.icon}}</div>
+                    <h3 class="feature-title">{{this.title}}</h3>
+                    <p class="feature-description">{{this.description}}</p>
+                    {{#if this.highlights}}
+                    <ul style="margin-top: 12px;">
+                        {{#each this.highlights}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="page">
+            <h1>🏗️ System Architecture</h1>
+            
+            <h2>High-Level Components</h2>
+            <ul>
+                {{#each architecture.components}}
+                <li><strong>{{this.name}}:</strong> {{this.description}}</li>
+                {{/each}}
+            </ul>
+            
+            <div class="arch-diagram">
+                <h3>Architecture Diagram</h3>
+                <div class="diagram-placeholder">
+                    {{architecture.diagramPlaceholder}}
+                </div>
+            </div>
+            
+            <h2>Tech Stack</h2>
+            <ul>
+                {{#each architecture.techStack}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="page">
+            <h1>🚀 Quick Start</h1>
+            
+            <h2>Prerequisites</h2>
+            <ul>
+                {{#each quickStart.prerequisites}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            
+            <h2>Installation</h2>
+            {{#each quickStart.installation}}
+            <div class="code-block">{{this}}</div>
+            {{/each}}
+            
+            <div class="callout callout-info">
+                <div class="callout-title">💡 Getting Started Tip</div>
+                <p>{{quickStart.tip}}</p>
+            </div>
+        </div>
+
+        <!-- Configuration -->
+        <div class="page">
+            <h1>🔧 Configuration</h1>
+            
+            <h2>Environment Variables</h2>
+            <table class="config-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Description</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each configuration.environmentVariables}}
+                    <tr>
+                        <td><code>{{this.name}}</code></td>
+                        <td>{{this.description}}</td>
+                        <td>
+                            {{#if this.required}}
+                            <span class="badge badge-required">Required</span>
+                            {{else}}
+                            <span class="badge badge-optional">Optional</span>
+                            {{/if}}
+                        </td>
+                        <td>{{this.default}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            
+            <h2>Configuration Example</h2>
+            <div class="code-block">{{configuration.exampleConfig}}</div>
+        </div>
+
+        <!-- API Usage -->
+        <div class="page">
+            <h1>📡 API Usage</h1>
+            
+            {{#each api.endpoints}}
+            <div class="section">
+                <h2>{{this.title}}</h2>
+                <p>{{this.description}}</p>
+                
+                {{#each this.examples}}
+                <h4>{{this.title}}</h4>
+                <div class="code-block">{{this.code}}</div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Monitoring & Troubleshooting -->
+        <div class="page">
+            <h1>🔍 Monitoring & Troubleshooting</h1>
+            
+            <h2>Health Checks</h2>
+            <ul>
+                {{#each monitoring.healthChecks}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            
+            <h2>Common Issues</h2>
+            {{#each troubleshooting.commonIssues}}
+            <div class="callout callout-warning">
+                <div class="callout-title">{{this.issue}}</div>
+                <p><strong>Cause:</strong> {{this.cause}}</p>
+                <p><strong>Solution:</strong> {{this.solution}}</p>
+                {{#if this.code}}
+                <div class="code-block">{{this.code}}</div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Deployment -->
+        <div class="page">
+            <h1>🚀 Deployment</h1>
+            
+            <h2>Production Deployment</h2>
+            {{#each deployment.production}}
+            <h3>{{this.method}}</h3>
+            <p>{{this.description}}</p>
+            <div class="code-block">{{this.commands}}</div>
+            {{/each}}
+            
+            <h2>Infrastructure Requirements</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Minimum Requirements</h3>
+                    <ul>
+                        {{#each deployment.requirements.minimum}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Recommended Production</h3>
+                    <ul>
+                        {{#each deployment.requirements.recommended}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support & Licensing -->
+        <div class="page">
+            <h1>📞 Support & Licensing</h1>
+            
+            <h2>Getting Help</h2>
+            <ul>
+                {{#each support.gettingHelp}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            
+            <h2>Development Setup</h2>
+            {{#each support.developmentSetup}}
+            <div class="code-block">{{this}}</div>
+            {{/each}}
+            
+            <div class="callout callout-danger">
+                <div class="callout-title">📄 License - {{support.licensingInfo.type}}</div>
+                <p><strong>{{support.licensingInfo.description}}</strong></p>
+                <p><strong>© {{support.licensingInfo.owner}} {{support.licensingInfo.year}}</strong></p>
+                <p>You may not copy, modify, distribute, or use this software without prior written consent.</p>
+                
+                <h3 style="margin-top: 16px;">Commercial Usage Options:</h3>
+                <ul>
+                    {{#each support.licensingInfo.options}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                
+                <p style="margin-top: 12px;"><strong>For licensing inquiries, contact:</strong> {{support.licensingInfo.contact}}</p>
+            </div>
+            
+            <div class="page-footer">
+                <p><strong>{{productName}}</strong> {{version}}</p>
+                <p>© {{support.licensingInfo.owner}} {{support.licensingInfo.year}} - Proprietary Software</p>
+                <p>Generated on {{generationDate}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

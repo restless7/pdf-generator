@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura {{invoiceNumber}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-red: #dc2626;
+            --red-dark: #991b1b;
+            --red-light: #fecaca;
+            --red-50: #fef2f2;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--white);
+            font-size: 14px;
+        }
+        .container { max-width: 210mm; margin: 0 auto; padding: 2rem; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .company-info h1 {
+            color: var(--primary-red);
+            margin: 0 0 5px 0;
+            font-size: 2em;
+        }
+        .invoice-details {
+            text-align: right;
+        }
+        .invoice-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-red);
+        }
+        .billing-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .bill-to, .company-details {
+            width: 45%;
+        }
+        .section-title {
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--gray-300);
+            padding-bottom: 5px;
+        }
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .items-table th, .items-table td {
+            border: 1px solid var(--gray-300);
+            padding: 10px;
+            text-align: left;
+        }
+        .items-table th {
+            background: var(--gray-50);
+            font-weight: bold;
+        }
+        .items-table .amount {
+            text-align: right;
+        }
+        .totals {
+            float: right;
+            width: 300px;
+        }
+        .totals-table {
+            width: 100%;
+        }
+        .totals-table td {
+            padding: 8px;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        .totals-table .total-row {
+            font-weight: bold;
+            font-size: 1.1em;
+            background: var(--gray-50);
+        }
+        .payment-info {
+            clear: both;
+            margin-top: 40px;
+            background: var(--gray-50);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.9em;
+            border-top: 1px solid var(--gray-300);
+            padding-top: 20px;
+        }
+        @media print {
+            body { font-size: 12px; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="company-info">
+                <h1>{{companyName}}</h1>
+                <p>{{{formatContent companyInfo.address}}}</p>
+                <p>Tel: {{companyInfo.phone}}</p>
+                <p>Email: {{companyInfo.email}}</p>
+            </div>
+            <div class="invoice-details">
+                <div class="invoice-number">FACTURA {{invoiceNumber}}</div>
+                <p><strong>Fecha:</strong> {{invoiceDate}}</p>
+                <p><strong>Vencimiento:</strong> {{dueDate}}</p>
+            </div>
+        </div>
+
+        <div class="billing-section">
+            <div class="bill-to">
+                <div class="section-title">FACTURAR A:</div>
+                <p><strong>{{billTo.company}}</strong></p>
+                <p>{{{formatContent billTo.address}}}</p>
+                <p>{{billTo.email}}</p>
+                <p>NIT: {{billTo.taxId}}</p>
+            </div>
+            <div class="company-details">
+                <div class="section-title">DATOS DE LA EMPRESA:</div>
+                <p><strong>{{companyName}}</strong></p>
+                <p>{{{formatContent companyInfo.address}}}</p>
+                <p>{{companyInfo.email}}</p>
+                <p>NIT: {{companyInfo.taxId}}</p>
+            </div>
+        </div>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Precio/Hora</th>
+                    <th class="amount">Importe</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each items}}
+                <tr>
+                    <td>
+                        <strong>{{this.description}}</strong>
+                        <br><small>{{this.details}}</small>
+                    </td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{formatCurrency this.rate currency}}</td>
+                    <td class="amount">{{formatCurrency this.amount currency}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <div class="totals">
+            <table class="totals-table">
+                <tr>
+                    <td>Subtotal:</td>
+                    <td class="amount">{{formatCurrency subtotal currency}}</td>
+                </tr>
+                <tr>
+                    <td>IVA ({{taxRate}}%):</td>
+                    <td class="amount">{{formatCurrency taxAmount currency}}</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL:</td>
+                    <td class="amount">{{formatCurrency total currency}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="payment-info">
+            <div class="section-title">INFORMACIÓN DE PAGO</div>
+            <p><strong>Condiciones:</strong> {{paymentTerms}}</p>
+            <p><strong>Formas de pago:</strong></p>
+            {{#if bankInfo.bankName}}
+            <p><strong>{{bankInfo.bankName}}:</strong> {{bankInfo.accountNumber}}</p>
+            {{/if}}
+            {{#if bankInfo.nequi}}
+            <p><strong>NEQUI:</strong> {{bankInfo.nequi}} ({{bankInfo.accountHolder}})</p>
+            {{/if}}
+            <p><strong>Notas:</strong> {{notes}}</p>
+        </div>
+
+        <div class="footer">
+            <p>Gracias por su confianza</p>
+            <p>Generado con APEX AI SOLUTIONS - Sistema de Generación de PDFs v2.0</p>
+        </div>
+    </div>
+</body>
+</html>

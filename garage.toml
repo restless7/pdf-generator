@@ -1,0 +1,20 @@
+metadata_dir = "/var/lib/garage/meta"
+data_dir = "/var/lib/garage/data"
+db_engine = "sqlite"
+
+replication_factor = 1
+
+rpc_bind_addr = "[::]:3901"
+rpc_secret = "161fffd07b5508598f5ad609a502d8dabbd1ffea37a5feac59575b8684f25429"
+
+[s3_api]
+s3_region = "us-east-1"
+api_bind_addr = "[::]:3900"
+root_domain = ".s3.apexaisolutions.dev"
+
+[s3_web]
+bind_addr = "[::]:3902"
+root_domain = ".web.apexaisolutions.dev"
+
+[admin]
+api_bind_addr = "[::]:3903"

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex AI Solutions - Partner Documentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --primary-cyan: #06b6d4;
+            --primary-blue: #0ea5e9;
+            --primary-purple: #8b5cf6;
+            --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #8b5cf6 100%);
+            --dark-bg: #0a0e14;
+            --card-bg: #1a1d29;
+            --border-color: #2d3748;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --accent-orange: #f97316;
+            --accent-green: #10b981;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            --glow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--dark-bg);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: var(--glow);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            border-bottom: 2px solid var(--primary-cyan);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Cover Page */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1d29 100%);
+            position: relative;
+            page-break-after: always;
+            padding: 2rem;
+        }
+        
+        .cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 3rem;
+        }
+        
+        .apex-logo {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .document-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .document-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+        
+        .company-info {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .meta-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 12px;
+            border: 1px solid var(--primary-cyan);
+        }
+        
+        .meta-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .generation-info {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Content Pages */
+        .content-page {
+            padding: 2.5rem;
+            min-height: 100vh;
+            page-break-before: always;
+        }
+        
+        .page {
+            padding: 2rem;
+            min-height: calc(100vh - 4rem);
+        }
+        
+        /* Service Cards */
+        .service-category {
+            margin-bottom: 3rem;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+        }
+        
+        .service-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        
+        .service-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            margin-bottom: 1rem;
+        }
+        
+        .service-features ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .service-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .service-features li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-cyan);
+            font-size: 0.8rem;
+        }
+        
+        .industries {
+            margin-top: 1rem;
+        }
+        
+        .industries strong {
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+        }
+        
+        /* Metrics & Stats */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Callouts */
+        .callout {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary-cyan);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .callout.warning {
+            border-left-color: var(--accent-orange);
+            background: rgba(249, 115, 22, 0.1);
+        }
+        
+        .callout.success {
+            border-left-color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background: var(--card-bg);
+            color: var(--primary-cyan);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .page-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .brand-footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .brand-name {
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Responsive */
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            
+            .cover {
+                height: 100vh;
+            }
+            
+            .content-page, .page {
+                padding: 1.5rem;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <div class="cover-content">
+                <div class="apex-logo">🔺</div>
+                <h1 class="document-title">Partner Documentation</h1>
+                <p class="document-subtitle">The Future of Business Intelligence & Automation</p>
+                
+                <div class="company-info">
+                    <h2 class="company-name">Apex AI Solutions</h2>
+                    <p class="tagline">{{tagline}}</p>
+                    
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <div class="meta-label">Mission</div>
+                            <div class="meta-value">AI Evolution</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Focus</div>
+                            <div class="meta-value">Automation-First</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Philosophy</div>
+                            <div class="meta-value">Apex Predator</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Approach</div>
+                            <div class="meta-value">Future-Proof</div>
+                        </div>
+                    </div>
+                    
+                    <div class="generation-info">
+                        <p><strong>Document Generated:</strong> {{generationDate}}</p>
+                        <p>Confidential Partner Documentation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brand-footer">
+                <p>Generated by <span class="brand-name">Apex AI Solutions</span></p>
+                <p>Where Evolution Meets Intelligence</p>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="content-page">
+            <h1>Executive Summary</h1>
+            
+            <div class="callout">
+                <h3>{{mission.title}}</h3>
+                <p>{{mission.description}}</p>
+            </div>
+            
+            <div class="callout">
+                <h3>{{vision.title}}</h3>
+                <p>{{vision.description}}</p>
+            </div>
+            
+            <h2>Company Positioning</h2>
+            <p><strong>{{positioning.title}}</strong></p>
+            <p>{{positioning.description}}</p>
+            
+            <h3>Core Differentiators</h3>
+            <ul>
+                {{#each differentiators}}
+                <li><strong>{{this.title}}:</strong> {{this.description}}</li>
+                {{/each}}
+            </ul>
+            
+            <h3>Brand Positioning Themes</h3>
+            <ul>
+                {{#each brandThemes}}
+                <li><strong>{{this.title}}:</strong> {{this.description}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <!-- Service Catalog -->
+        <div class="content-page">
+            <h1>Service Catalog</h1>
+            
+            {{#each serviceCategories}}
+            <div class="service-category">
+                <h2>{{this.icon}} {{this.title}}</h2>
+                
+                <div class="service-grid">
+                    {{#each this.services}}
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-name">{{this.name}}</h3>
+                            <p class="service-subtitle">{{this.plainLanguage}}</p>
+                        </div>
+                        
+                        <p class="service-description">{{this.description}}</p>
+                        
+                        <div class="callout success">
+                            <strong>Value Proposition:</strong> {{this.valueProposition}}
+                        </div>
+                        
+                        {{#if this.keyFeatures}}
+                        <div class="service-features">
+                            <strong>Key Features:</strong>
+                            <ul>
+                                {{#each this.keyFeatures}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        {{/if}}
+                        
+                        {{#if this.industries}}
+                        <div class="industries">
+                            <strong>Key Industries:</strong> {{this.industries}}
+                        </div>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Implementation Methodology -->
+        <div class="content-page">
+            <h1>Implementation Methodology</h1>
+            
+            <h2>Our Consulting Approach: Strategy-First, Results-Driven</h2>
+            <p>{{methodology.description}}</p>
+            
+            <div class="service-grid">
+                {{#each methodology.pillars}}
+                <div class="service-card">
+                    <div class="service-icon">{{this.icon}}</div>
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="content-page">
+            <h1>Key Performance Metrics</h1>
+            
+            <h2>Company Scale</h2>
+            <div class="metrics-grid">
+                {{#each companyMetrics}}
+                <div class="metric-card">
+                    <div class="metric-value">{{this.value}}</div>
+                    <div class="metric-label">{{this.label}}</div>
+                </div>
+                {{/each}}
+            </div>
+            
+            <h2>Typical Client Results</h2>
+            <div class="metrics-grid">
+                {{#each clientResults}}
+                <div class="metric-card">
+                    <div class="metric-value">{{this.value}}</div>
+                    <div class="metric-label">{{this.label}}</div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Technology Stack & Partnership -->
+        <div class="content-page">
+            <h1>Technology Stack Excellence</h1>
+            
+            <p>Our solutions leverage cutting-edge technologies including:</p>
+            
+            <div class="service-grid">
+                {{#each techStack}}
+                <div class="service-card">
+                    <h3>{{this.category}}</h3>
+                    <p>{{this.technologies}}</p>
+                </div>
+                {{/each}}
+            </div>
+            
+            <h1>Partnership Value Proposition</h1>
+            
+            <h2>Why Partner with Apex AI Solutions</h2>
+            <div class="service-grid">
+                {{#each partnershipBenefits}}
+                <div class="service-card">
+                    <div class="service-icon">{{@index}}</div>
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                </div>
+                {{/each}}
+            </div>
+            
+            <div class="callout success">
+                <h3>Our Commitment to Partners</h3>
+                <ul>
+                    {{#each commitment}}
+                    <li><strong>{{this.title}}:</strong> {{this.description}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            
+            <div class="page-footer">
+                <h2>Contact Information</h2>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <div class="meta-label">Headquarters</div>
+                        <div class="meta-value">{{contact.headquarters}}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Global Offices</div>
+                        <div class="meta-value">{{contact.globalOffices}}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Sales Inquiries</div>
+                        <div class="meta-value">{{contact.sales}}</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Partnership</div>
+                        <div class="meta-value">{{contact.partnership}}</div>
+                    </div>
+                </div>
+                
+                <div class="generation-info">
+                    <p><strong>Generated:</strong> {{generationDate}}</p>
+                    <p><em>This document represents our comprehensive service portfolio as of 2025. For the most current information and detailed technical specifications, please contact our partnership team directly.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+{
+  "documentTitle": "ICE Colombia — Investor Pitch",
+  "subtitle": "1-Hour Reunion Outline, Speaking Guide & Demo Flow",
+  "version": "1.0",
+  "effectiveDate": "April 2026",
+  "confidentialityNotice": "CONFIDENTIAL — INVESTOR EYES ONLY",
+  "companyInfo": {
+    "name": "Apex AI Solutions LLC",
+    "website": "apexaisolutions.dev",
+    "supportEmail": "support@apexaisolutions.dev"
+  },
+  "branding": {
+    "primaryColor": "#4338ca",
+    "secondaryColor": "#1e1b4b",
+    "accentColor": "#6366f1"
+  },
+  "parts": [
+    {
+      "partNumber": "I",
+      "partTitle": "Reunion Structure & Preparation",
+      "sections": [
+        {
+          "sectionNumber": "01",
+          "title": "Meeting Agenda (60 Minutes)",
+          "content": "<p>This document outlines the complete flow for a 1-hour investor presentation. Each section is timed and includes speaker notes, key talking points, and visual cues for the live demo.</p>",
+          "tables": [
+            {
+              "headers": ["Time", "Section", "Duration", "Focus"],
+              "rows": [
+                ["0:00", "Opening & Rapport", "5 min", "Problem framing — the visa wait crisis"],
+                ["0:05", "Market Opportunity", "8 min", "TAM, pain points, competitive void"],
+                ["0:13", "The ICE Ecosystem", "12 min", "3 Pillars presentation"],
+                ["0:25", "Live Platform Demo", "10 min", "Pre-loaded tabs, data flow demo"],
+                ["0:35", "Technology Moat & IP", "7 min", "Stack, codebase scale, proprietary assets"],
+                ["0:42", "Franchise Model & Revenue", "8 min", "3 commercial models, unit economics"],
+                ["0:50", "Financial Projections", "5 min", "3-year conservative projection"],
+                ["0:55", "Q&A & Close", "5 min", "Anticipated questions, closing statement"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Pre-Meeting Checklist",
+            "content": "All demo pages pre-loaded in browser tabs · VPN/Cloudflare tunnel confirmed active · 2-3 real student profiles ready to show · Accounting ledger has recent transactions visible · Agent heatmap has data populated · Print 3 copies of this script · Dress code: business formal"
+          }
+        }
+      ]
+    },
+    {
+      "partNumber": "II",
+      "partTitle": "Opening & Market Opportunity",
+      "sections": [
+        {
+          "sectionNumber": "02",
+          "title": "Opening & Rapport (5 min)",
+          "content": "<p><strong>Do NOT open with the product.</strong> Open with the <em>problem</em>. Create immediate emotional resonance.</p><h3>Opening Script</h3><p><em>\"Every year, over 300,000 Latin Americans apply for US visas. The average wait time for an interview appointment? <strong>14 to 24 months.</strong> The cost of a single missed or poorly timed appointment? Not just money — it's a year of someone's life on hold.\"</em></p><p><em>\"ICE Colombia was built to solve this — not just the visa problem, but the entire lifecycle of international education and mobility. And we've turned it into a <strong>franchise-ready, AI-powered ecosystem</strong> that runs at 90% automation.\"</em></p><h3>Key Points</h3><ul><li>Introduce yourself briefly — emphasize operator + builder hybrid profile</li><li>Mention the ecosystem is <strong>live, serving real clients, generating revenue today</strong></li><li>This is not a prototype — it's a production system</li></ul>"
+        },
+        {
+          "sectionNumber": "03",
+          "title": "Market Opportunity (8 min)",
+          "content": "<h3>The Numbers That Matter</h3><p>Present these figures with confidence — they establish the scale of opportunity.</p>",
+          "tables": [
+            {
+              "headers": ["Metric", "Value"],
+              "rows": [
+                ["Annual US visa applicants (LatAm)", "300,000+"],
+                ["Work & Travel program market (Colombia alone)", "$15M/year"],
+                ["Average client lifetime value (programs + visa)", "$1,500 – $4,500 USD"],
+                ["Franchise addressable locations (COL, ECU, PER, MEX)", "50+ cities"],
+                ["Digital infrastructure penetration in competitors", "< 5%"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Competitive Positioning",
+            "content": "\"Our competitors are paper companies with WhatsApp groups. We are a <strong>technology company</strong> that happens to operate in international education. That's the moat.\""
+          }
+        }
+      ]
+    },
+    {
+      "partNumber": "III",
+      "partTitle": "The ICE Ecosystem",
+      "sections": [
+        {
+          "sectionNumber": "04",
+          "title": "Three Pillars of ICE (12 min)",
+          "content": "<h3>Pillar 1: Revenue Engine (CRM & Lead Pipeline)</h3><ul><li><strong>AI-Powered Lead Scoring</strong> — 6-component weighted algorithm (0–100) with conversion probability</li><li><strong>Kanban Pipeline</strong> — NEW → CONTACTED → QUALIFIED → OPPORTUNITY → CONVERTED</li><li><strong>Auto-Assignment</strong> — Round-robin + skill-based routing</li><li><strong>ETL Ingestion</strong> — From events, social media, website forms, partner agencies</li><li><strong>Follow-Up Cadence Automation</strong> — 14-day structured nurture sequence</li></ul><h3>Pillar 2: Operations Platform (Visa + Student Lifecycle)</h3><ul><li><strong>Visa Rescheduler Bot</strong> — Proprietary Playwright-based automation that monitors consulate portals 24/7 and reschedules automatically</li><li><strong>Student Portal</strong> — Self-service document upload, enrollment tracking, GPA/credits visibility</li><li><strong>Document Workflow</strong> — PENDING → REVIEW → APPROVED pipeline with MinIO secure storage</li><li><strong>Invoice & Payment System</strong> — Full billing lifecycle with installment support</li><li><strong>Program Management</strong> — Multi-edition program tracking (Work & Travel, Au Pair, University)</li></ul><h3>Pillar 3: Enterprise Operations (HR + Finance + Admin)</h3><ul><li><strong>Workforce Command Center</strong> — Real-time agent monitoring, attendance heatmaps, performance dashboards</li><li><strong>Enterprise Payroll System</strong> — Automatic hour aggregation → payroll generation → accounting integration</li><li><strong>Universal Cashflow Ledger</strong> — Every payment, every payroll, every transaction in one synchronized general ledger</li><li><strong>Daily Closure System</strong> — POS-grade end-of-day reconciliation</li><li><strong>Role-Based Access Control</strong> — 8 system roles from Student to Super Admin</li></ul>",
+          "callout": {
+            "title": "Emphasis Line",
+            "content": "\"This is not 3 separate products. This is <strong>one cohesive ecosystem</strong> where a student payment automatically creates an accounting transaction, an agent's worked hours automatically calculate their payroll, and a payroll approval automatically registers as a business expense.\""
+          }
+        }
+      ]
+    },
+    {
+      "partNumber": "IV",
+      "partTitle": "Live Demo & Technology",
+      "sections": [
+        {
+          "sectionNumber": "05",
+          "title": "Live Platform Demo Route (10 min)",
+          "content": "<p>Follow this exact flow for maximum impact. Pre-load all pages in separate tabs before the meeting. Focus on <strong>data flow between modules</strong>, not individual button clicks.</p>",
+          "tables": [
+            {
+              "headers": ["Step", "Page", "What to Show"],
+              "rows": [
+                ["1", "Portal Dashboard", "Real-time agent monitoring, online status"],
+                ["2", "/portal/leads", "Lead flowing through Kanban with AI score overlay"],
+                ["3", "/students/[id]", "Student profile: payments, documents, enrollment"],
+                ["4", "/portal/accounting", "Unified ledger with TRM exchange rate conversion"],
+                ["5", "/portal/agents", "Workforce heatmap and 'Needs Facture' flags"],
+                ["6", "/portal/hr-hub", "Daily Timeline tab — visual worked hours"],
+                ["7", "/dashboard", "Active Visa Rescheduler jobs running live"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Demo Pro-Tips",
+            "content": "Keep narration flowing — never stop to troubleshoot · End the demo by showing a payment create a transaction — the 'wow moment' · If asked about a feature, say 'Let me show you' instead of explaining"
+          }
+        },
+        {
+          "sectionNumber": "06",
+          "title": "Technology Moat & IP Assets (7 min)",
+          "content": "<p>Present the technology stack not as a list of tools, but as a <strong>competitive barrier to entry</strong>.</p>",
+          "tables": [
+            {
+              "headers": ["Asset", "Detail"],
+              "rows": [
+                ["Stack", "Next.js 15, TypeScript, Prisma 6, PostgreSQL, Redis, BullMQ"],
+                ["Automation", "Playwright headless browser for consulate portal automation"],
+                ["Security", "HashiCorp Vault for encrypted credential storage"],
+                ["Infrastructure", "Cloudflare Tunnels, PM2 process management, self-hosted"],
+                ["Scale", "50+ API endpoints, 60+ Prisma models, 17 portal modules"],
+                ["Codebase", "80,000+ lines of production TypeScript"]
+              ]
+            },
+            {
+              "headers": ["IP Asset", "Description"],
+              "rows": [
+                ["Visa Rescheduler Bot", "Core proprietary product — no competitor has this automated"],
+                ["Operations Manual", "15-chapter franchise replication guide (< 30 day launch)"],
+                ["Training Curriculum", "24–39 hour certified path by role (Agent, Supervisor, Admin)"],
+                ["Codebase", "Purpose-built, not a template — 80,000+ lines of TypeScript"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Key Investor Line",
+            "content": "\"An investor is not buying a website. You're investing in a <strong>franchise operating system</strong> — one that includes the technology platform, the operational playbook, the training curriculum, and the brand system to replicate across Latin America.\""
+          }
+        }
+      ]
+    },
+    {
+      "partNumber": "V",
+      "partTitle": "Business Model & Financials",
+      "sections": [
+        {
+          "sectionNumber": "07",
+          "title": "Franchise Model & Revenue (8 min)",
+          "content": "<p>Present the three commercial models. Emphasize flexibility — each model adapts to the investor's risk appetite.</p>",
+          "tables": [
+            {
+              "headers": ["Model", "Structure", "Best For"],
+              "rows": [
+                ["Outright Sale", "One-time license payment + annual maintenance", "Established operators"],
+                ["Subscription", "Monthly/annual SaaS fee (all-inclusive)", "New market entrants"],
+                ["Revenue Share", "Lower fees + % of franchise revenue", "Strategic partners"]
+              ]
+            },
+            {
+              "headers": ["Item", "Estimated Value"],
+              "rows": [
+                ["Franchise Setup Fee", "$8,000 – $15,000"],
+                ["Monthly Platform Fee", "$500 – $1,200"],
+                ["Revenue per Enrolled Student", "$1,500 – $4,500"],
+                ["Students per Agent/Month (target)", "3 – 5"],
+                ["Break-even Timeline", "3 – 6 months"]
+              ]
+            }
+          ]
+        },
+        {
+          "sectionNumber": "08",
+          "title": "Financial Projections & Use of Funds (5 min)",
+          "content": "<h3>Conservative 3-Year Projection (Subscription Model)</h3>",
+          "tables": [
+            {
+              "headers": ["Year", "Active Franchises", "Monthly Revenue", "Annual Platform Revenue"],
+              "rows": [
+                ["Year 1", "2", "$2,400", "$28,800 + setup fees"],
+                ["Year 2", "5", "$6,000", "$72,000 + setup fees"],
+                ["Year 3", "10", "$12,000", "$144,000 + revenue share"]
+              ]
+            },
+            {
+              "headers": ["Use of Funds", "Allocation"],
+              "rows": [
+                ["Engineering (mobile app, AI chatbot)", "35%"],
+                ["Sales & Franchise Development", "25%"],
+                ["Infrastructure & DevOps", "15%"],
+                ["Marketing & Brand", "15%"],
+                ["Legal & Compliance", "10%"]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Revenue Upside",
+            "content": "This projection assumes a conservative subscription model. Revenue share models on high-performing franchises could yield <strong>2-3x multiples</strong> above these figures."
+          }
+        }
+      ]
+    },
+    {
+      "partNumber": "VI",
+      "partTitle": "Closing & Q&A Preparation",
+      "sections": [
+        {
+          "sectionNumber": "09",
+          "title": "Anticipated Questions & Responses",
+          "content": "<p>Prepare for these questions. Rehearse the answers until they feel natural.</p>",
+          "tables": [
+            {
+              "headers": ["Question", "Suggested Response"],
+              "rows": [
+                ["What if a competitor copies the visa bot?", "Our moat isn't just the bot — it's the entire integrated ecosystem. The bot is the hook, but the CRM, student lifecycle, HR system, and franchise manual create lock-in."],
+                ["How many clients are you serving today?", "[Provide actual numbers] — Emphasize the system is LIVE and generating revenue, not a prototype."],
+                ["What's the total addressable market?", "Colombia alone: 50,000+ students apply for US programs annually. W&T, Au Pair, and Visa Advisory in the COL-ECU-PER triangle exceeds $100M."],
+                ["What's your unfair advantage?", "We built the operating system first, then the franchise model around it. Nobody else in this space has a technology-first approach."],
+                ["Why should I invest now?", "The technology is built. The manual is written. The training is certified. We need capital to REPLICATE. First-mover advantage in LatAm franchise tech."]
+              ]
+            }
+          ],
+          "callout": {
+            "title": "Closing Statement",
+            "content": "\"You're not investing in software. You're investing in the <strong>franchise operating system for international education in Latin America.</strong> The technology is built. The manual is written. The training is certified. We need capital to replicate.\""
+          }
+        }
+      ]
+    }
+  ]
+}

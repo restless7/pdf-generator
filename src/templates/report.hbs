@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{reportTitle}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-purple: #7c3aed;
+            --purple-dark: #5b21b6;
+            --purple-light: #c4b5fd;
+            --purple-50: #f5f3ff;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+            --green-500: #10b981;
+            --yellow-500: #f59e0b;
+            --red-500: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--white);
+            font-size: 14px;
+        }
+        .container { max-width: 210mm; margin: 0 auto; padding: 2rem; }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-purple);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .report-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-purple);
+            margin-bottom: 10px;
+        }
+        .report-meta {
+            color: var(--gray-600);
+            margin-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        .section-title {
+            font-size: 1.4em;
+            color: var(--primary-purple);
+            border-bottom: 2px solid var(--gray-300);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .executive-summary {
+            background: var(--purple-50);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-purple);
+            margin-bottom: 20px;
+        }
+        .findings-list {
+            list-style: none;
+            padding: 0;
+        }
+        .findings-list li {
+            background: var(--gray-50);
+            padding: 10px;
+            margin-bottom: 5px;
+            border-left: 3px solid var(--primary-purple);
+            border-radius: 4px;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--gray-300);
+        }
+        .metric-card.good { border-color: var(--green-500); background: #ecfdf5; }
+        .metric-card.needs-improvement { border-color: var(--yellow-500); background: #fffbeb; }
+        .metric-card.critical { border-color: var(--red-500); background: #fef2f2; }
+        .recommendation {
+            background: var(--gray-50);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-purple);
+        }
+        .recommendation-title {
+            font-weight: bold;
+            color: var(--purple-dark);
+            margin-bottom: 5px;
+        }
+        .priority-high { color: var(--red-500); }
+        .priority-media { color: var(--yellow-500); }
+        .priority-low { color: var(--green-500); }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.9em;
+            border-top: 1px solid var(--gray-300);
+            padding-top: 20px;
+        }
+        @media print {
+            body { font-size: 12px; }
+            .container { padding: 1rem; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="report-title">{{reportTitle}}</div>
+            <div class="report-meta">Proyecto: {{projectName}}</div>
+            <div class="report-meta">Cliente: {{clientName}}</div>
+            <div class="report-meta">Autor: {{authorName}}</div>
+            <div class="report-meta">Fecha: {{reportDate}} | Versión: {{version}}</div>
+            <div class="report-meta">{{confidentiality}}</div>
+        </div>
+
+        {{#if executiveSummary}}
+        <div class="section">
+            <h2 class="section-title">Resumen Ejecutivo</h2>
+            <div class="executive-summary">
+                <p>{{executiveSummary}}</p>
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if keyFindings}}
+        <div class="section">
+            <h2 class="section-title">Hallazgos Principales</h2>
+            <ul class="findings-list">
+                {{#each keyFindings}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+
+        {{#if statusMetrics}}
+        <div class="section">
+            <h2 class="section-title">Métricas de Estado</h2>
+            <div class="metrics-grid">
+                {{#each statusMetrics}}
+                <div class="metric-card {{this.status}}">
+                    <h4>{{this.metric}}</h4>
+                    <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">{{this.value}}</div>
+                    <div style="font-size: 0.9em; color: var(--gray-600);">Objetivo: {{this.target}}</div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if recommendations}}
+        <div class="section">
+            <h2 class="section-title">Recomendaciones</h2>
+            {{#each recommendations}}
+            <div class="recommendation">
+                <div class="recommendation-title">{{this.title}} 
+                    <span class="priority-{{#eq this.priority 'Alta'}}high{{/eq}}{{#eq this.priority 'Media'}}media{{/eq}}{{#eq this.priority 'Baja'}}low{{/eq}}">
+                        (Prioridad: {{this.priority}})
+                    </span>
+                </div>
+                <p>{{this.description}}</p>
+                <p><strong>Plazo:</strong> {{this.timeframe}}</p>
+                <p><strong>Impacto:</strong> {{this.impact}}</p>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <div class="footer">
+            <p>{{companyName}} - Análisis Técnico {{currentDate}}</p>
+            <p>Generado con PlanMaestro - Sistema de Generación de PDFs v2.0</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -190,6 +190,214 @@ export const OperationsManualSchema = z.object({
 
 // Template Registry
 export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
+  'security-portfolio': {
+    id: 'security-portfolio',
+    name: 'SECURITY PORTFOLIO',
+    description: 'Template for security-portfolio',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/security-portfolio.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'brand-book': {
+    id: 'brand-book',
+    name: 'BRAND BOOK',
+    description: 'Template for brand-book',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/brand-book.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'psychology-guide': {
+    id: 'psychology-guide',
+    name: 'PSYCHOLOGY GUIDE',
+    description: 'Template for psychology-guide',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/psychology-guide.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'ice-visa-rescheduler-bot': {
+    id: 'ice-visa-rescheduler-bot',
+    name: 'ICE VISA RESCHEDULER BOT',
+    description: 'Template for ice-visa-rescheduler-bot',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/ice-visa-rescheduler-bot.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'apex-partner-documentation': {
+    id: 'apex-partner-documentation',
+    name: 'APEX PARTNER DOCUMENTATION',
+    description: 'Template for apex-partner-documentation',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/apex-partner-documentation.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'fujiyama-proposal': {
+    id: 'fujiyama-proposal',
+    name: 'FUJIYAMA PROPOSAL',
+    description: 'Template for fujiyama-proposal',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/fujiyama-proposal.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'sales-manual': {
+    id: 'sales-manual',
+    name: 'SALES MANUAL',
+    description: 'Template for sales-manual',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/sales-manual.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'sales-manual-mx': {
+    id: 'sales-manual-mx',
+    name: 'SALES MANUAL MX',
+    description: 'Template for sales-manual-mx',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/sales-manual-mx.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'roi-report': {
+    id: 'roi-report',
+    name: 'ROI REPORT',
+    description: 'Template for roi-report',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/roi-report.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'partnership-proposal': {
+    id: 'partnership-proposal',
+    name: 'PARTNERSHIP PROPOSAL',
+    description: 'Template for partnership-proposal',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/partnership-proposal.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'jessica-content-calendar': {
+    id: 'jessica-content-calendar',
+    name: 'JESSICA CONTENT CALENDAR',
+    description: 'Template for jessica-content-calendar',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/jessica-content-calendar.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'creditos-nv-proposal': {
+    id: 'creditos-nv-proposal',
+    name: 'CREDITOS NV PROPOSAL',
+    description: 'Template for creditos-nv-proposal',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/creditos-nv-proposal.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'good-energy-funnel': {
+    id: 'good-energy-funnel',
+    name: 'GOOD ENERGY FUNNEL',
+    description: 'Template for good-energy-funnel',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/good-energy-funnel.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
   'business-plan': {
     id: 'business-plan',
     name: 'Business Plan Template',
@@ -399,6 +607,36 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
       },
       printBackground: true,
       displayHeaderFooter: true,
+      watermark: {
+        enabled: false
+      }
+    },
+    localization: {
+      supported: ['es', 'en'],
+      defaultLocale: 'es'
+    }
+  },
+  'onlysafe-architecture': {
+    id: 'onlysafe-architecture',
+    name: 'OnlySafe Technical Architecture',
+    description: 'Comprehensive documentation of the OnlySafe backend and business architecture',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/onlysafe-architecture.hbs',
+    partials: [],
+    assets: ['logos'],
+    schema: ReportSchema,
+    defaultOptions: {
+      format: 'A4',
+      margins: {
+        top: '1.5cm',
+        right: '1.5cm',
+        bottom: '1.5cm',
+        left: '1.5cm'
+      },
+      printBackground: true,
+      displayHeaderFooter: false,
       watermark: {
         enabled: false
       }

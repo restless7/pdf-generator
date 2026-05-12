@@ -24,9 +24,8 @@ RUN apt-get update \
 WORKDIR /app
 
 # Set environment variables
-ENV NODE_ENV=production
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 
 # Copy package files
 COPY package*.json ./
@@ -40,7 +39,8 @@ COPY . .
 # Build the application
 RUN npm run build:server
 
-# Remove dev dependencies for smaller image
+# Set production environment and prune dev dependencies
+ENV NODE_ENV=production
 RUN npm prune --production
 
 # Create necessary directories

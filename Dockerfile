@@ -44,8 +44,7 @@ ENV NODE_ENV=production
 RUN npm prune --production
 
 # Create necessary directories
-RUN mkdir -p output cache temp \
-    && ln -s /app/dist/templates /app/templates
+RUN mkdir -p output cache temp templates
 
 # Expose port
 EXPOSE ${PORT:-4000}

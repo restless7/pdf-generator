@@ -1,9 +1,11 @@
 <div class="header">
-    <h1>{{businessName}}</h1>
-    <div class="subtitle">{{businessType}}</div>
-    <div class="date">
-        <strong>Fecha:</strong> {{generationDate}} | 
-        <strong>Ubicación:</strong> {{location}} |
-        <strong>Documento Técnico v1.0</strong>
+    <div class="header-content">
+        <h1>Propuesta de Transformación Digital y Automatización</h1>
+        <div class="subtitle">{{proposalType}} — {{companyName}} & APEX AI Solutions</div>
+    </div>
+    <div class="meta">
+        <div>Fecha: <strong>{{generatedDate}}</strong></div>
+        <div>Ref: <strong>APEX-{{substring proposalToken 0 8}}</strong></div>
+        <div>Validez: <strong>{{validUntil}}</strong></div>
     </div>
 </div>

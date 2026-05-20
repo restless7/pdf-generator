@@ -69,24 +69,29 @@ export const BusinessPlanSchema = z.object({
 // Proposal Data Schema
 export const ProposalSchema = z.object({
   clientName: z.string().min(1),
-  projectTitle: z.string().min(1),
-  proposalDate: z.string(),
-  validUntil: z.string(),
-  services: z.array(z.object({
-    name: z.string(),
-    description: z.string(),
-    price: z.number(),
-    quantity: z.number().optional().default(1)
-  })),
-  totalAmount: z.number(),
-  terms: z.string().optional(),
-  companyInfo: z.object({
-    name: z.string(),
-    address: z.string(),
-    email: z.string(),
-    phone: z.string(),
-    website: z.string().optional()
-  })
+  companyName: z.string().min(1),
+  clientEmail: z.string().optional().or(z.literal('')),
+  clientPhone: z.string().optional().or(z.literal('')),
+  proposalType: z.string().min(1),
+  serviceName: z.string().min(1),
+  serviceDescription: z.string().optional().or(z.literal('')),
+  capabilities: z.array(z.string()).optional(),
+  techStack: z.array(z.string()).optional(),
+  tierName: z.string().optional().or(z.literal('')),
+  tierDescription: z.string().optional().or(z.literal('')),
+  price: z.string().optional().or(z.literal('')),
+  priceRange: z.string().optional().or(z.literal('')),
+  currency: z.string().optional().or(z.literal('')),
+  timeline: z.string().optional().or(z.literal('')),
+  features: z.array(z.string()).optional(),
+  deliverables: z.array(z.string()).optional(),
+  excludedFeatures: z.array(z.string()).optional(),
+  successMetrics: z.array(z.string()).optional(),
+  addOnOptions: z.array(z.string()).optional(),
+  validUntil: z.string().min(1),
+  generatedDate: z.string().min(1),
+  proposalToken: z.string().optional(),
+  proposalUrl: z.string().optional().or(z.literal(''))
 });
 
 // Invoice Data Schema
@@ -709,6 +714,7 @@ export interface GenerationJob {
   result?: {
     pdfPath?: string;
     pdfBuffer?: Buffer;
+    downloadUrl?: string;
     metadata: {
       fileSize: number;
       pageCount: number;

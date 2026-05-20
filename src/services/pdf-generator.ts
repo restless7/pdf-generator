@@ -128,6 +128,7 @@ export class EnhancedPDFGenerator {
       job.status = 'processing';
       job.progress = 10;
       job.updatedAt = new Date();
+      console.log(`[Worker] Processing job ${job.id} for template ${templateConfig.id}`);
 
       const startTime = Date.now();
 
@@ -328,8 +329,10 @@ export class EnhancedPDFGenerator {
       result.pdfPath = filepath;
 
       // Try uploading to S3
+      console.log(`[Storage] Uploading ${filename} to S3...`);
       const signedUrl = await storageService.uploadPDF(pdfBuffer, filename);
       if (signedUrl) {
+        console.log(`[Storage] Uploaded successfully. Signed URL: ${signedUrl}`);
         result.downloadUrl = signedUrl;
       }
     }

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && node -e \"const fs=require('fs'); if(fs.existsSync('src/templates')) fs.cpSync('src/templates', 'dist/templates', {recursive: true, force: true})\"",
+    "build": "tsc && node -e \"const fs=require('fs'); if(fs.existsSync('templates')) fs.cpSync('templates', 'dist/templates', {recursive: true, force: true})\"",
     "dev": "tsc --watch",
     "clean": "rm -rf dist",
     "test": "jest",

@@ -61,7 +61,9 @@ router.post('/generate-sync', async (req: Request, res: Response) => {
     validationService.validateTemplateOptions(options);
 
     // Generate PDF
+    console.log(`[API] Starting sync PDF generation for template: ${options.templateId}`);
     const job = await pdfGenerator.generatePDF(options);
+    console.log(`[API] Job created: ${job.id}`);
 
     // Poll for completion
     const maxWaitTime = 120000; // 2 minutes
@@ -90,6 +92,7 @@ router.post('/generate-sync', async (req: Request, res: Response) => {
           status: job.status,
           result: {
             pdfPath: job.result?.pdfPath,
+            downloadUrl: job.result?.downloadUrl,
             metadata: job.result?.metadata
           }
         });

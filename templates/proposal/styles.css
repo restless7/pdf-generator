@@ -1,71 +1,398 @@
-/* SACI Technical Proposal Styles */
+/* APEX Enterprise Proposal Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f8fafc;
-    --border-color: #e5e7eb;
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --text-dark: #1f2937;
+  --text-muted: #4b5563;
+  --text-light: #6b7280;
+  --bg-light: #f9fafb;
+  --bg-card: #ffffff;
+  --border: #e5e7eb;
+  --border-violet: #f3e8ff;
+  --bg-violet: #faf5ff;
+  --border-emerald: #d1fae5;
+  --bg-emerald: #ecfdf5;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background: white;
-    font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: white;
+  font-size: 13.5px;
 }
 
 .container {
-    max-width: 21cm;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 21cm;
+  margin: 0 auto;
+  padding: 15mm;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.header .subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.header .meta {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.header .meta strong {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 24px;
+  page-break-inside: avoid;
+}
+
+.section h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.lead {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  page-break-inside: avoid;
+}
+
+.card h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--bg-violet);
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.badge-blue {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.badge-emerald {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--bg-emerald);
+  color: var(--secondary-hover);
+  font-weight: 500;
+  font-size: 10px;
+}
+
+/* Highlight boxes */
+.highlight-box {
+  background: var(--bg-emerald);
+  border: 1px solid var(--border-emerald);
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.highlight-box h3 {
+  color: var(--secondary-hover);
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.highlight-box p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.discount-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: var(--secondary-hover);
+  color: white;
+  font-weight: 600;
+  font-size: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.price-tag {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.price-original {
+  text-decoration: line-through;
+  color: var(--text-light);
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+/* Tables */
+table.pricing {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+}
+
+table.pricing thead th {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+table.pricing td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dark);
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/* Custom lists */
+ul.clean {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+ul.clean li {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  padding-left: 14px;
+  position: relative;
+}
+
+ul.clean li::before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+ul.clean-check {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+ul.clean-check li {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+ul.clean-check li::before {
+  content: "✓";
+  color: var(--secondary-hover);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Horizontal separators */
+hr.sep {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+/* Signature block */
+.sig-blocks {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  page-break-inside: avoid;
+}
+
+.sig {
+  flex: 1;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  text-align: left;
+  font-size: 11.5px;
+  color: var(--text-dark);
+}
+
+.sig .title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.sig .role {
+  color: var(--text-light);
+  font-size: 10.5px;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  page-break-inside: avoid;
+}
+
+.footer .company-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.footer .contact-section h3 {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.footer .contact-info {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.footer .disclaimer {
+  font-size: 9.5px;
+  color: var(--text-light);
+  font-style: italic;
+  padding: 10px;
+  background: var(--bg-light);
+  border-radius: 4px;
+  line-height: 1.4;
 }
 
 /* Print optimizations */
 @media print {
-    body {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    
-    .page-break {
-        page-break-before: always;
-    }
-    
-    .no-break {
-        page-break-inside: avoid;
-    }
-    
-    .container {
-        padding: 15px;
-    }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white;
+  }
+  
+  .container {
+    padding: 0;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  .no-break {
+    page-break-inside: avoid;
+  }
+  
+  hr.sep {
+    display: none;
+  }
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 12px;
+/* Brand Logo Positioning (Fixed on every page) */
+.brand-logo-fixed {
+  position: fixed;
+  top: 15mm;
+  right: 15mm;
+  height: 24px;
+  z-index: 9999;
 }
-
-p {
-    margin-bottom: 12px;
+.brand-logo-fixed img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
-
-/* Utility classes */
-.text-center { text-align: center; }
-.text-primary { color: var(--primary-color); }
-.text-light { color: var(--text-light); }
-.mb-20 { margin-bottom: 20px; }
-.mt-20 { margin-top: 20px; }

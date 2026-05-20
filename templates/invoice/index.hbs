@@ -317,6 +317,8 @@
             background: var(--gray-50);
             border-radius: var(--radius-lg);
             border-left: 4px solid var(--primary-emerald);
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
         
         .notes-section h3 {
@@ -523,11 +525,11 @@
                             {{#if details}}<div class="item-details">{{details}}</div>{{/if}}
                         </td>
                         <td class="item-quantity">{{quantity}}</td>
-                        <td class="item-rate">{{formatCurrency rate}} {{../currency}}</td>
+                        <td class="item-rate">{{formatCurrency rate}}</td>
                         {{#if ../showTax}}
                         <td class="item-rate">{{tax}}%</td>
                         {{/if}}
-                        <td class="item-amount">{{formatCurrency amount}} {{../currency}}</td>
+                        <td class="item-amount">{{formatCurrency amount}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -560,7 +562,7 @@
                     <table class="totals-table">
                         <tr>
                             <td>Subtotal:</td>
-                            <td>{{formatCurrency subtotal}} {{currency}}</td>
+                            <td>{{formatCurrency subtotal}}</td>
                         </tr>
                         {{#if discount}}
                         <tr>
@@ -582,7 +584,7 @@
                         {{/if}}
                         <tr class="total-row">
                             <td>TOTAL:</td>
-                            <td>{{formatCurrency total}} {{currency}}</td>
+                            <td>{{formatCurrency total}}</td>
                         </tr>
                     </table>
                 </div>
@@ -628,7 +630,7 @@
             </div>
             
             <div class="footer-legal">
-                Factura generada el {{formatDate currentDate}}
+                Factura generada el {{currentDate}}
                 {{#if companyInfo.taxId}} • NIF/CIF: {{companyInfo.taxId}}{{/if}}
                 {{#if metadata.branding.companyName}}
                 <br>Generado con {{metadata.branding.companyName}} PDF Generator v2.0

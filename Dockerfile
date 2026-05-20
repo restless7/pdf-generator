@@ -47,11 +47,12 @@ RUN npm prune --production
 RUN mkdir -p output cache temp templates
 
 # Expose port
-EXPOSE ${PORT:-4000}
+ENV PORT=9091
+EXPOSE 9091
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${PORT:-4000}/api/health || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+    CMD curl -f http://localhost:9091/api/health || exit 1
 
 # Start the application
 CMD ["npm", "start"]

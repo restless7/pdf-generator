@@ -455,9 +455,9 @@
                 </div>
                 <div class="invoice-details">
                     <div class="invoice-number">{{invoiceNumber}}</div>
-                    <div class="invoice-date">Fecha: {{formatDate invoiceDate}}</div>
+                    <div class="invoice-date">Fecha: {{invoiceDate}}</div>
                     {{#if dueDate}}
-                    <div class="invoice-date">Vencimiento: {{formatDate dueDate}}</div>
+                    <div class="invoice-date">Vencimiento: {{dueDate}}</div>
                     {{/if}}
                 </div>
             </div>
@@ -540,10 +540,12 @@
                     <div class="payment-details">
                         {{#if paymentTerms}}<strong>Términos:</strong> {{paymentTerms}}<br>{{/if}}
                         {{#if bankInfo}}
-                        <strong>Cuenta Bancaria:</strong><br>
-                        {{bankInfo.bankName}}<br>
-                        IBAN: {{bankInfo.iban}}<br>
-                        {{#if bankInfo.swift}}SWIFT: {{bankInfo.swift}}<br>{{/if}}
+                        <strong>💳 Datos Bancarios para Pagos:</strong><br>
+                        Banco: {{bankInfo.bankName}}<br>
+                        Cuenta N°: {{bankInfo.accountNumber}}<br>
+                        NEQUI: {{bankInfo.nequi}}<br>
+                        Titular: {{bankInfo.titular}}<br>
+                        NIT: {{bankInfo.taxId}}<br>
                         {{/if}}
                         {{#if paymentMethods}}
                         <div style="margin-top: 1rem;">

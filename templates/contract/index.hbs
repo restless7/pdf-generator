@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Prestación de Servicios - APEX AI Solutions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-slate: #0f172a;
+            --secondary-slate: #334155;
+            --accent-blue: #2563eb;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-700);
+            background-color: var(--white);
+            line-height: 1.6;
+            font-size: 13px;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-slate);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .company-logo {
+            font-weight: 800;
+            font-size: 22px;
+            color: var(--primary-slate);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--secondary-slate);
+        }
+
+        .header p {
+            font-size: 11px;
+            color: var(--gray-500);
+            margin-top: 5px;
+        }
+
+        .intro-text {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-slate);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--gray-300);
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+        }
+
+        .section p, .section ul {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 5px;
+        }
+
+        .highlight-box {
+            background-color: var(--gray-100);
+            border-left: 4px solid var(--primary-slate);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .parties-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .parties-table td {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid var(--gray-300);
+            vertical-align: top;
+        }
+
+        .parties-table strong {
+            color: var(--primary-slate);
+        }
+
+        .deliverables-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .deliverables-list li {
+            padding: 8px 12px;
+            background: var(--gray-100);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .signature-section {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            page-break-inside: avoid;
+        }
+
+        .signature-box {
+            width: 45%;
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 1px solid var(--gray-700);
+            margin-top: 60px;
+            padding-top: 10px;
+        }
+
+        .signature-stamp {
+            font-size: 10px;
+            color: var(--gray-500);
+            margin-top: 5px;
+            font-family: monospace;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 10px;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-300);
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="company-logo">APEX AI SOLUTIONS</div>
+            <h1>Contrato de Prestación de Servicios Tecnológicos</h1>
+            <p>Documento Legal de Validez E2E • Confidencialidad Asegurada</p>
+        </div>
+
+        <div class="intro-text">
+            <p>Conste por el presente documento, el <strong>Contrato de Prestación de Servicios de Consultoría y Desarrollo Tecnológico</strong>, celebrado de buena fe entre los firmantes detallados a continuación, de conformidad con las siguientes cláusulas y estipulaciones:</p>
+        </div>
+
+        <table class="parties-table">
+            <tr>
+                <td>
+                    <strong>EL PRESTADOR:</strong><br>
+                    <strong>Nombre/Razón Social:</strong> APEX AI Solutions<br>
+                    <strong>Representante:</strong> Sebastián García<br>
+                    <strong>NIT/Identificación:</strong> 1098706707<br>
+                    <strong>Domicilio:</strong> Bucaramanga, Colombia<br>
+                    <strong>Contacto:</strong> support@apexaisolutions.dev
+                </td>
+                <td>
+                    <strong>EL CLIENTE:</strong><br>
+                    <strong>Nombre/Razón Social:</strong> {{companyName}}<br>
+                    <strong>Representante Legal:</strong> {{clientName}}<br>
+                    <strong>NIT/Identificación:</strong> {{nit}}<br>
+                    <strong>Domicilio:</strong> {{address}}<br>
+                    <strong>Contacto:</strong> {{clientEmail}}
+                </td>
+            </tr>
+        </table>
+
+        <div class="section">
+            <div class="section-title">Primera: Objeto del Contrato</div>
+            <p>El objeto del presente contrato es la prestación de servicios especializados de consultoría, diseño, desarrollo e implementación tecnológica del módulo <strong>{{serviceName}}</strong> (Plan {{tierName}}). El alcance detallado incluye el suministro, configuración y despliegue de las capacidades acordadas.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Segunda: Entregables y Compromisos</div>
+            <p>El Prestador se compromete a entregar al Cliente los siguientes componentes clave en los términos acordados:</p>
+            <ul class="deliverables-list">
+                {{#each deliverables}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="section" style="page-break-before: always;">
+            <div class="section-title">Tercera: Cronograma e Inversión</div>
+            <p>Las partes acuerdan un cronograma estimado de ejecución de <strong>{{timeline}}</strong> a partir de la firma y cumplimiento de los anticipos financieros correspondientes.</p>
+            <div class="highlight-box">
+                <strong>VALOR TOTAL DEL CONTRATO:</strong> {{price}} {{currency}}<br>
+                <strong>FORMA DE PAGO:</strong> Anticipo del 50% para la activación del servicio y firma del contrato, y el 50% restante contra entrega final e inicio de la etapa UAT.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Cuarta: Propiedad Intelectual</div>
+            <p>Todas las configuraciones lógicas, bases de conocimiento personalizadas e integraciones realizadas específicamente para el Cliente serán propiedad absoluta de <strong>{{companyName}}</strong> una vez se haya completado el 100% de los pagos contemplados en la Cláusula Tercera. Las herramientas propietarias preexistentes de APEX AI Solutions continúan bajo licencia del prestador.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Quinta: Confidencialidad (NDA)</div>
+            <p>Ambas partes se obligan a guardar estricta reserva y confidencialidad respecto a toda la información comercial, técnica, corporativa o financiera compartida para la ejecución de este contrato. Esta obligación subsistirá aún después de finalizado el presente acuerdo.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Sexta: Jurisdicción y Ley Aplicable</div>
+            <p>Para la resolución de cualquier discrepancia derivada de la interpretación o ejecución de este acuerdo, las partes se someten a la legislación comercial de la República de Colombia, con domicilio preferente en la ciudad de Bucaramanga.</p>
+        </div>
+
+        <div class="intro-text" style="margin-top: 30px;">
+            <p>En señal de conformidad y aceptación de todas las cláusulas, las partes firman el presente acuerdo de manera digital.</p>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-box">
+                <div class="signature-line">
+                    <strong>Por el Prestador:</strong><br>
+                    Sebastián García<br>
+                    CEO & Fundador, APEX AI Solutions
+                </div>
+                <div class="signature-stamp">FIRMADO DIGITALMENTE - TIMESTAMP: {{generatedDate}}</div>
+            </div>
+            <div class="signature-box">
+                <div class="signature-line">
+                    <strong>Por el Cliente:</strong><br>
+                    {{clientName}}<br>
+                    Representante Legal, {{companyName}}
+                </div>
+                <div class="signature-stamp">FIRMADO DIGITALMENTE - CONFIRMADO IP: CLIENT_PORTAL_OK</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>APEX AI SOLUTIONS © 2026 • Contrato de Servicios Generado Electrónicamente</p>
+            <p>Código de Auditoría Único: SHA256-{{generatedDate}}-E2E-APEX</p>
+        </div>
+    </div>
+</body>
+</html>

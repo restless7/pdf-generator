@@ -475,8 +475,7 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
     engine: 'handlebars',
     category: 'invoice',
     templatePath: 'templates/invoice/index.hbs',
-    stylePath: 'templates/invoice/styles.css',
-    partials: ['header', 'footer'],
+    partials: [],
     assets: ['logos'],
     schema: InvoiceSchema,
     defaultOptions: {
@@ -506,8 +505,7 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
     engine: 'handlebars',
     category: 'report',
     templatePath: 'templates/report/index.hbs',
-    stylePath: 'templates/report/styles.css',
-    partials: ['header', 'footer'],
+    partials: [],
     assets: ['logos'],
     schema: ReportSchema,
     defaultOptions: {
@@ -649,6 +647,48 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateConfig> = {
     localization: {
       supported: ['es', 'en'],
       defaultLocale: 'es'
+    }
+  },
+  'welcome': {
+    id: 'welcome',
+    name: 'Welcome Guide Template',
+    description: 'Onboarding Welcome document with project stages',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'report',
+    templatePath: 'templates/welcome/index.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: {
+        top: '1.5cm',
+        right: '1.5cm',
+        bottom: '1.5cm',
+        left: '1.5cm'
+      },
+      printBackground: true,
+      displayHeaderFooter: false
+    }
+  },
+  'contract': {
+    id: 'contract',
+    name: 'Service Agreement Contract',
+    description: 'Professional legal prestation de services contract',
+    version: '1.0.0',
+    engine: 'handlebars',
+    category: 'contract',
+    templatePath: 'templates/contract/index.hbs',
+    schema: z.any(),
+    defaultOptions: {
+      format: 'A4',
+      margins: {
+        top: '2cm',
+        right: '1.5cm',
+        bottom: '2cm',
+        left: '1.5cm'
+      },
+      printBackground: true,
+      displayHeaderFooter: false
     }
   }
 };

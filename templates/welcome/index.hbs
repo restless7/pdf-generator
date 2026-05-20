@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a APEX AI Solutions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-violet: #6366f1;
+            --primary-emerald: #10b981;
+            --gray-900: #0f172a;
+            --gray-800: #1e293b;
+            --gray-700: #334155;
+            --gray-400: #94a3b8;
+            --gray-100: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gray-900);
+            color: var(--gray-100);
+            line-height: 1.6;
+            font-size: 14px;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: linear-gradient(185deg, #1e1b4b 0%, #0f172a 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Top decorative line */
+        .decor-header {
+            height: 6px;
+            background: linear-gradient(to right, var(--primary-violet), var(--primary-emerald));
+            width: 100%;
+        }
+
+        .hero-section {
+            padding: 60px 50px 40px 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo-box {
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--gray-400);
+            max-w: 600px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+            margin: 0 50px;
+        }
+
+        .content-section {
+            padding: 40px 50px;
+        }
+
+        .greeting {
+            margin-bottom: 35px;
+        }
+
+        .greeting h2 {
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .greeting p {
+            color: var(--gray-400);
+            font-size: 15px;
+        }
+
+        .stages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stage-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .stage-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a78bfa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+        }
+
+        .stage-info h3 {
+            font-size: 16px;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .stage-info p {
+            font-size: 13.5px;
+            color: var(--gray-400);
+        }
+
+        .assets-box {
+            background: rgba(16, 185, 129, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .assets-box h3 {
+            color: var(--primary-emerald);
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .assets-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .assets-list li {
+            padding: 6px 0;
+            font-size: 13.5px;
+            color: var(--gray-100);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .assets-list li::before {
+            content: "✓";
+            color: var(--primary-emerald);
+            font-weight: bold;
+        }
+
+        .cta-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .cta-box h3 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-violet), #818cf8);
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .footer {
+            padding: 30px 50px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray-400);
+            background: rgba(0, 0, 0, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer p {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decor-header"></div>
+        
+        <div class="hero-section">
+            <div class="logo-box">APEX AI SOLUTIONS</div>
+            <h1 class="hero-title">Guía de Inicio & Bienvenida</h1>
+            <p class="hero-subtitle">Estamos emocionados de iniciar este viaje de transformación tecnológica contigo. A continuación, encontrarás los pasos claves para el lanzamiento del proyecto.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="content-section">
+            <div class="greeting">
+                <h2>¡Hola, {{clientName}}!</h2>
+                <p>Tu propuesta para el servicio <strong>{{serviceName}}</strong> (Plan {{tierName}}) ha sido aprobada con éxito. Ya hemos iniciado la configuración inicial de tu ecosistema tecnológico.</p>
+            </div>
+
+            <h2 style="font-size: 18px; color: var(--white); margin-bottom: 20px;">Fases de Implementación</h2>
+            
+            <div class="stages-grid">
+                <div class="stage-card">
+                    <div class="stage-num">1</div>
+                    <div class="stage-info">
+                        <h3>Fase 1: Recopilación de Requisitos e Integración</h3>
+                        <p>Recopilaremos todas tus preferencias de marca, logos, credenciales necesarias y accesos a API para unificar tus canales de venta y comunicación.</p>
+                    </div>
+                </div>
+
+                <div class="stage-card">
+                    <div class="stage-num">2</div>
+                    <div class="stage-info">
+                        <h3>Fase 2: Modelado y Entrenamiento IA</h3>
+                        <p>Diseñaremos y configuraremos el backend lógico y bases de conocimiento personalizadas para tus flujos de automatización.</p>
+                    </div>
+                </div>
+
+                <div class="stage-card">
+                    <div class="stage-num">3</div>
+                    <div class="stage-info">
+                        <h3>Fase 3: Pruebas de Calidad (UAT) y Ajustes</h3>
+                        <p>Haremos despliegues en entornos de prueba para afinar respuestas, asegurar el correcto flujo de datos y garantizar la total satisfacción de tu equipo.</p>
+                    </div>
+                </div>
+                
+                <div class="stage-card">
+                    <div class="stage-num">4</div>
+                    <div class="stage-info">
+                        <h3>Fase 4: Paso a Producción y Acompañamiento</h3>
+                        <p>Lanzamiento definitivo del servicio, monitoreo en tiempo real del tráfico y soporte especializado constante durante los primeros días.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="assets-box">
+                <h3>Recursos Requeridos para el Inicio</h3>
+                <ul class="assets-list">
+                    <li>Manuales de marca y Logotipos en alta definición (SVG / PNG).</li>
+                    <li>Acceso de administrador o tokens de API de plataformas de chat / CRM (según corresponda).</li>
+                    <li>Preguntas Frecuentes (FAQ) recurrentes de tus clientes para entrenamiento inicial.</li>
+                    <li>Información tributaria actualizada para la emisión del contrato y facturas.</li>
+                </ul>
+            </div>
+
+            <div class="cta-box">
+                <h3>Accede a tu Portal de Cliente</h3>
+                <p>Hemos habilitado un Portal de Cliente enterprise para ti. Desde allí podrás subir la documentación anterior, monitorear el progreso semanal y descargar tus documentos legales firmados de forma segura.</p>
+                <a href="{{dashboardUrl}}" class="cta-btn">Ingresar al Portal</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>APEX AI SOLUTIONS © 2026</strong> • Bucaramanga, Colombia</p>
+            <p>Documento digital emitido confidencialmente el {{generationDate}}</p>
+        </div>
+    </div>
+</body>
+</html>

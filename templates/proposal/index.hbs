@@ -16,11 +16,16 @@
     {{> header}}
 
     <!-- 1. RESUMEN EJECUTIVO -->
-    <section class="section no-break">
+    <section class="section page-break no-break">
       <h2>1. Resumen Ejecutivo: La Era de la Respuesta Inmediata</h2>
+      {{#if executiveSummary}}
+      <p class="lead" style="white-space: pre-wrap;">{{executiveSummary}}</p>
+      {{else}}
       <p class="lead">
         APEX AI Solutions propone a <strong>{{clientName}}</strong> una transformación digital integral diseñada para acelerar la captación, automatizar la atención al cliente y optimizar las operaciones de su negocio. En el mercado actual, la velocidad y la confianza son los activos más valiosos.
       </p>
+      {{/if}}
+      
       {{#if serviceDescription}}
       <div class="card" style="border-left: 4px solid var(--primary); background: var(--bg-violet); border-color: var(--border-violet);">
         <h3>Foco Principal de la Propuesta</h3>
@@ -37,10 +42,13 @@
     <hr class="sep" />
 
     <!-- 2. DIAGNÓSTICO Y PUNTOS DE DOLOR -->
-    <section class="section no-break">
+    <section class="section page-break no-break">
       <h2>2. Diagnóstico: Obstáculos y Puntos de Dolor Operativos</h2>
-      <p class="muted" style="font-size: 12px; color: var(--text-light); margin-bottom: 8px;">Desafíos clave identificados en el flujo comercial tradicional:</p>
       
+      {{#if diagnosis}}
+      <p class="lead" style="white-space: pre-wrap;">{{diagnosis}}</p>
+      {{else}}
+      <p class="muted" style="font-size: 12px; color: var(--text-light); margin-bottom: 8px;">Desafíos clave identificados en el flujo comercial tradicional:</p>
       <div class="grid-2">
         <div class="card">
           <h3>⚠️ Fricción Operativa Manual</h3>
@@ -59,6 +67,7 @@
           <p>La falta de un CRM centralizado provoca la dispersión de datos de interacción y restringe las estrategias automatizadas de re-compra y fidelización.</p>
         </div>
       </div>
+      {{/if}}
     </section>
 
     <hr class="sep" />
@@ -66,9 +75,14 @@
     <!-- 3. PROPUESTA DE VALOR -->
     <section class="section page-break no-break">
       <h2>3. Propuesta de Valor: La Solución APEX</h2>
+      
+      {{#if valueProposition}}
+      <p class="lead" style="white-space: pre-wrap;">{{valueProposition}}</p>
+      {{else}}
       <p class="lead">
         Nuestra solución digital convierte su presencia web en una terminal de captura automatizada conectada de extremo a extremo:
       </p>
+      {{/if}}
 
       {{#if capabilities.length}}
       <div class="grid-2">
@@ -76,7 +90,7 @@
         <div class="card">
           <h3 style="color: var(--primary); display: flex; align-items: center;">
             <span style="color: var(--secondary); margin-right: 6px;">✓</span> 
-            Capacidad {{index}}
+            Capacidad Estratégica
           </h3>
           <p>{{this}}</p>
         </div>
@@ -105,7 +119,7 @@
     </section>
 
     <!-- 4. ESTRUCTURA Y ENTREGABLES -->
-    <section class="section no-break">
+    <section class="section page-break no-break">
       <h2>4. Estructura de Ecosistema y Entregables (Plan {{tierName}})</h2>
       
       <div class="grid-2">
@@ -232,7 +246,7 @@
     </section>
 
     <!-- PAYMENT OPTIONS & BANK DETAILS -->
-    <section class="section no-break">
+    <section class="section page-break no-break">
       <h2>Opciones de Pago</h2>
       
       <div class="grid-2">

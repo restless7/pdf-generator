@@ -19,7 +19,8 @@ export class StorageService {
           secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
         },
         // Force path style for MinIO compatibility
-        forcePathStyle: process.env.S3_FORCE_PATH_STYLE === 'true'
+        forcePathStyle: process.env.S3_FORCE_PATH_STYLE === 'true',
+        systemClockOffset: 0, // Ensure dynamic system clock usage
       });
       console.log('✅ StorageService: Initialized S3 Client for endpoint', process.env.S3_ENDPOINT);
     } else {
@@ -54,7 +55,11 @@ export class StorageService {
         Key: key,
       });
 
-      const signedUrl = await getSignedUrl(this.s3Client, getCommand, { expiresIn: 86400 });
+      // Force dynamic system-level timestamp for Signature V4 to prevent 'Date is too old' AWS XML errors
+      const signedUrl = await getSignedUrl(this.s3Client, getCommand, { 
+        expiresIn: 86400,
+        signingDate: new Date() 
+      });
       return signedUrl;
 
     } catch (error) {

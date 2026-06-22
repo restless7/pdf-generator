@@ -11,9 +11,7 @@
     "test": "jest",
     "start": "node dist/server.js",
     "start:dev": "ts-node src/server.ts",
-    "build:server": "npm run build",
-    "railway:build": "npm run build",
-    "railway:start": "./start-railway.sh"
+    "build:server": "npm run build"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1045.0",
